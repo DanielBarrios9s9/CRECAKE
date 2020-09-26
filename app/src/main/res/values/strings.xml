@@ -2,4 +2,11 @@
     <string name="app_name">CREATIVE CAKE</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+    <string name="todo">Todo</string>
+    <string name="usuario">Usuario</string>
+    <string name="ofertas">Ofertas</string>
+    <string name="pedido">Pedido</string>
+    <string name="carrito">Carrito</string>
+    <string name="cotizaci_n">Cotización</string>
+    <string name="cat_logo">Catálogo</string>
 </resources>
