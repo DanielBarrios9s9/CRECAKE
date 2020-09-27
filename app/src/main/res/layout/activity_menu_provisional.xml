@@ -12,7 +12,7 @@
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginTop="64dp"
-        android:background="#8C1C3A"
+        android:background="@drawable/button_rounded"
         android:gravity="center"
         android:text="@string/men_provisional"
         android:textColor="#F2F2F2"
@@ -27,28 +27,33 @@
         android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="168dp"
-        android:background="#8C423B"
+        android:background="#F2F2F2"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/iniciaSesion"
+        app:buttonTint = "#F2F2F2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
             android:id="@+id/radioButton"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:background="#08C4423B"
+            android:background="@color/colorSecondary"
             android:text="@string/cliente"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="#F2F2F2"
+            android:textColorHighlight="#F2F2F2"
+            android:textColorHint="#F2F2F2"
+            android:textColorLink="#F2F2F2"
+            android:textCursorDrawable="@android:color/background_light"
             android:textSize="30sp" />
 
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#D9918B"
+            android:background="@color/colorSecondary"
             android:text="@string/tienda"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="#F2F2F2"
@@ -60,9 +65,12 @@
             android:id="@+id/radioButton3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorSecondary"
             android:text="@string/domicilio"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="#F2F2F2"
+            android:textColorHint="#F2F2F2"
+            android:textCursorDrawable="@android:color/background_light"
             android:textSize="30sp" />
     </RadioGroup>
 
@@ -70,7 +78,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/t_usuario"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#F2F2F2"
@@ -81,12 +89,12 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/iniciaSesion"
+        android:id="@+id/siguiente"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="32dp"
-        android:background="#8C1C3A"
+        android:background="@drawable/button_rounded"
         android:shadowColor="#FFFFFF"
         android:text="@string/next"
         android:textColor="#F2F2F2"

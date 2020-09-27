@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button iniciaSesion;
+    private Button iniciaSesion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
