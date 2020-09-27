@@ -1,4 +1,4 @@
-package com.example.creativecake.ui.main;
+package com.example.creativecake;
 
 import android.os.Bundle;
 
