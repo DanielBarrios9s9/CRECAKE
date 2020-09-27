@@ -34,17 +34,22 @@ public class Menu_provisional extends AppCompatActivity {
 
                 radioButton = (RadioButton) findViewById(selectedId);
                 System.out.println(selectedId);
+                Intent siguiente = new Intent(Menu_provisional.this, Inicio_domiciliario.class);
+                startActivity(siguiente);
                 // 2131230920 cliente
                 // 2131230921 tienda
                 // 2131230922 domicilio
-                if (selectedId == 2131230920){
+                /*if (selectedId == 2131230920){
                     Intent siguiente = new Intent(Menu_provisional.this, Inicio_cliente.class);
                     startActivity(siguiente);
                 } else if (selectedId == 2131230921){
-                    System.out.println("Tienda");
+                    Intent siguiente = new Intent(Menu_provisional.this, Inicio_Tienda.class);
+                    startActivity(siguiente);
                 } else if (selectedId == 2131230922){
                     System.out.println("Domiciliario");
                 }
+
+                 */
             }
         });
     }
