@@ -13,7 +13,6 @@
         android:layout_width="165sp"
         android:layout_height="41sp"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="62dp"
         android:ems="10"
         android:hint="@string/txtCotiTamaño"
@@ -27,7 +26,6 @@
         android:layout_width="165dp"
         android:layout_height="41dp"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="48dp"
         android:ems="10"
         android:hint="@string/txtCotiCobertura"
@@ -62,12 +60,11 @@
         android:layout_height="41sp"
         android:layout_marginTop="62dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:ems="10"
         android:hint="@string/txtCotiSabor"
         android:inputType="textPersonName"
-        android:textSize="20sp"
         android:textColor="#F2F2F2"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
@@ -77,12 +74,11 @@
         android:layout_height="41sp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:ems="10"
         android:hint="@string/txtCotiDecoracion"
         android:inputType="textPersonName"
-        android:textSize="20sp"
         android:textColor="#F2F2F2"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idSabor" />
 
@@ -91,13 +87,12 @@
         android:layout_width="165sp"
         android:layout_height="41sp"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="48dp"
         android:ems="10"
         android:hint="@string/txtCotiSaborDecoracion"
         android:inputType="textPersonName"
-        android:textSize="20sp"
         android:textColor="#F2F2F2"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idCobertura" />
 
@@ -107,12 +102,11 @@
         android:layout_height="41sp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:ems="10"
         android:hint="@string/txtCotiAñadido"
         android:inputType="textPersonName"
-        android:textSize="20sp"
         android:textColor="#F2F2F2"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idDecoracion" />
 
