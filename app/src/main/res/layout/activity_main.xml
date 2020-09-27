@@ -16,7 +16,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo"
+        android:contentDescription="TODO" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -27,12 +28,13 @@
         android:layout_marginEnd="32dp"
         android:backgroundTint="#F2F2F2"
         android:ems="10"
-        android:hint="Email"
+        android:hint="@string/email"
         android:inputType="textPersonName"
         android:textColorHint="#F2F2F2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
@@ -43,13 +45,14 @@
         android:layout_marginEnd="32dp"
         android:backgroundTint="#F2F2F2"
         android:ems="10"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:textColorHint="#F2F2F2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/button"
@@ -59,7 +62,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/button_rounded"
-        android:text="Inicia Sesión"
+        android:text="@string/inicia_sesi_n"
         android:textColor="#F2F2F2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,7 +76,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/button_borde"
-        android:text="Regístrate"
+        android:text="@string/reg_strate"
         android:textColor="#F2F2F2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

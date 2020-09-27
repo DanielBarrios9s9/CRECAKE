@@ -8,18 +8,20 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="92dp"
+        android:id="@+id/textView12"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="64dp"
         android:background="#8C1C3A"
+        android:gravity="center"
         android:text="@string/registro"
         android:textColor="#F2F2F2"
         android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        android:textStyle="normal|bold"
+        app:drawableTint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -34,7 +36,7 @@
 
         <RadioButton
             android:id="@+id/radioButton"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:background="#08C4423B"
             android:text="@string/cliente"
@@ -76,21 +78,19 @@
         android:textStyle="normal|bold"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.175"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
         android:background="#8C1C3A"
         android:shadowColor="#FFFFFF"
         android:text="@string/next"
         android:textColor="#F2F2F2"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.885"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
