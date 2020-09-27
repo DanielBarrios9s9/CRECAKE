@@ -1,4 +1,4 @@
-package com.example.creativecake;
+/*package com.example.creativecake;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,3 +12,5 @@ public class RegistroNegocio extends AppCompatActivity {
         setContentView(R.layout.activity_registro_negocio);
     }
 }
+
+ */
