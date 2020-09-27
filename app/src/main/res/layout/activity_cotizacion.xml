@@ -131,4 +131,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idSaborDecoracion" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="127dp"
+        android:layout_height="121dp"
+        app:srcCompat="@mipmap/pngegg"
+        tools:layout_editor_absoluteX="249dp"
+        tools:layout_editor_absoluteY="581dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
