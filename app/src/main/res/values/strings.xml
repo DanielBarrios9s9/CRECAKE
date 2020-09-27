@@ -29,4 +29,27 @@
     <string name="txtPCompletadoTitulo">Pedidos Completados</string>
     <string name="txtPCompletado">Tus pedidos completados son: </string>
     <string name="txtPCompletadoCantidad">0</string>
+
+    <string name="registro">Registro</string>
+    <string name="t_usuario">Tipo de usuario</string>
+    <string name="cliente">Cliente</string>
+    <string name="tienda">Negocio</string>
+    <string name="domicilio">Domiciliario</string>
+    <string name="next">Siguiente</string>
+    <string name="nombre_cliente">Nombre</string>
+    <string name="correo">Correo</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="telefono">Teléfono</string>
+    <string name="direccion">Dirección</string>
+    <string name="edad">Edad</string>
+    <string name="back">Volver</string>
+    <string name="nombreNegocio">Nombre del negocio</string>
+    <string name="cuenta">Cuenta de nequi</string>
+
+    <string name="gan">Ganancias</string>
+    <string name="acum">Acumulado:</string>
+
+    <string name="estadisticas">Estadisticas</string>
+    <string name="estI">Imagen estadística</string>
+
 </resources>
