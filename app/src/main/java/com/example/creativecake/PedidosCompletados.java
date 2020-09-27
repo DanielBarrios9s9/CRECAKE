@@ -1,4 +1,4 @@
-package com.example.creativecake.ui.main;
+package com.example.creativecake;
 
 import android.os.Bundle;
 
@@ -6,11 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.creativecake.R;
 
-public class Inventario extends AppCompatActivity {
+public class PedidosCompletados extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inventario);
+        setContentView(R.layout.activity_pedidos_completados);
     }
 }
