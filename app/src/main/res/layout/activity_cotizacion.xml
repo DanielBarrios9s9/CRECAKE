@@ -56,23 +56,6 @@
             android:textSize="25sp" />
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="148dp"
-        android:layout_height="136dp"
-        android:layout_marginStart="211dp"
-        android:layout_marginLeft="211dp"
-        android:layout_marginTop="99dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginRight="52dp"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:srcCompat="@mipmap/pngegg" />
-
     <EditText
         android:id="@+id/idSabor"
         android:layout_width="165sp"
@@ -135,17 +118,15 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="175dp"
+        android:layout_height="55dp"
         android:layout_marginStart="109dp"
-        android:layout_marginLeft="109dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="109dp"
-        android:layout_marginRight="109dp"
-        android:text="@string/txtCotiBoton"
-        android:textSize="18sp"
-        android:textColor="#F2F2F2"
         android:background="@drawable/redondez_botones_daniel"
+        android:text="@string/txtCotiBoton"
+        android:textColor="#F2F2F2"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idSaborDecoracion" />
