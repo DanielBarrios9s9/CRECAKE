@@ -135,8 +135,10 @@
         android:id="@+id/imageView"
         android:layout_width="127dp"
         android:layout_height="121dp"
-        app:srcCompat="@mipmap/pngegg"
-        tools:layout_editor_absoluteX="249dp"
-        tools:layout_editor_absoluteY="581dp" />
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="29dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@mipmap/pngegg" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
