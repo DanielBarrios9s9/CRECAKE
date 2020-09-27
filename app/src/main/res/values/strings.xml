@@ -9,4 +9,24 @@
     <string name="carrito">Carrito</string>
     <string name="cotizaci_n">Cotización</string>
     <string name="cat_logo">Catálogo</string>
+
+    <string name="txtCotiTitulo">Cotización</string>
+    <string name="txtCotiTamaño">Tamaño</string>
+    <string name="txtCotiSabor">Sabor</string>
+    <string name="txtCotiCobertura">Cobertura</string>
+    <string name="txtCotiDecoracion">Decoración</string>
+    <string name="txtCotiSaborDecoracion">Sabor decoración</string>
+    <string name="txtCotiAñadido">Añadido</string>
+    <string name="txtCotiBoton">Enviar cotización</string>
+
+    <string name="txtInvenTitulo">Inventario</string>
+    <string name="txtInvenVisualizar">Visualizar</string>
+    <string name="txtInvenAgregar">Agregar productos</string>
+    <string name="txtInvenEliminar">Eliminar productos</string>
+    <string name="txtInvenModCantidad">Modificar cantidad</string>
+    <string name="txtInvenEditar">Editar producto</string>
+
+    <string name="txtPCompletadoTitulo">Pedidos Completados</string>
+    <string name="txtPCompletado">Tus pedidos completados son: </string>
+    <string name="txtPCompletadoCantidad">0</string>
 </resources>
