@@ -29,4 +29,7 @@
     <string name="txtPCompletadoTitulo">Pedidos Completados</string>
     <string name="txtPCompletado">Tus pedidos completados son: </string>
     <string name="txtPCompletadoCantidad">0</string>
+    <string name="estado_de_pedido">ESTADO DE PEDIDO</string>
+    <string name="informacion_de_pedido">Informacion de pedido</string>
+    <string name="informacon_de_pedido">Informacon de pedido :</string>
 </resources>
