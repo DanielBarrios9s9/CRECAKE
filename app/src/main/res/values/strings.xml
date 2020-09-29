@@ -32,4 +32,10 @@
     <string name="estado_de_pedido">ESTADO DE PEDIDO</string>
     <string name="informacion_de_pedido">Informacion de pedido</string>
     <string name="informacon_de_pedido">Informacon de pedido :</string>
+    <string name="comprador">Comprador :</string>
+    <string name="codigo_de_pedido">codigo de pedido:</string>
+    <string name="codigo_de_pedido">codigo de pedido:</string>
+    <string name="pedido_activo">PEDIDO ACTIVO</string>
+    <string name="informacion_de_pedido2">Informacion de pedido:</string>
+    <string name="seguimiento">SEGUIMIENTO....</string>
 </resources>

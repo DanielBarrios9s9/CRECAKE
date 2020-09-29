@@ -9,8 +9,8 @@
 
     <View
         android:id="@+id/view4"
-        android:layout_width="416dp"
-        android:layout_height="109dp"
+        android:layout_width="412dp"
+        android:layout_height="111dp"
         android:background="#8C1C3A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,15 +34,15 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
+        android:layout_width="60dp"
+        android:layout_height="56dp"
+        android:background="@drawable/ic_baseline_library_books_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.674"
+        app:layout_constraintHorizontal_bias="0.66"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.819" />
+        app:layout_constraintVertical_bias="0.817" />
 
     <View
         android:id="@+id/view5"
@@ -60,17 +60,32 @@
     <SeekBar
         android:id="@+id/seekBar2"
         style="@android:style/Widget.Material.SeekBar.Discrete"
-        android:layout_width="265dp"
-        android:layout_height="112dp"
+        android:layout_width="261dp"
+        android:layout_height="79dp"
         android:max="4"
         android:progress="3"
         android:progressBackgroundTint="#000000"
         android:progressTint="#330810"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.673" />
+        app:layout_constraintVertical_bias="0.702" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="319dp"
+        android:layout_height="76dp"
+        android:text="ESTADO ..."
+        android:textAlignment="center"
+        android:textColor="#5E1025"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.604" />
 
     <TextView
         android:id="@+id/textView"
@@ -109,13 +124,14 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        android:text="codigo de pedido:"
+        android:text="@string/codigo_de_pedido"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view4"
-        app:layout_constraintVertical_bias="0.286" />
+        app:layout_constraintVertical_bias="0.286"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/editTextTextMultiLine3"
@@ -124,13 +140,14 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        android:text="codigo de pedido:"
+        android:text="@string/comprador"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view4"
-        app:layout_constraintVertical_bias="0.381" />
+        app:layout_constraintVertical_bias="0.381"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/editTextTextMultiLine4"
@@ -139,12 +156,13 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        android:text="codigo de pedido:"
+        android:text="@string/codigo_de_pedido"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view4"
-        app:layout_constraintVertical_bias="0.47" />
+        app:layout_constraintVertical_bias="0.47"
+        android:autofillHints="" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
