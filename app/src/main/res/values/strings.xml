@@ -2,6 +2,8 @@
     <string name="app_name">CREATIVE CAKE</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+
+    <!--string de catálogo-->
     <string name="todo">Todo</string>
     <string name="usuario">Usuario</string>
     <string name="ofertas">Ofertas</string>
@@ -10,25 +12,57 @@
     <string name="cotizaci_n">Cotización</string>
     <string name="cat_logo">Catálogo</string>
 
-    <string name="txtCotiTitulo">Cotización</string>
-    <string name="txtCotiTamaño">Tamaño</string>
-    <string name="txtCotiSabor">Sabor</string>
-    <string name="txtCotiCobertura">Cobertura</string>
-    <string name="txtCotiDecoracion">Decoración</string>
-    <string name="txtCotiSaborDecoracion">Sabor decoración</string>
+    <!--strings de cotización cliente-->
     <string name="txtCotiAñadido">Añadido</string>
     <string name="txtCotiBoton">Enviar cotización</string>
 
+    <string-array name="tamaño">
+        <item>Tamaño</item>
+        <item>5 porciones</item>
+        <item>15 porciones</item>
+        <item>25 porciones</item>
+        <item>35 porciones</item>
+        <item>2 piezas</item>
+        <item>3 piezas</item>
+    </string-array>
+    <string-array name="cobertura">
+        <item>Cobertura</item>
+        <item>Mantequilla</item>
+        <item>Fondant</item>
+        <item>Chocolate Derretido</item>
+        <item>Crema Chantilly</item>
+        <item>Ganache de Chocolates</item>
+        <item>Merengue</item>
+    </string-array>
+    <string-array name="sabor">
+        <item>Sabor</item>
+        <item>Tres Leches</item>
+        <item>Torta Negra</item>
+        <item>Vainilla</item>
+        <item>Amapola</item>
+        <item>Naranja</item>
+    </string-array>
+    <string-array name="decoracion">
+        <item>Decoración</item>
+        <item>Flores</item>
+        <item>Trozos de Chocolate</item>
+        <item>Frutas</item>
+        <item>Dulces</item>
+        <item>Perzonalizado en añadido</item>
+    </string-array>
+
+    <!-- strings inventario-->
     <string name="txtInvenTitulo">Inventario</string>
     <string name="txtInvenVisualizar">Visualizar</string>
     <string name="txtInvenAgregar">Agregar productos</string>
     <string name="txtInvenEliminar">Eliminar productos</string>
     <string name="txtInvenModCantidad">Modificar cantidad</string>
     <string name="txtInvenEditar">Editar producto</string>
-
     <string name="txtPCompletadoTitulo">Pedidos Completados</string>
     <string name="txtPCompletado">Tus pedidos completados son: </string>
     <string name="txtPCompletadoCantidad">0</string>
+
+    <!--strings registros-->
     <string name="registro">Registro</string>
     <string name="t_usuario">Tipo de usuario</string>
     <string name="cliente">Cliente</string>
@@ -45,11 +79,13 @@
     <string name="nombreNegocio">Nombre del negocio</string>
     <string name="cuenta">Cuenta de nequi</string>
 
+    <!--strings estadísticas-->
     <string name="estadisticas">Estadisticas</string>
     <string name="estI">Imagen estadística</string>
-
     <string name="gan">Ganancias</string>
     <string name="acum">Acumulado:</string>
+
+    <!--strings log in-->
     <string name="inicia_sesi_n">Inicia Sesión</string>
     <string name="reg_strate">Regístrate</string>
     <string name="password">Password</string>
@@ -57,7 +93,8 @@
     <string name="menu_cat">TODO</string>
     <string name="buscar">TODO</string>
     <string name="men_provisional">Menú Provisional</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
+    <!--strings de menu provisional-->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_inicio_tienda">Inicio_tienda</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -71,6 +108,7 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
 
+    <!--strings de catálogo cliente-->
     <string name="precio_m_ximo">Ingrese el precio máximo</string>
     <string name="torta">Tortas</string>
     <string name="postre">Postres</string>
@@ -100,5 +138,22 @@
     <string name="galletas_con_chips_de_chocolate">Galletas con chips de Chocolate</string>
     <string name="hojaldre_relleno_de_pesto">Hojaldre relleno de Pesto</string>
     <string name="_7000_c_u">$ 7000 c/u</string>
+
+    <!--strings de menu lateral cliente-->
+    <string name="title_activity_menu_lateral_cliente">MenuLateralCliente</string>
+    <string name="cu_l_es_tu_presupuesto">¿Cuál es tu presupuesto?</string>
+
+    <!--strings de carrito cliente-->
+
+    <!-- algunos strings de item cliente-->
+
+    <!--strings de comprar item cliente-->
+
+    <!--strings de carrito cliente-->
+
+    <!--strings de oferta cliente-->
+
+    <!--strings de ajustes usuario cliente-->
+
 
 </resources>

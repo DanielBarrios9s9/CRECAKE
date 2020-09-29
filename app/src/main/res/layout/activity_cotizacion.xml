@@ -4,135 +4,233 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#BF5A7F"
+    android:background="#FFFFFF"
     tools:context=".Cotizacion">
 
 
-    <EditText
-        android:id="@+id/idTamaño"
-        android:layout_width="165sp"
-        android:layout_height="41sp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="62dp"
-        android:ems="10"
-        android:hint="@string/txtCotiTamaño"
-        android:inputType="textPersonName"
-        android:textSize="20sp"
+    <View
+        android:id="@+id/view"
+        android:layout_width="411dp"
+        android:layout_height="498dp"
+        android:background="#BF5A7F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <EditText
-        android:id="@+id/idCobertura"
-        android:layout_width="165dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="48dp"
-        android:ems="10"
-        android:hint="@string/txtCotiCobertura"
-        android:inputType="textPersonName"
-        android:textSize="20sp"
+    <View
+        android:id="@+id/view4"
+        android:layout_width="413dp"
+        android:layout_height="131dp"
+        android:background="@drawable/ic_wave"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idTamaño" />
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.825" tools:targetApi="m" />
+
+    <ImageButton
+        android:id="@+id/opciones"
+        style="@android:style/Widget.Holo.Light.ImageButton"
+        android:layout_width="58dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="352dp"
+        android:background="#BF5A7F"
+        android:contentDescription="@string/todo"
+        android:tint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.008"
+        app:srcCompat="@drawable/ic_baseline_menu_24" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="35dp"
+        android:text="@string/cotizaci_n"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/view4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="411dp"
-        android:layout_height="62dp"
-        android:background="#8C1C3A"
+        android:id="@+id/linearLayout2"
+        android:layout_width="402dp"
+        android:layout_height="310dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.163">
 
-        <TextView
-            android:id="@+id/textView"
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="15sp"
-            android:text="@string/txtCotiTitulo"
-            android:textColor="#F2F2F2"
-            android:textSize="25sp" />
+            android:layout_height="71dp"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="81dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@drawable/ic_baseline_crop_free_24" />
+
+            <Spinner
+                android:id="@+id/tamaño"
+                android:layout_width="327dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:spinnerMode="dropdown" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="71dp"
+            android:layout_gravity="center">
+
+            <Spinner
+                android:id="@+id/cobertura"
+                android:layout_width="327dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:spinnerMode="dropdown" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="79dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@drawable/ic_baseline_broken_image_24" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="71dp"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="81dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@drawable/ic_baseline_local_dining_24" />
+
+            <Spinner
+                android:id="@+id/sabor"
+                android:layout_width="327dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:spinnerMode="dropdown" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="71dp"
+            android:layout_gravity="center">
+
+            <Spinner
+                android:id="@+id/decoracion"
+                android:layout_width="327dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:spinnerMode="dropdown" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="81dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@drawable/ic_baseline_brush_24" />
+        </TableRow>
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/idSabor"
-        android:layout_width="165sp"
-        android:layout_height="41sp"
-        android:layout_marginTop="62dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="@string/txtCotiSabor"
-        android:inputType="textPersonName"
-        android:textColor="#F2F2F2"
-        android:textSize="20sp"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="79dp"
+        android:layout_height="89dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-    <EditText
-        android:id="@+id/idDecoracion"
-        android:layout_width="165sp"
-        android:layout_height="41sp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="@string/txtCotiDecoracion"
-        android:inputType="textPersonName"
-        android:textColor="#F2F2F2"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idSabor" />
-
-    <EditText
-        android:id="@+id/idSaborDecoracion"
-        android:layout_width="165sp"
-        android:layout_height="41sp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="48dp"
-        android:ems="10"
-        android:hint="@string/txtCotiSaborDecoracion"
-        android:inputType="textPersonName"
-        android:textColor="#F2F2F2"
-        android:textSize="20sp"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idCobertura" />
-
-    <EditText
-        android:id="@+id/idAñadido"
-        android:layout_width="165sp"
-        android:layout_height="41sp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="@string/txtCotiAñadido"
-        android:inputType="textPersonName"
-        android:textColor="#F2F2F2"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idDecoracion" />
+        app:layout_constraintTop_toBottomOf="@+id/iniciaSesion"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@mipmap/pngegg" />
 
     <Button
         android:id="@+id/iniciaSesion"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="109dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="109dp"
+        android:layout_width="230dp"
+        android:layout_height="54dp"
         android:background="@drawable/redondez_botones_daniel"
         android:text="@string/txtCotiBoton"
         android:textColor="#F2F2F2"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idSaborDecoracion" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="127dp"
-        android:layout_height="121dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="29dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@mipmap/pngegg" />
+        app:layout_constraintHorizontal_bias="0.088"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.586" />
+
+    <EditText
+        android:id="@+id/presupuesto"
+        style="@style/Widget.MaterialComponents.TextInputEditText.FilledBox"
+        android:layout_width="410dp"
+        android:layout_height="63dp"
+        android:autofillHints=""
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:hint="@string/cu_l_es_tu_presupuesto"
+        android:inputType="numberSigned"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.567" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="413dp"
+        android:layout_height="131dp"
+        android:textColorHint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.724">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/txtCotiAñadido"
+            android:textColorHint="#000000" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
