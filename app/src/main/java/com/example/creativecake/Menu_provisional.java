@@ -30,26 +30,25 @@ public class Menu_provisional extends AppCompatActivity {
         siguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 int selectedId = radioGroup.getCheckedRadioButtonId();
 
                 radioButton = (RadioButton) findViewById(selectedId);
-                System.out.println(selectedId);
-                Intent siguiente = new Intent(Menu_provisional.this, Inicio_domiciliario.class);
-                startActivity(siguiente);
-                // 2131230920 cliente
-                // 2131230921 tienda
-                // 2131230922 domicilio
-                /*if (selectedId == 2131230920){
-                    Intent siguiente = new Intent(Menu_provisional.this, Inicio_cliente.class);
-                    startActivity(siguiente);
-                } else if (selectedId == 2131230921){
-                    Intent siguiente = new Intent(Menu_provisional.this, Inicio_Tienda.class);
-                    startActivity(siguiente);
-                } else if (selectedId == 2131230922){
-                    System.out.println("Domiciliario");
-                }
 
-                 */
+                if(radioButton.getText().equals("Cliente")){
+                    Intent cliente = new Intent(Menu_provisional.this,
+                            Inicio_cliente.class);
+                    startActivity(cliente);
+                    System.out.println("Cliente");
+                } else if(radioButton.getText().equals("Negocio")){
+                    Intent tienda = new Intent(Menu_provisional.this,
+                            Inicio_tienda.class);
+                    startActivity(tienda);
+                } else if(radioButton.getText().equals("Domiciliario")) {
+                    Intent domiciliario = new Intent(Menu_provisional.this,
+                            Inicio_domiciliario.class);
+                    startActivity(domiciliario);
+                }
             }
         });
     }
