@@ -56,6 +56,20 @@
     <string name="email">Email</string>
     <string name="menu_cat">TODO</string>
     <string name="buscar">TODO</string>
+    <string name="men_provisional">Menú Provisional</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_inicio_tienda">Inicio_tienda</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
 
     <string name="precio_m_ximo">Ingrese el precio máximo</string>
     <string name="torta">Tortas</string>

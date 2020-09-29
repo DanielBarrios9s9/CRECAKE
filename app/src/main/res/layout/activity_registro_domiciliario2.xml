@@ -8,7 +8,7 @@
     tools:context=".RegistroDomiciliario">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/registrate"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginEnd="16dp"
@@ -33,7 +33,7 @@
         android:textColor="#F2F2F2"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@+id/registrate"
         app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent" />
 
