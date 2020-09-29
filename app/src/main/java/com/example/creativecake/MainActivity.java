@@ -1,30 +1,31 @@
 package com.example.creativecake;
 
-import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.tabs.TabLayout;
-
-import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
-import android.view.Menu;
-import android.view.MenuItem;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
-
-import com.example.creativecake.ui.main.SectionsPagerAdapter;
-
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Button iniciaSesion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        iniciaSesion = (Button)findViewById(R.id.iniciaSesion);
+
+        iniciaSesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent iniciaSesion = new Intent(MainActivity.this, Menu_provisional.class);
+                startActivity(iniciaSesion);
+            }
+        });
     }
 }
