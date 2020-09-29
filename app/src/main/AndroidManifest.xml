@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.creativecake">
+    package="com.example.creativecake" >
 
     <application
         android:allowBackup="true"
@@ -8,12 +8,24 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".Inicio_cliente"></activity>
+        android:theme="@style/Theme.AppCompat.NoActionBar" >
+        <activity android:name=".Cotizacion" />
+        <activity android:name=".Estadisticas" />
+        <activity android:name=".Ganancias" />
+        <activity android:name=".Inicio_cliente" />
+        <activity android:name=".Inicio_domiciliario" />
+        <activity android:name=".Inicio_tienda" />
+        <activity android:name=".Inventario" />
+        <activity android:name=".Menu_provisional" />
+        <activity android:name=".PedidosCompletados" />
+        <activity android:name=".Registro" />
+        <activity android:name=".RegistroCliente" />
+        <activity android:name=".RegistroDomiciliario" />
+        <activity android:name=".RegistroNegocio" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
