@@ -33,15 +33,15 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="74dp"
+        android:layout_width="70dp"
         android:layout_height="63dp"
         android:background="@drawable/ic_baseline_library_add_check_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.676"
+        app:layout_constraintHorizontal_bias="0.646"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.818" />
+        app:layout_constraintVertical_bias="0.814" />
 
     <Button
         android:id="@+id/button5"
@@ -50,10 +50,10 @@
         android:background="@drawable/ic_baseline_where_to_vote_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.297"
+        app:layout_constraintHorizontal_bias="0.374"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.822" />
+        app:layout_constraintVertical_bias="0.818" />
 
     <EditText
         android:id="@+id/editTextTextMultiLine2"
@@ -154,7 +154,8 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.593"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.69" />
+        app:layout_constraintVertical_bias="0.693" />
 </androidx.constraintlayout.widget.ConstraintLayout>
