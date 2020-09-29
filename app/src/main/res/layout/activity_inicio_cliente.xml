@@ -12,8 +12,8 @@
 
     <View
         android:id="@+id/view2"
-        android:layout_width="411dp"
-        android:layout_height="345dp"
+        android:layout_width="413dp"
+        android:layout_height="514dp"
         android:background="#FFFFFF"
         android:backgroundTint="#BF5A7F"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,14 +25,15 @@
 
     <View
         android:id="@+id/view3"
-        android:layout_width="415dp"
-        android:layout_height="139dp"
-        android:layout_marginTop="344dp"
+        android:layout_width="412dp"
+        android:layout_height="221dp"
         android:foreground="@drawable/ic_wave"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/Boton_Catalogo"
@@ -54,10 +55,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="@+id/view2"
-        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintStart_toStartOf="@+id/view2"
         app:layout_constraintTop_toTopOf="@+id/view2"
-        app:layout_constraintVertical_bias="0.302" />
+        app:layout_constraintVertical_bias="0.263" />
 
     <Button
         android:id="@+id/Boton_Cotizacion"
@@ -79,10 +80,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="@+id/view2"
-        app:layout_constraintHorizontal_bias="0.858"
+        app:layout_constraintHorizontal_bias="0.851"
         app:layout_constraintStart_toStartOf="@+id/view2"
         app:layout_constraintTop_toTopOf="@+id/view2"
-        app:layout_constraintVertical_bias="0.302" />
+        app:layout_constraintVertical_bias="0.263" />
 
     <Button
         android:id="@+id/button_carrito"
@@ -107,7 +108,7 @@
         app:layout_constraintHorizontal_bias="0.141"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view2"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.53" />
 
     <Button
         android:id="@+id/button_pedido"
@@ -132,7 +133,7 @@
         app:layout_constraintHorizontal_bias="0.858"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view2"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.53" />
 
     <Button
         android:id="@+id/button_ofertas"
@@ -190,6 +191,7 @@
         android:layout_width="58dp"
         android:layout_height="43dp"
         android:layout_marginStart="16dp"
+        android:background="#BF5A7F"
         android:contentDescription="@string/todo"
         android:tint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
