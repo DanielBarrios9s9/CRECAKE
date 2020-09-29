@@ -29,4 +29,63 @@
     <string name="txtPCompletadoTitulo">Pedidos Completados</string>
     <string name="txtPCompletado">Tus pedidos completados son: </string>
     <string name="txtPCompletadoCantidad">0</string>
+    <string name="registro">Registro</string>
+    <string name="t_usuario">Tipo de usuario</string>
+    <string name="cliente">Cliente</string>
+    <string name="tienda">Negocio</string>
+    <string name="domicilio">Domiciliario</string>
+    <string name="next">Siguiente</string>
+    <string name="nombre_cliente">Nombre</string>
+    <string name="correo">Correo</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="telefono">Teléfono</string>
+    <string name="direccion">Dirección</string>
+    <string name="edad">Edad</string>
+    <string name="back">Volver</string>
+    <string name="nombreNegocio">Nombre del negocio</string>
+    <string name="cuenta">Cuenta de nequi</string>
+
+    <string name="estadisticas">Estadisticas</string>
+    <string name="estI">Imagen estadística</string>
+
+    <string name="gan">Ganancias</string>
+    <string name="acum">Acumulado:</string>
+    <string name="inicia_sesi_n">Inicia Sesión</string>
+    <string name="reg_strate">Regístrate</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="menu_cat">TODO</string>
+    <string name="buscar">TODO</string>
+
+    <string name="precio_m_ximo">Ingrese el precio máximo</string>
+    <string name="torta">Tortas</string>
+    <string name="postre">Postres</string>
+    <string name="hojaldre">Hojaldres</string>
+    <string name="otro">Otros</string>
+    <string name="pas_Mano_D">Pastelería Mano de Dios</string>
+    <string name="pas_l_Es">Pastelería La Española</string>
+    <string name="pas_maria">Hojaldres María</string>
+    <string name="pas_sugar">Pastelería Sugar</string>
+    <string name="cupcake_con_cobertura_de_fresa">Cupcake con cobertura de Fresa</string>
+    <string name="pasteler_a_santa_rosita">Pastelería Santa Rosita</string>
+    <string name="pastel_gloria_de_bocadillo">Pastel Gloria de Bocadillo</string>
+    <string name="_2000_c_u">$ 2000 c/u</string>
+    <string name="pastel_tres_leches_cober_mantq">Pastel Tres Leches Cober. Mantq.</string>
+    <string name="_35000_c_u">$ 35000 c/u</string>
+    <string name="pastel_tres_leches_rosas">Pastel Tres Leches Rosas</string>
+    <string name="_300000_c_u">$ 300000 c/u</string>
+    <string name="pastel_negro_decorado_pocahontas">Pastel Negro Decorado Pocahontas</string>
+    <string name="_60000_c_u">$ 60000 c/u</string>
+    <string name="_1800_c_u">$ 1800 c/u</string>
+    <string name="cupcakes_x5_varios_sabores">Cupcakes x5 varios sabores</string>
+    <string name="_7500">$ 7500</string>
+    <string name="fresas_con_crema">Fresas con Crema</string>
+    <string name="_5000_c_u">$ 5000 c/u</string>
+    <string name="tarta_de_lim_n">Tarta de Limón</string>
+    <string name="_15000_c_u">$ 15000 c/u</string>
+    <string name="galletas_con_chips_de_chocolate">Galletas con chips de Chocolate</string>
+    <string name="_2000_c_u">$ 2000 c/u</string>
+    <string name="hojaldre_relleno_de_pesto">Hojaldre relleno de Pesto</string>
+    <string name="_7000_c_u">$ 7000 c/u</string>
+
 </resources>
