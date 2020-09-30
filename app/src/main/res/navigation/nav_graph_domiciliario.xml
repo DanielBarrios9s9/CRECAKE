@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_domiciliario"
+    app:startDestination="@id/inicioDomiciliarioFragment">
+
+    <fragment
+        android:id="@+id/inicioDomiciliarioFragment"
+        android:name="com.example.creativecake.InicioDomiciliarioFragment"
+        android:label="fragment_inicio_domiciliario"
+        tools:layout="@layout/fragment_inicio_domiciliario" >
+        <action
+            android:id="@+id/action_inicioDomiciliarioFragment_to_pedidosCompDomiciliarioFragment"
+            app:destination="@id/pedidosCompDomiciliarioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pedidosCompDomiciliarioFragment"
+        android:name="com.example.creativecake.PedidosCompDomiciliarioFragment"
+        android:label="fragment_pedidos_comp_domiciliario"
+        tools:layout="@layout/fragment_pedidos_comp_domiciliario" />
+</navigation>
