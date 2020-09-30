@@ -15,6 +15,7 @@
     <!--strings de cotización cliente-->
     <string name="txtCotiAñadido">Añadido</string>
     <string name="txtCotiBoton">Enviar cotización</string>
+    <string name="cu_l_es_tu_presupuesto">¿Cuál es tu presupuesto?</string>
 
     <string-array name="tamaño">
         <item>Tamaño</item>
@@ -139,19 +140,22 @@
     <string name="hojaldre_relleno_de_pesto">Hojaldre relleno de Pesto</string>
     <string name="_7000_c_u">$ 7000 c/u</string>
 
-    <!--strings de menu lateral cliente-->
-    <string name="title_activity_menu_lateral_cliente">MenuLateralCliente</string>
-    <string name="cu_l_es_tu_presupuesto">¿Cuál es tu presupuesto?</string>
+    <!--strings de oferta cliente-->
+    <string name="_50">-50%</string>
+    <string name="_10">-10%</string>
+    <string name="_30">-30%</string>
+    <string name="juan_rodriguez">Juan Rodriguez</string>
+    <string name="juan38_gmail_com">juan38@gmail.com</string>
+    <string name="____">*****</string>
+    <string name="_3153456789">3153456789</string>
+    <string name="calle_26_a_35">Calle 26 A 35</string>
+    <string name="guardar_cambios">Guardar Cambios</string>
 
     <!--strings de carrito cliente-->
 
     <!-- algunos strings de item cliente-->
 
     <!--strings de comprar item cliente-->
-
-    <!--strings de carrito cliente-->
-
-    <!--strings de oferta cliente-->
 
     <!--strings de ajustes usuario cliente-->
 
