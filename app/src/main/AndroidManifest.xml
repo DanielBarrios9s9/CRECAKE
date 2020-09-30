@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".MainDomiciliario"></activity>
+        <activity android:name=".MainDomiciliario" />
         <activity android:name=".MainCliente" />
         <activity android:name=".Estadisticas" />
         <activity android:name=".Ganancias" />

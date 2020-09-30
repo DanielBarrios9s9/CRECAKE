@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:background="#F2F2F2"
         android:visibility="visible"
-        app:buttonTint = "#F2F2F2"
+        app:buttonTint="#F2F2F2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
