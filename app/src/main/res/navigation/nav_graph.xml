@@ -3,16 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/inicio_tienda">
+    app:startDestination="@id/activity_incio_tienda_fragment">
 
-    <activity
-        android:id="@+id/inicio_tienda"
-        android:name="com.example.creativecake.Inicio_tienda"
-        android:label="Inicio_tienda" />
-
-    <activity
-        android:id="@+id/inventario"
-        android:name="com.example.creativecake.Inventario"
-        android:label="activity_inventario"
-        tools:layout="@layout/activity_inventario" />
+    <fragment
+        android:id="@+id/activity_incio_tienda_fragment"
+        android:name="com.example.creativecake.activity_incio_tienda_fragment"
+        android:label="fragment_activity_incio_tienda_fragment"
+        tools:layout="@layout/fragment_activity_incio_tienda_fragment" />
 </navigation>
