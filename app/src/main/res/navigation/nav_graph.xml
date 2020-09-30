@@ -9,6 +9,7 @@
         android:id="@+id/inicio_tienda"
         android:name="com.example.creativecake.Inicio_tienda"
         android:label="Inicio_tienda" />
+
     <activity
         android:id="@+id/inventario"
         android:name="com.example.creativecake.Inventario"
