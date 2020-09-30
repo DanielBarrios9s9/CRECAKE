@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_cliente"
+    app:startDestination="@id/inicioClienteFragment">
+    <fragment
+        android:id="@+id/inicioClienteFragment"
+        android:name="com.example.creativecake.InicioClienteFragment"
+        android:label="fragment_inicio_cliente"
+        tools:layout="@layout/fragment_inicio_cliente" >
+        <action
+            android:id="@+id/action_inicioClienteFragment_to_catalogoClienteFragment"
+            app:destination="@id/catalogoClienteFragment" />
+        <action
+            android:id="@+id/action_inicioClienteFragment_to_cotizacionClienteFragment"
+            app:destination="@id/cotizacionClienteFragment" />
+        <action
+            android:id="@+id/action_inicioClienteFragment_to_carritoClienteFragment"
+            app:destination="@id/carritoClienteFragment" />
+        <action
+            android:id="@+id/action_inicioClienteFragment_to_estadoPedidoFragment"
+            app:destination="@id/estadoPedidoFragment" />
+        <action
+            android:id="@+id/action_inicioClienteFragment_to_ofertasClienteFragment"
+            app:destination="@id/ofertasClienteFragment" />
+        <action
+            android:id="@+id/action_inicioClienteFragment_to_usuarioClienteFragment"
+            app:destination="@id/usuarioClienteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/catalogoClienteFragment"
+        android:name="com.example.creativecake.CatalogoClienteFragment"
+        android:label="fragment_catalogo_cliente"
+        tools:layout="@layout/fragment_catalogo_cliente" >
+        <action
+            android:id="@+id/action_catalogoClienteFragment_to_itemClienteFragment"
+            app:destination="@id/itemClienteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemClienteFragment"
+        android:name="com.example.creativecake.ItemClienteFragment"
+        android:label="fragment_item_cliente"
+        tools:layout="@layout/fragment_item_cliente" >
+        <action
+            android:id="@+id/action_itemClienteFragment_to_catalogoClienteFragment"
+            app:destination="@id/catalogoClienteFragment" />
+        <action
+            android:id="@+id/action_itemClienteFragment_to_carritoClienteFragment"
+            app:destination="@id/carritoClienteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/carritoClienteFragment"
+        android:name="com.example.creativecake.CarritoClienteFragment"
+        android:label="fragment_carrito_cliente"
+        tools:layout="@layout/fragment_carrito_cliente" />
+    <fragment
+        android:id="@+id/cotizacionClienteFragment"
+        android:name="com.example.creativecake.CotizacionClienteFragment"
+        android:label="fragment_cotizacion_cliente"
+        tools:layout="@layout/fragment_cotizacion_cliente" >
+        <action
+            android:id="@+id/action_cotizacionClienteFragment_to_revisarCotiClienteFragment"
+            app:destination="@id/revisarCotiClienteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/estadoPedidoFragment"
+        android:name="com.example.creativecake.EstadoPedidoFragment"
+        android:label="fragment_estado_pedido"
+        tools:layout="@layout/fragment_estado_pedido" />
+    <fragment
+        android:id="@+id/ofertasClienteFragment"
+        android:name="com.example.creativecake.OfertasClienteFragment"
+        android:label="fragment_ofertas_cliente"
+        tools:layout="@layout/fragment_ofertas_cliente" />
+    <fragment
+        android:id="@+id/usuarioClienteFragment"
+        android:name="com.example.creativecake.UsuarioClienteFragment"
+        android:label="fragment_usuario_cliente"
+        tools:layout="@layout/fragment_usuario_cliente" />
+    <fragment
+        android:id="@+id/revisarCotiClienteFragment"
+        android:name="com.example.creativecake.RevisarCotiClienteFragment"
+        android:label="fragment_revisar_coti_cliente"
+        tools:layout="@layout/fragment_revisar_coti_cliente" />
+</navigation>

@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Ofertas_cliente extends AppCompatActivity {
+public class MainCliente extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ofertas_cliente);
+        setContentView(R.layout.activity_main_cliente);
     }
 }
