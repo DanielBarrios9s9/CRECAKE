@@ -9,13 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".Item_cliente"></activity>
-        <activity android:name=".Usuario_Cliente" />
-        <activity android:name=".Ofertas_cliente" />
-        <activity android:name=".Cotizacion" />
+        <activity android:name=".MainDomiciliario" />
+        <activity android:name=".MainCliente" />
         <activity android:name=".Estadisticas" />
         <activity android:name=".Ganancias" />
-        <activity android:name=".Inicio_cliente" />
         <activity android:name=".Inicio_domiciliario" />
         <activity android:name=".Inicio_tienda" />
         <activity android:name=".Inventario" />

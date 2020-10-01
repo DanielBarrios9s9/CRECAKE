@@ -1,12 +1,13 @@
 package com.example.creativecake;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,12 +15,15 @@ public class Menu_provisional extends AppCompatActivity {
     private RadioGroup radioGroup;
     private RadioButton radioButton;
     private Button siguiente;
+    private Window window;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_provisional);
 
+        this.window = getWindow();
+        cambiarColor();
         addListenerOnButton();
     }
 
@@ -37,7 +41,7 @@ public class Menu_provisional extends AppCompatActivity {
 
                 if(radioButton.getText().equals("Cliente")){
                     Intent cliente = new Intent(Menu_provisional.this,
-                            Inicio_cliente.class);
+                            InicioClienteFragment.class);
                     startActivity(cliente);
                     System.out.println("Cliente");
                 } else if(radioButton.getText().equals("Negocio")){
@@ -51,5 +55,9 @@ public class Menu_provisional extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void cambiarColor(){
+        window.setStatusBarColor(Color.parseColor("#BF5A7F"));
     }
 }

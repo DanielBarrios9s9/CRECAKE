@@ -1,16 +1,14 @@
 package com.example.creativecake;
 
-import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.creativecake.R;
+import android.os.Bundle;
 
-public class Cotizacion extends AppCompatActivity {
+public class MainDomiciliario extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cotizacion);
+        setContentView(R.layout.activity_main_domiciliario);
     }
 }

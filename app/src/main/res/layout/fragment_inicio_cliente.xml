@@ -8,7 +8,7 @@
     android:background="#FFFFFF"
     android:clickable="true"
     android:focusable="true"
-    tools:context=".Inicio_cliente">
+    tools:context=".InicioClienteFragment">
 
     <View
         android:id="@+id/view2"

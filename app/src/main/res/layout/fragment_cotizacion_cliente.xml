@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".Cotizacion">
-
+    tools:context=".CotizacionClienteFragment">
 
     <View
         android:id="@+id/view"
@@ -174,7 +173,7 @@
         android:contentDescription="@string/todo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintHorizontal_bias="0.909"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iniciaSesion"
         app:layout_constraintVertical_bias="1.0"
@@ -232,5 +231,20 @@
             android:hint="@string/txtCotiAñadido"
             android:textColorHint="#000000" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="183dp"
+        android:layout_height="36dp"
+        android:background="@drawable/redondez_botones"
+        android:text="@string/revisar_cotizaci_n"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.739"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iniciaSesion"
+        app:layout_constraintVertical_bias="0.578" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
