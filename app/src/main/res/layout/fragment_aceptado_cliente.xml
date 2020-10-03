@@ -1,14 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".AceptadoClienteFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <View
+        android:id="@+id/view"
+        android:layout_width="415dp"
+        android:layout_height="397dp"
+        android:background="#BF5A7F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
-</FrameLayout>
+    <View
+        android:id="@+id/view4"
+        android:layout_width="413dp"
+        android:layout_height="106dp"
+        android:layout_marginBottom="228dp"
+        android:background="@drawable/ic_wave"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.0"
+        tools:targetApi="m" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="348dp"
+        android:layout_height="56dp"
+        android:text="@string/pago_aceptado"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.14" />
+
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="324dp"
+        android:layout_height="106dp"
+        android:text="@string/tu_pedido_est_en_camino"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView33"
+        app:layout_constraintVertical_bias="0.166" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="196dp"
+        android:layout_height="219dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/ic_baseline_playlist_add_check_24"
+        app:layout_constraintBottom_toBottomOf="@+id/view4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.742" />
+
+    <TableRow
+        android:id="@+id/tableRow6"
+        android:layout_width="350dp"
+        android:layout_height="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9"
+        app:layout_constraintVertical_bias="0.643">
+
+        <TextView
+            android:id="@+id/textView46"
+            android:layout_width="174dp"
+            android:layout_height="30dp"
+            android:text="@string/c_digo"
+            android:textAllCaps="true"
+            android:textColor="@color/colorSecondary"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/codigo_domicilio"
+            android:layout_width="173dp"
+            android:layout_height="44dp"
+            android:text="@string/_12345"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="25sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="349dp"
+        android:layout_height="71dp"
+        app:layout_constraintBottom_toTopOf="@+id/tableRow6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9"
+        app:layout_constraintVertical_bias="0.773">
+
+        <TextView
+            android:id="@+id/textView44"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/domiciliario"
+            android:textAllCaps="true"
+            android:textColor="@color/colorSecondary"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/nombre_domiciliario"
+            android:layout_width="171dp"
+            android:layout_height="60dp"
+            android:text="@string/maria_chaparro"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="25sp" />
+    </TableRow>
+
+    <Button
+        android:id="@+id/button15"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:background="@drawable/redondez_botones_daniel"
+        android:text="@string/fin"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.899"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.976" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

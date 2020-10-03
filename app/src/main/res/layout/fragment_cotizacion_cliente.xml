@@ -64,15 +64,15 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="402dp"
-        android:layout_height="310dp"
+        android:layout_width="405dp"
+        android:layout_height="284dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="0.163">
+        app:layout_constraintVertical_bias="0.111">
 
         <TableRow
             android:layout_width="match_parent"
@@ -194,11 +194,29 @@
         app:layout_constraintTop_toBottomOf="@+id/view"
         app:layout_constraintVertical_bias="0.586" />
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.0">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nombre_de_la_cotizac_n"
+            android:textColor="#000000"
+            android:textColorHint="#000000" />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <EditText
         android:id="@+id/presupuesto"
         style="@style/Widget.MaterialComponents.TextInputEditText.FilledBox"
-        android:layout_width="410dp"
-        android:layout_height="63dp"
+        android:layout_width="407dp"
+        android:layout_height="56dp"
         android:autofillHints=""
         android:backgroundTint="#FFFFFF"
         android:ems="10"
@@ -208,10 +226,10 @@
         android:textColorHint="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.567" />
+        app:layout_constraintVertical_bias="0.561" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
