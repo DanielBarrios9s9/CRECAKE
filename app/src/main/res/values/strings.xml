@@ -16,6 +16,7 @@
     <string name="txtCotiAñadido">Añadido</string>
     <string name="txtCotiBoton">Enviar cotización</string>
     <string name="cu_l_es_tu_presupuesto">¿Cuál es tu presupuesto?</string>
+    <string name="revisar_cotizaci_n">Revisar Cotización</string>
 
     <string-array name="tamaño">
         <item>Tamaño</item>
@@ -144,21 +145,25 @@
     <string name="_50">-50%</string>
     <string name="_10">-10%</string>
     <string name="_30">-30%</string>
+
+    <!--strings de carrito cliente-->
+
+    <!-- algunos strings de item cliente-->
+    <string name="calle_76b_87_95">Calle 76B 87 95</string>
+    <string name="especificaciones">Especificaciones</string>
+    <string name="especificaciones_aqu">Especificaciones aquí</string>
+    <string name="comprar">Comprar</string>
+
+    <!--strings de comprar item cliente-->
+
+    <!--strings de ajustes usuario cliente-->
     <string name="juan_rodriguez">Juan Rodriguez</string>
     <string name="juan38_gmail_com">juan38@gmail.com</string>
     <string name="____">*****</string>
     <string name="_3153456789">3153456789</string>
     <string name="calle_26_a_35">Calle 26 A 35</string>
     <string name="guardar_cambios">Guardar Cambios</string>
-    <string name="revisar_cotizaci_n">Revisar Cotización</string>
 
-    <!--strings de carrito cliente-->
-
-    <!-- algunos strings de item cliente-->
-
-    <!--strings de comprar item cliente-->
-
-    <!--strings de ajustes usuario cliente-->
 
 
 </resources>

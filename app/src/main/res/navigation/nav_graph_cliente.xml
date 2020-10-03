@@ -36,6 +36,9 @@
         <action
             android:id="@+id/action_catalogoClienteFragment_to_itemClienteFragment"
             app:destination="@id/itemClienteFragment" />
+        <action
+            android:id="@+id/action_catalogoClienteFragment_to_inicioClienteFragment"
+            app:destination="@id/inicioClienteFragment" />
     </fragment>
     <fragment
         android:id="@+id/itemClienteFragment"
@@ -48,12 +51,22 @@
         <action
             android:id="@+id/action_itemClienteFragment_to_carritoClienteFragment"
             app:destination="@id/carritoClienteFragment" />
+        <action
+            android:id="@+id/action_itemClienteFragment_to_ofertasClienteFragment"
+            app:destination="@id/ofertasClienteFragment" />
     </fragment>
     <fragment
         android:id="@+id/carritoClienteFragment"
         android:name="com.example.creativecake.CarritoClienteFragment"
         android:label="fragment_carrito_cliente"
-        tools:layout="@layout/fragment_carrito_cliente" />
+        tools:layout="@layout/fragment_carrito_cliente" >
+        <action
+            android:id="@+id/action_carritoClienteFragment_to_inicioClienteFragment"
+            app:destination="@id/inicioClienteFragment" />
+        <action
+            android:id="@+id/action_carritoClienteFragment_to_finCompraClienteFragment"
+            app:destination="@id/finCompraClienteFragment" />
+    </fragment>
     <fragment
         android:id="@+id/cotizacionClienteFragment"
         android:name="com.example.creativecake.CotizacionClienteFragment"
@@ -62,25 +75,88 @@
         <action
             android:id="@+id/action_cotizacionClienteFragment_to_revisarCotiClienteFragment"
             app:destination="@id/revisarCotiClienteFragment" />
+        <action
+            android:id="@+id/action_cotizacionClienteFragment_to_inicioClienteFragment"
+            app:destination="@id/inicioClienteFragment" />
     </fragment>
     <fragment
         android:id="@+id/estadoPedidoFragment"
         android:name="com.example.creativecake.EstadoPedidoFragment"
         android:label="fragment_estado_pedido"
-        tools:layout="@layout/fragment_estado_pedido" />
+        tools:layout="@layout/fragment_estado_pedido" >
+        <action
+            android:id="@+id/action_estadoPedidoFragment_to_inicioClienteFragment"
+            app:destination="@id/inicioClienteFragment" />
+    </fragment>
     <fragment
         android:id="@+id/ofertasClienteFragment"
         android:name="com.example.creativecake.OfertasClienteFragment"
         android:label="fragment_ofertas_cliente"
-        tools:layout="@layout/fragment_ofertas_cliente" />
+        tools:layout="@layout/fragment_ofertas_cliente" >
+        <action
+            android:id="@+id/action_ofertasClienteFragment_to_inicioClienteFragment"
+            app:destination="@id/inicioClienteFragment" />
+        <action
+            android:id="@+id/action_ofertasClienteFragment_to_itemClienteFragment"
+            app:destination="@id/itemClienteFragment" />
+    </fragment>
     <fragment
         android:id="@+id/usuarioClienteFragment"
         android:name="com.example.creativecake.UsuarioClienteFragment"
         android:label="fragment_usuario_cliente"
-        tools:layout="@layout/fragment_usuario_cliente" />
+        tools:layout="@layout/fragment_usuario_cliente" >
+        <action
+            android:id="@+id/action_usuarioClienteFragment_to_inicioClienteFragment"
+            app:destination="@id/inicioClienteFragment" />
+    </fragment>
     <fragment
         android:id="@+id/revisarCotiClienteFragment"
         android:name="com.example.creativecake.RevisarCotiClienteFragment"
         android:label="fragment_revisar_coti_cliente"
         tools:layout="@layout/fragment_revisar_coti_cliente" />
+    <fragment
+        android:id="@+id/finCompraClienteFragment"
+        android:name="com.example.creativecake.FinCompraClienteFragment"
+        android:label="fragment_fin_compra_cliente"
+        tools:layout="@layout/fragment_fin_compra_cliente" >
+        <action
+            android:id="@+id/action_finCompraClienteFragment_to_carritoClienteFragment"
+            app:destination="@id/carritoClienteFragment" />
+        <action
+            android:id="@+id/action_finCompraClienteFragment_to_vrifPagoClienteFragment"
+            app:destination="@id/vrifPagoClienteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vrifPagoClienteFragment"
+        android:name="com.example.creativecake.VrifPagoClienteFragment"
+        android:label="fragment_vrif_pago_cliente"
+        tools:layout="@layout/fragment_vrif_pago_cliente" >
+        <action
+            android:id="@+id/action_vrifPagoClienteFragment_to_aceptadoClienteFragment"
+            app:destination="@id/aceptadoClienteFragment" />
+        <action
+            android:id="@+id/action_vrifPagoClienteFragment_to_denegadoClienteFragment"
+            app:destination="@id/denegadoClienteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aceptadoClienteFragment"
+        android:name="com.example.creativecake.AceptadoClienteFragment"
+        android:label="fragment_aceptado_cliente"
+        tools:layout="@layout/fragment_aceptado_cliente" >
+        <action
+            android:id="@+id/action_aceptadoClienteFragment_to_inicioClienteFragment"
+            app:destination="@id/inicioClienteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/denegadoClienteFragment"
+        android:name="com.example.creativecake.DenegadoClienteFragment"
+        android:label="fragment_denegado_cliente"
+        tools:layout="@layout/fragment_denegado_cliente" >
+        <action
+            android:id="@+id/action_denegadoClienteFragment_to_vrifPagoClienteFragment"
+            app:destination="@id/vrifPagoClienteFragment" />
+        <action
+            android:id="@+id/action_denegadoClienteFragment_to_carritoClienteFragment"
+            app:destination="@id/carritoClienteFragment" />
+    </fragment>
 </navigation>

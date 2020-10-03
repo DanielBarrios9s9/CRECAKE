@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
@@ -7,5 +8,195 @@
     android:background="#FFFFFF"
     android:backgroundTint="#FFFFFF"
     tools:context=".ItemClienteFragment">
+
+    <View
+        android:id="@+id/view7"
+        android:layout_width="415dp"
+        android:layout_height="253dp"
+        android:background="#BF5A7F"
+        android:backgroundTint="BF5A7F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/view8"
+        android:layout_width="418dp"
+        android:layout_height="105dp"
+        android:background="@drawable/ic_wave"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view7"
+        app:layout_constraintVertical_bias="0.404" />
+
+    <ImageView
+        android:id="@+id/imagen_producto"
+        android:layout_width="187dp"
+        android:layout_height="165dp"
+        android:contentDescription="@string/todo"
+        android:elevation="35dp"
+        android:src="@drawable/p_leches"
+        app:layout_constraintBottom_toBottomOf="@+id/view7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.928"
+        app:layout_constraintStart_toStartOf="@+id/view7"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.534" />
+
+    <TextView
+        android:id="@+id/descuento"
+        android:layout_width="187dp"
+        android:layout_height="45dp"
+        android:background="@color/colorSecondary"
+        android:backgroundTint="@color/colorSecondary"
+        android:elevation="30dp"
+        android:gravity="center"
+        android:text="@string/_50"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/view8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.928"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagen_producto"
+        app:layout_constraintVertical_bias="0.192" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#BF5A7F"
+        android:contentDescription="@string/menu_cat"
+        app:layout_constraintBottom_toBottomOf="@+id/view7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view7"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_baseline_menu_24" />
+
+    <TextView
+        android:id="@+id/nombre_producto"
+        android:layout_width="173dp"
+        android:layout_height="173dp"
+        android:layout_marginStart="16dp"
+        android:gravity="center"
+        android:text="@string/pastel_tres_leches_rosas"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view7"
+        app:layout_constraintEnd_toStartOf="@+id/imagen_producto"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/view7"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.775" />
+
+    <ScrollView
+        android:layout_width="393dp"
+        android:layout_height="489dp"
+        android:layout_marginTop="92dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view8"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/precio_producto"
+                android:layout_width="392dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:text="@string/_300000_c_u"
+                android:textColor="@color/colorSecondary"
+                android:textSize="35sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/pasteleria_producto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pas_sugar"
+                android:textColor="#000000"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/direccion_pasteleria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/calle_76b_87_95"
+                android:textColor="#000000"
+                android:textSize="25sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="257dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RatingBar
+                        style="@android:style/Widget.DeviceDefault.Light.RatingBar.Indicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="30dp"
+                        android:isIndicator="true"
+                        android:numStars="5"
+                        android:progressTint="#BF5A7F"
+                        android:rating="3.0" />
+
+                    <Button
+                        android:id="@+id/comprar_producto"
+                        android:layout_width="185dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:text="@string/comprar"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/añadir_carrito"
+                    android:layout_width="120dp"
+                    android:layout_height="91dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/ic_baseline_shopping_cart_24" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView31"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/especificaciones"
+                android:textColor="@color/colorSecondary"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/especificaciones"
+                android:layout_width="match_parent"
+                android:layout_height="262dp"
+                android:text="@string/especificaciones_aqu"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
