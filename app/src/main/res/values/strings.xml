@@ -17,6 +17,7 @@
     <string name="txtCotiBoton">Enviar cotización</string>
     <string name="cu_l_es_tu_presupuesto">¿Cuál es tu presupuesto?</string>
     <string name="revisar_cotizaci_n">Revisar Cotización</string>
+    <string name="nombre_de_la_cotizac_n">Nombre de la Cotizacón</string>
 
     <string-array name="tamaño">
         <item>Tamaño</item>
@@ -156,15 +157,11 @@
     <string name="_10">-10%</string>
     <string name="_30">-30%</string>
 
-    <!--strings de carrito cliente-->
-
     <!-- algunos strings de item cliente-->
     <string name="calle_76b_87_95">Calle 76B 87 95</string>
     <string name="especificaciones">Especificaciones</string>
     <string name="especificaciones_aqu">Especificaciones aquí</string>
     <string name="comprar">Comprar</string>
-
-    <!--strings de comprar item cliente-->
 
     <!--strings de ajustes usuario cliente-->
     <string name="juan_rodriguez">Juan Rodriguez</string>
@@ -174,6 +171,44 @@
     <string name="calle_26_a_35">Calle 26 A 35</string>
     <string name="guardar_cambios">Guardar Cambios</string>
 
+    <!--strings de finalizar compra cliente-->
+    <string name="finalizar_compra">Finalizar Compra</string>
+    <string name="subtotal">Subtotal =</string>
+    <string name="_40000">$ 40000</string>
+    <string name="comisi_n_5">Comisión (5%) =</string>
+    <string name="_2000">$ 2000</string>
+    <string name="descuento">Descuento =</string>
+    <string name="_0">-$ 0</string>
+    <string name="por_favor_consigna_el_valor_total_de_la_compra_con_los_datos_dispuestos_abajo_cuando_lo_hayas_realizado_da_click_en_siguiente_para_confirmar_el_pago">Por favor consigna el valor total de la compra con los datos dispuestos abajo. Cuando lo hayas realizado da click en siguiente para confirmar el pago.</string>
+    <string name="total">TOTAL =</string>
+    <string name="_42000">$ 42000</string>
+    <string name="siguiente">siguiente</string>
+    <string name="c_digo_recaudo_20200714">Código Recaudo: 20200714</string>
+    <string name="no_cuenta_013_77060_9">No. Cuenta: 013 - 77060 - 9</string>
+    <string name="banco_banco_davivienda">Banco: Banco Davivienda</string>
+    <string name="nombre_creative_cake_pagos">Nombre: Creative Cake Pagos</string>
+
+    <!--strings de verificación compra cliente-->
+    <string name="gracias_por_la_espera_estamos_verificando_tu_pago">Gracias por la espera. Estamos verificando tu pago.</string>
+
+    <!--strings de pago de compra denegado cliente-->
+    <string name="a_ocurrido_un_error_con_tu_pago">A ocurrido un error con tu pago</string>
+    <string name="por_favor_verifica_que_hayas_efectuado_correctamente_el_pago">Por favor verifica que hayas efectuado correctamente el pago</string>
+    <string name="volver_al_carrito">Volver al carrito</string>
+    <string name="verificar">Verificar</string>
+    <string name="cancelar">cancelar</string>
+
+    <!--strings de carrito cliente-->
+    <string name="tienes_3_productos">Tienes 3 productos</string>
+    <string name="pago_aceptado">Pago Aceptado</string>
+
+    <!--strings de pago de compra aceptado cliente-->
+    <string name="tu_pedido_est_en_camino">Tu Pedido está en camino</string>
+    <string name="fin">Fin</string>
+    <string name="c_digo">Código:</string>
+    <string name="_12345">12345</string>
+    <string name="domiciliario">Domiciliario:</string>
+    <string name="maria_chaparro">Maria Chaparro</string>
 
 
 </resources>
