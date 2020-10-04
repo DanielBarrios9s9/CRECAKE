@@ -106,10 +106,20 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="codigo_de_pedido">codigo de pedido :</string>
+    <string name="comprador">comprador :</string>
+    <string name="pedido_activo">PEDIDO ACTIVO </string>
+    <string name="informacion_de_pedido2">Informacion de pedido :</string>
+    <string name="seguimiento">SEGUIMIENTO...</string>
+    <string name=""></string>
+    <string name=""></string>
+
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="estado_de_pedido">ESTADO DE PEDIDO</string>
+    <string name="informacon_de_pedido">Informacion de pedido :</string>
 
     <!--strings de catálogo cliente-->
     <string name="precio_m_ximo">Ingrese el precio máximo</string>

@@ -2,119 +2,62 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#BF5A7F">
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="275dp"
-        android:layout_height="275dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo"
-        android:contentDescription="TODO" />
+    tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="match_parent"
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:backgroundTint="#F2F2F2"
-        android:ems="10"
-        android:hint="@string/email"
-        android:inputType="textPersonName"
-        android:textColorHint="#F2F2F2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        android:autofillHints="" />
+        android:theme="@style/AppTheme.AppBarOverlay"
+        tools:layout_conversion_absoluteHeight="107dp"
+        tools:layout_conversion_absoluteWidth="411dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
-    <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minHeight="?actionBarSize"
+            android:padding="@dimen/appbar_padding"
+            android:text="@string/app_name"
+            android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+            tools:layout_conversion_absoluteHeight="59dp"
+            tools:layout_conversion_absoluteWidth="179dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            tools:layout_conversion_absoluteHeight="48dp"
+            tools:layout_conversion_absoluteWidth="411dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="59dp" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:backgroundTint="#F2F2F2"
-        android:ems="10"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:textColorHint="#F2F2F2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
-        android:autofillHints="" />
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:layout_conversion_absoluteHeight="624dp"
+        tools:layout_conversion_absoluteWidth="411dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="107dp" />
 
-    <Button
-        android:id="@+id/iniciaSesion"
-        android:layout_width="match_parent"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/button_rounded"
-        android:text="@string/inicia_sesi_n"
-        android:textColor="#F2F2F2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
-
-    <Button
-        android:id="@+id/registrate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/button_borde"
-        android:text="@string/reg_strate"
-        android:textColor="#F2F2F2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iniciaSesion" />
-
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/button_social"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton5"
-        app:layout_constraintTop_toBottomOf="@+id/registrate"
-        app:srcCompat="@drawable/facebook" />
-
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/button_social"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registrate"
-        app:srcCompat="@drawable/twitter" />
-
-    <ImageButton
-        android:id="@+id/imageButton6"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/button_social"
-        android:scaleType="fitCenter"
-        app:layout_constraintStart_toEndOf="@+id/imageButton5"
-        app:layout_constraintTop_toBottomOf="@+id/registrate"
-        app:srcCompat="@drawable/google" />
+        app:srcCompat="@android:drawable/ic_dialog_email"
+        tools:layout_conversion_absoluteHeight="56dp"
+        tools:layout_conversion_absoluteWidth="56dp"
+        tools:layout_editor_absoluteX="339dp"
+        tools:layout_editor_absoluteY="659dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
