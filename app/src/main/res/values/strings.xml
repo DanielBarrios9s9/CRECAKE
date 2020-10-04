@@ -17,7 +17,7 @@
     <string name="txtCotiBoton">Enviar cotización</string>
     <string name="cu_l_es_tu_presupuesto">¿Cuál es tu presupuesto?</string>
     <string name="revisar_cotizaci_n">Revisar Cotización</string>
-    <string name="nombre_de_la_cotizac_n">Nombre de la Cotizacón</string>
+    <string name="nombre_de_la_cotizac_n">Nombre de la Cotización</string>
 
     <string-array name="tamaño">
         <item>Tamaño</item>
@@ -199,6 +199,7 @@
     <string name="_12345">12345</string>
     <string name="domiciliario">Domiciliario:</string>
     <string name="maria_chaparro">Maria Chaparro</string>
+    <string name="respuesta_cotizaci_n">Respuesta Cotización</string>
 
 
 </resources>
