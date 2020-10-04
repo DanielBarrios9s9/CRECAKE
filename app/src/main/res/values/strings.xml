@@ -111,8 +111,6 @@
     <string name="pedido_activo">PEDIDO ACTIVO </string>
     <string name="informacion_de_pedido2">Informacion de pedido :</string>
     <string name="seguimiento">SEGUIMIENTO...</string>
-    <string name=""></string>
-    <string name=""></string>
 
 
     <string name="menu_home">Home</string>
@@ -210,6 +208,7 @@
     <string name="domiciliario">Domiciliario:</string>
     <string name="maria_chaparro">Maria Chaparro</string>
     <string name="respuesta_cotizaci_n">Respuesta Cotización</string>
+    <string name="estado">ESTADO ...</string>
 
 
 </resources>
