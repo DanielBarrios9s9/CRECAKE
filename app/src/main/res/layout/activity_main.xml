@@ -20,7 +20,7 @@
         android:contentDescription="TODO" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/idNombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -51,7 +51,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/idNombre"
         android:autofillHints="" />
 
     <Button

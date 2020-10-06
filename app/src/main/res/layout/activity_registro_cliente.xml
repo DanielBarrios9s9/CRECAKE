@@ -52,7 +52,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/idCorreo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="96dp"
@@ -67,22 +67,22 @@
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/idPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="80dp"
         android:ems="10"
         android:hint="@string/contraseña"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:textColorHint="#F2F2F2"
         android:textCursorDrawable="@android:color/background_dark"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/idNombre" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/idDireccion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -94,10 +94,10 @@
         android:textCursorDrawable="@android:color/background_dark"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintTop_toBottomOf="@+id/idPassword" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/idEdad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
@@ -109,10 +109,10 @@
         android:textColorHint="#F2F2F2"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+        app:layout_constraintTop_toBottomOf="@+id/idTelefono" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/idNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -135,11 +135,11 @@
         android:textColor="#F2F2F2"
         android:textSize="18sp"
         android:textStyle="normal|bold"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName" />
+        app:layout_constraintBottom_toTopOf="@+id/idNombre"
+        app:layout_constraintStart_toStartOf="@+id/idNombre" />
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/idTelefono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
@@ -150,7 +150,7 @@
         android:textColorHint="#F2F2F2"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/idCorreo" />
 
     <TextView
         android:id="@+id/textView9"
@@ -161,8 +161,8 @@
         android:textColor="#F2F2F2"
         android:textSize="18sp"
         android:textStyle="normal|bold"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNumber"
-        app:layout_constraintStart_toStartOf="@+id/editTextNumber" />
+        app:layout_constraintBottom_toTopOf="@+id/idEdad"
+        app:layout_constraintStart_toStartOf="@+id/idEdad" />
 
     <TextView
         android:id="@+id/textView8"
@@ -172,8 +172,8 @@
         android:textColor="#F2F2F2"
         android:textSize="18sp"
         android:textStyle="normal|bold"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName4"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName4"
+        app:layout_constraintBottom_toTopOf="@+id/idDireccion"
+        app:layout_constraintStart_toStartOf="@+id/idDireccion"
         tools:text="@string/direccion" />
 
     <TextView
@@ -185,8 +185,8 @@
         android:textColor="#F2F2F2"
         android:textSize="18sp"
         android:textStyle="normal|bold"
-        app:layout_constraintBottom_toTopOf="@+id/editTextPhone"
-        app:layout_constraintStart_toStartOf="@+id/editTextPhone" />
+        app:layout_constraintBottom_toTopOf="@+id/idTelefono"
+        app:layout_constraintStart_toStartOf="@+id/idTelefono" />
 
     <TextView
         android:id="@+id/textView6"
@@ -197,8 +197,8 @@
         android:textColor="#F2F2F2"
         android:textSize="18sp"
         android:textStyle="normal|bold"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName3"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintBottom_toTopOf="@+id/idPassword"
+        app:layout_constraintStart_toStartOf="@+id/idPassword" />
 
     <TextView
         android:id="@+id/textView5"
@@ -209,7 +209,7 @@
         android:textColor="#F2F2F2"
         android:textSize="18sp"
         android:textStyle="normal|bold"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintBottom_toTopOf="@+id/idCorreo"
+        app:layout_constraintStart_toStartOf="@+id/idCorreo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
