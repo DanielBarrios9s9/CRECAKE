@@ -23,6 +23,7 @@ public class fragment_inventario_nuevoproducto extends Fragment {
 
     private EditText nombre;
     private EditText precio;
+    private EditText descripcion;
     private Button agregar;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -76,6 +77,7 @@ public class fragment_inventario_nuevoproducto extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         nombre = (EditText) view.findViewById(R.id.editNombrenuevoproducto);
         precio = (EditText) view.findViewById(R.id.editPrecionuevoproducto);
+        descripcion = (EditText) view.findViewById(R.id.editDescripcionnuevoproducto);
         agregar = (Button) view.findViewById(R.id.buttonAgregarnuevoproducto);
 
         agregar.setOnClickListener(new View.OnClickListener() {
@@ -83,10 +85,13 @@ public class fragment_inventario_nuevoproducto extends Fragment {
             public void onClick(View v) {
                 String nombreProducto;
                 String precioProducto;
+                String descripcionProducto;
                 nombreProducto = nombre.getText().toString();
                 precioProducto = precio.getText().toString();
+                descripcionProducto = descripcion.getText().toString();
                 System.out.println("Nombre del producto: " + nombreProducto +
-                        "\nPrecio del producto: " + precioProducto);
+                        "\nPrecio del producto: " + precioProducto +
+                        "\nDescripcion del producto: " + descripcionProducto);
             }
         });
     }

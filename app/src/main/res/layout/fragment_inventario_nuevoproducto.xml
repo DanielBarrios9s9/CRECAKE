@@ -8,7 +8,7 @@
 
     <EditText
         android:id="@+id/editNombrenuevoproducto"
-        android:layout_width="250dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
         android:autofillHints=""
@@ -24,7 +24,7 @@
 
     <EditText
         android:id="@+id/editPrecionuevoproducto"
-        android:layout_width="250dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:autofillHints=""
@@ -38,15 +38,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editNombrenuevoproducto" />
 
-    <Button
-        android:id="@+id/buttonAgregarnuevoproducto"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/editDescripcionnuevoproducto"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="256dp"
-        android:backgroundTint="@color/colorSecondary"
-        android:text="Agregar"
+        android:layout_marginTop="64dp"
+        android:autofillHints=""
+        android:backgroundTint="#F2F2F2"
+        android:ems="10"
+        android:hint="Descripción del nuevo producto"
+        android:inputType="textPersonName"
+        android:textColorHint="#F2F2F2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPrecionuevoproducto" />
+
+    <Button
+        android:id="@+id/buttonAgregarnuevoproducto"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/colorSecondary"
+        android:text="Agregar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
