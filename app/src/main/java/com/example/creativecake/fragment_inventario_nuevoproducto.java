@@ -11,13 +11,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link fragment_tienda_inventario#newInstance} factory method to
+ * Use the {@link fragment_inventario_nuevoproducto#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class fragment_tienda_inventario extends Fragment {
+public class fragment_inventario_nuevoproducto extends Fragment {
+
+
+    private EditText nombre;
+    private EditText precio;
+    private Button agregar;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,7 +34,7 @@ public class fragment_tienda_inventario extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public fragment_tienda_inventario() {
+    public fragment_inventario_nuevoproducto() {
         // Required empty public constructor
     }
 
@@ -38,11 +44,11 @@ public class fragment_tienda_inventario extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment fragment_tienda_inventario.
+     * @return A new instance of fragment fragment_inventario_nuevoproducto.
      */
     // TODO: Rename and change types and number of parameters
-    public static fragment_tienda_inventario newInstance(String param1, String param2) {
-        fragment_tienda_inventario fragment = new fragment_tienda_inventario();
+    public static fragment_inventario_nuevoproducto newInstance(String param1, String param2) {
+        fragment_inventario_nuevoproducto fragment = new fragment_inventario_nuevoproducto();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -63,21 +69,24 @@ public class fragment_tienda_inventario extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tienda_inventario, container, false);
+        return inflater.inflate(R.layout.fragment_inventario_nuevoproducto, container, false);
     }
 
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
-        Button botonVisualizar = view.findViewById(R.id.botonVisualizar);
-        Button botonAgregar = view.findViewById(R.id.botonAgregar);
-        Button botonEliminar = view.findViewById(R.id.botonEliminar);
-        Button botonEditar = view.findViewById(R.id.botonEditar);
-        Button botonModCantidad = view.findViewById(R.id.botonModCantidad);
+        nombre = (EditText) view.findViewById(R.id.editNombrenuevoproducto);
+        precio = (EditText) view.findViewById(R.id.editPrecionuevoproducto);
+        agregar = (Button) view.findViewById(R.id.buttonAgregarnuevoproducto);
 
-        botonAgregar.setOnClickListener(new View.OnClickListener() {
+        agregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.fragment_inventario_nuevoproducto);
+                String nombreProducto;
+                String precioProducto;
+                nombreProducto = nombre.getText().toString();
+                precioProducto = precio.getText().toString();
+                System.out.println("Nombre del producto: " + nombreProducto +
+                        "\nPrecio del producto: " + precioProducto);
             }
         });
     }

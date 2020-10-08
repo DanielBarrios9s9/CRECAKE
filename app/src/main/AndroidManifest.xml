@@ -11,18 +11,14 @@
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity android:name=".MainDomiciliario" />
         <activity android:name=".MainCliente" />
-        <activity android:name=".Estadisticas" />
         <activity android:name=".Ganancias" />
         <activity android:name=".Inicio_domiciliario" />
         <activity android:name=".Inicio_tienda" />
-        <activity android:name=".Inventario" />
         <activity android:name=".Menu_provisional" />
-        <activity android:name=".PedidosCompletados" />
         <activity android:name=".Registro" />
         <activity android:name=".RegistroCliente" />
         <activity android:name=".RegistroDomiciliario" />
         <activity android:name=".RegistroNegocio" />
-        <activity android:name="InicioClienteFragment"/>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
