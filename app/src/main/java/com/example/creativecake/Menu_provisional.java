@@ -41,7 +41,7 @@ public class Menu_provisional extends AppCompatActivity {
 
                 if(radioButton.getText().equals("Cliente")){
                     Intent cliente = new Intent(Menu_provisional.this,
-                            InicioClienteFragment.class);
+                            MainCliente.class);
                     startActivity(cliente);
                     System.out.println("Cliente");
                 } else if(radioButton.getText().equals("Negocio")){
