@@ -6,7 +6,11 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Window;
 
-public class MainCliente extends AppCompatActivity {
+import com.google.android.material.navigation.NavigationView;
+
+public class MainCliente extends AppCompatActivity{
+
+
 
     private Window window;
 

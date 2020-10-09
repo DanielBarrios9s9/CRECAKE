@@ -80,4 +80,7 @@ public class InicioClienteFragment extends Fragment {
             }
         });
     }
+
+    public interface OnFragmentInteractionListener {
+    }
 }
