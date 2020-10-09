@@ -8,14 +8,13 @@
     android:background="#FFFFFF"
     android:backgroundTint="#FFFFFF"
     tools:context=".OfertasClienteFragment">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="411dp"
+        android:layout_height="50dp"
         android:background="@color/colorPrimary"
         android:elevation="30dp"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -72,14 +71,15 @@
 
     <ScrollView
         android:id="@+id/Scroll"
-        android:layout_width="410dp"
-        android:layout_height="704dp"
+        android:layout_width="413dp"
+        android:layout_height="681dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:layout_constraintVertical_bias="0.0">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -148,7 +148,7 @@
             <TableRow
                 android:id="@+id/tabla_lista"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/item"
@@ -348,9 +348,10 @@
                 </androidx.cardview.widget.CardView>
 
             </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <androidx.cardview.widget.CardView
                     style="@style/Theme.AppCompat.Light.NoActionBar"
@@ -402,8 +403,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:orientation="vertical">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -423,8 +424,8 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/pas_Mano_D"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:text="@string/pas_Mano_D" />
 
                         <RatingBar
                             style="@android:style/Widget.DeviceDefault.Light.RatingBar.Indicator"
@@ -441,9 +442,10 @@
                 </androidx.cardview.widget.CardView>
 
             </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <androidx.cardview.widget.CardView
                     style="@style/Theme.AppCompat.Light.NoActionBar"
@@ -495,8 +497,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:orientation="vertical">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -516,8 +518,8 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/pas_maria"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:text="@string/pas_maria" />
 
                         <RatingBar
                             style="@android:style/Widget.DeviceDefault.Light.RatingBar.Indicator"
@@ -534,9 +536,10 @@
                 </androidx.cardview.widget.CardView>
 
             </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <androidx.cardview.widget.CardView
                     style="@style/Theme.AppCompat.Light.NoActionBar"
@@ -588,8 +591,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:orientation="vertical">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -609,8 +612,8 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/pas_maria"
-                            android:gravity="center"/>
+                            android:gravity="center"
+                            android:text="@string/pas_maria" />
 
                         <RatingBar
                             style="@android:style/Widget.DeviceDefault.Light.RatingBar.Indicator"

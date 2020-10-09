@@ -11,12 +11,9 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="410dp"
+        android:layout_height="64dp"
         android:background="@color/colorPrimary"
-        android:elevation="30dp"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -28,7 +25,6 @@
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:elevation="35dp"
         android:text="@string/carrito"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
@@ -45,19 +41,18 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#BF5A7F"
         android:contentDescription="@string/todo"
-        android:elevation="30dp"
         android:src="@drawable/ic_baseline_menu_24"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toStartOf="@+id/textView15"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.021"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.8" />
 
     <TextView
         android:id="@+id/textView37"
-        android:layout_width="350dp"
-        android:layout_height="42dp"
+        android:layout_width="309dp"
+        android:layout_height="45dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="11dp"
         android:layout_marginEnd="31dp"
@@ -171,7 +166,7 @@
                 android:gravity="bottom"
                 android:text="@string/total"
                 android:textColor="#000000"
-                android:textSize="33sp"
+                android:textSize="30sp"
                 android:textStyle="bold" />
 
             <TextView

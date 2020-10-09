@@ -18,7 +18,7 @@
         android:backgroundTint="#BF5A7F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
@@ -36,7 +36,7 @@
         app:layout_constraintVertical_bias="1.0" tools:targetApi="m" />
 
     <Button
-        android:id="@+id/Boton_Catalogo"
+        android:id="@+id/btn_cat"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -50,19 +50,19 @@
         android:singleLine="true"
         android:soundEffectsEnabled="true"
         android:text="@string/cat_logo"
-        android:textColor="#000000"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="@+id/view2"
-        app:layout_constraintHorizontal_bias="0.14"
+        app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toStartOf="@+id/view2"
         app:layout_constraintTop_toTopOf="@+id/view2"
         app:layout_constraintVertical_bias="0.263" />
 
     <Button
-        android:id="@+id/Boton_Cotizacion"
+        android:id="@+id/btn_coti"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -77,9 +77,9 @@
         android:soundEffectsEnabled="true"
         android:text="@string/cotizaci_n"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="@+id/view2"
         app:layout_constraintHorizontal_bias="0.851"
@@ -88,7 +88,7 @@
         app:layout_constraintVertical_bias="0.263" />
 
     <Button
-        android:id="@+id/button_carrito"
+        android:id="@+id/btn_carrito"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -103,9 +103,9 @@
         android:soundEffectsEnabled="true"
         android:text="@string/carrito"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.141"
@@ -114,7 +114,7 @@
         app:layout_constraintVertical_bias="0.53" />
 
     <Button
-        android:id="@+id/button_pedido"
+        android:id="@+id/btn_pedido"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -129,9 +129,9 @@
         android:soundEffectsEnabled="true"
         android:text="@string/pedido"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.858"
@@ -140,7 +140,7 @@
         app:layout_constraintVertical_bias="0.53" />
 
     <Button
-        android:id="@+id/button_ofertas"
+        android:id="@+id/btn_ofertas"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -166,7 +166,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button_usuario"
+        android:id="@+id/btn_usuario"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -181,9 +181,9 @@
         android:soundEffectsEnabled="true"
         android:text="@string/usuario"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.858"
