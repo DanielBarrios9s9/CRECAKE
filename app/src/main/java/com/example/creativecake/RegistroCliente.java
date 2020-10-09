@@ -3,6 +3,8 @@ package com.example.creativecake;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -16,6 +18,7 @@ public class RegistroCliente extends AppCompatActivity
     DatabaseReference reference;
     private EditText  etNombre, etCorreo, etPassword, etTelefono, etDireccion, etEdad;
     private FirebaseAuth mAuth;
+    private Button botonSiguiente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -31,31 +34,30 @@ public class RegistroCliente extends AppCompatActivity
         etTelefono = (EditText)findViewById(R.id.idTelefono);
         etDireccion = (EditText)findViewById(R.id.idDireccion);
         etEdad = (EditText)findViewById(R.id.idEdad);
+        botonSiguiente = (Button)findViewById(R.id.botonSiguiente);
 
 
         // Write a message to the database
-        database = FirebaseDatabase.getInstance();
-        reference = database.getReference("usuarioCliente");
+        botonSiguiente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                database = FirebaseDatabase.getInstance();
+                reference = database.getReference("usuarioCliente");
 
-        String nombre = etNombre.getText().toString();
-        String correo = etCorreo.getText().toString();
-        String password = etPassword.getText().toString();
-        String telefono = etTelefono.getText().toString();
-        String direccion = etDireccion.getText().toString();
-        String edad = etEdad.getText().toString();
+                String nombre = etNombre.getText().toString();
+                String correo = etCorreo.getText().toString();
+                String password = etPassword.getText().toString();
+                String telefono = etTelefono.getText().toString();
+                String direccion = etDireccion.getText().toString();
+                String edad = etEdad.getText().toString();
 
-        UserHelperClass helperClass = new UserHelperClass(nombre, correo, password,telefono, direccion, edad);
-        reference.setValue(helperClass);
+                UserHelperClass helperClass = new UserHelperClass(nombre, correo, password,telefono, direccion, edad);
+
+
+                reference.child(telefono).setValue(helperClass);
+            }
+        });
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
-    }
-
-    private void updateUI(FirebaseUser currentUser) {
-    }
 }

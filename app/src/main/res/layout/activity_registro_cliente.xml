@@ -8,11 +8,11 @@
     tools:context=".RegistroCliente">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/botonSiguiente"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="31dp"
         android:background="#8C1C3A"
         android:shadowColor="#FFFFFF"
         android:text="@string/next"
@@ -26,7 +26,7 @@
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="31dp"
         android:background="#8C1C3A"
         android:shadowColor="#FFFFFF"
         android:text="@string/back"
@@ -37,9 +37,10 @@
 
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="99dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="151dp"
+        android:layout_marginTop="59dp"
         android:background="#8C1C3A"
         android:gravity="center"
         android:text="@string/cliente"
@@ -47,7 +48,6 @@
         android:textSize="36sp"
         android:textStyle="normal|bold"
         app:drawableTint="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -55,161 +55,172 @@
         android:id="@+id/idCorreo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="49dp"
         android:ems="10"
         android:hint="@string/correo"
         android:inputType="textEmailAddress"
         android:textColor="#000000"
         android:textColorHint="#F2F2F2"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintBottom_toTopOf="@+id/textView7"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/idPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginBottom="45dp"
         android:ems="10"
         android:hint="@string/contraseña"
         android:inputType="textPassword"
         android:textColorHint="#F2F2F2"
         android:textCursorDrawable="@android:color/background_dark"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idNombre" />
+        app:layout_constraintBottom_toTopOf="@+id/textView8"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/idDireccion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginBottom="157dp"
         android:ems="10"
         android:hint="@string/direccion"
         android:inputType="textPersonName"
         android:textColorHint="#F2F2F2"
         android:textCursorDrawable="@android:color/background_dark"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idPassword" />
+        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/idEdad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="157dp"
         android:ems="10"
         android:hint="@string/edad"
         android:inputType="number"
         android:textColor="#000000"
         android:textColorHint="#F2F2F2"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idTelefono" />
-
-    <EditText
-        android:id="@+id/idNombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="96dp"
-        android:ems="10"
-        android:hint="@string/nombre_cliente"
-        android:inputType="textPersonName"
-        android:textColorHint="#F2F2F2"
-        android:textCursorDrawable="@android:color/background_dark"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintBottom_toTopOf="@+id/botonSiguiente"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="19dp"
         android:text="@string/nombre_cliente"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#F2F2F2"
         android:textSize="18sp"
         android:textStyle="normal|bold"
         app:layout_constraintBottom_toTopOf="@+id/idNombre"
-        app:layout_constraintStart_toStartOf="@+id/idNombre" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/idTelefono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="45dp"
         android:ems="10"
         android:hint="@string/telefono"
-        android:inputType="phone"
+        android:inputType="number"
         android:textColorHint="#F2F2F2"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idCorreo" />
+        app:layout_constraintBottom_toTopOf="@+id/textView9"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="11dp"
         android:text="@string/edad"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#F2F2F2"
         android:textSize="18sp"
         android:textStyle="normal|bold"
         app:layout_constraintBottom_toTopOf="@+id/idEdad"
-        app:layout_constraintStart_toStartOf="@+id/idEdad" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="11dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#F2F2F2"
         android:textSize="18sp"
         android:textStyle="normal|bold"
         app:layout_constraintBottom_toTopOf="@+id/idDireccion"
-        app:layout_constraintStart_toStartOf="@+id/idDireccion"
+        app:layout_constraintStart_toStartOf="parent"
         tools:text="@string/direccion" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/telefono"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#F2F2F2"
         android:textSize="18sp"
         android:textStyle="normal|bold"
         app:layout_constraintBottom_toTopOf="@+id/idTelefono"
-        app:layout_constraintStart_toStartOf="@+id/idTelefono" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/contraseña"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#F2F2F2"
         android:textSize="18sp"
         android:textStyle="normal|bold"
         app:layout_constraintBottom_toTopOf="@+id/idPassword"
-        app:layout_constraintStart_toStartOf="@+id/idPassword" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="20dp"
         android:text="@string/correo"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#F2F2F2"
         android:textSize="18sp"
         android:textStyle="normal|bold"
         app:layout_constraintBottom_toTopOf="@+id/idCorreo"
-        app:layout_constraintStart_toStartOf="@+id/idCorreo" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/idNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="51dp"
+        android:ems="10"
+        android:hint="@string/nombre_cliente"
+        android:inputType="textPersonName"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
