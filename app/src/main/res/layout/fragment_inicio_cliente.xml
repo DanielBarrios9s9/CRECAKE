@@ -16,9 +16,9 @@
         android:layout_height="514dp"
         android:background="#FFFFFF"
         android:backgroundTint="#BF5A7F"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/view3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
@@ -28,18 +28,18 @@
         android:layout_width="411dp"
         android:layout_height="218dp"
         android:foreground="@drawable/ic_wave"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view2"
-        tools:targetApi="m" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" tools:targetApi="m"/>
 
     <Button
-        android:id="@+id/Boton_Catalogo"
+        android:id="@+id/btn_cat"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="128dp"
         android:alpha="1"
         android:background="@drawable/redondez_botones"
         android:backgroundTintMode="multiply"
@@ -54,15 +54,18 @@
         android:textColor="#000000"
         android:textSize="25sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btn_carrito"
+        app:layout_constraintEnd_toStartOf="@+id/btn_coti"
+        app:layout_constraintHorizontal_bias="0.561"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.622" />
 
     <Button
-        android:id="@+id/Boton_Cotizacion"
+        android:id="@+id/btn_coti"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="128dp"
         android:alpha="1"
         android:background="@drawable/redondez_botones"
         android:backgroundTintMode="multiply"
@@ -77,17 +80,19 @@
         android:textColor="#000000"
         android:textSize="25sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btn_pedido"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Boton_Catalogo"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.854"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.622" />
 
     <Button
-        android:id="@+id/button_carrito"
+        android:id="@+id/btn_carrito"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginBottom="52dp"
         android:alpha="1"
         android:background="@drawable/redondez_botones"
         android:backgroundTintMode="multiply"
@@ -102,16 +107,16 @@
         android:textColor="#000000"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Boton_Catalogo" />
+        app:layout_constraintBottom_toTopOf="@+id/btn_ofertas"
+        app:layout_constraintEnd_toStartOf="@+id/btn_pedido"
+        app:layout_constraintHorizontal_bias="0.657"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button_pedido"
+        android:id="@+id/btn_pedido"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
         android:alpha="1"
         android:background="@drawable/redondez_botones"
         android:backgroundTintMode="multiply"
@@ -126,16 +131,18 @@
         android:textColor="#000000"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/button_carrito"
-        app:layout_constraintTop_toBottomOf="@+id/Boton_Cotizacion" />
+        app:layout_constraintBottom_toTopOf="@+id/btn_usuario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.854"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.83" />
 
     <Button
-        android:id="@+id/button_ofertas"
+        android:id="@+id/btn_ofertas"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
         android:alpha="1"
         android:background="@drawable/redondez_botones"
         android:backgroundTintMode="multiply"
@@ -150,16 +157,18 @@
         android:textColor="#000000"
         android:textSize="25sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.157"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_carrito" />
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        app:layout_constraintVertical_bias="0.774" />
 
     <Button
-        android:id="@+id/button_usuario"
+        android:id="@+id/btn_usuario"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
         android:alpha="1"
         android:background="@drawable/redondez_botones"
         android:backgroundTintMode="multiply"
@@ -174,21 +183,26 @@
         android:textColor="#000000"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/button_ofertas"
-        app:layout_constraintTop_toBottomOf="@+id/button_pedido" />
+        app:layout_constraintBottom_toBottomOf="@+id/view3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.854"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.773" />
 
     <ImageButton
         android:id="@+id/opciones"
         style="@android:style/Widget.Holo.Light.ImageButton"
         android:layout_width="58dp"
         android:layout_height="43dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:background="#BF5A7F"
+        android:background="@drawable/ic_baseline_menu_24"
         android:contentDescription="@string/todo"
         android:tint="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/btn_cat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_menu_24" />
+        app:layout_constraintVertical_bias="0.388" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
