@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_fragment_tienda_inventario_to_fragment_tienda_inicio"
             app:destination="@id/fragment_tienda_inicio" />
+        <action
+            android:id="@+id/action_fragment_tienda_inventario_to_fragment_inventario_nuevoproducto"
+            app:destination="@id/fragment_inventario_nuevoproducto" />
     </fragment>
     <fragment
         android:id="@+id/fragment_tienda_estadisticas"
@@ -47,4 +50,9 @@
             android:id="@+id/action_fragment_tienda_ventas_to_fragment_tienda_inicio"
             app:destination="@id/fragment_tienda_inicio" />
     </fragment>
+    <fragment
+        android:id="@+id/fragment_inventario_nuevoproducto"
+        android:name="com.example.creativecake.fragment_inventario_nuevoproducto"
+        android:label="fragment_inventario_nuevoproducto"
+        tools:layout="@layout/fragment_inventario_nuevoproducto" />
 </navigation>
