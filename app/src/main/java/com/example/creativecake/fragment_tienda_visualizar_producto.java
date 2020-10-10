@@ -12,27 +12,29 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-public class OfertasClienteFragment extends Fragment {
+public class fragment_tienda_visualizar_producto extends Fragment {
     RecyclerView recyclerProductos;
-    ArrayList<p_ejemplo_oferta> listaProductos;
+    ArrayList<p_ejemplo_tienda> listaProductos;
 
-    public OfertasClienteFragment() {
+    public fragment_tienda_visualizar_producto() {
+        // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View vista=inflater.inflate(R.layout.fragment_ofertas_cliente,container,false);
+        View vista=inflater.inflate(R.layout.fragment_tienda_visualizar_producto,container,false);
         listaProductos= new ArrayList<>();
         recyclerProductos = vista.findViewById(R.id.recyclerviewOfertas);
         recyclerProductos.setLayoutManager(new LinearLayoutManager(getContext()));
         llenarLista();
-        AdaptadorProductoOferta adapter=new AdaptadorProductoOferta(listaProductos);
+        AdaptadorProductoTienda adapter=new AdaptadorProductoTienda(listaProductos);
         recyclerProductos.setAdapter(adapter);
         return vista;
     }
 
     private void llenarLista() {
         //Hay que comenzar a llenar con los datos de la BD
+
     }
 }

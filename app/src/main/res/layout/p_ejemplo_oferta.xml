@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:background="#FFFFFF"
-    style="@style/Theme.AppCompat.Light.NoActionBar">
+    android:orientation="vertical"
+    android:layout_height="match_parent">
 
     <TableRow
         android:id="@+id/tabla_lista"
         android:layout_width="match_parent"
-        android:layout_height="169dp">
+        android:layout_height="151dp">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/item"
             style="@style/Theme.AppCompat.Light.NoActionBar"
             android:layout_width="150dp"
-            android:layout_height="130dp"
+            android:layout_height="125dp"
             android:layout_margin="10dp"
             android:layout_marginStart="10dp"
             android:background="#FFFFFF"
@@ -24,27 +24,51 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="15dp">
 
-            <ImageView
-                android:id="@+id/imagen_producto"
+            <LinearLayout
+                android:id="@+id/item1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@mipmap/cupcake"
-                android:contentDescription="@string/todo" />
+                android:background="#FFFFFF"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/descuento_producto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="#8C1C3A"
+                    android:backgroundTint="#8C1C3A"
+                    android:gravity="center"
+                    android:text="@string/_50"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imagen_producto"
+                    android:layout_width="match_parent"
+                    android:layout_height="97dp"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@mipmap/cupcake" />
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/itemc"
             style="@style/Theme.AppCompat.Light.NoActionBar"
             android:layout_width="227dp"
-            android:layout_height="130dp"
+            android:layout_height="125dp"
             android:layout_margin="10dp"
             android:layout_marginStart="10dp"
             android:background="#FFFFFF"
             android:clickable="true"
             android:focusable="true"
+            app:cardBackgroundColor="#FFFFFF"
             app:cardCornerRadius="8dp"
             app:cardElevation="5dp">
 
             <LinearLayout
+                android:id="@+id/item2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#FFFFFF"
@@ -71,7 +95,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/oferta_producto"
+                    android:id="@+id/pasteleria_producto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
