@@ -215,5 +215,11 @@
     <string name="editar">Editar</string>
     <string name="eliminar">Eliminar</string>
 
+    <string-array name="Tipo_producto" >
+        <item>Torta</item>
+        <item>Postre</item>
+        <item>Hojaldre</item>
+        <item>Otro</item>
+    </string-array>
 
 </resources>
