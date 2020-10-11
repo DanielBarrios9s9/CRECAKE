@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout6"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:backgroundTint="#BF5A7F"
+    tools:context=".Loguin_domiciliario">
+
+    <Button
+        android:id="@+id/button18"
+        android:layout_width="137dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="44dp"
+        android:backgroundTint="#8C1C3A"
+        android:text="Log up"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.722" />
+
+    <View
+        android:id="@+id/view12"
+        android:layout_width="477dp"
+        android:layout_height="70dp"
+        android:background="#8C1C3A"
+        android:foreground="@drawable/ic_wave"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+   >
+
+    <TextView
+        android:id="@+id/textView49"
+        android:layout_width="415dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="4dp"
+        android:background="#8C1C3A"
+        android:gravity="center"
+        android:text="@string/domicilio"
+        android:textColor="#5E1025"
+        android:textSize="36sp"
+        android:textStyle="normal|bold"
+        app:drawableTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView51"
+        android:layout_width="280dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="75dp"
+        android:text="Nombre/Correo :"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView49"
+        app:layout_constraintStart_toStartOf="@+id/textView49"
+        app:layout_constraintTop_toBottomOf="@+id/textView49" />
+
+    <TextView
+        android:id="@+id/textView52"
+        android:layout_width="280dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="184dp"
+        android:text="Contraseña:"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView49" />
+
+    <Button
+        android:id="@+id/button16"
+        android:layout_width="137dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="48dp"
+        android:background="#8C1C3A"
+        android:text="Log in "
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout6" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout5"
+        android:layout_width="279dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="111dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textInputEditText"
+        app:layout_constraintEnd_toEndOf="@+id/textView49"
+        app:layout_constraintTop_toBottomOf="@+id/textView49">
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditText"
+        android:layout_width="279dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="24dp"
+        android:hint="hint"
+        app:layout_constraintBottom_toTopOf="@+id/textView52"
+        app:layout_constraintEnd_toEndOf="@+id/textView51"
+        app:layout_constraintStart_toStartOf="@+id/textView51" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout6"
+        android:layout_width="279dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="233dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textInputEditText2"
+        app:layout_constraintStart_toStartOf="@+id/textView49"
+        app:layout_constraintTop_toBottomOf="@+id/textView49">
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditText2"
+        android:layout_width="279dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="233dp"
+        android:hint="hint"
+        app:layout_constraintEnd_toEndOf="@+id/textView52"
+        app:layout_constraintStart_toStartOf="@+id/textView52"
+        app:layout_constraintTop_toBottomOf="@+id/textView49" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
