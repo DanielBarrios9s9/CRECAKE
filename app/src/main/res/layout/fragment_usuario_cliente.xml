@@ -237,7 +237,7 @@
     </TableRow>
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/btn_revisar"
         android:layout_width="204dp"
         android:layout_height="43dp"
         android:background="@drawable/redondez_botones"

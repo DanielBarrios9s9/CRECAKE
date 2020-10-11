@@ -14,7 +14,7 @@
         android:layout_width="415dp"
         android:layout_height="253dp"
         android:background="#BF5A7F"
-        android:backgroundTint="BF5A7F"
+        android:backgroundTint="#BF5A7F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -49,7 +49,7 @@
         app:layout_constraintVertical_bias="0.534" />
 
     <TextView
-        android:id="@+id/descuento"
+        android:id="@+id/descuento_producto"
         android:layout_width="187dp"
         android:layout_height="45dp"
         android:background="@color/colorSecondary"
@@ -124,7 +124,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/pasteleria_producto"
+                android:id="@+id/oferta_producto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/pas_sugar"

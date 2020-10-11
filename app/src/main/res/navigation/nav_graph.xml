@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-<<<<<<< HEAD
     app:startDestination="@id/fragment_tienda_inicio">
 
     <fragment
@@ -14,6 +13,12 @@
         <action
             android:id="@+id/action_fragment_tienda_inventario_to_fragment_tienda_inicio"
             app:destination="@id/fragment_tienda_inicio" />
+        <action
+            android:id="@+id/action_fragment_tienda_inventario_to_fragment_inventario_nuevoproducto"
+            app:destination="@id/fragment_inventario_nuevoproducto" />
+        <action
+            android:id="@+id/action_fragment_tienda_inventario_to_fragment_tienda_visualizar_producto"
+            app:destination="@id/fragment_tienda_visualizar_producto" />
     </fragment>
     <fragment
         android:id="@+id/fragment_tienda_estadisticas"
@@ -43,29 +48,35 @@
         android:id="@+id/fragment_tienda_ventas"
         android:name="com.example.creativecake.fragment_tienda_ventas"
         android:label="fragment_tienda_ventas"
-        tools:layout="@layout/fragment_tienda_ventas" />
-=======
-    app:startDestination="@id/FirstFragment">
-
-    <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.creativecake.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
-
+        tools:layout="@layout/fragment_tienda_ventas" >
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_fragment_tienda_ventas_to_fragment_tienda_inicio"
+            app:destination="@id/fragment_tienda_inicio" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.creativecake.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
+        android:id="@+id/fragment_inventario_nuevoproducto"
+        android:name="com.example.creativecake.fragment_inventario_nuevoproducto"
+        android:label="fragment_inventario_nuevoproducto"
+        tools:layout="@layout/fragment_inventario_nuevoproducto" />
+    <fragment
+        android:id="@+id/fragment_tienda_visualizar_producto"
+        android:name="com.example.creativecake.fragment_tienda_visualizar_producto"
+        android:label="fragment_tienda_visualizar_producto"
+        tools:layout="@layout/fragment_tienda_visualizar_producto" >
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_fragment_tienda_visualizar_producto_to_fragment_tienda_inventario"
+            app:destination="@id/fragment_tienda_inventario" />
+        <action
+            android:id="@+id/action_fragment_tienda_visualizar_producto_to_fragment_item_tienda"
+            app:destination="@id/fragment_item_tienda" />
     </fragment>
->>>>>>> 30890889a08ff695ab44057e568358abb27abd6a
+    <fragment
+        android:id="@+id/fragment_item_tienda"
+        android:name="com.example.creativecake.fragment_item_tienda"
+        android:label="fragment_item_tienda"
+        tools:layout="@layout/fragment_item_tienda" >
+        <action
+            android:id="@+id/action_fragment_item_tienda_to_fragment_tienda_visualizar_producto"
+            app:destination="@id/fragment_tienda_visualizar_producto" />
+    </fragment>
 </navigation>

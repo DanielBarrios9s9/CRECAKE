@@ -132,23 +132,23 @@
     <string name="cupcake_con_cobertura_de_fresa">Cupcake con cobertura de Fresa</string>
     <string name="pasteler_a_santa_rosita">Pastelería Santa Rosita</string>
     <string name="pastel_gloria_de_bocadillo">Pastel Gloria de Bocadillo</string>
-    <string name="o_2000_c_u">$ 2000 c/u</string>
+    <string name="o_2000_c_u">$ 2.000 c/u</string>
     <string name="pastel_tres_leches_cober_mantq">Pastel Tres Leches Cober. Mantq.</string>
-    <string name="_35000_c_u">$ 35000 c/u</string>
+    <string name="_35000_c_u">$ 35.000 c/u</string>
     <string name="pastel_tres_leches_rosas">Pastel Tres Leches Rosas</string>
-    <string name="_300000_c_u">$ 300000 c/u</string>
+    <string name="_300000_c_u">$ 30.000 c/u</string>
     <string name="pastel_negro_decorado_pocahontas">Pastel Negro Decorado Pocahontas</string>
-    <string name="_60000_c_u">$ 60000 c/u</string>
-    <string name="_1800_c_u">$ 1800 c/u</string>
+    <string name="_60000_c_u">$ 60.000 c/u</string>
+    <string name="_1800_c_u">$ 1.800 c/u</string>
     <string name="cupcakes_x5_varios_sabores">Cupcakes x5 varios sabores</string>
-    <string name="_7500">$ 7500</string>
+    <string name="_7500">$ 7.500</string>
     <string name="fresas_con_crema">Fresas con Crema</string>
-    <string name="_5000_c_u">$ 5000 c/u</string>
+    <string name="_5000_c_u">$ 5.000 c/u</string>
     <string name="tarta_de_lim_n">Tarta de Limón</string>
-    <string name="_15000_c_u">$ 15000 c/u</string>
+    <string name="_15000_c_u">$ 15.000 c/u</string>
     <string name="galletas_con_chips_de_chocolate">Galletas con chips de Chocolate</string>
     <string name="hojaldre_relleno_de_pesto">Hojaldre relleno de Pesto</string>
-    <string name="_7000_c_u">$ 7000 c/u</string>
+    <string name="_7000_c_u">$ 7.000 c/u</string>
 
     <!--strings de oferta cliente-->
     <string name="_50">-50%</string>
@@ -156,7 +156,7 @@
     <string name="_30">-30%</string>
 
     <!-- algunos strings de item cliente-->
-    <string name="calle_76b_87_95">Calle 76B 87 95</string>
+    <string name="calle_76b_87_95">Calle 76B #87-95</string>
     <string name="especificaciones">Especificaciones</string>
     <string name="especificaciones_aqu">Especificaciones aquí</string>
     <string name="comprar">Comprar</string>
@@ -166,7 +166,7 @@
     <string name="juan38_gmail_com">juan38@gmail.com</string>
     <string name="____">*****</string>
     <string name="_3153456789">3153456789</string>
-    <string name="calle_26_a_35">Calle 26 A 35</string>
+    <string name="calle_26_a_35">Calle 26A #35</string>
     <string name="guardar_cambios">Guardar Cambios</string>
 
     <!--strings de finalizar compra cliente-->
@@ -209,6 +209,11 @@
     <string name="maria_chaparro">Maria Chaparro</string>
     <string name="respuesta_cotizaci_n">Respuesta Cotización</string>
     <string name="estado">ESTADO ...</string>
+    <string name="tu_inventario">Tu Inventario</string>
+    <string name="no_oferta">No Oferta</string>
+    <string name="ver">Ver</string>
+    <string name="editar">Editar</string>
+    <string name="eliminar">Eliminar</string>
 
 
 </resources>

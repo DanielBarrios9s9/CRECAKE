@@ -5,11 +5,14 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 public class CotizacionClienteFragment extends Fragment {
@@ -30,6 +33,33 @@ public class CotizacionClienteFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        Button boton_enviar_coti= view.findViewById(R.id.btn_enviar);
+        Button boton_revisar_coti= view.findViewById(R.id.btn_revisar);
+        Button boton_bot= view.findViewById(R.id.btn_bot);
+
+        final NavController navController= Navigation.findNavController(view);
+
+        boton_enviar_coti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //navController.navigate(R.id.catalogoClienteFragment); falta saber qué enviar
+            }
+        });
+
+        boton_revisar_coti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.revisarCotiClienteFragment);
+            }
+        });
+
+        boton_bot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //navController.navigate(R.id.cotizacionClienteFragment); abrir el bot
+            }
+        });
 
         tamaño= (Spinner)vista.findViewById(R.id.tamaño);
         ArrayAdapter<CharSequence> adapter1=ArrayAdapter.createFromResource(getContext(), R.array.tamaño, android.R.layout.simple_spinner_item);

@@ -47,7 +47,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/botonSiguiente"
         android:layout_width="180dp"
         android:layout_height="180dp"
         android:layout_marginTop="96dp"
@@ -81,7 +81,7 @@
         android:background="?attr/actionBarItemBackground"
         android:foreground="@mipmap/ic_age"
         android:text="edad"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintEnd_toStartOf="@+id/botonSiguiente"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 

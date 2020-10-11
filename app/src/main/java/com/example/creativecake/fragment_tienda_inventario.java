@@ -2,57 +2,19 @@ package com.example.creativecake;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link fragment_tienda_inventario#newInstance} factory method to
- * create an instance of this fragment.
- */
+import android.widget.Button;
 public class fragment_tienda_inventario extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public fragment_tienda_inventario() {
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment fragment_tienda_inventario.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static fragment_tienda_inventario newInstance(String param1, String param2) {
-        fragment_tienda_inventario fragment = new fragment_tienda_inventario();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -60,5 +22,42 @@ public class fragment_tienda_inventario extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_tienda_inventario, container, false);
+    }
+
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState){
+        super.onViewCreated(view, savedInstanceState);
+        Button botonVisualizar = view.findViewById(R.id.botonVisualizar);
+        Button botonAgregar = view.findViewById(R.id.botonAgregar);
+        Button botonEliminar = view.findViewById(R.id.botonEliminar);
+        Button botonEditar = view.findViewById(R.id.botonEditar);
+        Button botonModCantidad = view.findViewById(R.id.botonModCantidad);
+
+        botonAgregar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.fragment_inventario_nuevoproducto);
+            }
+        });
+
+        botonVisualizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.fragment_tienda_visualizar_producto);
+            }
+        });
+
+        botonEliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.fragment_tienda_visualizar_producto);
+            }
+        });
+
+        botonEditar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.fragment_tienda_visualizar_producto);
+            }
+        });
     }
 }
