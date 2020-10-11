@@ -36,7 +36,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/idRbCliente"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:background="@color/colorSecondary"
@@ -50,7 +50,7 @@
             android:textSize="30sp" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/idRbNegocio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorSecondary"
@@ -62,7 +62,7 @@
             android:textSize="30sp" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/idRbDomiciliario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorSecondary"
