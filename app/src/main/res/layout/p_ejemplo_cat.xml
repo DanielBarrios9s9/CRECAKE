@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    style="@style/Theme.AppCompat.Light.NoActionBar">
+
+    <TableRow
+        android:id="@+id/tabla_lista"
+        android:layout_width="match_parent"
+        android:layout_height="169dp">
+
+        <androidx.cardview.widget.CardView
+            style="@style/Theme.AppCompat.Light.NoActionBar"
+            android:layout_width="150dp"
+            android:layout_height="130dp"
+            android:layout_margin="10dp"
+            android:layout_marginStart="10dp"
+            android:background="#FFFFFF"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="15dp">
+
+            <ImageView
+                android:id="@+id/imagen_producto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@mipmap/cupcake"
+                android:contentDescription="@string/todo" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            style="@style/Theme.AppCompat.Light.NoActionBar"
+            android:layout_width="227dp"
+            android:layout_height="130dp"
+            android:layout_margin="10dp"
+            android:layout_marginStart="10dp"
+            android:background="#FFFFFF"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nombre_producto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/cupcake_con_cobertura_de_fresa"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/precio_producto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/o_2000_c_u"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/oferta_producto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/pas_l_Es"
+                    android:textColor="#000000" />
+
+                <RatingBar
+                    android:id="@+id/rating_producto"
+                    style="@android:style/Widget.DeviceDefault.Light.RatingBar.Indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="30dp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:progressTint="#BF5A7F"
+                    android:rating="4.0" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </TableRow>
+
+</LinearLayout>

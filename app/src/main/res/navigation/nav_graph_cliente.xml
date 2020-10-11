@@ -113,7 +113,11 @@
         android:id="@+id/revisarCotiClienteFragment"
         android:name="com.example.creativecake.RevisarCotiClienteFragment"
         android:label="fragment_revisar_coti_cliente"
-        tools:layout="@layout/fragment_revisar_coti_cliente" />
+        tools:layout="@layout/fragment_revisar_coti_cliente" >
+        <action
+            android:id="@+id/action_revisarCotiClienteFragment_to_cotizacionClienteFragment"
+            app:destination="@id/cotizacionClienteFragment" />
+    </fragment>
     <fragment
         android:id="@+id/finCompraClienteFragment"
         android:name="com.example.creativecake.FinCompraClienteFragment"

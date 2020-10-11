@@ -209,6 +209,11 @@
     <string name="maria_chaparro">Maria Chaparro</string>
     <string name="respuesta_cotizaci_n">Respuesta Cotización</string>
     <string name="estado">ESTADO ...</string>
+    <string name="tu_inventario">Tu Inventario</string>
+    <string name="no_oferta">No Oferta</string>
+    <string name="ver">Ver</string>
+    <string name="editar">Editar</string>
+    <string name="eliminar">Eliminar</string>
 
 
 </resources>

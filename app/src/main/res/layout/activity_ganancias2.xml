@@ -74,7 +74,7 @@
         app:layout_constraintTop_toBottomOf="@+id/divider" />
 
     <Button
-        android:id="@+id/iniciaSesion"
+        android:id="@+id/btn_enviar"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:background="#8C1C3A"

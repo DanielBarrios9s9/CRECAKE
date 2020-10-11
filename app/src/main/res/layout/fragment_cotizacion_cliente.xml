@@ -166,21 +166,23 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/btn_bot"
         android:layout_width="79dp"
         android:layout_height="89dp"
         android:layout_marginBottom="16dp"
+        android:clickable="true"
         android:contentDescription="@string/todo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.909"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iniciaSesion"
+        app:layout_constraintTop_toBottomOf="@+id/btn_enviar"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@mipmap/pngegg" />
+        app:srcCompat="@mipmap/pngegg"
+        android:focusable="true" />
 
     <Button
-        android:id="@+id/iniciaSesion"
+        android:id="@+id/btn_enviar"
         android:layout_width="230dp"
         android:layout_height="54dp"
         android:background="@drawable/redondez_botones_daniel"
@@ -252,18 +254,19 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/btn_revisar"
         android:layout_width="183dp"
         android:layout_height="36dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/redondez_botones"
         android:text="@string/revisar_cotizaci_n"
         android:textColor="#000000"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.739"
+        app:layout_constraintEnd_toStartOf="@+id/btn_bot"
+        app:layout_constraintHorizontal_bias="0.63"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iniciaSesion"
+        app:layout_constraintTop_toBottomOf="@+id/btn_enviar"
         app:layout_constraintVertical_bias="0.578" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -64,7 +64,7 @@ public class fragment_tienda_inicio extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Button button3 = view.findViewById(R.id.button3);
+        Button button3 = view.findViewById(R.id.botonSiguiente);
         Button button = view.findViewById(R.id.button);
         Button button2 = view.findViewById(R.id.button2);
 
