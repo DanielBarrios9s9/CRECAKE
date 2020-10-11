@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         iniciaSesion = (Button)findViewById(R.id.iniciaSesion);
-        registro = (Button)findViewById(R.id.registrate);
+        registro = (Button)findViewById(R.id.idBotonSiguiente);
 
         etTelefono = (EditText)findViewById(R.id.idTelefonoMain);
         etPassword = (EditText)findViewById(R.id.idPasswordMain);
