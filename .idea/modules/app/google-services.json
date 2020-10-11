@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "397291749046",
+    "firebase_url": "https://creative-cake-v2.firebaseio.com",
+    "project_id": "creative-cake-v2",
+    "storage_bucket": "creative-cake-v2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:397291749046:android:0730eb503759c502e8f017",
+        "android_client_info": {
+          "package_name": "com.example.creativecake"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "397291749046-s2cs0o3rhq0geb0pt84usim98ftb9vq2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.creativecake",
+            "certificate_hash": "0022fc874dff3d5c06e2dba88ce3053ea281c958"
+          }
+        },
+        {
+          "client_id": "397291749046-15h1v5g8g4gpr39ilpnrj76ahb37i36a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNq9pI3CNOlhBq16YYv3FMM6hvRRU91yc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "397291749046-15h1v5g8g4gpr39ilpnrj76ahb37i36a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -11,7 +11,7 @@
         android:id="@+id/textView12"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginBottom="113dp"
         android:background="#8C1C3A"
         android:gravity="center"
         android:text="@string/registro"
@@ -19,18 +19,18 @@
         android:textSize="36sp"
         android:textStyle="normal|bold"
         app:drawableTint="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="168dp"
+        android:layout_marginBottom="229dp"
         android:background="#8C423B"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/iniciaSesion"
+        app:layout_constraintBottom_toTopOf="@+id/btn_enviar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
