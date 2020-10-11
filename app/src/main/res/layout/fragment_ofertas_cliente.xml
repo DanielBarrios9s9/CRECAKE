@@ -206,6 +206,7 @@
                         android:id="@+id/item2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:background="#FFFFFF"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -215,6 +216,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="@string/cupcake_con_cobertura_de_fresa"
+                            android:textColor="#040404"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -224,6 +226,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="@string/o_2000_c_u"
+                            android:textColor="#000000"
                             android:textSize="18sp" />
 
                         <TextView
@@ -231,7 +234,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="@string/pas_l_Es" />
+                            android:text="@string/pas_l_Es"
+                            android:textColor="#000000" />
 
                         <RatingBar
                             android:id="@+id/ratingBar3"
@@ -309,6 +313,7 @@
                         android:id="@+id/item22"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:background="#F2F2F2"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -317,6 +322,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="@string/hojaldre_relleno_de_pesto"
+                            android:textColor="#000000"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -325,13 +331,15 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="@string/_7000_c_u"
+                            android:textColor="#000000"
                             android:textSize="18sp" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="@string/pas_maria" />
+                            android:text="@string/pas_maria"
+                            android:textColor="#000000" />
 
                         <RatingBar
                             style="@android:style/Widget.DeviceDefault.Light.RatingBar.Indicator"
@@ -402,14 +410,16 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:gravity="center">
+                        android:background="#FFFFFF"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="@string/cupcakes_x5_varios_sabores"
+                            android:textColor="#000000"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -418,13 +428,15 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="@string/_7500"
+                            android:textColor="#000000"
                             android:textSize="18sp" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="@string/pas_Mano_D"
-                            android:gravity="center"/>
+                            android:textColor="#121212" />
 
                         <RatingBar
                             style="@android:style/Widget.DeviceDefault.Light.RatingBar.Indicator"
@@ -495,14 +507,16 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:gravity="center">
+                        android:background="#FFFFFF"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="@string/tarta_de_lim_n"
+                            android:textColor="#000000"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -511,13 +525,15 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="@string/_15000_c_u"
+                            android:textColor="#000000"
                             android:textSize="18sp" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="@string/pas_maria"
-                            android:gravity="center"/>
+                            android:textColor="#000000" />
 
                         <RatingBar
                             style="@android:style/Widget.DeviceDefault.Light.RatingBar.Indicator"
