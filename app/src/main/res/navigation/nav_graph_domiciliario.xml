@@ -11,6 +11,9 @@
         android:label="fragment_inicio_domiciliario"
         tools:layout="@layout/fragment_inicio_domiciliario" >
         <action
+            android:id="@+id/action_inicioDomiciliarioFragment_to_pedido_activo"
+            app:destination="@id/pedido_activo" />
+        <action
             android:id="@+id/action_inicioDomiciliarioFragment_to_pedidosCompDomiciliarioFragment"
             app:destination="@id/pedidosCompDomiciliarioFragment" />
     </fragment>
@@ -18,5 +21,52 @@
         android:id="@+id/pedidosCompDomiciliarioFragment"
         android:name="com.example.creativecake.PedidosCompDomiciliarioFragment"
         android:label="fragment_pedidos_comp_domiciliario"
-        tools:layout="@layout/fragment_pedidos_comp_domiciliario" />
+        tools:layout="@layout/fragment_pedidos_comp_domiciliario" >
+        <action
+            android:id="@+id/action_pedidosCompDomiciliarioFragment_to_inicioDomiciliarioFragment"
+            app:destination="@id/inicioDomiciliarioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registro_domiciliario"
+        android:name="com.example.creativecake.Registro_domiciliario"
+        android:label="fragment_registro_domiciliario"
+        tools:layout="@layout/fragment_registro_domiciliario" >
+        <action
+            android:id="@+id/action_registro_domiciliario_to_loguin_domiciliario"
+            app:destination="@id/loguin_domiciliario" />
+    </fragment>
+    <fragment
+        android:id="@+id/pedido_activo"
+        android:name="com.example.creativecake.pedido_activo"
+        android:label="fragment_pedido_activo"
+        tools:layout="@layout/fragment_pedido_activo" >
+        <action
+            android:id="@+id/action_pedido_activo_to_ubicacion_distribuidor"
+            app:destination="@id/ubicacion_distribuidor" />
+        <action
+            android:id="@+id/action_pedido_activo_to_LIsta_domiciliario"
+            app:destination="@id/LIsta_domiciliario" />
+    </fragment>
+    <fragment
+        android:id="@+id/loguin_domiciliario"
+        android:name="com.example.creativecake.Loguin_domiciliario"
+        android:label="fragment_loguin_domiciliario"
+        tools:layout="@layout/fragment_loguin_domiciliario" >
+        <action
+            android:id="@+id/action_loguin_domiciliario_to_inicioDomiciliarioFragment"
+            app:destination="@id/inicioDomiciliarioFragment" />
+        <action
+            android:id="@+id/action_loguin_domiciliario_to_registro_domiciliario2"
+            app:destination="@id/registro_domiciliario" />
+    </fragment>
+    <fragment
+        android:id="@+id/ubicacion_distribuidor"
+        android:name="com.example.creativecake.Ubicacion_distribuidor"
+        android:label="fragment_ubicacion_distribuidor"
+        tools:layout="@layout/fragment_ubicacion_distribuidor" />
+    <fragment
+        android:id="@+id/LIsta_domiciliario"
+        android:name="com.example.creativecake.LIsta_domiciliario"
+        android:label="fragment_l_ista_domiciliario"
+        tools:layout="@layout/fragment_l_ista_domiciliario" />
 </navigation>
