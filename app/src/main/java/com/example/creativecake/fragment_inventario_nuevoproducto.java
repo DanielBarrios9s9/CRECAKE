@@ -13,12 +13,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link fragment_inventario_nuevoproducto#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class fragment_inventario_nuevoproducto extends Fragment {
+
+    FirebaseDatabase database;
+    DatabaseReference reference;
 
 
     private EditText nombre;
@@ -83,15 +89,19 @@ public class fragment_inventario_nuevoproducto extends Fragment {
         agregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nombreProducto;
-                String precioProducto;
-                String descripcionProducto;
-                nombreProducto = nombre.getText().toString();
-                precioProducto = precio.getText().toString();
-                descripcionProducto = descripcion.getText().toString();
-                System.out.println("Nombre del producto: " + nombreProducto +
-                        "\nPrecio del producto: " + precioProducto +
-                        "\nDescripcion del producto: " + descripcionProducto);
+
+                database = FirebaseDatabase.getInstance();
+                reference = database.getReference("producto");
+
+                String nombreProducto = nombre.getText().toString();
+                String precioProducto = precio.getText().toString();
+                String descripcionProducto = descripcion.getText().toString();
+                ProductHelperClass helperClass = new ProductHelperClass(nombreProducto, precioProducto
+                        , descripcionProducto, nombreProducto);
+
+
+                reference.child(nombreProducto).setValue(helperClass);
+
             }
         });
     }
