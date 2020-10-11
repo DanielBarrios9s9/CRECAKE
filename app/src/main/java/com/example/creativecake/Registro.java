@@ -33,7 +33,7 @@ public class Registro extends AppCompatActivity
             startActivity(intent);
         }else if (rbDomiciliario.isChecked()== true)
         {
-            Intent intent = new Intent(getApplicationContext(), Registro_domiciliario.class);
+            Intent intent = new Intent(getApplicationContext(), RegistroDomiciliario.class);
             startActivity(intent);
         }
     }
