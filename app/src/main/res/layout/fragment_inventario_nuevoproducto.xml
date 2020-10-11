@@ -14,7 +14,7 @@
         android:autofillHints=""
         android:backgroundTint="#F2F2F2"
         android:ems="10"
-        android:hint="Nombre del producto"
+        android:hint="@string/nombre_del_producto"
         android:inputType="textPersonName"
         android:textColorHint="#F2F2F2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,8 +27,8 @@
         android:layout_width="355dp"
         android:layout_height="37dp"
         android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editNombrenuevoproducto" />
 
     <EditText
@@ -49,7 +49,9 @@
 
     <EditText
         android:id="@+id/editDescripcionnuevoproducto"
+        android:inputType="textMultiLine"
         android:layout_width="350dp"
+        android:scrollbars="vertical"
         android:layout_height="200dp"
         android:layout_marginTop="32dp"
         android:autofillHints=""
@@ -57,14 +59,12 @@
         android:ems="10"
         android:gravity="top|left"
         android:hint="Descripción del nuevo producto"
-        android:inputType="textPersonName"
         android:lines="8"
         android:maxLines="10"
         android:minLines="6"
         android:textColorHint="#F2F2F2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPrecionuevoproducto" />
 
     <Button
@@ -73,7 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:backgroundTint="@color/colorSecondary"
-        android:text="Agregar"
+        android:text="@string/agregar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

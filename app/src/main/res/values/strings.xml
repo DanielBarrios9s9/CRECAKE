@@ -214,6 +214,8 @@
     <string name="ver">Ver</string>
     <string name="editar">Editar</string>
     <string name="eliminar">Eliminar</string>
+    <string name="nombre_del_producto">Nombre del producto</string>
+    <string name="agregar">Agregar</string>
 
     <string-array name="Tipo_producto" >
         <item>Torta</item>
