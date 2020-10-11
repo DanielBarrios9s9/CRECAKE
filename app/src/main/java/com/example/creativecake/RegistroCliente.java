@@ -7,8 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -17,7 +16,6 @@ public class RegistroCliente extends AppCompatActivity
     FirebaseDatabase database;
     DatabaseReference reference;
     private EditText  etNombre, etCorreo, etPassword, etTelefono, etDireccion, etEdad;
-    private FirebaseAuth mAuth;
     private Button botonSiguiente;
 
     @Override
@@ -26,7 +24,7 @@ public class RegistroCliente extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_cliente);
 
-        mAuth = FirebaseAuth.getInstance();
+
 
         etNombre = (EditText)findViewById(R.id.idNombre);
         etCorreo = (EditText)findViewById(R.id.idCorreo);
