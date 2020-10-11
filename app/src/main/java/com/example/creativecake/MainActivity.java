@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                Intent registro = new Intent(getApplicationContext(), RegistroCliente.class);
+                Intent registro = new Intent(getApplicationContext(), Registro.class);
                 startActivity(registro);
 
             }
