@@ -8,7 +8,7 @@
     tools:context=".RegistroDomiciliario">
 
     <Button
-        android:id="@+id/registrate"
+        android:id="@+id/idBotonSiguiente"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginEnd="16dp"
@@ -33,7 +33,7 @@
         android:textColor="#F2F2F2"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/registrate"
+        app:layout_constraintEnd_toStartOf="@+id/idBotonSiguiente"
         app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -46,12 +46,12 @@
         android:textColor="#F2F2F2"
         android:textSize="18sp"
         android:textStyle="normal|bold"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName5"
+        app:layout_constraintBottom_toTopOf="@+id/idCuentaDomiciliario"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="@string/cuenta" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress2"
+        android:id="@+id/idCorreoDomiciliario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
@@ -76,8 +76,8 @@
         android:textColor="#F2F2F2"
         android:textSize="18sp"
         android:textStyle="normal|bold"
-        app:layout_constraintBottom_toTopOf="@+id/editTextPhone2"
-        app:layout_constraintStart_toStartOf="@+id/editTextPhone2" />
+        app:layout_constraintBottom_toTopOf="@+id/idTelefonoDomiciliario"
+        app:layout_constraintStart_toStartOf="@+id/idTelefonoDomiciliario" />
 
     <TextView
         android:id="@+id/textView12"
@@ -96,7 +96,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/idNombreDomiciliario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -119,11 +119,11 @@
         android:textColor="#F2F2F2"
         android:textSize="18sp"
         android:textStyle="normal|bold"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress2"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress2" />
+        app:layout_constraintBottom_toTopOf="@+id/idCorreoDomiciliario"
+        app:layout_constraintStart_toStartOf="@+id/idCorreoDomiciliario" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/idCuentaDomiciliario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -132,7 +132,7 @@
         android:layout_marginBottom="124dp"
         android:ems="10"
         android:hint="@string/cuenta"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:textColorHint="#F2F2F2"
         android:textCursorDrawable="@android:color/background_dark"
         android:textSize="14sp"
@@ -140,7 +140,7 @@
         app:layout_constraintEnd_toStartOf="@+id/idEdad"
         app:layout_constraintHorizontal_bias="0.736"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/idNombreDomiciliario" />
 
     <TextView
         android:id="@+id/textView14"
@@ -152,11 +152,11 @@
         android:textColor="#F2F2F2"
         android:textSize="18sp"
         android:textStyle="normal|bold"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
+        app:layout_constraintBottom_toTopOf="@+id/idNombreDomiciliario"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextPhone2"
+        android:id="@+id/idTelefonoDomiciliario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
@@ -169,5 +169,5 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/textView9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
+        app:layout_constraintTop_toBottomOf="@+id/idCorreoDomiciliario" />
 </androidx.constraintlayout.widget.ConstraintLayout>

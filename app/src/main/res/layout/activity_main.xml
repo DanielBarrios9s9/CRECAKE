@@ -69,7 +69,7 @@
         app:layout_constraintTop_toBottomOf="@+id/idPasswordMain" />
 
     <Button
-        android:id="@+id/registrate"
+        android:id="@+id/idBotonSiguiente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -91,7 +91,7 @@
         android:background="@drawable/button_social"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toStartOf="@+id/imageButton5"
-        app:layout_constraintTop_toBottomOf="@+id/registrate"
+        app:layout_constraintTop_toBottomOf="@+id/idBotonSiguiente"
         app:srcCompat="@drawable/facebook" />
 
     <ImageButton
@@ -103,7 +103,7 @@
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registrate"
+        app:layout_constraintTop_toBottomOf="@+id/idBotonSiguiente"
         app:srcCompat="@drawable/twitter" />
 
     <ImageButton
@@ -115,6 +115,6 @@
         android:background="@drawable/button_social"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toEndOf="@+id/imageButton5"
-        app:layout_constraintTop_toBottomOf="@+id/registrate"
+        app:layout_constraintTop_toBottomOf="@+id/idBotonSiguiente"
         app:srcCompat="@drawable/google" />
 </androidx.constraintlayout.widget.ConstraintLayout>

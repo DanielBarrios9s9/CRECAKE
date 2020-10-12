@@ -10,8 +10,16 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Space;
+import android.widget.Spinner;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,11 +28,15 @@ import android.widget.EditText;
  */
 public class fragment_inventario_nuevoproducto extends Fragment {
 
+    FirebaseDatabase database;
+    DatabaseReference reference;
+
 
     private EditText nombre;
     private EditText precio;
     private EditText descripcion;
     private Button agregar;
+    private Spinner tipo;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -78,20 +90,32 @@ public class fragment_inventario_nuevoproducto extends Fragment {
         nombre = (EditText) view.findViewById(R.id.editNombrenuevoproducto);
         precio = (EditText) view.findViewById(R.id.editPrecionuevoproducto);
         descripcion = (EditText) view.findViewById(R.id.editDescripcionnuevoproducto);
+        tipo = (Spinner) view.findViewById(R.id.spinnerNuevoProducto);
         agregar = (Button) view.findViewById(R.id.buttonAgregarnuevoproducto);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(requireActivity(),
+                R.array.Tipo_producto, android.R.layout.simple_spinner_item);
+
+        tipo.setAdapter(adapter);
 
         agregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nombreProducto;
-                String precioProducto;
-                String descripcionProducto;
-                nombreProducto = nombre.getText().toString();
-                precioProducto = precio.getText().toString();
-                descripcionProducto = descripcion.getText().toString();
-                System.out.println("Nombre del producto: " + nombreProducto +
-                        "\nPrecio del producto: " + precioProducto +
-                        "\nDescripcion del producto: " + descripcionProducto);
+
+                database = FirebaseDatabase.getInstance();
+                reference = database.getReference("productoTienda");
+
+                String nombreProducto = nombre.getText().toString();
+                String precioProducto = precio.getText().toString();
+                String descripcionProducto = descripcion.getText().toString();
+                String tipoProducto = (String) tipo.getItemAtPosition(tipo.getSelectedItemPosition());
+
+                ProductHelperClass helperClass = new ProductHelperClass(nombreProducto, precioProducto
+                        , descripcionProducto, tipoProducto);
+
+
+                reference.push().setValue(helperClass);
+
             }
         });
     }

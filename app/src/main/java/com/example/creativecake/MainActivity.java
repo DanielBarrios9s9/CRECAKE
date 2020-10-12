@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         iniciaSesion = (Button)findViewById(R.id.iniciaSesion);
-        registro = (Button)findViewById(R.id.registrate);
+        registro = (Button)findViewById(R.id.idBotonSiguiente);
 
         etTelefono = (EditText)findViewById(R.id.idTelefonoMain);
         etPassword = (EditText)findViewById(R.id.idPasswordMain);
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                Intent registro = new Intent(getApplicationContext(), RegistroCliente.class);
+                Intent registro = new Intent(getApplicationContext(), Registro.class);
                 startActivity(registro);
 
             }
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
                     if (passwordfromDB.equals(passwordIngresado))
                     {
-                        Intent intent = new Intent(getApplicationContext(), MainCliente.class);
+                        Intent intent = new Intent(getApplicationContext(), Menu_provisional.class);
                         startActivity(intent);
                     }else
                         {
