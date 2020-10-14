@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
                     if (passwordfromDB.equals(passwordIngresado))
                     {
-                        Intent intent = new Intent(getApplicationContext(), Menu_provisional.class);
+                        Intent intent = new Intent(getApplicationContext(), MainCliente.class);
                         startActivity(intent);
                     }else
                         {
