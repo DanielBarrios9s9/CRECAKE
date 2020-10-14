@@ -25,7 +25,7 @@ public class fragment_tienda_visualizar_producto extends Fragment {
                              Bundle savedInstanceState) {
         View vista=inflater.inflate(R.layout.fragment_tienda_visualizar_producto,container,false);
         listaProductos= new ArrayList<>();
-        recyclerProductos = vista.findViewById(R.id.recyclerviewOfertas);
+        recyclerProductos = vista.findViewById(R.id.recyclerTienda);
         recyclerProductos.setLayoutManager(new LinearLayoutManager(getContext()));
         llenarLista();
         AdaptadorProductoTienda adapter=new AdaptadorProductoTienda(listaProductos);
