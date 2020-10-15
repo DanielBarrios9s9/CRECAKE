@@ -23,7 +23,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/idBotonSiguiente"
+        android:id="@+id/idBotonRegistro"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginEnd="28dp"
@@ -48,7 +48,7 @@
         android:textColor="#F2F2F2"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/idBotonSiguiente"
+        app:layout_constraintEnd_toStartOf="@+id/idBotonRegistro"
         app:layout_constraintHorizontal_bias="0.168"
         app:layout_constraintStart_toStartOf="parent" />
 

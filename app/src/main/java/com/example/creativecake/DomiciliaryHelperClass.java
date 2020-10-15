@@ -2,17 +2,18 @@ package com.example.creativecake;
 
 public class DomiciliaryHelperClass
 {
-    String nombre, correo, cuenta, telefono;
+    String nombre, correo, cuenta, telefono, password;
 
     public DomiciliaryHelperClass() {
     }
 
-    public DomiciliaryHelperClass(String nombre, String correo, String cuenta, String telefono)
+    public DomiciliaryHelperClass(String nombre, String correo, String cuenta, String telefono, String password)
     {
         this.nombre = nombre;
         this.correo = correo;
         this.cuenta = cuenta;
         this.telefono = telefono;
+        this.password = password;
     }
 
     public String getNombre() {
@@ -45,5 +46,13 @@ public class DomiciliaryHelperClass
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

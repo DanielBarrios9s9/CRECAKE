@@ -29,7 +29,7 @@ public class RegistroNegocio extends AppCompatActivity
         etDireccionNegocio = (EditText)findViewById(R.id.idDireccionNegocio);
         etTelefonoNegocio = (EditText)findViewById(R.id.idTelefonoNegocio);
         etPasswordNegocio = (EditText)findViewById(R.id.idPasswordNegocio);
-        boton = (Button)findViewById(R.id.idBotonSiguiente);
+        boton = (Button)findViewById(R.id.idBotonRegistro);
 
 
         boton.setOnClickListener(new View.OnClickListener()

@@ -6,6 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="#BF5A7F">
+
+    <Button
+        android:id="@+id/iniciaSesionNegocio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/button_rounded"
+        android:text="@string/inicia_sesi_n_negocio"
+        android:textColor="#F2F2F2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iniciaSesionDomiciliario" />
+
+    <Button
+        android:id="@+id/iniciaSesionDomiciliario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/button_rounded"
+        android:text="@string/inicia_sesi_n_domiciliario"
+        android:textColor="#F2F2F2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iniciaSesionCliente" />
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="275dp"
@@ -55,66 +86,69 @@
         android:autofillHints="" />
 
     <Button
-        android:id="@+id/iniciaSesion"
+        android:id="@+id/iniciaSesionCliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="13dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/button_rounded"
-        android:text="@string/inicia_sesi_n"
+        android:text="@string/inicia_sesi_n_cliente"
         android:textColor="#F2F2F2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idPasswordMain" />
+        app:layout_constraintTop_toBottomOf="@+id/idBotonRegistro" />
 
     <Button
-        android:id="@+id/idBotonSiguiente"
+        android:id="@+id/idBotonRegistro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="7dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/button_borde"
         android:text="@string/reg_strate"
         android:textColor="#F2F2F2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iniciaSesion" />
+        app:layout_constraintTop_toBottomOf="@+id/idPasswordMain" />
 
     <ImageButton
         android:id="@+id/imageButton4"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="5dp"
         android:background="@drawable/button_social"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toStartOf="@+id/imageButton5"
-        app:layout_constraintTop_toBottomOf="@+id/idBotonSiguiente"
+        app:layout_constraintTop_toBottomOf="@+id/iniciaSesionNegocio"
         app:srcCompat="@drawable/facebook" />
-
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/button_social"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idBotonSiguiente"
-        app:srcCompat="@drawable/twitter" />
 
     <ImageButton
         android:id="@+id/imageButton6"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="161dp"
         android:background="@drawable/button_social"
         android:scaleType="fitCenter"
-        app:layout_constraintStart_toEndOf="@+id/imageButton5"
-        app:layout_constraintTop_toBottomOf="@+id/idBotonSiguiente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iniciaSesionNegocio"
         app:srcCompat="@drawable/google" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/button_social"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton6"
+        app:layout_constraintTop_toBottomOf="@+id/iniciaSesionNegocio"
+        app:srcCompat="@drawable/twitter" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
