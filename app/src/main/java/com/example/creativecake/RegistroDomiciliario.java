@@ -15,7 +15,7 @@ public class RegistroDomiciliario extends AppCompatActivity
 {
     DatabaseReference reference;
     FirebaseDatabase database;
-    EditText etNombreDomiciliario, etCorreoDomiciliario, etCuentaDomiciliario, etTelefonoDomiciliario;
+    EditText etNombreDomiciliario, etCorreoDomiciliario, etCuentaDomiciliario, etTelefonoDomiciliario, etPasswordDomiciliario;
     Button boton;
 
     @Override
@@ -27,7 +27,8 @@ public class RegistroDomiciliario extends AppCompatActivity
         etCorreoDomiciliario = (EditText)findViewById(R.id.idCorreoDomiciliario);
         etCuentaDomiciliario = (EditText)findViewById(R.id.idCuentaDomiciliario);
         etTelefonoDomiciliario = (EditText)findViewById(R.id.idTelefonoDomiciliario);
-        boton = (Button)findViewById(R.id.idBotonSiguiente);
+        etPasswordDomiciliario = (EditText)findViewById(R.id.idPasswordDomiciliario);
+        boton = (Button)findViewById(R.id.idBotonRegistro);
 
 
         boton.setOnClickListener(new View.OnClickListener() {
@@ -41,8 +42,9 @@ public class RegistroDomiciliario extends AppCompatActivity
                 String correo = etCorreoDomiciliario.getText().toString();
                 String cuenta = etCuentaDomiciliario.getText().toString();
                 String telefono = etTelefonoDomiciliario.getText().toString();
+                String password = etPasswordDomiciliario.getText().toString();
 
-                DomiciliaryHelperClass domiciliaryHelperClass = new DomiciliaryHelperClass(nombre, correo, cuenta, telefono);
+                DomiciliaryHelperClass domiciliaryHelperClass = new DomiciliaryHelperClass(nombre, correo, cuenta, telefono,password);
 
                 reference.child(telefono).setValue(domiciliaryHelperClass);
 

@@ -7,8 +7,36 @@
     android:background="#BF5A7F"
     tools:context=".RegistroDomiciliario">
 
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#F2F2F2"
+        android:textSize="18sp"
+        android:textStyle="normal|bold"
+        app:layout_constraintBottom_toTopOf="@+id/idPasswordDomiciliario"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="@string/password" />
+
+    <EditText
+        android:id="@+id/idPasswordDomiciliario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="146dp"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:textColorHint="#F2F2F2"
+        android:textCursorDrawable="@android:color/background_dark"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
-        android:id="@+id/idBotonSiguiente"
+        android:id="@+id/idBotonRegistro"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginEnd="16dp"
@@ -33,7 +61,7 @@
         android:textColor="#F2F2F2"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/idBotonSiguiente"
+        app:layout_constraintEnd_toStartOf="@+id/idBotonRegistro"
         app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent" />
 

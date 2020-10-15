@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button iniciaSesion, registro;
+    private Button iniciaSesionCliente, registro, iniciaSesionDom, iniciaSesionNeg;
     private EditText etTelefono, etPassword;
 
     @Override
@@ -26,18 +26,20 @@ public class MainActivity extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        iniciaSesion = (Button)findViewById(R.id.iniciaSesion);
-        registro = (Button)findViewById(R.id.idBotonSiguiente);
+        iniciaSesionCliente = (Button)findViewById(R.id.iniciaSesionCliente);
+        registro = (Button)findViewById(R.id.idBotonRegistro);
+        iniciaSesionDom = (Button)findViewById(R.id.iniciaSesionDomiciliario);
+        iniciaSesionNeg = (Button)findViewById(R.id.iniciaSesionNegocio);
 
         etTelefono = (EditText)findViewById(R.id.idTelefonoMain);
         etPassword = (EditText)findViewById(R.id.idPasswordMain);
 
-        iniciaSesion.setOnClickListener(new View.OnClickListener()
+        iniciaSesionCliente.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                Login();
+                LoginCliente();
             }
         });
 
@@ -48,6 +50,20 @@ public class MainActivity extends AppCompatActivity {
                 Intent registro = new Intent(getApplicationContext(), Registro.class);
                 startActivity(registro);
 
+            }
+        });
+
+        iniciaSesionDom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LoginDomiciliario();
+            }
+        });
+
+        iniciaSesionNeg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LoginStore();
             }
         });
     }
@@ -80,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void Login()
+    public void LoginCliente()
     {
         if (!validarTelefono() | !validarPassword())
         {
@@ -90,6 +106,30 @@ public class MainActivity extends AppCompatActivity {
                 isUser();
             }
     }
+
+    public void LoginDomiciliario()
+    {
+        if (!validarTelefono() | !validarPassword())
+        {
+            return;
+        }else
+        {
+            isDomiciliary();
+        }
+    }
+
+    public void LoginStore()
+    {
+        if (!validarTelefono() | !validarPassword())
+        {
+            return;
+        }else
+        {
+            isStore();
+        }
+    }
+
+
 
     private void isUser()
     {
@@ -116,14 +156,100 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(), MainCliente.class);
                         startActivity(intent);
                     }else
-                        {
-                            etPassword.setError("Contraeña incorrecta");
-                            etPassword.requestFocus();
-                        }
-                }else
                     {
-                        etTelefono.setError("No está registrado el numero, registrate");
+                        etPassword.setError("Contraeña incorrecta");
+                        etPassword.requestFocus();
                     }
+                }else
+                {
+                    etTelefono.setError("No está registrado el numero, registrate");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error)
+            {
+
+            }
+        });
+    }
+
+    private void isDomiciliary()
+    {
+        final String numeroIngresado = etTelefono.getText().toString().trim();
+        final String passwordIngresado = etPassword.getText().toString().trim();
+
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("usuarioDomiciliario");
+
+        Query checkUsuario = reference.orderByChild("telefono").equalTo(numeroIngresado);
+
+        checkUsuario.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot)
+            {
+                if (snapshot.exists())
+                {
+                    etTelefono.setError(null);
+
+                    String passwordfromDB = snapshot.child(numeroIngresado).child("password").getValue(String.class);
+
+                    if (passwordfromDB.equals(passwordIngresado))
+                    {
+                        Intent intent = new Intent(getApplicationContext(), MainDomiciliario.class);
+                        startActivity(intent);
+                    }else
+                    {
+                        etPassword.setError("Contraeña incorrecta");
+                        etPassword.requestFocus();
+                    }
+                }else
+                {
+                    etTelefono.setError("No está registrado el numero, registrate");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error)
+            {
+
+            }
+        });
+    }
+
+    private void isStore()
+    {
+        final String numeroIngresado = etTelefono.getText().toString().trim();
+        final String passwordIngresado = etPassword.getText().toString().trim();
+
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("usuarioNegocio");
+
+        Query checkUsuario = reference.orderByChild("telefono").equalTo(numeroIngresado);
+
+        checkUsuario.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot)
+            {
+                if (snapshot.exists())
+                {
+                    etTelefono.setError(null);
+
+                    String passwordfromDB = snapshot.child(numeroIngresado).child("password").getValue(String.class);
+
+                    if (passwordfromDB.equals(passwordIngresado))
+                    {
+                        Intent intent = new Intent(getApplicationContext(), Inicio_tienda.class);
+                        startActivity(intent);
+                    }else
+                    {
+                        etPassword.setError("Contraeña incorrecta");
+                        etPassword.requestFocus();
+                    }
+                }else
+                {
+                    etTelefono.setError("No está registrado el numero, registrate");
+                }
             }
 
             @Override
