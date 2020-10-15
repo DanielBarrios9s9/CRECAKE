@@ -34,5 +34,10 @@ public class OfertasClienteFragment extends Fragment {
 
     private void llenarLista() {
         //Hay que comenzar a llenar con los datos de la BD
+        listaProductos.add(new p_ejemplo_oferta(R.mipmap.cupcake,"Cupcake de Fresa","$ 2.000 c/u","Pastelería La Española","-5%",4.0));
+        listaProductos.add(new p_ejemplo_oferta(R.drawable.fr_crema,"Fresas con Crema","$ 5.000 c/u","Pastelería La Española","-10%",4.0));
+        listaProductos.add(new p_ejemplo_oferta(R.drawable.p_gloria_h,"Pastel Gloria","$ 1.800 c/u","Pastelería La Española","-5%",5.0));
+        listaProductos.add(new p_ejemplo_oferta(R.drawable.p_leches,"Pastel Tres Leches","$ 30.000 c/u","Pastelería La Española","-30%",4.3));
+        listaProductos.add(new p_ejemplo_oferta(R.drawable.p_mantequilla,"Pastel Mantequilla","$ 35.000 c/u","Pastelería La Española","-50%",3.0));
     }
 }

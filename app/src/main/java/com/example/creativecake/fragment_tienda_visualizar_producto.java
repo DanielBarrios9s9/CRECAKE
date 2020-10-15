@@ -35,6 +35,10 @@ public class fragment_tienda_visualizar_producto extends Fragment {
 
     private void llenarLista() {
         //Hay que comenzar a llenar con los datos de la BD
-
+        listaProductos.add(new p_ejemplo_tienda(R.mipmap.cupcake,"Cupcake de Fresa","$ 2.000 c/u","No Descuento"));
+        listaProductos.add(new p_ejemplo_tienda(R.drawable.fr_crema,"Fresas con Crema","$ 5.000 c/u","-10%"));
+        listaProductos.add(new p_ejemplo_tienda(R.drawable.p_gloria_h,"Pastel Gloria","$ 1.800 c/u","No descuento"));
+        listaProductos.add(new p_ejemplo_tienda(R.drawable.p_leches,"Pastel Tres Leches","$ 30.000 c/u","-30%"));
+        listaProductos.add(new p_ejemplo_tienda(R.drawable.p_mantequilla,"Pastel Mantequilla","$ 35.000 c/u","-50%"));
     }
 }

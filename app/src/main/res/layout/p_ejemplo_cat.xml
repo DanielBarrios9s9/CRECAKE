@@ -28,7 +28,7 @@
                 android:id="@+id/imagen_producto"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@mipmap/cupcake"
+                android:background="#FFFFFF"
                 android:contentDescription="@string/todo" />
         </androidx.cardview.widget.CardView>
 
@@ -56,7 +56,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="@string/cupcake_con_cobertura_de_fresa"
+                    android:text="@string/nombre_del_producto"
                     android:textColor="#000000"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -66,17 +66,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="@string/o_2000_c_u"
+                    android:text="@string/precio_producto"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/oferta_producto"
+                    android:id="@+id/pasteleria_producto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/pas_l_Es"
-                    android:textColor="#000000" />
+                    android:text="@string/pasteleria_producto"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
 
                 <RatingBar
                     android:id="@+id/rating_producto"

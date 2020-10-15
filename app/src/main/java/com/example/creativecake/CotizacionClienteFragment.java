@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 
 public class CotizacionClienteFragment extends Fragment {
@@ -36,7 +37,7 @@ public class CotizacionClienteFragment extends Fragment {
 
         Button boton_enviar_coti= view.findViewById(R.id.btn_enviar);
         Button boton_revisar_coti= view.findViewById(R.id.btn_revisar);
-        Button boton_bot= view.findViewById(R.id.btn_bot);
+        ImageButton boton_bot= view.findViewById(R.id.btn_bot);
 
         final NavController navController= Navigation.findNavController(view);
 
