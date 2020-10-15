@@ -194,6 +194,7 @@
     <string name="agregar">Agregar</string>
     <string name="precio_producto">Precio Producto</string>
     <string name="pasteleria_producto">Pasteleria Producto</string>
+    <string name="total_items">Total Items</string>
 
     <string-array name="Tipo_producto">
         <item>Torta</item>
