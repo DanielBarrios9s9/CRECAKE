@@ -11,16 +11,30 @@
         android:id="@+id/textView23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="116dp"
-        android:layout_marginRight="116dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="120dp"
         android:text="@string/telefono"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#F2F2F2"
         android:textSize="18sp"
         android:textStyle="normal|bold"
         app:layout_constraintBottom_toTopOf="@+id/idTelefonoNegocio"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/idTelefonoNegocio" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="96dp"
+        android:text="@string/direccion"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#F2F2F2"
+        android:textSize="18sp"
+        android:textStyle="normal|bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idNombreNegocio" />
 
     <Button
         android:id="@+id/button7"
@@ -56,9 +70,8 @@
         android:id="@+id/idTelefonoNegocio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="444dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="92dp"
         android:ems="10"
         android:hint="@string/telefono"
@@ -67,43 +80,22 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/textView9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/idCorreoNegocio" />
 
     <EditText
         android:id="@+id/idDireccionNegocio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="436dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="124dp"
         android:ems="10"
         android:hint="@string/direccion"
         android:inputType="textPersonName"
         android:textColorHint="#8C1C3A"
         android:textCursorDrawable="@android:color/background_dark"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
-        app:layout_constraintEnd_toStartOf="@+id/idEdad"
-        app:layout_constraintHorizontal_bias="0.736"
+        app:layout_constraintEnd_toStartOf="@+id/idTelefonoNegocio"
+        app:layout_constraintHorizontal_bias="0.225"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="12dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#F2F2F2"
-        android:textSize="18sp"
-        android:textStyle="normal|bold"
-        app:layout_constraintBottom_toTopOf="@+id/idDireccionNegocio"
-        app:layout_constraintEnd_toStartOf="@+id/textView23"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:text="@string/direccion" />
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
     <EditText
         android:id="@+id/idCorreoNegocio"
@@ -129,7 +121,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="220dp"
         android:layout_marginEnd="124dp"
-        android:layout_marginRight="124dp"
         android:text="@string/correo"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#F2F2F2"
@@ -145,36 +136,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="116dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/nombreNegocio"
         android:inputType="textPersonName"
         android:textColorHint="#8C1C3A"
         android:textCursorDrawable="@android:color/background_dark"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView22"
         app:layout_constraintEnd_toStartOf="@+id/idCorreoNegocio"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
     <TextView
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="220dp"
         android:text="@string/nombreNegocio"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#F2F2F2"
         android:textSize="18sp"
         android:textStyle="normal|bold"
-        app:layout_constraintBottom_toTopOf="@+id/idNombreNegocio"
         app:layout_constraintEnd_toStartOf="@+id/textView21"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView19"
@@ -197,23 +185,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="73dp"
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/button7"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="7dp"
+        android:layout_marginTop="40dp"
         android:text="@string/password"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/idPasswordNegocio"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idDireccionNegocio" />
 </androidx.constraintlayout.widget.ConstraintLayout>

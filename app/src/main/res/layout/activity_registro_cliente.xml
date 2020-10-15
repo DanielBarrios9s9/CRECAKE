@@ -37,10 +37,9 @@
 
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="99dp"
+        android:layout_width="141dp"
         android:layout_height="48dp"
-        android:layout_marginStart="151dp"
-        android:layout_marginTop="59dp"
+        android:layout_marginTop="56dp"
         android:background="#8C1C3A"
         android:gravity="center"
         android:text="@string/cliente"
@@ -48,6 +47,7 @@
         android:textSize="36sp"
         android:textStyle="normal|bold"
         app:drawableTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
