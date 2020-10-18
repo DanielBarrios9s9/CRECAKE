@@ -57,7 +57,7 @@
         android:layout_marginTop="11dp"
         android:layout_marginEnd="31dp"
         android:layout_marginBottom="622dp"
-        android:text="@string/tienes_3_productos"
+        android:text="@string/tienes_0_productos"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="35sp"
@@ -67,6 +67,7 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="276dp"
         android:layout_height="163dp"
         android:layout_marginStart="59dp"
@@ -198,5 +199,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView37" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerviewCarrito"
+        android:layout_width="355dp"
+        android:layout_height="305dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.347" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

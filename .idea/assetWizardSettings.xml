@@ -320,7 +320,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/playlist_add_check/baseline_playlist_add_check_24.xml" />
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/exposure_neg_1/baseline_exposure_neg_1_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -330,8 +330,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="8c1c3a" />
-                            <entry key="outputName" value="ic_baseline_playlist_add_check_24" />
+                            <entry key="color" value="ffffff" />
+                            <entry key="outputName" value="ic_baseline_exposure_neg_1_24" />
                             <entry key="sourceFile" value="C:\Users\paula\AndroidStudioProjects\CRECAKE" />
                           </map>
                         </option>

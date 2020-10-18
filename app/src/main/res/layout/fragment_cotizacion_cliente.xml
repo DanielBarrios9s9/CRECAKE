@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
+    android:contentDescription="@string/todo"
     tools:context=".CotizacionClienteFragment">
 
     <View
@@ -27,7 +28,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="0.825" tools:targetApi="m" />
+        app:layout_constraintVertical_bias="0.825"
+        tools:targetApi="m" />
 
     <ImageButton
         android:id="@+id/opciones"
@@ -165,22 +167,6 @@
         </TableRow>
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/btn_bot"
-        android:layout_width="79dp"
-        android:layout_height="89dp"
-        android:layout_marginBottom="16dp"
-        android:clickable="true"
-        android:contentDescription="@string/todo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.909"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_enviar"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@mipmap/pngegg"
-        android:focusable="true" />
-
     <Button
         android:id="@+id/btn_enviar"
         android:layout_width="230dp"
@@ -263,10 +249,22 @@
         android:textColor="#000000"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_bot"
-        app:layout_constraintHorizontal_bias="0.63"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_enviar"
-        app:layout_constraintVertical_bias="0.578" />
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/btn_bot"
+        android:layout_width="90dp"
+        android:layout_height="86dp"
+        android:background="@mipmap/pngegg"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.903" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

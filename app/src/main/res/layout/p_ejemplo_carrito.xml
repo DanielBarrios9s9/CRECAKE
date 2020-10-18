@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#FFFFFF"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="131dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="262dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_eliminar"
+                android:layout_width="106dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/redondez_botones_daniel"
+                android:text="@string/eliminar" />
+
+            <ImageView
+                android:id="@+id/imagen_producto"
+                android:layout_width="129dp"
+                android:layout_height="97dp"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:contentDescription="@string/todo"
+                android:elevation="40dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nombre_producto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nombre_del_producto"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/precio_producto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/precio_producto"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/menos"
+                    android:layout_width="2dp"
+                    android:layout_height="49dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_baseline_exposure_neg_1_24"
+                    android:backgroundTint="#BF5A7F"
+                    android:contentDescription="@string/todo"
+                    android:elevation="50dp" />
+
+                <TextView
+                    android:id="@+id/total_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="51dp"
+                    android:layout_weight="1"
+                    android:text="@string/total_items"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/mas"
+                    android:layout_width="5dp"
+                    android:layout_height="51dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_baseline_plus_one_24"
+                    android:backgroundTint="#BF5A7F"
+                    android:contentDescription="@string/todo"
+                    android:elevation="50dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -127,35 +127,9 @@
     <string name="postre">Postres</string>
     <string name="hojaldre">Hojaldres</string>
     <string name="otro">Otros</string>
-    <string name="pas_Mano_D">Pastelería Mano de Dios</string>
-    <string name="pas_l_Es">Pastelería La Española</string>
-    <string name="pas_maria">Hojaldres María</string>
-    <string name="pas_sugar">Pastelería Sugar</string>
-    <string name="cupcake_con_cobertura_de_fresa">Cupcake con cobertura de Fresa</string>
-    <string name="pasteler_a_santa_rosita">Pastelería Santa Rosita</string>
-    <string name="pastel_gloria_de_bocadillo">Pastel Gloria de Bocadillo</string>
-    <string name="o_2000_c_u">$ 2.000 c/u</string>
-    <string name="pastel_tres_leches_cober_mantq">Pastel Tres Leches Cober. Mantq.</string>
-    <string name="_35000_c_u">$ 35.000 c/u</string>
-    <string name="pastel_tres_leches_rosas">Pastel Tres Leches Rosas</string>
-    <string name="_300000_c_u">$ 30.000 c/u</string>
-    <string name="pastel_negro_decorado_pocahontas">Pastel Negro Decorado Pocahontas</string>
-    <string name="_60000_c_u">$ 60.000 c/u</string>
-    <string name="_1800_c_u">$ 1.800 c/u</string>
-    <string name="cupcakes_x5_varios_sabores">Cupcakes x5 varios sabores</string>
-    <string name="_7500">$ 7.500</string>
-    <string name="fresas_con_crema">Fresas con Crema</string>
-    <string name="_5000_c_u">$ 5.000 c/u</string>
-    <string name="tarta_de_lim_n">Tarta de Limón</string>
-    <string name="_15000_c_u">$ 15.000 c/u</string>
-    <string name="galletas_con_chips_de_chocolate">Galletas con chips de Chocolate</string>
-    <string name="hojaldre_relleno_de_pesto">Hojaldre relleno de Pesto</string>
-    <string name="_7000_c_u">$ 7.000 c/u</string>
 
     <!--strings de oferta cliente-->
-    <string name="_50">-50%</string>
-    <string name="_10">-10%</string>
-    <string name="_30">-30%</string>
+    <string name="_oferta">Porcentaje Oferta</string>
 
     <!-- algunos strings de item cliente-->
     <string name="calle_76b_87_95">Calle 76B #87-95</string>
@@ -199,7 +173,7 @@
     <string name="cancelar">cancelar</string>
 
     <!--strings de carrito cliente-->
-    <string name="tienes_3_productos">Tienes 3 productos</string>
+    <string name="tienes_0_productos">Tienes 0 productos</string>
     <string name="pago_aceptado">Pago Aceptado</string>
 
     <!--strings de pago de compra aceptado cliente-->
@@ -218,6 +192,9 @@
     <string name="eliminar">Eliminar</string>
     <string name="nombre_del_producto">Nombre del producto</string>
     <string name="agregar">Agregar</string>
+    <string name="precio_producto">Precio Producto</string>
+    <string name="pasteleria_producto">Pasteleria Producto</string>
+    <string name="total_items">Total Items</string>
 
     <string-array name="Tipo_producto">
         <item>Torta</item>

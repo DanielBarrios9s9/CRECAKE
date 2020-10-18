@@ -35,10 +35,10 @@ public class CatalogoClienteFragment extends Fragment {
 
     private void llenarLista() {
         //Hay que comenzar a llenar con los datos de la BD
-        listaProductos.add(new p_ejemplo_cat(R.mipmap.cupcake,"@string/cupcake_con_cobertura_de_fresa","@string/o_2000_c_u","@string/pas_l_Es",4.0));
-        listaProductos.add(new p_ejemplo_cat(R.drawable.fr_crema,"@string/fresas_con_crema","@string/_5000_c_u","@string/pas_l_Es",4.0));
-        listaProductos.add(new p_ejemplo_cat(R.drawable.p_gloria_h,"@string/pastel_gloria_de_bocadillo","@string/_1800_c_u","@string/pas_maria",5.0));
-        listaProductos.add(new p_ejemplo_cat(R.drawable.p_leches,"@string/pastel_tres_leches_rosas","@string/_300000_c_u","@string/pas_sugar",4.3));
-        listaProductos.add(new p_ejemplo_cat(R.drawable.p_mantequilla,"@string/pastel_tres_leches_cober_mantq","@string/_35000_c_u","@string/pasteler_a_santa_rosita",3.0));
+        listaProductos.add(new p_ejemplo_cat(R.mipmap.cupcake,"Cupcake de Fresa","$ 2.000 c/u","Pastelería La Española",4.0));
+        listaProductos.add(new p_ejemplo_cat(R.drawable.fr_crema,"Fresas con Crema","$ 5.000 c/u","Pastelería La Española",4.0));
+        listaProductos.add(new p_ejemplo_cat(R.drawable.p_gloria_h,"Pastel Gloria","$ 1.800 c/u","Pastelería La Española",5.0));
+        listaProductos.add(new p_ejemplo_cat(R.drawable.p_leches,"Pastel Tres Leches","$ 30.000 c/u","Pastelería La Española",4.3));
+        listaProductos.add(new p_ejemplo_cat(R.drawable.p_mantequilla,"Pastel Mantequilla","$ 35.000 c/u","Pastelería La Española",3.0));
     }
 }
