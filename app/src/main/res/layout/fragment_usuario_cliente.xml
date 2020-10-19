@@ -101,9 +101,12 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/idDireccion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/calle_26_a_35" />
+                android:hint="@string/calle_26_a_35"
+                android:inputType="text"
+                android:textColor="#E91E63" />
         </com.google.android.material.textfield.TextInputLayout>
     </TableRow>
 
@@ -133,9 +136,12 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/idNombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/juan_rodriguez" />
+                android:hint="@string/juan_rodriguez"
+                android:inputType="textPersonName"
+                android:textColor="#E91E63" />
         </com.google.android.material.textfield.TextInputLayout>
 
     </TableRow>
@@ -166,9 +172,12 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/idCorreo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/juan38_gmail_com" />
+                android:hint="@string/juan38_gmail_com"
+                android:inputType="textWebEmailAddress|textEmailAddress"
+                android:textColor="#E91E63" />
         </com.google.android.material.textfield.TextInputLayout>
     </TableRow>
 
@@ -198,9 +207,12 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/idContraseña"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/____" />
+                android:hint="@string/____"
+                android:inputType="textPassword"
+                android:textColor="#E91E63" />
         </com.google.android.material.textfield.TextInputLayout>
     </TableRow>
 
@@ -230,9 +242,12 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/idTelefono"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/_3153456789" />
+                android:hint="@string/_3153456789"
+                android:inputType="phone"
+                android:textColor="#E91E63" />
         </com.google.android.material.textfield.TextInputLayout>
     </TableRow>
 
