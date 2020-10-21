@@ -155,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
                     {
                         Intent intent = new Intent(getApplicationContext(), MainCliente.class);
                         startActivity(intent);
+                        finish();
                     }else
                     {
                         etPassword.setError("Contraeña incorrecta");
@@ -198,6 +199,7 @@ public class MainActivity extends AppCompatActivity {
                     {
                         Intent intent = new Intent(getApplicationContext(), MainDomiciliario.class);
                         startActivity(intent);
+                        finish();
                     }else
                     {
                         etPassword.setError("Contraeña incorrecta");
@@ -235,12 +237,18 @@ public class MainActivity extends AppCompatActivity {
                 {
                     etTelefono.setError(null);
 
+
+                    String namefromDB = snapshot.child(numeroIngresado).child("nombre").getValue(String.class);
                     String passwordfromDB = snapshot.child(numeroIngresado).child("password").getValue(String.class);
 
                     if (passwordfromDB.equals(passwordIngresado))
                     {
                         Intent intent = new Intent(getApplicationContext(), Inicio_tienda.class);
+
+                        intent.putExtra("nombreIngresado", namefromDB);
+
                         startActivity(intent);
+                        finish();
                     }else
                     {
                         etPassword.setError("Contraeña incorrecta");

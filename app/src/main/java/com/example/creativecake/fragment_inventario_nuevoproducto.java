@@ -1,5 +1,6 @@
 package com.example.creativecake;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -93,6 +94,9 @@ public class fragment_inventario_nuevoproducto extends Fragment {
         tipo = (Spinner) view.findViewById(R.id.spinnerNuevoProducto);
         agregar = (Button) view.findViewById(R.id.buttonAgregarnuevoproducto);
 
+        Intent intent = getActivity().getIntent();
+        final String user_name = intent.getStringExtra("nombreIngresado");
+
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(requireActivity(),
                 R.array.Tipo_producto, android.R.layout.simple_spinner_item);
 
@@ -111,10 +115,13 @@ public class fragment_inventario_nuevoproducto extends Fragment {
                 String tipoProducto = (String) tipo.getItemAtPosition(tipo.getSelectedItemPosition());
 
                 ProductHelperClass helperClass = new ProductHelperClass(nombreProducto, precioProducto
-                        , descripcionProducto, tipoProducto);
+                        , descripcionProducto, tipoProducto, user_name);
 
 
                 reference.push().setValue(helperClass);
+
+
+                Navigation.findNavController(v).navigate(R.id.fragment_tienda_inventario);
 
             }
         });
