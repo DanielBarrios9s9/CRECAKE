@@ -29,10 +29,6 @@ import java.util.Objects;
  */
 public class fragment_inventario_nuevoproducto extends Fragment {
 
-    FirebaseDatabase database;
-    DatabaseReference reference;
-
-
     private EditText nombre;
     private EditText precio;
     private EditText descripcion;
@@ -94,8 +90,6 @@ public class fragment_inventario_nuevoproducto extends Fragment {
         tipo = (Spinner) view.findViewById(R.id.spinnerNuevoProducto);
         agregar = (Button) view.findViewById(R.id.buttonAgregarnuevoproducto);
 
-        Intent intent = getActivity().getIntent();
-        final String user_name = intent.getStringExtra("nombreIngresado");
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(requireActivity(),
                 R.array.Tipo_producto, android.R.layout.simple_spinner_item);
@@ -106,22 +100,7 @@ public class fragment_inventario_nuevoproducto extends Fragment {
             @Override
             public void onClick(View v) {
 
-                database = FirebaseDatabase.getInstance();
-                reference = database.getReference("productoTienda");
-
-                String nombreProducto = nombre.getText().toString();
-                String precioProducto = precio.getText().toString();
-                String descripcionProducto = descripcion.getText().toString();
-                String tipoProducto = (String) tipo.getItemAtPosition(tipo.getSelectedItemPosition());
-
-                ProductHelperClass helperClass = new ProductHelperClass(nombreProducto, precioProducto
-                        , descripcionProducto, tipoProducto, user_name);
-
-
-                reference.push().setValue(helperClass);
-
-
-                Navigation.findNavController(v).navigate(R.id.fragment_tienda_inventario);
+                Navigation.findNavController(v).navigate(R.id.subirImagen1);
 
             }
         });

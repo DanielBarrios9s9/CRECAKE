@@ -24,7 +24,7 @@ public class OfertasClienteFragment extends Fragment {
                              Bundle savedInstanceState) {
         View vista=inflater.inflate(R.layout.fragment_ofertas_cliente,container,false);
         listaProductos= new ArrayList<>();
-        recyclerProductos = vista.findViewById(R.id.recyclerviewOfertas);
+
         recyclerProductos.setLayoutManager(new LinearLayoutManager(getContext()));
         llenarLista();
         AdaptadorProductoOferta adapter=new AdaptadorProductoOferta(listaProductos);
