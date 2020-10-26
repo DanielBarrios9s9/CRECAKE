@@ -2,6 +2,7 @@ package com.example.creativecake;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Window;
@@ -10,6 +11,12 @@ public class Inicio_tienda extends AppCompatActivity {
 
     private Window window;
 
+    public static Context contextOfApplication;
+    public static Context getContextOfApplication(){
+        return contextOfApplication;
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,6 +24,7 @@ public class Inicio_tienda extends AppCompatActivity {
 
         this.window = getWindow();
         cambiarColor();
+
     }
 
     public void cambiarColor(){

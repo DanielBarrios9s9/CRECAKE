@@ -1,226 +1,233 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="#BF5A7F"
     tools:context=".RegistroCliente">
 
-    <Button
-        android:id="@+id/botonSiguiente"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="31dp"
-        android:background="#8C1C3A"
-        android:shadowColor="#FFFFFF"
-        android:text="@string/next"
-        android:textColor="#F2F2F2"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="31dp"
-        android:background="#8C1C3A"
-        android:shadowColor="#FFFFFF"
-        android:text="@string/back"
-        android:textColor="#F2F2F2"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="141dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="135dp"
         android:background="#8C1C3A"
         android:gravity="center"
         android:text="@string/cliente"
         android:textColor="#F2F2F2"
         android:textSize="36sp"
         android:textStyle="normal|bold"
-        app:drawableTint="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/idCorreo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="49dp"
-        android:ems="10"
-        android:hint="@string/correo"
-        android:inputType="textEmailAddress"
-        android:textColor="#000000"
-        android:textColorHint="#F2F2F2"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView7"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <EditText
-        android:id="@+id/idPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="45dp"
-        android:ems="10"
-        android:hint="@string/contraseña"
-        android:inputType="textPassword"
-        android:textColorHint="#F2F2F2"
-        android:textCursorDrawable="@android:color/background_dark"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView8"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/idDireccion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="157dp"
-        android:ems="10"
-        android:hint="@string/direccion"
-        android:inputType="textPersonName"
-        android:textColorHint="#F2F2F2"
-        android:textCursorDrawable="@android:color/background_dark"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/idEdad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="157dp"
-        android:ems="10"
-        android:hint="@string/edad"
-        android:inputType="number"
-        android:textColor="#000000"
-        android:textColorHint="#F2F2F2"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/botonSiguiente"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:drawableTint="#FFFFFF"/>
+    
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="19dp"
         android:text="@string/nombre_cliente"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#F2F2F2"
         android:textSize="18sp"
-        android:textStyle="normal|bold"
-        app:layout_constraintBottom_toTopOf="@+id/idNombre"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textStyle="normal|bold" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="5dp"/>
 
     <EditText
-        android:id="@+id/idTelefono"
-        android:layout_width="wrap_content"
+        android:id="@+id/idNombre"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="45dp"
         android:ems="10"
-        android:hint="@string/telefono"
-        android:inputType="number"
+        android:hint="@string/nombre_cliente"
+        android:inputType="textPersonName"
+        android:textColor="#000000"
+        android:textSize="14sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/correo"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#F2F2F2"
+        android:textSize="18sp"
+        android:textStyle="normal|bold" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="5dp"/>
+
+    <EditText
+        android:id="@+id/idCorreo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/correo"
+        android:inputType="textEmailAddress"
+        android:textColor="#000000"
         android:textColorHint="#F2F2F2"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView9"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:textSize="14sp" />
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="11dp"
-        android:text="@string/edad"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#F2F2F2"
-        android:textSize="18sp"
-        android:textStyle="normal|bold"
-        app:layout_constraintBottom_toTopOf="@+id/idEdad"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="11dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#F2F2F2"
-        android:textSize="18sp"
-        android:textStyle="normal|bold"
-        app:layout_constraintBottom_toTopOf="@+id/idDireccion"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:text="@string/direccion" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/telefono"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#F2F2F2"
-        android:textSize="18sp"
-        android:textStyle="normal|bold"
-        app:layout_constraintBottom_toTopOf="@+id/idTelefono"
-        app:layout_constraintEnd_toEndOf="parent" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="10dp"
         android:text="@string/contraseña"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#F2F2F2"
         android:textSize="18sp"
-        android:textStyle="normal|bold"
-        app:layout_constraintBottom_toTopOf="@+id/idPassword"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textStyle="normal|bold" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="5dp"/>
+
+    <EditText
+        android:id="@+id/idPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/contraseña"
+        android:inputType="textPassword"
+        android:textColorHint="#F2F2F2"
+        android:textCursorDrawable="@android:color/background_dark"
+        android:textSize="14sp"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/telefono"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#F2F2F2"
+        android:textSize="18sp"
+        android:textStyle="normal|bold"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="5dp"/>
+
+    <EditText
+        android:id="@+id/idTelefono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/telefono"
+        android:inputType="number"
+        android:textColorHint="#F2F2F2"
+        android:textSize="14sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/edad"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#F2F2F2"
+        android:textSize="18sp"
+        android:textStyle="normal|bold" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="5dp"/>
+
+    <EditText
+        android:id="@+id/idEdad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="20dp"
-        android:text="@string/correo"
+        android:ems="10"
+        android:hint="@string/edad"
+        android:inputType="number"
+        android:textColor="#000000"
+        android:textColorHint="#F2F2F2"
+        android:textSize="14sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#F2F2F2"
         android:textSize="18sp"
         android:textStyle="normal|bold"
-        app:layout_constraintBottom_toTopOf="@+id/idCorreo"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:text="@string/direccion" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="5dp"/>
 
     <EditText
-        android:id="@+id/idNombre"
-        android:layout_width="wrap_content"
+        android:id="@+id/idDireccion"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="51dp"
         android:ems="10"
-        android:hint="@string/nombre_cliente"
+        android:hint="@string/direccion"
         android:inputType="textPersonName"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColorHint="#F2F2F2"
+        android:textSize="14sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:background="#8C1C3A"
+            android:shadowColor="#FFFFFF"
+            android:text="@string/back"
+            android:textColor="#F2F2F2"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.367" />
+
+        <Button
+            android:id="@+id/botonSiguiente"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="16dp"
+            android:background="#8C1C3A"
+            android:shadowColor="#FFFFFF"
+            android:text="@string/next"
+            android:textColor="#F2F2F2"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.367" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

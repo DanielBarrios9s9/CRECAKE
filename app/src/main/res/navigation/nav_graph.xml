@@ -57,7 +57,11 @@
         android:id="@+id/fragment_inventario_nuevoproducto"
         android:name="com.example.creativecake.fragment_inventario_nuevoproducto"
         android:label="fragment_inventario_nuevoproducto"
-        tools:layout="@layout/fragment_inventario_nuevoproducto" />
+        tools:layout="@layout/fragment_inventario_nuevoproducto" >
+        <action
+            android:id="@+id/action_fragment_inventario_nuevoproducto_to_subirImagen1"
+            app:destination="@id/subirImagen1" />
+    </fragment>
     <fragment
         android:id="@+id/fragment_tienda_visualizar_producto"
         android:name="com.example.creativecake.fragment_tienda_visualizar_producto"
@@ -78,5 +82,14 @@
         <action
             android:id="@+id/action_fragment_item_tienda_to_fragment_tienda_visualizar_producto"
             app:destination="@id/fragment_tienda_visualizar_producto" />
+    </fragment>
+    <fragment
+        android:id="@+id/subirImagen1"
+        android:name="com.example.creativecake.SubirImagen1"
+        android:label="fragment_subir_imagen1"
+        tools:layout="@layout/fragment_subir_imagen1" >
+        <action
+            android:id="@+id/action_subirImagen1_to_fragment_tienda_inventario"
+            app:destination="@id/fragment_tienda_inventario" />
     </fragment>
 </navigation>

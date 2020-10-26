@@ -1,5 +1,6 @@
 package com.example.creativecake;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -27,10 +28,6 @@ import java.util.Objects;
  * create an instance of this fragment.
  */
 public class fragment_inventario_nuevoproducto extends Fragment {
-
-    FirebaseDatabase database;
-    DatabaseReference reference;
-
 
     private EditText nombre;
     private EditText precio;
@@ -93,6 +90,7 @@ public class fragment_inventario_nuevoproducto extends Fragment {
         tipo = (Spinner) view.findViewById(R.id.spinnerNuevoProducto);
         agregar = (Button) view.findViewById(R.id.buttonAgregarnuevoproducto);
 
+
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(requireActivity(),
                 R.array.Tipo_producto, android.R.layout.simple_spinner_item);
 
@@ -102,19 +100,7 @@ public class fragment_inventario_nuevoproducto extends Fragment {
             @Override
             public void onClick(View v) {
 
-                database = FirebaseDatabase.getInstance();
-                reference = database.getReference("productoTienda");
-
-                String nombreProducto = nombre.getText().toString();
-                String precioProducto = precio.getText().toString();
-                String descripcionProducto = descripcion.getText().toString();
-                String tipoProducto = (String) tipo.getItemAtPosition(tipo.getSelectedItemPosition());
-
-                ProductHelperClass helperClass = new ProductHelperClass(nombreProducto, precioProducto
-                        , descripcionProducto, tipoProducto);
-
-
-                reference.push().setValue(helperClass);
+                Navigation.findNavController(v).navigate(R.id.subirImagen1);
 
             }
         });
