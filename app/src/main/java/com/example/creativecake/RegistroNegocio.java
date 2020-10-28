@@ -53,6 +53,7 @@ public class RegistroNegocio extends AppCompatActivity
 
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

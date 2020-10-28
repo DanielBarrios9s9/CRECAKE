@@ -11,6 +11,7 @@
         android:id="@+id/textView12"
         android:layout_width="250dp"
         android:layout_height="50dp"
+        android:layout_marginTop="64dp"
         android:layout_marginBottom="113dp"
         android:background="#8C1C3A"
         android:gravity="center"
@@ -21,7 +22,8 @@
         app:drawableTint="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -38,7 +40,7 @@
             android:id="@+id/idRbCliente"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:background="#08C4423B"
+            android:background="@color/colorSecondary"
             android:text="@string/cliente"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="#F2F2F2"
@@ -48,7 +50,7 @@
             android:id="@+id/idRbNegocio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#D9918B"
+            android:background="@color/colorSecondary"
             android:text="@string/tienda"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="#F2F2F2"
@@ -60,6 +62,7 @@
             android:id="@+id/idRbDomiciliario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorSecondary"
             android:text="@string/domicilio"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="#F2F2F2"
