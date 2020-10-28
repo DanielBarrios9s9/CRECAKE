@@ -48,10 +48,24 @@
         app:layout_constraintTop_toBottomOf="@+id/spinnerNuevoProducto" />
 
     <EditText
-        android:id="@+id/editDescripcionnuevoproducto"
-        android:inputType="textMultiLine"
+        android:id="@+id/editCantidad"
         android:layout_width="350dp"
-        android:scrollbars="vertical"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:autofillHints=""
+        android:backgroundTint="#F2F2F2"
+        android:ems="10"
+        android:hint="Cantidad"
+        android:inputType="textPersonName"
+        android:textColorHint="#F2F2F2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editPrecionuevoproducto" />
+
+    <EditText
+        android:id="@+id/editDescripcionnuevoproducto"
+        android:layout_width="350dp"
         android:layout_height="200dp"
         android:layout_marginTop="32dp"
         android:autofillHints=""
@@ -59,13 +73,16 @@
         android:ems="10"
         android:gravity="top|left"
         android:hint="Descripción del nuevo producto"
+        android:inputType="textMultiLine"
         android:lines="8"
         android:maxLines="10"
         android:minLines="6"
+        android:scrollbars="vertical"
         android:textColorHint="#F2F2F2"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editPrecionuevoproducto" />
+        app:layout_constraintTop_toBottomOf="@+id/editCantidad" />
 
     <Button
         android:id="@+id/buttonAgregarnuevoproducto"
