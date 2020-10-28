@@ -48,10 +48,7 @@ public class SubirImagen1 extends Fragment {
 
     ImageView imagen;
     Button subir, seleccionar;
-    EditText nombre;
-    EditText precio;
-    EditText descripcion;
-    int cantidad;
+    EditText nombre, precio, descripcion, cantidad;
     Spinner tipo;
     ProgressDialog cargando;
 
@@ -122,7 +119,7 @@ public class SubirImagen1 extends Fragment {
         nombre = (EditText) getActivity().findViewById(R.id.editNombrenuevoproducto);
         precio = (EditText) getActivity().findViewById(R.id.editPrecionuevoproducto);
         descripcion = (EditText) getActivity().findViewById(R.id.editDescripcionnuevoproducto);
-        cantidad = (int) Double.parseDouble(String.valueOf(getActivity().findViewById(R.id.editCantidad)));
+        cantidad = (EditText) getActivity().findViewById(R.id.editCantidad);
         tipo = (Spinner) getActivity().findViewById(R.id.spinnerNuevoProducto);
 
 
@@ -211,10 +208,11 @@ public class SubirImagen1 extends Fragment {
                                 String nombreProducto = nombre.getText().toString();
                                 String precioProducto = precio.getText().toString();
                                 String descripcionProducto = descripcion.getText().toString();
+                                String cantidadProducto = cantidad.getText().toString();
                                 String tipoProducto = (String) tipo.getItemAtPosition(tipo.getSelectedItemPosition());
 
                                 final ProductHelperClass helperClass = new ProductHelperClass(nombreProducto, precioProducto
-                                        , descripcionProducto, tipoProducto, user_name, downloadUri.toString(), cantidad);
+                                        , descripcionProducto, tipoProducto, user_name, downloadUri.toString(), cantidadProducto);
 
                                 reference.push().setValue(helperClass);
                                 cargando.dismiss();
