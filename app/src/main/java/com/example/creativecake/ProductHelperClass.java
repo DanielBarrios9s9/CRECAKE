@@ -2,7 +2,7 @@ package com.example.creativecake;
 
 public class ProductHelperClass {
     String nombre, precio, descripción, tipo, user_name, downloadUrl;
-    String cantidad;
+    String cantidad, oferta, estrellas;
 
     public ProductHelperClass() {
     }
@@ -16,6 +16,8 @@ public class ProductHelperClass {
         this.user_name = user_name;
         this.downloadUrl = downloadUrl;
         this.cantidad = cantidad;
+        oferta = " ";
+        estrellas = " ";
     }
 
     public String getNombre() {
@@ -46,7 +48,7 @@ public class ProductHelperClass {
         return tipo;
     }
 
-    public void setTipo(String telefono) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
@@ -66,11 +68,28 @@ public class ProductHelperClass {
         this.downloadUrl = downloadUrl;
     }
 
-    public String cantidad() {
+    public String getCantidadcantidad() {
         return cantidad;
     }
 
     public void setCantidad(String cantidad) {
         this.cantidad = cantidad;
     }
+
+    public String getOferta() {
+        return oferta;
+    }
+
+    public void setOferta(String oferta) {
+        this.oferta = oferta;
+    }
+
+    public String getEstrellas() {
+        return estrellas;
+    }
+
+    public void setEstrellas(String estrellas) {
+        this.estrellas = estrellas;
+    }
+
 }
