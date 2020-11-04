@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class AdaptadorProductosCarrito  extends RecyclerView.Adapter<AdaptadorProductosCarrito.ViewHolderDatos> {
+public class AdaptadorProductosCarrito  extends RecyclerView.Adapter<AdaptadorProductosCarrito.ViewHolderDatosCarrito> {
     ArrayList<p_ejemplo_carrito> listaProductos;
 
     public AdaptadorProductosCarrito(ArrayList<p_ejemplo_carrito> listaProductos) {
@@ -20,14 +20,14 @@ public class AdaptadorProductosCarrito  extends RecyclerView.Adapter<AdaptadorPr
     }
 
     @Override
-    public ViewHolderDatos onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolderDatosCarrito onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.p_ejemplo_carrito,null,false);
-        return new ViewHolderDatos(view);
+        return new ViewHolderDatosCarrito(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolderDatos holder, int position) {
-        holder.imagenProducto.setImageResource(listaProductos.get(position).getImagenProducto());
+    public void onBindViewHolder(@NonNull ViewHolderDatosCarrito holder, int position) {
+        //holder.imagenProducto.setImageResource(listaProductos.get(position).getImagenProducto());
         holder.nombreProducto.setText(listaProductos.get(position).getNombreProducto());
         holder.valorProducto.setText(listaProductos.get(position).getValorProducto());
         holder.totalItems.setText(listaProductos.get(position).getTotalItems());
@@ -39,11 +39,11 @@ public class AdaptadorProductosCarrito  extends RecyclerView.Adapter<AdaptadorPr
         return listaProductos.size();
     }
 
-    public class ViewHolderDatos extends RecyclerView.ViewHolder {
+    public class ViewHolderDatosCarrito extends RecyclerView.ViewHolder {
         ImageView imagenProducto;
         TextView nombreProducto, valorProducto, totalItems;
 
-        public ViewHolderDatos(@NonNull View itemView) {
+        public ViewHolderDatosCarrito(@NonNull View itemView) {
             super(itemView);
             imagenProducto= (ImageView) itemView.findViewById(R.id.imagen_producto);
             nombreProducto= (TextView) itemView.findViewById(R.id.nombre_producto);

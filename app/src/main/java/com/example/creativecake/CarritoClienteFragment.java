@@ -34,8 +34,6 @@ public class CarritoClienteFragment extends Fragment {
     }
 
     private void llenarLista() {
-        //Hay que comenzar a llenar con los datos de la BD
-        listaProductos.add(new p_ejemplo_carrito(R.drawable.fr_crema,"Fresas con Crema","5.000","1"));
-        listaProductos.add(new p_ejemplo_carrito(R.drawable.p_mantequilla,"Pastel Mantequilla","35.000","1"));
+        //esta es la única lista que no se llena llamando directamente a la base sino con los eventos onclick
     }
 }

@@ -27,7 +27,7 @@
                 android:id="@+id/imagen_producto"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#FFFFFF"
+                android:background="@drawable/imagenproducto"
                 android:backgroundTint="#FFFFFF"
                 android:contentDescription="@string/todo" />
         </androidx.cardview.widget.CardView>

@@ -16,5 +16,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/nav_graph_cliente" />
+        app:navGraph="@navigation/nav_graph_cliente" >
+
+        <fragment
+            android:id="@+id/fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="94dp"
+            android:layout_height="45dp"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_graph_cliente" />
+    </androidx.fragment.app.FragmentContainerView>
 </androidx.constraintlayout.widget.ConstraintLayout>

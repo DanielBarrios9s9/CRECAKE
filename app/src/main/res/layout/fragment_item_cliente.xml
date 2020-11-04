@@ -40,7 +40,7 @@
         android:layout_height="165dp"
         android:contentDescription="@string/todo"
         android:elevation="35dp"
-        android:src="@drawable/p_leches"
+        android:src="@drawable/imagenproducto"
         app:layout_constraintBottom_toBottomOf="@+id/view7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.928"

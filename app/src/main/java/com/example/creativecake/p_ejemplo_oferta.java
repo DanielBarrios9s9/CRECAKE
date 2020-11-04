@@ -1,23 +1,25 @@
 package com.example.creativecake;
 
 public class p_ejemplo_oferta {
-    private int imagenProducto;
+    private String imagenProducto;
     private String nombreProducto;
     private String valorProducto;
     private String pasteleriaProducto;
     private String ofertaProducto;
-    private double ratingProducto;
+    private String tipoProducto;
+    private String ratingProducto;
 
-    public p_ejemplo_oferta(int imagenProducto, String nombreProducto, String valorProducto, String pasteleriaProducto, String ofertaProducto, double ratingProducto){
+    public p_ejemplo_oferta(String imagenProducto, String nombreProducto, String valorProducto, String pasteleriaProducto, String ofertaProducto, String tipoProducto, String ratingProducto){
         this.imagenProducto = imagenProducto;
         this.nombreProducto = nombreProducto;
         this.valorProducto = valorProducto;
         this.pasteleriaProducto = pasteleriaProducto;
         this.ofertaProducto=ofertaProducto;
+        this.tipoProducto=tipoProducto;
         this.ratingProducto = ratingProducto;
     }
 
-    public int getImagenProducto() {
+    public String getImagenProducto() {
         return imagenProducto;
     }
 
@@ -37,7 +39,11 @@ public class p_ejemplo_oferta {
         return ofertaProducto;
     }
 
-    public double getRatingProducto() {
+    public String getTipoProducto() {
+        return tipoProducto;
+    }
+
+    public String getRatingProducto() {
         return ratingProducto;
     }
 }
