@@ -48,7 +48,7 @@
                     android:id="@+id/imagen_producto"
                     android:layout_width="match_parent"
                     android:layout_height="97dp"
-                    android:background="#FFFFFF"
+                    android:background="@drawable/imagenproducto"
                     android:contentDescription="@string/todo" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -112,6 +112,15 @@
                     android:numStars="5"
                     android:progressTint="#BF5A7F"
                     android:rating="4.0" />
+
+                <TextView
+                    android:id="@+id/tipo_producto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="tipo de producto"
+                    android:textColor="#FFFFFF"
+                    android:textSize="5sp" />
 
             </LinearLayout>
 

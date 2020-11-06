@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class AdaptadorProductoTienda extends RecyclerView.Adapter<AdaptadorProductoTienda.ViewHolderDatos> {
+public class AdaptadorProductoTienda extends RecyclerView.Adapter<AdaptadorProductoTienda.ViewHolderDatosTienda> {
     ArrayList<p_ejemplo_tienda> listaProductos;
 
     public AdaptadorProductoTienda( ArrayList<p_ejemplo_tienda> listaProductos){
@@ -19,14 +19,14 @@ public class AdaptadorProductoTienda extends RecyclerView.Adapter<AdaptadorProdu
     }
 
     @Override
-    public ViewHolderDatos onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolderDatosTienda onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.p_ejemplo_tienda,null,false);
-        return new ViewHolderDatos(view);
+        return new ViewHolderDatosTienda(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdaptadorProductoTienda.ViewHolderDatos holder, int position) {
-        holder.imagenProducto.setImageResource(listaProductos.get(position).getImagenProducto());
+    public void onBindViewHolder(@NonNull AdaptadorProductoTienda.ViewHolderDatosTienda holder, int position) {
+        //holder.imagenProducto.setImageResource(listaProductos.get(position).getImagenProducto());
         holder.nombreProducto.setText(listaProductos.get(position).getNombreProducto());
         holder.valorProducto.setText(listaProductos.get(position).getValorProducto());
         holder.ofertaProducto.setText(listaProductos.get(position).getOfertaProducto());
@@ -37,11 +37,11 @@ public class AdaptadorProductoTienda extends RecyclerView.Adapter<AdaptadorProdu
         return listaProductos.size();
     }
 
-    public class ViewHolderDatos extends RecyclerView.ViewHolder {
+    public class ViewHolderDatosTienda extends RecyclerView.ViewHolder {
         ImageView imagenProducto;
         TextView nombreProducto, valorProducto, ofertaProducto;
 
-        public ViewHolderDatos(@NonNull View itemView) {
+        public ViewHolderDatosTienda(@NonNull View itemView) {
             super(itemView);
             imagenProducto= (ImageView) itemView.findViewById(R.id.imagen_producto);
             nombreProducto= (TextView) itemView.findViewById(R.id.nombre);

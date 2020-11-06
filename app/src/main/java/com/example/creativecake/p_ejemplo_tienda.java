@@ -1,19 +1,19 @@
 package com.example.creativecake;
 
 public class p_ejemplo_tienda {
-    private int imagenProducto;
+    private String imagenProducto;
     private String nombreProducto;
     private String valorProducto;
     private String ofertaProducto;
 
-    public p_ejemplo_tienda(int imagenProducto, String nombreProducto, String valorProducto, String ofertaProducto){
+    public p_ejemplo_tienda(String imagenProducto, String nombreProducto, String valorProducto, String ofertaProducto){
         this.imagenProducto = imagenProducto;
         this.nombreProducto = nombreProducto;
         this.valorProducto = valorProducto;
         this.ofertaProducto = ofertaProducto;
     }
 
-    public int getImagenProducto() {
+    public String getImagenProducto() {
         return imagenProducto;
     }
 

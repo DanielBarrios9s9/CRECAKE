@@ -32,6 +32,7 @@ public class fragment_inventario_nuevoproducto extends Fragment {
     private EditText nombre;
     private EditText precio;
     private EditText descripcion;
+    private EditText cantidad;
     private Button agregar;
     private Spinner tipo;
 
@@ -87,6 +88,7 @@ public class fragment_inventario_nuevoproducto extends Fragment {
         nombre = (EditText) view.findViewById(R.id.editNombrenuevoproducto);
         precio = (EditText) view.findViewById(R.id.editPrecionuevoproducto);
         descripcion = (EditText) view.findViewById(R.id.editDescripcionnuevoproducto);
+        cantidad = (EditText) view.findViewById(R.id.editCantidad);
         tipo = (Spinner) view.findViewById(R.id.spinnerNuevoProducto);
         agregar = (Button) view.findViewById(R.id.buttonAgregarnuevoproducto);
 
