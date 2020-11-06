@@ -1,5 +1,6 @@
 package com.example.creativecake;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +17,8 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class UsuarioClienteFragment extends Fragment {
+
+    private TextView tvNombreGrande, etNombre, etCorreo, etPassword, etTelefono, etDireccion;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -52,7 +57,34 @@ public class UsuarioClienteFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
+            tvNombreGrande = (TextView) getActivity().findViewById(R.id.nombre);
+            etNombre = (TextView)getActivity().findViewById(R.id.idNombrePerfil);
+            etDireccion = (TextView)getActivity().findViewById(R.id.idDireccionPerfil);
+            etCorreo = (TextView)getActivity().findViewById(R.id.idCorreoPerfil);
+            etPassword = (TextView)getActivity().findViewById(R.id.idPasswordPerfil);
+            etTelefono = (TextView)getActivity().findViewById(R.id.idTelefonoPerfil);
+
+            //funcion para mostrar toda la informacion del usuario en el activity
+            mostrarInfo();
         }
+    }
+
+    private void mostrarInfo()
+    {
+        Intent intent = getActivity().getIntent();
+        String nombre = intent.getStringExtra("nombre");
+        String password = intent.getStringExtra("password");
+        String email = intent.getStringExtra("correo");
+        String direccion = intent.getStringExtra("direccion");
+        String telefono = intent.getStringExtra("telefono");
+
+        tvNombreGrande.setText(nombre);
+        etNombre.setText(nombre);
+        etPassword.setText(password);
+        etCorreo.setText(email);
+        etDireccion.setText(direccion);
+        etTelefono.setText(telefono);
     }
 
     @Override

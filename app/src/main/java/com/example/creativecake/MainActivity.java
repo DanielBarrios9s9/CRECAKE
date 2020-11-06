@@ -150,10 +150,21 @@ public class MainActivity extends AppCompatActivity {
                     etTelefono.setError(null);
 
                     String passwordfromDB = snapshot.child(numeroIngresado).child("password").getValue(String.class);
+                    String namefromDB = snapshot.child(numeroIngresado).child("nombre").getValue(String.class);
+                    String addressfromDB = snapshot.child(numeroIngresado).child("direccion").getValue(String.class);
+                    String emailfromDB = snapshot.child(numeroIngresado).child("correo").getValue(String.class);
+                    String phonefromDB = snapshot.child(numeroIngresado).child("telefono").getValue(String.class);
 
                     if (passwordfromDB.equals(passwordIngresado))
                     {
                         Intent intent = new Intent(getApplicationContext(), MainCliente.class);
+
+                        intent.putExtra("nombre", namefromDB);
+                        intent.putExtra("password", passwordfromDB);
+                        intent.putExtra("direccion", addressfromDB);
+                        intent.putExtra("correo", emailfromDB);
+                        intent.putExtra("telefono", phonefromDB);
+
                         startActivity(intent);
                         finish();
                     }else

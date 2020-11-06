@@ -202,5 +202,6 @@
         <item>Hojaldre</item>
         <item>Otro</item>
     </string-array>
+    <string name="botonModificar">Modificar</string>
 
 </resources>

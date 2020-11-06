@@ -21,6 +21,8 @@ public class MainCliente extends AppCompatActivity{
 
         this.window = getWindow();
         cambiarColor();
+
+
     }
 
     public void cambiarColor(){

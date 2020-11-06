@@ -60,7 +60,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/nombre_producto"
+        android:id="@+id/nombre"
         android:layout_width="173dp"
         android:layout_height="91dp"
         android:gravity="center"
@@ -75,196 +75,131 @@
         app:layout_constraintTop_toTopOf="@+id/view5"
         app:layout_constraintVertical_bias="0.609" />
 
-    <TableRow
-        android:id="@+id/tableRow5"
-        android:layout_width="395dp"
-        android:layout_height="70dp"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="52dp"
+        android:text="@string/nombre_cliente"
+        android:textColor="#BF5A7F"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableRow"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/view6" />
 
-        <TextView
-            android:id="@+id/textView28"
-            android:layout_width="159dp"
-            android:layout_height="wrap_content"
-            android:text="@string/direccion"
-            android:textColor="@color/colorSecondary"
-            android:textSize="35sp"
-            android:textStyle="bold" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/idDireccion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/calle_26_a_35"
-                android:inputType="text"
-                android:textColor="#E91E63" />
-        </com.google.android.material.textfield.TextInputLayout>
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow4"
-        android:layout_width="393dp"
-        android:layout_height="69dp"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/direccion"
+        android:textColor="#BF5A7F"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view6"
-        app:layout_constraintVertical_bias="0.041">
+        app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
-        <TextView
-            android:id="@+id/textView29"
-            android:layout_width="158dp"
-            android:layout_height="wrap_content"
-            android:text="@string/nombre_cliente"
-            android:textColor="@color/colorSecondary"
-            android:textSize="35sp"
-            android:textStyle="bold" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/idNombre"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/juan_rodriguez"
-                android:inputType="textPersonName"
-                android:textColor="#E91E63" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow3"
-        android:layout_width="393dp"
-        android:layout_height="67dp"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/correo"
+        android:textColor="#BF5A7F"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableRow4"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
-        <TextView
-            android:id="@+id/textView25"
-            android:layout_width="158dp"
-            android:layout_height="wrap_content"
-            android:text="@string/correo"
-            android:textColor="@color/colorSecondary"
-            android:textSize="35sp"
-            android:textStyle="bold" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/idCorreo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/juan38_gmail_com"
-                android:inputType="textWebEmailAddress|textEmailAddress"
-                android:textColor="#E91E63" />
-        </com.google.android.material.textfield.TextInputLayout>
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow2"
-        android:layout_width="391dp"
-        android:layout_height="61dp"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/password"
+        android:textColor="#BF5A7F"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableRow3"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/textView26" />
 
-        <TextView
-            android:id="@+id/textView26"
-            android:layout_width="165dp"
-            android:layout_height="wrap_content"
-            android:text="@string/contraseña"
-            android:textColor="@color/colorSecondary"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/idContraseña"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/____"
-                android:inputType="textPassword"
-                android:textColor="#E91E63" />
-        </com.google.android.material.textfield.TextInputLayout>
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow"
-        android:layout_width="393dp"
-        android:layout_height="59dp"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/telefono"
+        android:textColor="#BF5A7F"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableRow2"
-        app:layout_constraintVertical_bias="0.0">
-
-        <TextView
-            android:id="@+id/textView27"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:text="@string/telefono"
-            android:textColor="@color/colorSecondary"
-            android:textSize="35sp"
-            android:textStyle="bold" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/idTelefono"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/_3153456789"
-                android:inputType="phone"
-                android:textColor="#E91E63" />
-        </com.google.android.material.textfield.TextInputLayout>
-    </TableRow>
+        app:layout_constraintTop_toBottomOf="@+id/textView27" />
 
     <Button
-        android:id="@+id/btn_revisar"
-        android:layout_width="204dp"
-        android:layout_height="43dp"
-        android:background="@drawable/redondez_botones"
-        android:backgroundTintMode="multiply"
-        android:elevation="100sp"
-        android:gravity="center"
-        android:text="@string/guardar_cambios"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/idBotonModificar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="165dp"
+        android:background="@drawable/redondez_botones_daniel"
+        android:text="@string/botonModificar"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableRow5"
-        app:layout_constraintVertical_bias="0.46" />
+        app:layout_constraintTop_toBottomOf="@+id/idTelefonoPerfil" />
+
+    <TextView
+        android:id="@+id/idNombrePerfil"
+        android:layout_width="180dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="57dp"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view6" />
+
+    <TextView
+        android:id="@+id/idDireccionPerfil"
+        android:layout_width="180dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="57dp"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idNombrePerfil" />
+
+    <TextView
+        android:id="@+id/idCorreoPerfil"
+        android:layout_width="180dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="57dp"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idDireccionPerfil" />
+
+    <TextView
+        android:id="@+id/idPasswordPerfil"
+        android:layout_width="180dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="57dp"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idCorreoPerfil" />
+
+    <TextView
+        android:id="@+id/idTelefonoPerfil"
+        android:layout_width="180dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="57dp"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idPasswordPerfil" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

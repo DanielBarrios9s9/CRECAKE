@@ -4,7 +4,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -46,7 +45,7 @@ public class AdaptadorProductosCarrito  extends RecyclerView.Adapter<AdaptadorPr
         public ViewHolderDatos(@NonNull View itemView) {
             super(itemView);
             imagenProducto= (ImageView) itemView.findViewById(R.id.imagen_producto);
-            nombreProducto= (TextView) itemView.findViewById(R.id.nombre_producto);
+            nombreProducto= (TextView) itemView.findViewById(R.id.nombre);
             valorProducto= (TextView) itemView.findViewById(R.id.precio_producto);
             totalItems= (TextView) itemView.findViewById(R.id.total_item);
         }
