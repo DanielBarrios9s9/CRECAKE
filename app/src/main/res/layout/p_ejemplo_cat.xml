@@ -95,13 +95,23 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="tipo de producto"
+                    android:text=""
                     android:textColor="#FFFFFF"
                     android:textSize="5sp" />
 
+                <TextView
+                    android:id="@+id/oferta_producto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/_tip_producto"
+                    android:textColor="#FFFFFF"
+                    android:textSize="5sp" />
+
+
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>*/
 
     </TableRow>
 
