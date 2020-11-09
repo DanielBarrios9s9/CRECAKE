@@ -1,14 +1,13 @@
 package com.example.creativecake;
 
 public class ProductHelperClass {
-    String nombre, precio, descripción, tipo, user_name, downloadUrl;
-    String cantidad;
+    String nombre, precio, descripción, tipo, user_name, downloadUrl, cantidad, oferta, rating;
 
     public ProductHelperClass() {
     }
 
     public ProductHelperClass(String nombre, String precio, String descripción,
-                              String tipo, String user_name, String downloadUrl, String cantidad) {
+                              String tipo, String user_name, String downloadUrl, String cantidad, String oferta, String rating ) {
         this.nombre = nombre;
         this.precio = precio;
         this.descripción = descripción;
@@ -16,6 +15,8 @@ public class ProductHelperClass {
         this.user_name = user_name;
         this.downloadUrl = downloadUrl;
         this.cantidad = cantidad;
+        this.oferta= oferta;
+        this.rating=rating;
     }
 
     public String getNombre() {
@@ -72,5 +73,25 @@ public class ProductHelperClass {
 
     public void setCantidad(String cantidad) {
         this.cantidad = cantidad;
+    }
+
+    public String getCantidad() {
+        return cantidad;
+    }
+
+    public String getOferta() {
+        return oferta;
+    }
+
+    public void setOferta(String oferta) {
+        this.oferta = oferta;
+    }
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
     }
 }

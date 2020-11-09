@@ -35,6 +35,7 @@ public class fragment_inventario_nuevoproducto extends Fragment {
     private EditText cantidad;
     private Button agregar;
     private Spinner tipo;
+    private EditText oferta;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -90,6 +91,7 @@ public class fragment_inventario_nuevoproducto extends Fragment {
         descripcion = (EditText) view.findViewById(R.id.editDescripcionnuevoproducto);
         cantidad = (EditText) view.findViewById(R.id.editCantidad);
         tipo = (Spinner) view.findViewById(R.id.spinnerNuevoProducto);
+        oferta = (EditText) view.findViewById(R.id.ofertaNuevaProducto);
         agregar = (Button) view.findViewById(R.id.buttonAgregarnuevoproducto);
 
 

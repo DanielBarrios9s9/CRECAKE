@@ -10,12 +10,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -29,8 +31,8 @@ import java.util.ArrayList;
 public class CatalogoClienteFragment extends Fragment {
     private RecyclerView recyclerProductos;
     private DatabaseReference datosCatRef;
-    private FirebaseAuth mAuth;
-    private String currentUserID;
+    CheckBox tipoTorta, tipoPostre, tipoHojaldre, tipoOtro;
+    TextInputEditText precio;
 
     public CatalogoClienteFragment() {
         // Required empty public constructor
@@ -43,10 +45,12 @@ public class CatalogoClienteFragment extends Fragment {
         recyclerProductos = vista.findViewById(R.id.recyclerview);
         recyclerProductos.setLayoutManager(new LinearLayoutManager(getContext()));
         
-        mAuth=FirebaseAuth.getInstance();
-        currentUserID= mAuth.getCurrentUser().getUid();
-        
-        datosCatRef= FirebaseDatabase.getInstance().getReference().child("productoTienda").child(currentUserID);
+        datosCatRef= FirebaseDatabase.getInstance().getReference().child("productoTienda");
+
+        tipoTorta = (CheckBox) vista.findViewById(R.id.checkTorta);
+        tipoPostre = (CheckBox) vista.findViewById(R.id.checkPostre);
+        tipoHojaldre = (CheckBox) vista.findViewById(R.id.checkHojaldre);
+        tipoOtro = (CheckBox) vista.findViewById(R.id.checkOtro);
 
         return vista;
     }
@@ -68,37 +72,94 @@ public class CatalogoClienteFragment extends Fragment {
             protected void onBindViewHolder(@NonNull final ViewHolderDatos holder, int i, @NonNull p_ejemplo_cat p_ejemplo_cat) {
                 final String productosIDs= getRef(i).getKey();
 
-                datosCatRef.child(productosIDs).addValueEventListener(new ValueEventListener() {
+                datosCatRef.child(productosIDs);
+                datosCatRef.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if (snapshot.hasChild("downloadUrl")){
-                            String imagenProducto = snapshot.child("downloadUrl").getValue().toString();
-                            String nombreProducto = snapshot.child("nombre").getValue().toString();
-                            String valorProducto = snapshot.child("precio").getValue().toString();
-                            String pasteleriaProducto = snapshot.child("user_name").getValue().toString();
-                            String tipoProducto = snapshot.child("tipo").getValue().toString();
-                            String ratingProducto = snapshot.child("").getValue().toString();  //ojo
+                        if (snapshot.child("oferta").getValue().toString() == " "){
+                            if (tipoTorta.isChecked()) {
+                                if (snapshot.child("tipo").getValue().toString() == "Torta") {
+                                    String imagenProducto = snapshot.child("downloadUrl").getValue().toString();
+                                    String nombreProducto = snapshot.child("nombre").getValue().toString();
+                                    String valorProducto = snapshot.child("precio").getValue().toString();
+                                    String pasteleriaProducto = snapshot.child("user_name").getValue().toString();
+                                    String tipoProducto = "Torta";
+                                    String ratingProducto = snapshot.child("rating").getValue().toString();
 
-                            Picasso.get().load(imagenProducto).placeholder(R.drawable.imagenproducto).into(holder.imagenProducto);
-                            holder.nombreProducto.setText(nombreProducto);
-                            holder.valorProducto.setText(valorProducto);
-                            holder.pasteleriaProducto.setText(pasteleriaProducto);
-                            holder.tipoProducto.setText(tipoProducto);
-                            holder.ratingProducto.setNumStars(Integer.valueOf(ratingProducto));
-                        }
-                        //hacer el filtro de oferta, de tipo de producto y de rango de precio
-                        else {
-                            String nombreProducto = snapshot.child("nombre").getValue().toString();
-                            String valorProducto = snapshot.child("precio").getValue().toString();
-                            String pasteleriaProducto = snapshot.child("user_name").getValue().toString();
-                            String tipoProducto = snapshot.child("tipo").getValue().toString();
-                            String ratingProducto = snapshot.child("").getValue().toString();  //ojo
+                                    Picasso.get().load(imagenProducto).placeholder(R.drawable.imagenproducto).into(holder.imagenProducto);
+                                    holder.nombreProducto.setText(nombreProducto);
+                                    holder.valorProducto.setText(valorProducto);
+                                    holder.pasteleriaProducto.setText(pasteleriaProducto);
+                                    holder.tipoProducto.setText(tipoProducto);
+                                    holder.ratingProducto.setNumStars(Integer.valueOf(ratingProducto));
+                                }
+                            }
+                            else if (tipoPostre.isChecked()){
+                                if (snapshot.child("tipo").getValue().toString() == "Postre"){
+                                    String imagenProducto = snapshot.child("downloadUrl").getValue().toString();
+                                    String nombreProducto = snapshot.child("nombre").getValue().toString();
+                                    String valorProducto = snapshot.child("precio").getValue().toString();
+                                    String pasteleriaProducto = snapshot.child("user_name").getValue().toString();
+                                    String tipoProducto = "Postre";
+                                    String ratingProducto = snapshot.child("rating").getValue().toString();
 
-                            holder.nombreProducto.setText(nombreProducto);
-                            holder.valorProducto.setText(valorProducto);
-                            holder.pasteleriaProducto.setText(pasteleriaProducto);
-                            holder.tipoProducto.setText(tipoProducto);
-                            holder.ratingProducto.setNumStars(Integer.valueOf(ratingProducto));
+                                    Picasso.get().load(imagenProducto).placeholder(R.drawable.imagenproducto).into(holder.imagenProducto);
+                                    holder.nombreProducto.setText(nombreProducto);
+                                    holder.valorProducto.setText(valorProducto);
+                                    holder.pasteleriaProducto.setText(pasteleriaProducto);
+                                    holder.tipoProducto.setText(tipoProducto);
+                                    holder.ratingProducto.setNumStars(Integer.valueOf(ratingProducto));
+                                }
+                            }
+                            else if (tipoHojaldre.isChecked()){
+                                if (snapshot.child("tipo").getValue().toString() == "Hojaldre"){
+                                    String imagenProducto = snapshot.child("downloadUrl").getValue().toString();
+                                    String nombreProducto = snapshot.child("nombre").getValue().toString();
+                                    String valorProducto = snapshot.child("precio").getValue().toString();
+                                    String pasteleriaProducto = snapshot.child("user_name").getValue().toString();
+                                    String tipoProducto = "Hojaldre";
+                                    String ratingProducto = snapshot.child("rating").getValue().toString();
+
+                                    Picasso.get().load(imagenProducto).placeholder(R.drawable.imagenproducto).into(holder.imagenProducto);
+                                    holder.nombreProducto.setText(nombreProducto);
+                                    holder.valorProducto.setText(valorProducto);
+                                    holder.pasteleriaProducto.setText(pasteleriaProducto);
+                                    holder.tipoProducto.setText(tipoProducto);
+                                    holder.ratingProducto.setNumStars(Integer.valueOf(ratingProducto));
+                                }
+                            }
+                            else if (tipoOtro.isChecked()){
+                                if (snapshot.child("tipo").getValue().toString() == "Otro"){
+                                    String imagenProducto = snapshot.child("downloadUrl").getValue().toString();
+                                    String nombreProducto = snapshot.child("nombre").getValue().toString();
+                                    String valorProducto = snapshot.child("precio").getValue().toString();
+                                    String pasteleriaProducto = snapshot.child("user_name").getValue().toString();
+                                    String tipoProducto = "Otro";
+                                    String ratingProducto = snapshot.child("rating").getValue().toString();
+
+                                    Picasso.get().load(imagenProducto).placeholder(R.drawable.imagenproducto).into(holder.imagenProducto);
+                                    holder.nombreProducto.setText(nombreProducto);
+                                    holder.valorProducto.setText(valorProducto);
+                                    holder.pasteleriaProducto.setText(pasteleriaProducto);
+                                    holder.tipoProducto.setText(tipoProducto);
+                                    holder.ratingProducto.setNumStars(Integer.valueOf(ratingProducto));
+                                }
+                            }
+                            else{
+                                String imagenProducto = snapshot.child("downloadUrl").getValue().toString();
+                                String nombreProducto = snapshot.child("nombre").getValue().toString();
+                                String valorProducto = snapshot.child("precio").getValue().toString();
+                                String pasteleriaProducto = snapshot.child("user_name").getValue().toString();
+                                String tipoProducto = snapshot.child("tipo").getValue().toString();;
+                                String ratingProducto = snapshot.child("rating").getValue().toString();
+
+                                Picasso.get().load(imagenProducto).placeholder(R.drawable.imagenproducto).into(holder.imagenProducto);
+                                holder.nombreProducto.setText(nombreProducto);
+                                holder.valorProducto.setText(valorProducto);
+                                holder.pasteleriaProducto.setText(pasteleriaProducto);
+                                holder.tipoProducto.setText(tipoProducto);
+                                holder.ratingProducto.setNumStars(Integer.valueOf(ratingProducto));
+                            }
                         }
                     }
 

@@ -100,7 +100,7 @@
         app:layout_constraintVertical_bias="0.099">
 
         <CheckBox
-            android:id="@+id/checkBox"
+            android:id="@+id/checkTorta"
             style="@android:style/Widget.Material.Light.CompoundButton.CheckBox"
             android:layout_width="96dp"
             android:layout_height="wrap_content"
@@ -112,7 +112,7 @@
             android:textSize="18sp" />
 
         <CheckBox
-            android:id="@+id/checkBox2"
+            android:id="@+id/checkPostre"
             android:layout_width="104dp"
             android:layout_height="match_parent"
             android:buttonTint="#BF5A7F"
@@ -121,7 +121,7 @@
             android:textSize="18sp" />
 
         <CheckBox
-            android:id="@+id/checkBox3"
+            android:id="@+id/checkHojaldre"
             android:layout_width="114dp"
             android:layout_height="match_parent"
             android:buttonTint="#BF5A7F"
@@ -130,7 +130,7 @@
             android:textSize="18sp" />
 
         <CheckBox
-            android:id="@+id/checkBox4"
+            android:id="@+id/checkOtro"
             android:layout_width="95dp"
             android:layout_height="match_parent"
             android:buttonTint="#BF5A7F"
