@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    android:layout_width="400dp"
+    android:layout_height="180dp"
     android:background="#FFFFFF"
-    style="@style/Theme.AppCompat.Light.NoActionBar">
+    android:orientation="vertical">
 
     <TableRow
         android:id="@+id/tabla_lista"
         android:layout_width="match_parent"
-        android:layout_height="169dp">
+        android:layout_height="161dp">
 
         <androidx.cardview.widget.CardView
             style="@style/Theme.AppCompat.Light.NoActionBar"
             android:layout_width="150dp"
-            android:layout_height="130dp"
+            android:layout_height="150dp"
             android:layout_margin="10dp"
             android:layout_marginStart="10dp"
             android:background="#FFFFFF"
@@ -28,14 +27,13 @@
                 android:id="@+id/imagen_producto"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/imagenproducto"
                 android:contentDescription="@string/todo" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             style="@style/Theme.AppCompat.Light.NoActionBar"
-            android:layout_width="227dp"
-            android:layout_height="130dp"
+            android:layout_width="210dp"
+            android:layout_height="150dp"
             android:layout_margin="10dp"
             android:layout_marginStart="10dp"
             android:background="#FFFFFF"
@@ -111,7 +109,8 @@
 
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>*/
+        </androidx.cardview.widget.CardView>
+        */
 
     </TableRow>
 
