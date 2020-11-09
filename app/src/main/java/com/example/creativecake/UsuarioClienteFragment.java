@@ -11,63 +11,39 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link UsuarioClienteFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class UsuarioClienteFragment extends Fragment {
 
     private TextView tvNombreGrande, etNombre, etCorreo, etPassword, etTelefono, etDireccion;
+    private View UsuarioView;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public UsuarioClienteFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment UsuarioClienteFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static UsuarioClienteFragment newInstance(String param1, String param2) {
-        UsuarioClienteFragment fragment = new UsuarioClienteFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+
+    public View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
+        UsuarioView = inflater.inflate(R.layout.fragment_usuario_cliente, container, false);
+
+        tvNombreGrande = (TextView) UsuarioView.findViewById(R.id.nombre);
+        etNombre = (TextView)UsuarioView.findViewById(R.id.idNombrePerfil);
+        etDireccion = (TextView)UsuarioView.findViewById(R.id.idDireccionPerfil);
+        etCorreo = (TextView)UsuarioView.findViewById(R.id.idCorreoPerfil);
+        etPassword = (TextView)UsuarioView.findViewById(R.id.idPasswordPerfil);
+        etTelefono = (TextView)UsuarioView.findViewById(R.id.idTelefonoPerfil);
+
+        //funcion para mostrar toda la informacion del usuario en el activity
+        mostrarInfo();
+        return UsuarioView;
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+    public void onStart() {
+        super.onStart();
 
-            tvNombreGrande = (TextView) getActivity().findViewById(R.id.nombre);
-            etNombre = (TextView)getActivity().findViewById(R.id.idNombrePerfil);
-            etDireccion = (TextView)getActivity().findViewById(R.id.idDireccionPerfil);
-            etCorreo = (TextView)getActivity().findViewById(R.id.idCorreoPerfil);
-            etPassword = (TextView)getActivity().findViewById(R.id.idPasswordPerfil);
-            etTelefono = (TextView)getActivity().findViewById(R.id.idTelefonoPerfil);
-
-            //funcion para mostrar toda la informacion del usuario en el activity
-            mostrarInfo();
-        }
     }
 
     private void mostrarInfo()
