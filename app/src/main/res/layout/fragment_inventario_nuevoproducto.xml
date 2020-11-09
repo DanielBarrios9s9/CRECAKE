@@ -1,73 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".fragment_inventario_nuevoproducto">
 
     <EditText
         android:id="@+id/editNombrenuevoproducto"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
         android:autofillHints=""
         android:backgroundTint="#F2F2F2"
         android:ems="10"
         android:hint="@string/nombre_del_producto"
         android:inputType="textPersonName"
         android:textColorHint="#F2F2F2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_margin="20dp"/>
 
     <Spinner
         android:id="@+id/spinnerNuevoProducto"
         android:layout_width="355dp"
         android:layout_height="37dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editNombrenuevoproducto" />
+        android:layout_margin="20dp"/>
 
     <EditText
         android:id="@+id/editPrecionuevoproducto"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:autofillHints=""
         android:backgroundTint="#F2F2F2"
         android:ems="10"
         android:hint="Precio"
         android:inputType="textPersonName"
         android:textColorHint="#F2F2F2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerNuevoProducto" />
+        android:layout_margin="20dp"/>
 
     <EditText
         android:id="@+id/editCantidad"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:autofillHints=""
         android:backgroundTint="#F2F2F2"
         android:ems="10"
         android:hint="Cantidad"
         android:inputType="textPersonName"
         android:textColorHint="#F2F2F2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.54"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editPrecionuevoproducto" />
+        android:layout_margin="20dp"/>
 
     <EditText
         android:id="@+id/editDescripcionnuevoproducto"
-        android:layout_width="350dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:autofillHints=""
         android:backgroundTint="#F2F2F2"
         android:ems="10"
@@ -79,22 +65,16 @@
         android:minLines="6"
         android:scrollbars="vertical"
         android:textColorHint="#F2F2F2"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editCantidad" />
+        android:layout_margin="20dp"/>
 
     <Button
         android:id="@+id/buttonAgregarnuevoproducto"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
         android:backgroundTint="@color/colorSecondary"
         android:text="@string/siguiente"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_margin="20dp"/>
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

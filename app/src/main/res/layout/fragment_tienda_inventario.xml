@@ -1,74 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     android:layout_height="match_parent">
-    tools:context=".fragment_tienda_inventario">
 
     <Button
         android:id="@+id/botonEliminar"
         android:layout_width="250sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_gravity="center"
+        android:layout_margin="25dp"
         android:background="@drawable/redondez_botones_daniel"
         android:text="@string/txtInvenEliminar"
         android:textColor="#F2F2F2"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/botonAgregar" />
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/botonAgregar"
         android:layout_width="250sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_gravity="center"
+        android:layout_margin="25dp"
         android:background="@drawable/redondez_botones_daniel"
         android:text="@string/txtInvenAgregar"
         android:textColor="#F2F2F2"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/botonVisualizar" />
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/botonVisualizar"
         android:layout_width="250sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
+        android:layout_gravity="center"
         android:background="@drawable/redondez_botones_daniel"
         android:text="@string/txtInvenVisualizar"
         android:textColor="#F2F2F2"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_margin="25dp"
+        android:textSize="20sp"/>
 
     <Button
         android:id="@+id/botonModCantidad"
         android:layout_width="250sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_gravity="center"
         android:background="@drawable/redondez_botones_daniel"
         android:text="@string/txtInvenModCantidad"
         android:textColor="#F2F2F2"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/botonEditar" />
+        android:layout_margin="25dp"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/botonEditar"
         android:layout_width="250sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
         android:background="@drawable/redondez_botones_daniel"
         android:text="@string/txtInvenEditar"
         android:textColor="#F2F2F2"
+        android:layout_margin="25dp"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/botonEliminar" />
+        android:layout_gravity="center" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
