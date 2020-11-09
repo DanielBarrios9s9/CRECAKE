@@ -12,9 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class AdaptadorProductoTienda extends RecyclerView.Adapter<AdaptadorProductoTienda.ViewHolderDatosTienda> {
-    ArrayList<p_ejemplo_tienda> listaProductos;
+    ArrayList<producto_ejemplo> listaProductos;
 
-    public AdaptadorProductoTienda( ArrayList<p_ejemplo_tienda> listaProductos){
+    public AdaptadorProductoTienda( ArrayList<producto_ejemplo> listaProductos){
         this.listaProductos = listaProductos;
     }
 
@@ -27,9 +27,9 @@ public class AdaptadorProductoTienda extends RecyclerView.Adapter<AdaptadorProdu
     @Override
     public void onBindViewHolder(@NonNull AdaptadorProductoTienda.ViewHolderDatosTienda holder, int position) {
         //holder.imagenProducto.setImageResource(listaProductos.get(position).getImagenProducto());
-        holder.nombreProducto.setText(listaProductos.get(position).getNombreProducto());
-        holder.valorProducto.setText(listaProductos.get(position).getValorProducto());
-        holder.ofertaProducto.setText(listaProductos.get(position).getOfertaProducto());
+        //holder.nombreProducto.setText(listaProductos.get(position).getNombreProducto());
+        //holder.valorProducto.setText(listaProductos.get(position).getValorProducto());
+        //holder.ofertaProducto.setText(listaProductos.get(position).getOfertaProducto());
     }
 
     @Override

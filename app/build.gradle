@@ -24,8 +24,6 @@ android {
 }
 
 dependencies {
-    implementation 'com.theartofdev.edmodo:android-image-cropper:'
-
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'id.zelory:compressor:2.1.0'
     implementation 'com.google.firebase:firebase-storage:19.2.0'
@@ -57,7 +55,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-gcm:17.0.0'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'com.google.android.gms:play-services-location:17.1.0'
-    implementation 'com.google.android.gms:play-services-ads:19.5.0'
+    //implementation 'com.google.android.gms:play-services-ads:19.5.0'
     implementation 'com.google.android.gms:play-services-auth:18.1.0'
     implementation 'com.google.android.gms:play-services-gcm:17.0.0'
 

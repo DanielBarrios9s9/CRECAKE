@@ -29,8 +29,6 @@ import java.util.ArrayList;
 public class OfertasClienteFragment extends Fragment {
     private RecyclerView recyclerProductos;
     private DatabaseReference datosOffRef;
-    private FirebaseAuth mAuth;
-    private String currentUserID;
 
     public OfertasClienteFragment() {
     }
@@ -42,19 +40,16 @@ public class OfertasClienteFragment extends Fragment {
         recyclerProductos = vista.findViewById(R.id.recyclerviewOfertas);
         recyclerProductos.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        mAuth=FirebaseAuth.getInstance();
-        currentUserID= mAuth.getCurrentUser().getUid();
-
-        datosOffRef= FirebaseDatabase.getInstance().getReference().child("productoTienda").child(currentUserID);
+        datosOffRef= FirebaseDatabase.getInstance().getReference().child("productoTienda");
 
         return vista;
     }
-
+    /*
     @Override
     public void onStart() {
         super.onStart();
-        FirebaseRecyclerOptions opciones = new FirebaseRecyclerOptions.Builder<p_ejemplo_oferta>().setQuery(datosOffRef,p_ejemplo_oferta.class).build();
-        FirebaseRecyclerAdapter<p_ejemplo_oferta, ViewHolderDatosOferta> adapter = new FirebaseRecyclerAdapter<p_ejemplo_oferta, ViewHolderDatosOferta>(opciones){
+        FirebaseRecyclerOptions opciones = new FirebaseRecyclerOptions.Builder<producto_ejemplo>().setQuery(datosOffRef,p_ejemplo_oferta.class).build();
+        FirebaseRecyclerAdapter<producto_ejemplo, ViewHolderDatosOferta> adapter = new FirebaseRecyclerAdapter<p_ejemplo_oferta, ViewHolderDatosOferta>(opciones){
 
             @NonNull
             @Override
@@ -94,7 +89,7 @@ public class OfertasClienteFragment extends Fragment {
                             String pasteleriaProducto = snapshot.child("user_name").getValue().toString();
                             String tipoProducto = snapshot.child("tipo").getValue().toString();
                             String ofertaProducto = snapshot.child("oferta").getValue().toString();
-                            String ratingProducto = snapshot.child("").getValue().toString();  //ojo
+                            String ratingProducto = snapshot.child("rating").getValue().toString();  //ojo
 
                             holder.nombreProducto.setText(nombreProducto);
                             holder.valorProducto.setText(valorProducto);
@@ -133,5 +128,5 @@ public class OfertasClienteFragment extends Fragment {
             tipoProducto= (TextView) itemView.findViewById(R.id.tipo_producto);
             ratingProducto= (RatingBar) itemView.findViewById(R.id.rating_producto);
         }
-    }
+    }*/
 }

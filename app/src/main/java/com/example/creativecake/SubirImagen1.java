@@ -98,7 +98,7 @@ public class SubirImagen1 extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
 
         Intent intent1 = getActivity().getIntent();
-        final String user_name = intent1.getStringExtra("nombreIngresado");
+        final String user_name = "Pastelería " + intent1.getStringExtra("nombreIngresado");
 
         if(requestCode == PICK_PHOTO && resultCode == Activity.RESULT_OK && data != null && data.getData() != null){
 
