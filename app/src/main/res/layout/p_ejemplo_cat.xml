@@ -86,7 +86,7 @@
                     android:isIndicator="true"
                     android:numStars="5"
                     android:progressTint="#BF5A7F"
-                    android:rating="4.0" />
+                    android:rating="4.5" />
 
                 <TextView
                     android:id="@+id/tipo_producto"

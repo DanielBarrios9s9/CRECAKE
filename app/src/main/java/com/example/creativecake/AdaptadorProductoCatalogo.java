@@ -37,7 +37,7 @@ public class AdaptadorProductoCatalogo extends RecyclerView.Adapter<AdaptadorPro
         holder.pasteleriaProducto.setText(producto.getUser_name());
         holder.tipoProducto.setText(producto.getTipo());
         holder.ofertaProducto.setText(producto.getOferta());
-        //holder.ratingProducto.setNumStars(Integer.valueOf(producto.getRating()));
+        holder.ratingProducto.setRating(Float.parseFloat(producto.getRating()));
     }
 
     @Override

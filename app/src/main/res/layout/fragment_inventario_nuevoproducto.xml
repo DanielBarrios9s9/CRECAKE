@@ -30,13 +30,13 @@
         android:id="@+id/editPrecionuevoproducto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="15dp"
         android:autofillHints=""
         android:backgroundTint="#F2F2F2"
         android:ems="10"
-        android:hint="Precio"
-        android:inputType="textPersonName"
-        android:textColorHint="#F2F2F2"
-        android:layout_margin="15dp"/>
+        android:hint="@string/precio_producto"
+        android:inputType="number"
+        android:textColorHint="#F2F2F2" />
 
     <EditText
         android:id="@+id/editCantidad"
@@ -45,8 +45,8 @@
         android:autofillHints=""
         android:backgroundTint="#F2F2F2"
         android:ems="10"
-        android:hint="Cantidad"
-        android:inputType="textPersonName"
+        android:hint="@string/cantidad"
+        android:inputType="number"
         android:textColorHint="#F2F2F2"
         android:layout_margin="15dp"/>
 
@@ -54,30 +54,30 @@
         android:id="@+id/ofertaNuevaProducto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="15dp"
         android:autofillHints=""
         android:backgroundTint="#F2F2F2"
         android:ems="10"
-        android:hint="Oferta"
-        android:inputType="textPersonName"
-        android:textColorHint="#F2F2F2"
-        android:layout_margin="15dp"/>
+        android:hint="@string/_oferta"
+        android:inputType="number"
+        android:textColorHint="#F2F2F2" />
 
     <EditText
         android:id="@+id/editDescripcionnuevoproducto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
         android:autofillHints=""
         android:backgroundTint="#F2F2F2"
         android:ems="10"
-        android:gravity="top|left"
-        android:hint="Descripción del nuevo producto"
+        android:gravity="start|end"
+        android:hint="@string/descripci_n_del_nuevo_producto"
         android:inputType="textMultiLine"
         android:lines="8"
         android:maxLines="10"
         android:minLines="6"
         android:scrollbars="vertical"
-        android:textColorHint="#F2F2F2"
-        android:layout_margin="20dp"/>
+        android:textColorHint="#F2F2F2" />
 
     <Button
         android:id="@+id/buttonAgregarnuevoproducto"
