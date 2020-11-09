@@ -18,13 +18,13 @@
         android:hint="@string/nombre_del_producto"
         android:inputType="textPersonName"
         android:textColorHint="#F2F2F2"
-        android:layout_margin="20dp"/>
+        android:layout_margin="15dp"/>
 
     <Spinner
         android:id="@+id/spinnerNuevoProducto"
         android:layout_width="355dp"
         android:layout_height="37dp"
-        android:layout_margin="20dp"/>
+        android:layout_margin="15dp"/>
 
     <EditText
         android:id="@+id/editPrecionuevoproducto"
@@ -36,7 +36,7 @@
         android:hint="Precio"
         android:inputType="textPersonName"
         android:textColorHint="#F2F2F2"
-        android:layout_margin="20dp"/>
+        android:layout_margin="15dp"/>
 
     <EditText
         android:id="@+id/editCantidad"
@@ -48,23 +48,19 @@
         android:hint="Cantidad"
         android:inputType="textPersonName"
         android:textColorHint="#F2F2F2"
-        android:layout_margin="20dp"/>
+        android:layout_margin="15dp"/>
 
     <EditText
         android:id="@+id/ofertaNuevaProducto"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:autofillHints=""
         android:backgroundTint="#F2F2F2"
         android:ems="10"
         android:hint="Oferta"
         android:inputType="textPersonName"
         android:textColorHint="#F2F2F2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_margin="15dp"/>
 
     <EditText
         android:id="@+id/editDescripcionnuevoproducto"
