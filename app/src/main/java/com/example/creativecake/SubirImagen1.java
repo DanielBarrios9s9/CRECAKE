@@ -60,6 +60,25 @@ public class SubirImagen1 extends Fragment {
         // Required empty public constructor
     }
 
+    public static SubirImagen1 newInstance(String param1, String param2) {
+        SubirImagen1 fragment = new SubirImagen1();
+        Bundle args = new Bundle();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+        }
+
+        globalContext = this.getActivity();
+        cargando = new ProgressDialog(globalContext);
+
+
+    }
+
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -71,8 +90,9 @@ public class SubirImagen1 extends Fragment {
         imagen = (ImageView) main.findViewById(R.id.img_foto);
         nombre = (EditText) getActivity().findViewById(R.id.editNombrenuevoproducto);
         precio = (EditText) getActivity().findViewById(R.id.editPrecionuevoproducto);
-        descripcion = (EditText) getActivity().findViewById(R.id.editDescripcionnuevoproducto);
+        descripcion = (EditText) getActivity().findViewById(R.id.ofertaNuevaProducto);
         cantidad = (EditText) getActivity().findViewById(R.id.editCantidad);
+        oferta = (EditText) getActivity().findViewById(R.id.editDescripcionnuevoproducto);
         tipo = (Spinner) getActivity().findViewById(R.id.spinnerNuevoProducto);
 
 
