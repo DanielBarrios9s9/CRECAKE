@@ -130,6 +130,7 @@
 
     <!--strings de oferta cliente-->
     <string name="_oferta">Porcentaje Oferta</string>
+    <string name="_tip_producto">Tipo de Producto</string>
 
     <!-- algunos strings de item cliente-->
     <string name="calle_76b_87_95">Calle 76B #87-95</string>

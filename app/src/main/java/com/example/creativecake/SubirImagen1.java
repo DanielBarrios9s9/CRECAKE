@@ -39,18 +39,14 @@ import com.google.firebase.storage.UploadTask;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SubirImagen1#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class SubirImagen1 extends Fragment {
 
     ImageView imagen;
     Button subir, seleccionar;
-    EditText nombre, precio, descripcion, cantidad;
+    EditText nombre, precio, descripcion, cantidad, oferta;
     Spinner tipo;
     ProgressDialog cargando;
+    String ratingProducto;
 
     private Context globalContext = null;
 
@@ -60,51 +56,8 @@ public class SubirImagen1 extends Fragment {
 
     private final int PICK_PHOTO = 1;
 
-
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
     public SubirImagen1() {
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SubirImagen1.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static SubirImagen1 newInstance(String param1, String param2) {
-        SubirImagen1 fragment = new SubirImagen1();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-
-        globalContext = this.getActivity();
-        cargando = new ProgressDialog(globalContext);
-
-
     }
 
     @Override
@@ -145,7 +98,7 @@ public class SubirImagen1 extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
 
         Intent intent1 = getActivity().getIntent();
-        final String user_name = intent1.getStringExtra("nombreIngresado");
+        final String user_name = "Pastelería " + intent1.getStringExtra("nombreIngresado");
 
         if(requestCode == PICK_PHOTO && resultCode == Activity.RESULT_OK && data != null && data.getData() != null){
 
@@ -210,9 +163,10 @@ public class SubirImagen1 extends Fragment {
                                 String descripcionProducto = descripcion.getText().toString();
                                 String cantidadProducto = cantidad.getText().toString();
                                 String tipoProducto = (String) tipo.getItemAtPosition(tipo.getSelectedItemPosition());
+                                String ofertaProducto = oferta.getText().toString();;
 
                                 final ProductHelperClass helperClass = new ProductHelperClass(nombreProducto, precioProducto
-                                        , descripcionProducto, tipoProducto, user_name, downloadUri.toString(), cantidadProducto);
+                                        , descripcionProducto, tipoProducto, user_name, downloadUri.toString(), cantidadProducto, ofertaProducto, ratingProducto);
 
                                 reference.push().setValue(helperClass);
                                 cargando.dismiss();
