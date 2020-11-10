@@ -196,6 +196,8 @@
     <string name="precio_producto">Precio Producto</string>
     <string name="pasteleria_producto">Pasteleria Producto</string>
     <string name="total_items">Total Items</string>
+    <string name="cantidad">Cantidad</string>
+    <string name="descripci_n_del_nuevo_producto">Descripción del nuevo producto</string>
 
     <string-array name="Tipo_producto">
         <item>Torta</item>

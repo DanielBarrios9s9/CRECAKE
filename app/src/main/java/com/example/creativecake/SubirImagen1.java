@@ -90,9 +90,9 @@ public class SubirImagen1 extends Fragment {
         imagen = (ImageView) main.findViewById(R.id.img_foto);
         nombre = (EditText) getActivity().findViewById(R.id.editNombrenuevoproducto);
         precio = (EditText) getActivity().findViewById(R.id.editPrecionuevoproducto);
-        descripcion = (EditText) getActivity().findViewById(R.id.ofertaNuevaProducto);
+        descripcion = (EditText) getActivity().findViewById(R.id.editDescripcionnuevoproducto);
         cantidad = (EditText) getActivity().findViewById(R.id.editCantidad);
-        oferta = (EditText) getActivity().findViewById(R.id.editDescripcionnuevoproducto);
+        oferta = (EditText) getActivity().findViewById(R.id.ofertaNuevaProducto);
         tipo = (Spinner) getActivity().findViewById(R.id.spinnerNuevoProducto);
 
 
@@ -184,6 +184,7 @@ public class SubirImagen1 extends Fragment {
                                 String cantidadProducto = cantidad.getText().toString();
                                 String tipoProducto = (String) tipo.getItemAtPosition(tipo.getSelectedItemPosition());
                                 String ofertaProducto = oferta.getText().toString();;
+                                ratingProducto = "5.0";
 
                                 final ProductHelperClass helperClass = new ProductHelperClass(nombreProducto, precioProducto
                                         , descripcionProducto, tipoProducto, user_name, downloadUri.toString(), cantidadProducto, ofertaProducto, ratingProducto);

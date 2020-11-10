@@ -68,30 +68,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/Precio_maximo"
-        android:layout_width="410dp"
-        android:layout_height="61dp"
-        android:textAlignment="center"
-        android:textColorHint="#292828"
-        app:layout_constraintBottom_toTopOf="@+id/tableRow7"
+
+    <EditText
+        android:id="@+id/Precio_Maximo"
+        android:layout_width="384dp"
+        android:layout_height="43dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/precio_m_ximo"
+        android:inputType="number"
+        android:singleLine="true"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.0">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/precio_m_ximo"
-            android:textAlignment="center" />
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintVertical_bias="0.012" />
 
     <TableRow
         android:id="@+id/tableRow7"
-        android:layout_width="393dp"
-        android:layout_height="63dp"
+        android:layout_width="401dp"
+        android:layout_height="47dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -109,7 +110,7 @@
             android:text="@string/torta"
             android:textAlignment="textStart"
             android:textColor="#000000"
-            android:textSize="18sp" />
+            android:textSize="15sp" />
 
         <CheckBox
             android:id="@+id/checkPostre"
@@ -118,7 +119,7 @@
             android:buttonTint="#BF5A7F"
             android:text="@string/postre"
             android:textColor="#000000"
-            android:textSize="18sp" />
+            android:textSize="15sp" />
 
         <CheckBox
             android:id="@+id/checkHojaldre"
@@ -127,7 +128,7 @@
             android:buttonTint="#BF5A7F"
             android:text="@string/hojaldre"
             android:textColor="#000000"
-            android:textSize="18sp" />
+            android:textSize="15sp" />
 
         <CheckBox
             android:id="@+id/checkOtro"
@@ -136,7 +137,7 @@
             android:buttonTint="#BF5A7F"
             android:text="@string/otro"
             android:textColor="#000000"
-            android:textSize="18sp" />
+            android:textSize="15sp" />
     </TableRow>
 
     <androidx.recyclerview.widget.RecyclerView

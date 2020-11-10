@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.EditText;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DataSnapshot;
@@ -29,7 +30,7 @@ public class CatalogoClienteFragment extends Fragment {
     private ArrayList<producto_ejemplo> listaProductos;
     private DatabaseReference datosCatRef;
     CheckBox tipoTorta, tipoPostre, tipoHojaldre, tipoOtro;
-    TextInputEditText precio;
+    EditText precio;
 
     public CatalogoClienteFragment() {
         // Required empty public constructor
@@ -61,6 +62,7 @@ public class CatalogoClienteFragment extends Fragment {
         tipoPostre = (CheckBox) v.findViewById(R.id.checkPostre);
         tipoHojaldre = (CheckBox) v.findViewById(R.id.checkHojaldre);
         tipoOtro = (CheckBox) v.findViewById(R.id.checkOtro);
+        precio= (TextInputEditText) v.findViewById(R.id.Precio_maximo);
     }
 
     public void Base(){
@@ -68,10 +70,81 @@ public class CatalogoClienteFragment extends Fragment {
         datosCatRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int precioMax = 0;
                 listaProductos.removeAll(listaProductos);
+                try {
+                    precioMax= Integer.parseInt(precio.getText().toString());
+                } catch (Exception e) {
+                    precioMax = 0;
+                }
                 for (DataSnapshot ds: snapshot.getChildren()) {
                     producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
                     listaProductos.add(producto);
+                    //if ((ds.child("oferta").getValue().toString() == " ") && (ds.child("oferta").getValue() != null)){
+
+                        /*if(precioMax != 0){
+                            if (Integer.parseInt(ds.child("precio").getValue().toString()) <= precioMax) {
+                                if (tipoTorta.isChecked()) {
+                                    if (ds.child("tipo").getValue().toString() == "Torta") {
+                                        producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
+                                        listaProductos.add(producto);
+                                    }
+                                }
+                                else if (tipoPostre.isChecked()){
+                                    if (snapshot.child("tipo").getValue().toString() == "Postre"){
+                                        producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
+                                        listaProductos.add(producto);
+                                    }
+                                }
+                                else if (tipoHojaldre.isChecked()){
+                                    if (snapshot.child("tipo").getValue().toString() == "Hojaldre"){
+                                        producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
+                                        listaProductos.add(producto);
+                                    }
+                                }
+                                else if (tipoOtro.isChecked()){
+                                    if (snapshot.child("tipo").getValue().toString() == "Otro"){
+                                        producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
+                                        listaProductos.add(producto);
+                                    }
+                                }
+                                else{
+                                    producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
+                                    listaProductos.add(producto);
+                                }
+                            }
+                        }
+                        else{
+                            if (tipoTorta.isChecked()) {
+                                if (ds.child("tipo").getValue().toString() == "Torta") {
+                                    producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
+                                    listaProductos.add(producto);
+                                }
+                            }
+                            else if (tipoPostre.isChecked()){
+                                if (snapshot.child("tipo").getValue().toString() == "Postre"){
+                                    producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
+                                    listaProductos.add(producto);
+                                }
+                            }
+                            else if (tipoHojaldre.isChecked()){
+                                if (snapshot.child("tipo").getValue().toString() == "Hojaldre"){
+                                    producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
+                                    listaProductos.add(producto);
+                                }
+                            }
+                            else if (tipoOtro.isChecked()){
+                                if (snapshot.child("tipo").getValue().toString() == "Otro"){
+                                    producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
+                                    listaProductos.add(producto);
+                                }
+                            }
+                            else{
+                                producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
+                                listaProductos.add(producto);
+                            }
+                        }
+                    }*/
                 }
                 adaptador.notifyDataSetChanged();
             }
@@ -82,142 +155,4 @@ public class CatalogoClienteFragment extends Fragment {
             }
         });
     }
-/*
-    @Override
-    public void onStart() {
-        super.onStart();
-        FirebaseRecyclerOptions<producto_ejemplo> opciones = new FirebaseRecyclerOptions.Builder<producto_ejemplo>().setQuery(query,producto_ejemplo.class).build();
-        FirebaseRecyclerAdapter adapter = new FirebaseRecyclerAdapter<producto_ejemplo,ViewHolderDatos>(opciones){
-
-
-            @NonNull
-            @Override
-            public ViewHolderDatos onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.producto_ejemplo,parent,false);
-                return new ViewHolderDatos(view);
-            }
-
-            @Override
-            public void onBindViewHolder(final ViewHolderDatos holder, int posicion, producto_ejemplo modelo) {
-                final String productosIDs= getRef(posicion).getKey();
-
-                datosCatRef.child(productosIDs);
-                datosCatRef.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if ((snapshot.child("oferta").getValue().toString() == " ") && (snapshot.child("oferta").getValue() != null)){
-                            if (tipoTorta.isChecked()) {
-                                if (snapshot.child("tipo").getValue().toString() == "Torta") {
-                                    //String imagenProducto = snapshot.child("downloadUrl").getValue().toString();
-                                    String nombreProducto = snapshot.child("nombre").getValue().toString();
-                                    String valorProducto = snapshot.child("precio").getValue().toString();
-                                    String pasteleriaProducto = snapshot.child("user_name").getValue().toString();
-                                    String tipoProducto = "Torta";
-                                    String ratingProducto = snapshot.child("rating").getValue().toString();
-
-                                    //Picasso.get().load(imagenProducto).placeholder(R.drawable.imagenproducto).into(holder.imagenProducto);
-                                    holder.nombreProducto.setText(nombreProducto);
-                                    holder.valorProducto.setText(valorProducto);
-                                    holder.pasteleriaProducto.setText(pasteleriaProducto);
-                                    holder.tipoProducto.setText(tipoProducto);
-                                    holder.ratingProducto.setNumStars(Integer.valueOf(ratingProducto));
-                                }
-                            }
-                            else if (tipoPostre.isChecked()){
-                                if (snapshot.child("tipo").getValue().toString() == "Postre"){
-                                    //String imagenProducto = snapshot.child("downloadUrl").getValue().toString();
-                                    String nombreProducto = snapshot.child("nombre").getValue().toString();
-                                    String valorProducto = snapshot.child("precio").getValue().toString();
-                                    String pasteleriaProducto = snapshot.child("user_name").getValue().toString();
-                                    String tipoProducto = "Postre";
-                                    String ratingProducto = snapshot.child("rating").getValue().toString();
-
-                                    //Picasso.get().load(imagenProducto).placeholder(R.drawable.imagenproducto).into(holder.imagenProducto);
-                                    holder.nombreProducto.setText(nombreProducto);
-                                    holder.valorProducto.setText(valorProducto);
-                                    holder.pasteleriaProducto.setText(pasteleriaProducto);
-                                    holder.tipoProducto.setText(tipoProducto);
-                                    holder.ratingProducto.setNumStars(Integer.valueOf(ratingProducto));
-                                }
-                            }
-                            else if (tipoHojaldre.isChecked()){
-                                if (snapshot.child("tipo").getValue().toString() == "Hojaldre"){
-                                    //String imagenProducto = snapshot.child("downloadUrl").getValue().toString();
-                                    String nombreProducto = snapshot.child("nombre").getValue().toString();
-                                    String valorProducto = snapshot.child("precio").getValue().toString();
-                                    String pasteleriaProducto = snapshot.child("user_name").getValue().toString();
-                                    String tipoProducto = "Hojaldre";
-                                    String ratingProducto = snapshot.child("rating").getValue().toString();
-
-                                    //Picasso.get().load(imagenProducto).placeholder(R.drawable.imagenproducto).into(holder.imagenProducto);
-                                    holder.nombreProducto.setText(nombreProducto);
-                                    holder.valorProducto.setText(valorProducto);
-                                    holder.pasteleriaProducto.setText(pasteleriaProducto);
-                                    holder.tipoProducto.setText(tipoProducto);
-                                    holder.ratingProducto.setNumStars(Integer.valueOf(ratingProducto));
-                                }
-                            }
-                            else if (tipoOtro.isChecked()){
-                                if (snapshot.child("tipo").getValue().toString() == "Otro"){
-                                    //String imagenProducto = snapshot.child("downloadUrl").getValue().toString();
-                                    String nombreProducto = snapshot.child("nombre").getValue().toString();
-                                    String valorProducto = snapshot.child("precio").getValue().toString();
-                                    String pasteleriaProducto = snapshot.child("user_name").getValue().toString();
-                                    String tipoProducto = "Otro";
-                                    String ratingProducto = snapshot.child("rating").getValue().toString();
-
-                                    //Picasso.get().load(imagenProducto).placeholder(R.drawable.imagenproducto).into(holder.imagenProducto);
-                                    holder.nombreProducto.setText(nombreProducto);
-                                    holder.valorProducto.setText(valorProducto);
-                                    holder.pasteleriaProducto.setText(pasteleriaProducto);
-                                    holder.tipoProducto.setText(tipoProducto);
-                                    holder.ratingProducto.setNumStars(Integer.valueOf(ratingProducto));
-                                }
-                            }
-                            else{
-                                //String imagenProducto = snapshot.child("downloadUrl").getValue().toString();
-                                String nombreProducto = snapshot.child("nombre").getValue().toString();
-                                String valorProducto = snapshot.child("precio").getValue().toString();
-                                String pasteleriaProducto = snapshot.child("user_name").getValue().toString();
-                                String tipoProducto = snapshot.child("tipo").getValue().toString();;
-                                String ratingProducto = snapshot.child("rating").getValue().toString();
-
-                                //Picasso.get().load(imagenProducto).placeholder(R.drawable.imagenproducto).into(holder.imagenProducto);
-                                holder.nombreProducto.setText(nombreProducto);
-                                holder.valorProducto.setText(valorProducto);
-                                holder.pasteleriaProducto.setText(pasteleriaProducto);
-                                holder.tipoProducto.setText(tipoProducto);
-                                holder.ratingProducto.setNumStars(Integer.valueOf(ratingProducto));
-                            }
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-
-            }
-        };
-
-        recyclerProductos.setAdapter(adapter);
-        adapter.startListening();
-    }
-
-    public class ViewHolderDatos extends RecyclerView.ViewHolder {
-        ImageView imagenProducto;
-        TextView nombreProducto, valorProducto, pasteleriaProducto, tipoProducto;
-        RatingBar ratingProducto;
-
-        public ViewHolderDatos(@NonNull View itemView) {
-            super(itemView);
-            imagenProducto= (ImageView) itemView.findViewById(R.id.imagen_producto);
-            nombreProducto= (TextView) itemView.findViewById(R.id.nombre_producto);
-            valorProducto= (TextView) itemView.findViewById(R.id.precio_producto);
-            pasteleriaProducto= (TextView) itemView.findViewById(R.id.pasteleria_producto);
-            tipoProducto= (TextView) itemView.findViewById(R.id.tipo_producto);
-            ratingProducto= (RatingBar) itemView.findViewById(R.id.rating_producto);
-        }
-    }*/
 }
