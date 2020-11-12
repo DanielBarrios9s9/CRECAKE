@@ -1,14 +1,20 @@
 package com.example.creativecake;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.selection.ItemDetailsLookup;
+import androidx.recyclerview.selection.SelectionTracker;
+import androidx.recyclerview.selection.StableIdKeyProvider;
+import androidx.recyclerview.selection.StorageStrategy;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
@@ -31,6 +37,7 @@ public class CatalogoClienteFragment extends Fragment {
     private DatabaseReference datosCatRef;
     CheckBox tipoTorta, tipoPostre, tipoHojaldre, tipoOtro;
     EditText precio;
+    private Context globalContext = null;
 
     public CatalogoClienteFragment() {
         // Required empty public constructor
@@ -52,10 +59,11 @@ public class CatalogoClienteFragment extends Fragment {
     }
 
     public void Inicializar(){
+        globalContext = this.getActivity();
         recyclerProductos = (RecyclerView) v.findViewById(R.id.recyclerview);
         recyclerProductos.setLayoutManager(new LinearLayoutManager(getContext()));
         listaProductos = new ArrayList<>();
-        adaptador = new AdaptadorProductoCatalogo(listaProductos);
+        adaptador = new AdaptadorProductoCatalogo(listaProductos, globalContext);
         recyclerProductos.setAdapter(adaptador);
 
         tipoTorta = (CheckBox) v.findViewById(R.id.checkTorta);
@@ -66,6 +74,7 @@ public class CatalogoClienteFragment extends Fragment {
     }
 
     public void Base(){
+
         datosCatRef= FirebaseDatabase.getInstance().getReference().getRoot().child("productoTienda");
         datosCatRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -155,4 +164,7 @@ public class CatalogoClienteFragment extends Fragment {
             }
         });
     }
+
+
+
 }

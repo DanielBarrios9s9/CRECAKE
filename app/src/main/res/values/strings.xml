@@ -19,6 +19,9 @@
     <string name="revisar_cotizaci_n">Revisar Cotización</string>
     <string name="nombre_de_la_cotizac_n">Nombre de la Cotización</string>
 
+    <string name="btn_agregar">Agregar al carrito</string>
+    <string name="btn_cancelar">Cancelar</string>
+
     <string-array name="tamaño">
         <item>Tamaño</item>
         <item>5 porciones</item>
