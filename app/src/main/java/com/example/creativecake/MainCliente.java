@@ -2,6 +2,7 @@ package com.example.creativecake;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Window;
@@ -10,7 +11,10 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MainCliente extends AppCompatActivity{
 
-
+    public static Context contextOfApplication;
+    public static Context getContextOfApplication(){
+        return contextOfApplication;
+    }
 
     private Window window;
 

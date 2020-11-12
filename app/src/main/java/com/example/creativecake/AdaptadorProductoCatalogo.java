@@ -1,13 +1,16 @@
 package com.example.creativecake;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RatingBar;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
@@ -16,9 +19,11 @@ import java.util.ArrayList;
 
 public class AdaptadorProductoCatalogo extends RecyclerView.Adapter<AdaptadorProductoCatalogo.CatalogoviewHolder>{
     ArrayList<producto_ejemplo> listaProductos;
+    Context globalContext;
 
-    public AdaptadorProductoCatalogo(ArrayList<producto_ejemplo> listaProductos) {
+    public AdaptadorProductoCatalogo(ArrayList<producto_ejemplo> listaProductos, Context globalContext) {
         this.listaProductos = listaProductos;
+        this.globalContext = globalContext;
     }
 
     @NonNull
@@ -30,7 +35,7 @@ public class AdaptadorProductoCatalogo extends RecyclerView.Adapter<AdaptadorPro
 
     @Override
     public void onBindViewHolder(@NonNull CatalogoviewHolder holder, int position) {
-        producto_ejemplo producto = listaProductos.get(position);
+        final producto_ejemplo producto = listaProductos.get(position);
         Picasso.get().load(producto.getDownloadUrl()).placeholder(R.drawable.imagenproducto). error(R.drawable.imagenproducto).resize(150,150).into(holder.imagenProducto);
         holder.nombreProducto.setText(producto.getNombre());
         holder.valorProducto.setText(producto.getPrecio());
@@ -38,6 +43,16 @@ public class AdaptadorProductoCatalogo extends RecyclerView.Adapter<AdaptadorPro
         holder.tipoProducto.setText(producto.getTipo());
         holder.ofertaProducto.setText(producto.getOferta());
         holder.ratingProducto.setRating(Float.parseFloat(producto.getRating()));
+
+        holder.card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Dialog_product dialog_product = new Dialog_product(globalContext, producto);
+                System.out.println("RECIBIDOOO........");
+            }
+        });
+
     }
 
     @Override
@@ -45,14 +60,17 @@ public class AdaptadorProductoCatalogo extends RecyclerView.Adapter<AdaptadorPro
         return listaProductos.size();
     }
 
-    public static class  CatalogoviewHolder extends RecyclerView.ViewHolder {
+    public  class  CatalogoviewHolder extends RecyclerView.ViewHolder {
 
+        CardView card;
         ImageView imagenProducto;
         TextView nombreProducto, valorProducto, pasteleriaProducto, tipoProducto, ofertaProducto;
         RatingBar ratingProducto;
 
         public CatalogoviewHolder(@NonNull View itemView) {
             super(itemView);
+
+            card =  itemView.findViewById(R.id.card_producto);
             imagenProducto= (ImageView) itemView.findViewById(R.id.imagen_producto);
             nombreProducto= (TextView) itemView.findViewById(R.id.nombre_producto);
             valorProducto= (TextView) itemView.findViewById(R.id.precio_producto);
@@ -62,4 +80,5 @@ public class AdaptadorProductoCatalogo extends RecyclerView.Adapter<AdaptadorPro
             ratingProducto= (RatingBar) itemView.findViewById(R.id.rating_producto);
         }
     }
+
 }

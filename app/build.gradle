@@ -29,6 +29,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage:19.2.0'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'com.google.firebase:firebase-auth:20.0.0'
+    implementation 'androidx.recyclerview:recyclerview-selection:1.0.0'
     def nav_version = "2.3.0"
     implementation 'com.firebaseui:firebase-ui-database:3.2.2'
     //noinspection GradleDependency
