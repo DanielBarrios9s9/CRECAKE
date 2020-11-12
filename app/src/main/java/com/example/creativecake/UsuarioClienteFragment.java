@@ -3,6 +3,8 @@ package com.example.creativecake;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -35,9 +37,13 @@ public class UsuarioClienteFragment extends Fragment {
         etPassword = (TextView)UsuarioView.findViewById(R.id.idPasswordPerfil);
         etTelefono = (TextView)UsuarioView.findViewById(R.id.idTelefonoPerfil);
 
+        return UsuarioView;
+    }
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        this.UsuarioView=view;
         //funcion para mostrar toda la informacion del usuario en el activity
         mostrarInfo();
-        return UsuarioView;
     }
 
     @Override
