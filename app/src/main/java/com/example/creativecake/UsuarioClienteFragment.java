@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 
 
@@ -30,7 +29,7 @@ public class UsuarioClienteFragment extends Fragment {
     {
         UsuarioView = inflater.inflate(R.layout.fragment_usuario_cliente, container, false);
 
-        tvNombreGrande = (TextView) UsuarioView.findViewById(R.id.nombre);
+        tvNombreGrande = (TextView) UsuarioView.findViewById(R.id.nombre_producto);
         etNombre = (TextView)UsuarioView.findViewById(R.id.idNombrePerfil);
         etDireccion = (TextView)UsuarioView.findViewById(R.id.idDireccionPerfil);
         etCorreo = (TextView)UsuarioView.findViewById(R.id.idCorreoPerfil);

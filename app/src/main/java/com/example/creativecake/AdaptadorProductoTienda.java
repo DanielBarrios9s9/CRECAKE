@@ -44,7 +44,7 @@ public class AdaptadorProductoTienda extends RecyclerView.Adapter<AdaptadorProdu
         public ViewHolderDatosTienda(@NonNull View itemView) {
             super(itemView);
             imagenProducto= (ImageView) itemView.findViewById(R.id.imagen_producto);
-            nombreProducto= (TextView) itemView.findViewById(R.id.nombre);
+            nombreProducto= (TextView) itemView.findViewById(R.id.nombre_producto);
             valorProducto= (TextView) itemView.findViewById(R.id.precio_producto);
             ofertaProducto= (TextView) itemView.findViewById(R.id.oferta_producto);
         }

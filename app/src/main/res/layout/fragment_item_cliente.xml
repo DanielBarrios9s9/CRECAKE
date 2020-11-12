@@ -82,7 +82,7 @@
         app:srcCompat="@drawable/ic_baseline_menu_24" />
 
     <TextView
-        android:id="@+id/nombre"
+        android:id="@+id/nombre_producto"
         android:layout_width="173dp"
         android:layout_height="173dp"
         android:layout_marginStart="16dp"

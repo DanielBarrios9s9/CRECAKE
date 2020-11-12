@@ -45,7 +45,7 @@ public class AdaptadorProductosCarrito  extends RecyclerView.Adapter<AdaptadorPr
         public ViewHolderDatosCarrito(@NonNull View itemView) {
             super(itemView);
             imagenProducto= (ImageView) itemView.findViewById(R.id.imagen_producto);
-            nombreProducto= (TextView) itemView.findViewById(R.id.nombre);
+            nombreProducto= (TextView) itemView.findViewById(R.id.nombre_producto);
             valorProducto= (TextView) itemView.findViewById(R.id.precio_producto);
             totalItems= (TextView) itemView.findViewById(R.id.total_item);
         }
