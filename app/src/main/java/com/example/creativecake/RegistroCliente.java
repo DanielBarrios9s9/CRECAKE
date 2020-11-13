@@ -56,6 +56,13 @@ public class RegistroCliente extends AppCompatActivity
                 reference.child(telefono).setValue(helperClass);
 
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+
+                Bundle bundle = new Bundle();
+                intent.putExtra("nombre", nombre);
+                intent.putExtra("password", password);
+                intent.putExtra("correo", correo);
+                intent.putExtra("telefono", telefono);
+                intent.putExtra("direccion", direccion);
                 startActivity(intent);
                 finish();
             }

@@ -157,6 +157,12 @@ public class MainActivity extends AppCompatActivity {
 
                     if (passwordfromDB.equals(passwordIngresado))
                     {
+                        Bundle bundle = new Bundle();
+                        bundle.putString("nombre", namefromDB);
+                        bundle.putString("password", passwordfromDB);
+                        bundle.putString("direccion", addressfromDB);
+                        bundle.putString("correo", emailfromDB);
+                        bundle.putString("telefono", phonefromDB);
                         Intent intent = new Intent(getApplicationContext(), MainCliente.class);
 
                         intent.putExtra("nombre", namefromDB);

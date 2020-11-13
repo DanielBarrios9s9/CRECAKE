@@ -60,7 +60,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/nombre_producto"
+        android:id="@+id/idNombrePerfilGrande"
         android:layout_width="173dp"
         android:layout_height="91dp"
         android:gravity="center"
