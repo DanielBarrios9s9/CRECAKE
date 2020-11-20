@@ -1,5 +1,6 @@
 package com.example.creativecake;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 public class fragment_tienda_inventario extends Fragment {
+    private Context globalContext = null;
 
     public fragment_tienda_inventario() {
         // Required empty public constructor
@@ -28,9 +30,6 @@ public class fragment_tienda_inventario extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         Button botonVisualizar = view.findViewById(R.id.botonVisualizar);
         Button botonAgregar = view.findViewById(R.id.botonAgregar);
-        Button botonEliminar = view.findViewById(R.id.botonEliminar);
-        Button botonEditar = view.findViewById(R.id.botonEditar);
-        Button botonModCantidad = view.findViewById(R.id.botonModCantidad);
 
         botonAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,20 +39,6 @@ public class fragment_tienda_inventario extends Fragment {
         });
 
         botonVisualizar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.fragment_tienda_visualizar_producto);
-            }
-        });
-
-        botonEliminar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.fragment_tienda_visualizar_producto);
-            }
-        });
-
-        botonEditar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(v).navigate(R.id.fragment_tienda_visualizar_producto);

@@ -70,18 +70,6 @@
         <action
             android:id="@+id/action_fragment_tienda_visualizar_producto_to_fragment_tienda_inventario"
             app:destination="@id/fragment_tienda_inventario" />
-        <action
-            android:id="@+id/action_fragment_tienda_visualizar_producto_to_fragment_item_tienda"
-            app:destination="@id/fragment_item_tienda" />
-    </fragment>
-    <fragment
-        android:id="@+id/fragment_item_tienda"
-        android:name="com.example.creativecake.fragment_item_tienda"
-        android:label="fragment_item_tienda"
-        tools:layout="@layout/fragment_item_tienda" >
-        <action
-            android:id="@+id/action_fragment_item_tienda_to_fragment_tienda_visualizar_producto"
-            app:destination="@id/fragment_tienda_visualizar_producto" />
     </fragment>
     <fragment
         android:id="@+id/subirImagen1"

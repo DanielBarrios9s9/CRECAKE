@@ -39,6 +39,7 @@ public class RegistroNegocio extends AppCompatActivity
             {
                 database = FirebaseDatabase.getInstance();
                 reference = database.getReference("usuarioNegocio");
+                DatabaseReference ref2 = database.getReference("Ventas");
 
                 String nombreNegocio = etNombreNegocio.getText().toString();
                 String correoNegocio = etCorreoNegocio.getText().toString();
@@ -50,6 +51,7 @@ public class RegistroNegocio extends AppCompatActivity
                 StoreHelperClass storeHelperClass = new StoreHelperClass(nombreNegocio, correoNegocio, direccionNegocio, telefonoNegocio, passwordNegocio);
 
                 reference.child(telefonoNegocio).setValue(storeHelperClass);
+                ref2.child(telefonoNegocio);
 
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Theme.AppCompat.Light.NoActionBar"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#BF5A7F"
-    style="@style/Theme.AppCompat.Light.NoActionBar">
+    android:layout_height="190dp"
+    android:background="#BF5A7F">
 
     <TableRow
         android:id="@+id/tabla_lista"
         android:layout_width="match_parent"
-        android:layout_height="178dp">
+        android:layout_height="match_parent">
 
         <androidx.cardview.widget.CardView
             style="@style/Theme.AppCompat.Light.NoActionBar"
             android:layout_width="150dp"
-            android:layout_height="130dp"
+            android:layout_height="150dp"
             android:layout_margin="10dp"
             android:layout_marginStart="10dp"
             android:background="#FFFFFF"
@@ -25,9 +25,8 @@
 
             <ImageView
                 android:id="@+id/imagen_producto"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/imagenproducto"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:backgroundTint="#FFFFFF"
                 android:contentDescription="@string/todo" />
         </androidx.cardview.widget.CardView>
@@ -35,7 +34,7 @@
         <androidx.cardview.widget.CardView
             style="@style/Theme.AppCompat.Light.NoActionBar"
             android:layout_width="227dp"
-            android:layout_height="130dp"
+            android:layout_height="150dp"
             android:layout_margin="10dp"
             android:layout_marginStart="10dp"
             android:background="#FFFFFF"
@@ -44,86 +43,101 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="5dp">
 
-            <LinearLayout
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/nombre_producto"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/nombre_del_producto"
-                    android:textColor="#000000"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/precio_producto"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/precio_producto"
-                    android:textColor="#000000"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/oferta_producto"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/no_oferta"
-                    android:textColor="#000000" />
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
                     android:background="#FFFFFF"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                    <Button
-                        android:id="@+id/btn_ver"
-                        android:layout_width="49dp"
-                        android:layout_height="36dp"
-                        android:background="@drawable/button_cuadrado"
-                        android:text="@string/ver"
+                    <TextView
+                        android:id="@+id/nombre_producto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/nombre_del_producto"
+                        android:textColor="#000000"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/precio_producto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/precio_producto"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/oferta_producto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/no_oferta"
                         android:textColor="#000000" />
 
                     <TextView
-                        android:id="@+id/separador2"
-                        android:layout_width="7dp"
+                        android:id="@+id/tipo_product"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/todo"
-                        android:textColor="#FFFFFF" />
+                        android:foregroundGravity="clip_horizontal"
+                        android:gravity="center"
+                        android:text="@string/_tip_producto"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
 
-                    <Button
-                        android:id="@+id/btn_editar"
-                        android:layout_width="75dp"
-                        android:layout_height="36dp"
-                        android:background="@drawable/button_cuadrado"
-                        android:text="@string/editar"
-                        android:textColor="#000000" />
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#FFFFFF"
+                        android:gravity="center">
 
-                    <TextView
-                        android:id="@+id/separador"
-                        android:layout_width="6dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/todo"
-                        android:textColor="#FFFFFF" />
+                        <Button
+                            android:id="@+id/btn_ver"
+                            android:layout_width="49dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/button_cuadrado"
+                            android:text="@string/ver"
+                            android:textColor="#000000" />
 
-                    <Button
-                        android:id="@+id/btn_eliminar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="36dp"
-                        android:background="@drawable/button_cuadrado"
-                        android:text="@string/eliminar"
-                        android:textColor="#000000" />
-                </TableRow>
+                        <TextView
+                            android:id="@+id/separador2"
+                            android:layout_width="7dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/todo"
+                            android:textColor="#FFFFFF" />
 
-            </LinearLayout>
+                        <Button
+                            android:id="@+id/btn_editar"
+                            android:layout_width="75dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/button_cuadrado"
+                            android:text="@string/editar"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/separador"
+                            android:layout_width="6dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/todo"
+                            android:textColor="#FFFFFF" />
+
+                        <Button
+                            android:id="@+id/btn_eliminar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:background="@drawable/button_cuadrado"
+                            android:text="@string/eliminar"
+                            android:textColor="#000000" />
+                    </TableRow>
+
+                </LinearLayout>
+            </ScrollView>
 
         </androidx.cardview.widget.CardView>
 

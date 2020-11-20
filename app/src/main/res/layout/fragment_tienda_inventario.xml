@@ -8,17 +8,6 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/botonEliminar"
-        android:layout_width="250sp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="25dp"
-        android:background="@drawable/redondez_botones_daniel"
-        android:text="@string/txtInvenEliminar"
-        android:textColor="#F2F2F2"
-        android:textSize="20sp" />
-
-    <Button
         android:id="@+id/botonAgregar"
         android:layout_width="250sp"
         android:layout_height="wrap_content"
@@ -39,27 +28,5 @@
         android:textColor="#F2F2F2"
         android:layout_margin="25dp"
         android:textSize="20sp"/>
-
-    <Button
-        android:id="@+id/botonModCantidad"
-        android:layout_width="250sp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@drawable/redondez_botones_daniel"
-        android:text="@string/txtInvenModCantidad"
-        android:textColor="#F2F2F2"
-        android:layout_margin="25dp"
-        android:textSize="20sp" />
-
-    <Button
-        android:id="@+id/botonEditar"
-        android:layout_width="250sp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/redondez_botones_daniel"
-        android:text="@string/txtInvenEditar"
-        android:textColor="#F2F2F2"
-        android:layout_margin="25dp"
-        android:textSize="20sp"
-        android:layout_gravity="center" />
 
 </LinearLayout>

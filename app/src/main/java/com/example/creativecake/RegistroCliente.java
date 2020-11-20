@@ -8,6 +8,7 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.common.data.DataBufferObserverSet;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -42,6 +43,7 @@ public class RegistroCliente extends AppCompatActivity
             {
                 database = FirebaseDatabase.getInstance();
                 reference = database.getReference("usuarioCliente");
+                DatabaseReference ref2 = database.getReference("carrito");
 
                 String nombre = etNombre.getText().toString();
                 String correo = etCorreo.getText().toString();
@@ -54,6 +56,7 @@ public class RegistroCliente extends AppCompatActivity
 
 
                 reference.child(telefono).setValue(helperClass);
+                ref2.child(telefono).child("1").setValue(" ");
 
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
 

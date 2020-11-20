@@ -12,6 +12,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -26,7 +27,8 @@ public class Dialog_product{
 
     producto_ejemplo producto;
     ImageView img;
-    TextView nombre_producto, precio_producto, tipo_producto, descripcionProducto;
+    RatingBar ratingProducto;
+    TextView nombre_producto, precio_producto, tipo_producto, descripcionProducto, ofertaProducto;
 
    public Dialog_product(Context context, producto_ejemplo producto){
 
@@ -45,12 +47,31 @@ public class Dialog_product{
        precio_producto = (TextView) dialog.findViewById(R.id.text_precio);
        tipo_producto = (TextView) dialog.findViewById(R.id.text_tipo);
        descripcionProducto = (TextView) dialog.findViewById(R.id.text_descripcion);
+       ofertaProducto = (TextView) dialog.findViewById(R.id.txt_off);
+       ratingProducto =(RatingBar) dialog.findViewById(R.id.ratingBar);
+
+       ofertaProducto.setVisibility(View.GONE);
 
        Picasso.get().load(producto.getDownloadUrl()).placeholder(R.drawable.imagenproducto). error(R.drawable.imagenproducto).resize(130,130).into(img);
        nombre_producto.setText(producto.getNombre());
        precio_producto.setText("$ " + producto.getPrecio());
        tipo_producto.setText(producto.getTipo());
        descripcionProducto.setText(producto.getDescripción());
+       ratingProducto.setRating(Float.parseFloat(producto.getRating()));
+
+       if (producto.getOferta()==""){
+           ofertaProducto.setVisibility(View.INVISIBLE);
+       }
+       else if (producto.getOferta()==" ") {
+           ofertaProducto.setVisibility(View.INVISIBLE);
+       }
+       else if (producto.getOferta()=="0") {
+           ofertaProducto.setVisibility(View.INVISIBLE);
+       }
+       else{
+           ofertaProducto.setVisibility(View.VISIBLE);
+           ofertaProducto.setText("- "+producto.getOferta()+" %");
+       }
 
        btn_agregar.setOnClickListener(new View.OnClickListener() {
            @Override

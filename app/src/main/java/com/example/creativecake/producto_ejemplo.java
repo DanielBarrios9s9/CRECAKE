@@ -1,7 +1,7 @@
 package com.example.creativecake;
 
 public class producto_ejemplo {
-    private String cantidadcantidad;
+    private String cantidad;
     private String descripción;
     private String downloadUrl;
     private String nombre;
@@ -13,8 +13,8 @@ public class producto_ejemplo {
 
     public producto_ejemplo(){}
 
-    public producto_ejemplo(String cantidadcantidad, String descripción, String downloadUrl,String nombre, String oferta, String precio, String rating, String tipo, String user_name) {
-        this.cantidadcantidad= cantidadcantidad;
+    public producto_ejemplo(String cantidad, String descripción,String downloadUrl,String nombre, String oferta, String precio, String rating, String tipo, String user_name) {
+        this.cantidad= cantidad;
         this.descripción= descripción;
         this.downloadUrl=downloadUrl;
         this.nombre=nombre;
@@ -26,11 +26,11 @@ public class producto_ejemplo {
     }
 
     public String getCantidadcantidad() {
-        return cantidadcantidad;
+        return cantidad;
     }
 
     public void setCantidadcantidad(String cantidadcantidad) {
-        this.cantidadcantidad = cantidadcantidad;
+        this.cantidad = cantidad;
     }
 
     public String getDescripción() {

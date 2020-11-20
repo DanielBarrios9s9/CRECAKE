@@ -59,11 +59,8 @@
 
     <!-- strings inventario-->
     <string name="txtInvenTitulo">Inventario</string>
-    <string name="txtInvenVisualizar">Visualizar</string>
+    <string name="txtInvenVisualizar">Ver Inventario</string>
     <string name="txtInvenAgregar">Agregar productos</string>
-    <string name="txtInvenEliminar">Eliminar productos</string>
-    <string name="txtInvenModCantidad">Modificar cantidad</string>
-    <string name="txtInvenEditar">Editar producto</string>
     <string name="txtPCompletadoTitulo">Pedidos Completados</string>
     <string name="txtPCompletado">Tus pedidos completados son: </string>
     <string name="txtPCompletadoCantidad">0</string>
@@ -132,7 +129,7 @@
     <string name="otro">Otros</string>
 
     <!--strings de oferta cliente-->
-    <string name="_oferta">Porcentaje Oferta</string>
+    <string name="_oferta">Oferta</string>
     <string name="_tip_producto">Tipo de Producto</string>
 
     <!-- algunos strings de item cliente-->
@@ -209,5 +206,7 @@
         <item>Otro</item>
     </string-array>
     <string name="botonModificar">Modificar</string>
+    <string name="filtrar">Filtrar</string>
+    <string name="mostrar">mostrar</string>
 
 </resources>

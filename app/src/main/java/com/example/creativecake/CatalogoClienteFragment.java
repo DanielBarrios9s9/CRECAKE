@@ -1,5 +1,6 @@
 package com.example.creativecake;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 
@@ -17,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
@@ -25,6 +27,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -35,12 +38,27 @@ public class CatalogoClienteFragment extends Fragment {
     private RecyclerView recyclerProductos;
     private ArrayList<producto_ejemplo> listaProductos;
     private DatabaseReference datosCatRef;
-    CheckBox tipoTorta, tipoPostre, tipoHojaldre, tipoOtro;
+    CheckBox tipoTorta, tipoPostre, tipoHojaldre, tipoOtro, oferta;
     EditText precio;
+    Button botonFiltrar;
     private Context globalContext = null;
 
     public CatalogoClienteFragment() {
         // Required empty public constructor
+    }
+
+    public static CatalogoClienteFragment newInstance(String param1, String param2) {
+        CatalogoClienteFragment fragment = new CatalogoClienteFragment();
+        Bundle args = new Bundle();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {}
+        globalContext = this.getActivity();
     }
 
     @Override
@@ -59,18 +77,48 @@ public class CatalogoClienteFragment extends Fragment {
     }
 
     public void Inicializar(){
-        globalContext = this.getActivity();
         recyclerProductos = (RecyclerView) v.findViewById(R.id.recyclerview);
         recyclerProductos.setLayoutManager(new LinearLayoutManager(getContext()));
         listaProductos = new ArrayList<>();
         adaptador = new AdaptadorProductoCatalogo(listaProductos, globalContext);
         recyclerProductos.setAdapter(adaptador);
 
+        botonFiltrar= v.findViewById(R.id.bRefrescar);
+        oferta = (CheckBox) v.findViewById(R.id.checkOferta);
         tipoTorta = (CheckBox) v.findViewById(R.id.checkTorta);
         tipoPostre = (CheckBox) v.findViewById(R.id.checkPostre);
         tipoHojaldre = (CheckBox) v.findViewById(R.id.checkHojaldre);
         tipoOtro = (CheckBox) v.findViewById(R.id.checkOtro);
         precio= (TextInputEditText) v.findViewById(R.id.Precio_maximo);
+
+        botonFiltrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listaProductos.clear();
+
+                if (tipoTorta.isChecked()) {
+                    BaseTorta();
+                }
+                else if(tipoPostre.isChecked()){
+                    BasePostre();
+                }
+                else if(tipoHojaldre.isChecked()){
+                    BaseHojaldre();
+                }
+                else if(tipoOtro.isChecked()){
+                    BaseOtro();
+                }
+                else if(oferta.isChecked()){
+                    BaseOferta();
+                }
+                /*else if ((precio.getText().toString() != " ") || (precio.getText().toString() != "")){
+                    BasePrecio();
+                }*/
+                else{
+                    Base();
+                }
+            }
+        });
     }
 
     public void Base(){
@@ -79,81 +127,9 @@ public class CatalogoClienteFragment extends Fragment {
         datosCatRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                int precioMax = 0;
-                listaProductos.removeAll(listaProductos);
-                try {
-                    precioMax= Integer.parseInt(precio.getText().toString());
-                } catch (Exception e) {
-                    precioMax = 0;
-                }
                 for (DataSnapshot ds: snapshot.getChildren()) {
                     producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
                     listaProductos.add(producto);
-                    //if ((ds.child("oferta").getValue().toString() == " ") && (ds.child("oferta").getValue() != null)){
-
-                        /*if(precioMax != 0){
-                            if (Integer.parseInt(ds.child("precio").getValue().toString()) <= precioMax) {
-                                if (tipoTorta.isChecked()) {
-                                    if (ds.child("tipo").getValue().toString() == "Torta") {
-                                        producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
-                                        listaProductos.add(producto);
-                                    }
-                                }
-                                else if (tipoPostre.isChecked()){
-                                    if (snapshot.child("tipo").getValue().toString() == "Postre"){
-                                        producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
-                                        listaProductos.add(producto);
-                                    }
-                                }
-                                else if (tipoHojaldre.isChecked()){
-                                    if (snapshot.child("tipo").getValue().toString() == "Hojaldre"){
-                                        producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
-                                        listaProductos.add(producto);
-                                    }
-                                }
-                                else if (tipoOtro.isChecked()){
-                                    if (snapshot.child("tipo").getValue().toString() == "Otro"){
-                                        producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
-                                        listaProductos.add(producto);
-                                    }
-                                }
-                                else{
-                                    producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
-                                    listaProductos.add(producto);
-                                }
-                            }
-                        }
-                        else{
-                            if (tipoTorta.isChecked()) {
-                                if (ds.child("tipo").getValue().toString() == "Torta") {
-                                    producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
-                                    listaProductos.add(producto);
-                                }
-                            }
-                            else if (tipoPostre.isChecked()){
-                                if (snapshot.child("tipo").getValue().toString() == "Postre"){
-                                    producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
-                                    listaProductos.add(producto);
-                                }
-                            }
-                            else if (tipoHojaldre.isChecked()){
-                                if (snapshot.child("tipo").getValue().toString() == "Hojaldre"){
-                                    producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
-                                    listaProductos.add(producto);
-                                }
-                            }
-                            else if (tipoOtro.isChecked()){
-                                if (snapshot.child("tipo").getValue().toString() == "Otro"){
-                                    producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
-                                    listaProductos.add(producto);
-                                }
-                            }
-                            else{
-                                producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
-                                listaProductos.add(producto);
-                            }
-                        }
-                    }*/
                 }
                 adaptador.notifyDataSetChanged();
             }
@@ -165,6 +141,125 @@ public class CatalogoClienteFragment extends Fragment {
         });
     }
 
+    public void BaseOferta(){ //Arreglar
 
+        datosCatRef= FirebaseDatabase.getInstance().getReference("productoTienda");
+        Query productosTienda = datosCatRef.orderByChild("oferta").equalTo("50");
+        productosTienda.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot ds: snapshot.getChildren()) {
+                    producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
+                    listaProductos.add(producto);
+                }
+                adaptador.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    public void BasePostre(){
+        datosCatRef= FirebaseDatabase.getInstance().getReference("productoTienda");
+        Query productosTienda = datosCatRef.orderByChild("tipo").equalTo("Postre");
+        productosTienda.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot ds: snapshot.getChildren()) {
+                    producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
+                    listaProductos.add(producto);
+                }
+                adaptador.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+    public void BaseTorta(){
+        datosCatRef= FirebaseDatabase.getInstance().getReference("productoTienda");
+        Query productosTienda = datosCatRef.orderByChild("tipo").equalTo("Torta");
+        productosTienda.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot ds: snapshot.getChildren()) {
+                    producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
+                    listaProductos.add(producto);
+                }
+                adaptador.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    public void BaseHojaldre(){
+        datosCatRef= FirebaseDatabase.getInstance().getReference("productoTienda");
+        Query productosTienda = datosCatRef.orderByChild("tipo").equalTo("Hojaldre");
+        productosTienda.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot ds: snapshot.getChildren()) {
+                    producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
+                    listaProductos.add(producto);
+                }
+                adaptador.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    public void BaseOtro(){
+        datosCatRef= FirebaseDatabase.getInstance().getReference("productoTienda");
+        Query productosTienda = datosCatRef.orderByChild("tipo").equalTo("Otro");
+        productosTienda.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot ds: snapshot.getChildren()) {
+                    producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
+                    listaProductos.add(producto);
+                }
+                adaptador.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    public void BasePrecio(){ //Arreglar
+        datosCatRef= FirebaseDatabase.getInstance().getReference("productoTienda");
+        Query productosTienda = datosCatRef.orderByChild("precio").equalTo("5000");
+        productosTienda.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot ds: snapshot.getChildren()) {
+                    producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
+                    listaProductos.add(producto);
+                }
+                adaptador.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
 
 }

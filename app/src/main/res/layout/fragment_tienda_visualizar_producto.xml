@@ -13,35 +13,32 @@
         android:layout_width="411dp"
         android:layout_height="57dp"
         android:background="@color/colorPrimary"
-        android:elevation="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        android:elevation="30dp">
 
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="50dp"
-        android:layout_height="47dp"
-        android:background="@drawable/ic_baseline_search_24"
-        android:backgroundTint="#FFFFFF"
-        android:clickable="true"
-        android:contentDescription="@string/buscar"
-        android:elevation="30dp"
-        android:focusable="true" />
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="50dp"
+            android:layout_height="47dp"
+            android:background="@drawable/ic_baseline_search_24"
+            android:backgroundTint="#FFFFFF"
+            android:clickable="true"
+            android:contentDescription="@string/buscar"
+            android:elevation="30dp"
+            android:focusable="true" />
 
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="35dp"
-        android:text="@string/tu_inventario"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#FFFFFF"
-        android:textSize="35sp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:elevation="35dp"
+            android:gravity="center"
+            android:text="@string/tu_inventario"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#FFFFFF"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerTienda"

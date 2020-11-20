@@ -66,13 +66,6 @@ public class InicioClienteFragment extends Fragment {
             }
         });
 
-        boton_ofertas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.ofertasClienteFragment);
-            }
-        });
-
         boton_usuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

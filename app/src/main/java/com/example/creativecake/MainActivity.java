@@ -136,7 +136,6 @@ public class MainActivity extends AppCompatActivity {
         final String numeroIngresado = etTelefono.getText().toString().trim();
         final String passwordIngresado = etPassword.getText().toString().trim();
 
-
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("usuarioCliente");
 
         Query checkUsuario = reference.orderByChild("telefono").equalTo(numeroIngresado);
@@ -157,12 +156,12 @@ public class MainActivity extends AppCompatActivity {
 
                     if (passwordfromDB.equals(passwordIngresado))
                     {
-                        Bundle bundle = new Bundle();
+                        /*Bundle bundle = new Bundle();
                         bundle.putString("nombre", namefromDB);
                         bundle.putString("password", passwordfromDB);
                         bundle.putString("direccion", addressfromDB);
                         bundle.putString("correo", emailfromDB);
-                        bundle.putString("telefono", phonefromDB);
+                        bundle.putString("telefono", phonefromDB);*/
                         Intent intent = new Intent(getApplicationContext(), MainCliente.class);
 
                         intent.putExtra("nombre", namefromDB);

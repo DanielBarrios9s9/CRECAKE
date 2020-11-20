@@ -22,9 +22,6 @@
             android:id="@+id/action_inicioClienteFragment_to_estadoPedidoFragment"
             app:destination="@id/estadoPedidoFragment" />
         <action
-            android:id="@+id/action_inicioClienteFragment_to_ofertasClienteFragment"
-            app:destination="@id/ofertasClienteFragment" />
-        <action
             android:id="@+id/action_inicioClienteFragment_to_usuarioClienteFragment"
             app:destination="@id/usuarioClienteFragment" />
     </fragment>
@@ -34,26 +31,11 @@
         android:label="fragment_catalogo_cliente"
         tools:layout="@layout/fragment_catalogo_cliente" >
         <action
-            android:id="@+id/action_catalogoClienteFragment_to_itemClienteFragment"
-            app:destination="@id/itemClienteFragment" />
-        <action
             android:id="@+id/action_catalogoClienteFragment_to_inicioClienteFragment"
             app:destination="@id/inicioClienteFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/itemClienteFragment"
-        android:name="com.example.creativecake.ItemClienteFragment"
-        android:label="fragment_item_cliente"
-        tools:layout="@layout/fragment_item_cliente" >
         <action
-            android:id="@+id/action_itemClienteFragment_to_catalogoClienteFragment"
-            app:destination="@id/catalogoClienteFragment" />
-        <action
-            android:id="@+id/action_itemClienteFragment_to_carritoClienteFragment"
+            android:id="@+id/action_catalogoClienteFragment_to_carritoClienteFragment"
             app:destination="@id/carritoClienteFragment" />
-        <action
-            android:id="@+id/action_itemClienteFragment_to_ofertasClienteFragment"
-            app:destination="@id/ofertasClienteFragment" />
     </fragment>
     <fragment
         android:id="@+id/carritoClienteFragment"
@@ -66,6 +48,9 @@
         <action
             android:id="@+id/action_carritoClienteFragment_to_finCompraClienteFragment"
             app:destination="@id/finCompraClienteFragment" />
+        <action
+            android:id="@+id/action_carritoClienteFragment_to_catalogoClienteFragment"
+            app:destination="@id/catalogoClienteFragment" />
     </fragment>
     <fragment
         android:id="@+id/cotizacionClienteFragment"
@@ -87,18 +72,6 @@
         <action
             android:id="@+id/action_estadoPedidoFragment_to_inicioClienteFragment"
             app:destination="@id/inicioClienteFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/ofertasClienteFragment"
-        android:name="com.example.creativecake.OfertasClienteFragment"
-        android:label="fragment_ofertas_cliente"
-        tools:layout="@layout/fragment_ofertas_cliente" >
-        <action
-            android:id="@+id/action_ofertasClienteFragment_to_inicioClienteFragment"
-            app:destination="@id/inicioClienteFragment" />
-        <action
-            android:id="@+id/action_ofertasClienteFragment_to_itemClienteFragment"
-            app:destination="@id/itemClienteFragment" />
     </fragment>
     <fragment
         android:id="@+id/usuarioClienteFragment"

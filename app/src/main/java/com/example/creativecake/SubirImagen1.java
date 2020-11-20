@@ -196,7 +196,7 @@ public class SubirImagen1 extends Fragment {
 
 
                             } else {
-                                Toast.makeText(globalContext, "Imagen cargada sin exito", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(globalContext, "No se pudo cargar la imagen", Toast.LENGTH_SHORT).show();
                                 cargando.dismiss();
                             }
                         }

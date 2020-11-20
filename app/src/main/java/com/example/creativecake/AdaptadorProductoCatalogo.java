@@ -35,21 +35,36 @@ public class AdaptadorProductoCatalogo extends RecyclerView.Adapter<AdaptadorPro
 
     @Override
     public void onBindViewHolder(@NonNull CatalogoviewHolder holder, int position) {
+        holder.ofertaProducto.setVisibility(View.GONE);
         final producto_ejemplo producto = listaProductos.get(position);
+
+        if (producto.getOferta()==""){
+            holder.ofertaProducto.setVisibility(View.INVISIBLE);
+        }
+        else if (producto.getOferta()==" ") {
+            holder.ofertaProducto.setVisibility(View.INVISIBLE);
+        }
+        else if (producto.getOferta()=="0") {
+            holder.ofertaProducto.setVisibility(View.INVISIBLE);
+        }
+        else{
+            holder.ofertaProducto.setVisibility(View.VISIBLE);
+            holder.ofertaProducto.setText("- "+producto.getOferta()+" %");
+        }
+
         Picasso.get().load(producto.getDownloadUrl()).placeholder(R.drawable.imagenproducto). error(R.drawable.imagenproducto).resize(150,150).into(holder.imagenProducto);
         holder.nombreProducto.setText(producto.getNombre());
-        holder.valorProducto.setText(producto.getPrecio());
+        holder.valorProducto.setText("$ "+producto.getPrecio());
         holder.pasteleriaProducto.setText(producto.getUser_name());
         holder.tipoProducto.setText(producto.getTipo());
-        holder.ofertaProducto.setText(producto.getOferta());
         holder.ratingProducto.setRating(Float.parseFloat(producto.getRating()));
+
+
 
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Dialog_product dialog_product = new Dialog_product(globalContext, producto);
-                System.out.println("RECIBIDOOO........");
             }
         });
 
@@ -76,7 +91,7 @@ public class AdaptadorProductoCatalogo extends RecyclerView.Adapter<AdaptadorPro
             valorProducto= (TextView) itemView.findViewById(R.id.precio_producto);
             pasteleriaProducto= (TextView) itemView.findViewById(R.id.pasteleria_producto);
             tipoProducto= (TextView) itemView.findViewById(R.id.tipo_producto);
-            ofertaProducto = (TextView) itemView.findViewById(R.id.oferta_producto);
+            ofertaProducto = (TextView) itemView.findViewById(R.id.descuento_producto);
             ratingProducto= (RatingBar) itemView.findViewById(R.id.rating_producto);
         }
     }

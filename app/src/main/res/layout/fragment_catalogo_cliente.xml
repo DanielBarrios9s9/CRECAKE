@@ -14,19 +14,19 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:background="@color/colorPrimary"
         android:elevation="30dp"
-        android:layout_gravity="center"
         android:gravity="center_horizontal">
 
         <ImageButton
             android:id="@+id/imageButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
             android:backgroundTint="#BF5A7F"
             android:contentDescription="@string/menu_cat"
-            android:layout_gravity="center"
             android:elevation="30dp"
 
             app:srcCompat="@drawable/ic_baseline_menu_24" />
@@ -35,9 +35,9 @@
             android:id="@+id/textView15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:elevation="35dp"
             android:gravity="center"
-            android:layout_gravity="center"
             android:text="@string/cat_logo"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#FFFFFF"
@@ -48,10 +48,10 @@
             android:id="@+id/imageButton3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
             android:backgroundTint="#BF5A7F"
             android:clickable="true"
-            android:layout_gravity="center"
             android:contentDescription="@string/buscar"
             android:elevation="30dp"
             android:focusable="true"
@@ -59,65 +59,108 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <EditText
-        android:id="@+id/Precio_Maximo"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/Precio_Maximo"
+            android:layout_width="227dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/precio_m_ximo"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/bRefrescar"
+            android:layout_width="101dp"
+            android:layout_height="29dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_rounded"
+            android:text="@string/filtrar"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/precio_m_ximo"
-        android:inputType="number"
-        android:singleLine="true"
-        android:textColor="#000000"
-        android:textColorHint="#000000"
-        android:layout_margin="10dp"
-        android:visibility="visible" />
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <TableRow
-        android:id="@+id/tableRow7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="visible">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
 
-        <CheckBox
-            android:id="@+id/checkTorta"
-            style="@android:style/Widget.Material.Light.CompoundButton.CheckBox"
+            <CheckBox
+                android:id="@+id/checkPostre"
+                android:layout_width="106dp"
+                android:layout_height="wrap_content"
+                android:buttonTint="#BF5A7F"
+                android:text="@string/postre"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <CheckBox
+                android:id="@+id/checkTorta"
+                style="@android:style/Widget.Material.Light.CompoundButton.CheckBox"
+                android:layout_width="103dp"
+                android:layout_height="wrap_content"
+                android:buttonTint="#BF5A7F"
+                android:checked="false"
+                android:text="@string/torta"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <CheckBox
+                android:id="@+id/checkOferta"
+                style="@android:style/Widget.Material.Light.CompoundButton.CheckBox"
+                android:layout_width="107dp"
+                android:layout_height="wrap_content"
+                android:buttonTint="#BF5A7F"
+                android:checked="false"
+                android:text="@string/ofertas"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="#BF5A7F"
-            android:checked="false"
-            android:text="@string/torta"
-            android:textAlignment="textStart"
-            android:textColor="#000000"
-            android:textSize="15sp" />
+            android:gravity="center"
+            android:visibility="visible">
 
-        <CheckBox
-            android:id="@+id/checkPostre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:buttonTint="#BF5A7F"
-            android:text="@string/postre"
-            android:textColor="#000000"
-            android:textSize="15sp" />
+            <CheckBox
+                android:id="@+id/checkHojaldre"
+                android:layout_width="116dp"
+                android:layout_height="match_parent"
+                android:buttonTint="#BF5A7F"
+                android:text="@string/hojaldre"
+                android:textColor="#000000"
+                android:textSize="15sp" />
 
-        <CheckBox
-            android:id="@+id/checkHojaldre"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:buttonTint="#BF5A7F"
-            android:text="@string/hojaldre"
-            android:textColor="#000000"
-            android:textSize="15sp" />
+            <CheckBox
+                android:id="@+id/checkOtro"
+                android:layout_width="89dp"
+                android:layout_height="wrap_content"
+                android:buttonTint="#BF5A7F"
+                android:text="@string/otro"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+        </TableRow>
 
-        <CheckBox
-            android:id="@+id/checkOtro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:buttonTint="#BF5A7F"
-            android:text="@string/otro"
-            android:textColor="#000000"
-            android:textSize="15sp" />
-    </TableRow>
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
