@@ -15,7 +15,7 @@ public class Dialog_product_tienda {
     producto_ejemplo producto;
     ImageView img;
     RatingBar ratingProducto;
-    TextView nombre_producto, precio_producto, tipo_producto, descripcionProducto, ofertaProducto;
+    TextView nombre_producto, precio_producto, tipo_producto, descripcionProducto, cantidadProducto, ofertaProducto;
 
     public Dialog_product_tienda(){}
 
@@ -37,6 +37,7 @@ public class Dialog_product_tienda {
         descripcionProducto = (TextView) dialog.findViewById(R.id.text_descripcion);
         ofertaProducto = (TextView) dialog.findViewById(R.id.text_oferta);
         ratingProducto =(RatingBar) dialog.findViewById(R.id.ratingBar);
+        cantidadProducto=(TextView) dialog.findViewById(R.id.text_cantidad);
 
         ofertaProducto.setVisibility(View.GONE);
 
@@ -46,6 +47,7 @@ public class Dialog_product_tienda {
         tipo_producto.setText(producto.getTipo());
         descripcionProducto.setText(producto.getDescripción());
         ratingProducto.setRating(Float.parseFloat(producto.getRating()));
+        cantidadProducto.setText(producto.getCantidad());
         if (producto.getOferta()==""){
             ofertaProducto.setVisibility(View.INVISIBLE);
         }

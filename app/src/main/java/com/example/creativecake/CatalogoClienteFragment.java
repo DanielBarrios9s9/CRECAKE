@@ -127,6 +127,7 @@ public class CatalogoClienteFragment extends Fragment {
         datosCatRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                listaProductos.removeAll(listaProductos);
                 for (DataSnapshot ds: snapshot.getChildren()) {
                     producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
                     listaProductos.add(producto);
@@ -148,6 +149,7 @@ public class CatalogoClienteFragment extends Fragment {
         productosTienda.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                listaProductos.removeAll(listaProductos);
                 for (DataSnapshot ds: snapshot.getChildren()) {
                     producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
                     listaProductos.add(producto);
@@ -169,6 +171,7 @@ public class CatalogoClienteFragment extends Fragment {
         productosTienda.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                listaProductos.removeAll(listaProductos);
                 for (DataSnapshot ds: snapshot.getChildren()) {
                     producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
                     listaProductos.add(producto);
@@ -188,6 +191,7 @@ public class CatalogoClienteFragment extends Fragment {
         productosTienda.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                listaProductos.removeAll(listaProductos);
                 for (DataSnapshot ds: snapshot.getChildren()) {
                     producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
                     listaProductos.add(producto);
@@ -208,6 +212,7 @@ public class CatalogoClienteFragment extends Fragment {
         productosTienda.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                listaProductos.removeAll(listaProductos);
                 for (DataSnapshot ds: snapshot.getChildren()) {
                     producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
                     listaProductos.add(producto);
@@ -228,6 +233,7 @@ public class CatalogoClienteFragment extends Fragment {
         productosTienda.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                listaProductos.removeAll(listaProductos);
                 for (DataSnapshot ds: snapshot.getChildren()) {
                     producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
                     listaProductos.add(producto);
@@ -248,6 +254,7 @@ public class CatalogoClienteFragment extends Fragment {
         productosTienda.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                listaProductos.removeAll(listaProductos);
                 for (DataSnapshot ds: snapshot.getChildren()) {
                     producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
                     listaProductos.add(producto);

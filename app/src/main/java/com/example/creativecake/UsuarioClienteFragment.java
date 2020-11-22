@@ -17,6 +17,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -103,20 +105,23 @@ public class UsuarioClienteFragment extends Fragment {
         modificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try{
-                    Map<String,Object> usuarioMap = new HashMap<>();
-                    usuarioMap.put("nombre",etNombre.getText().toString());
-                    usuarioMap.put("correo", etCorreo.getText().toString());
-                    usuarioMap.put("password",etPassword.getText().toString());
-                    usuarioMap.put("direccion", etDireccion.getText().toString());
-                    usuarioMap.put("edad", etEdad.getText().toString());
-                    reference.updateChildren(usuarioMap);
-
-                    Toast.makeText(getActivity(), "Cambios guardados", Toast.LENGTH_SHORT).show();
-
-                } catch(Exception e){
-                    Toast.makeText(getActivity(), "Error al actualizar los Datos", Toast.LENGTH_SHORT).show();
-                }
+                Map<String,Object> usuarioMap = new HashMap<>();
+                usuarioMap.put("nombre",etNombre.getText().toString());
+                usuarioMap.put("correo", etCorreo.getText().toString());
+                usuarioMap.put("password",etPassword.getText().toString());
+                usuarioMap.put("direccion", etDireccion.getText().toString());
+                usuarioMap.put("edad", etEdad.getText().toString());
+                reference.updateChildren(usuarioMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(getActivity(), "Cambios guardados", Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getActivity(), "Error al actualizar los datos", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
     }

@@ -25,7 +25,7 @@ public class producto_ejemplo {
         this.user_name=user_name;
     }
 
-    public String getCantidadcantidad() {
+    public String getCantidad() {
         return cantidad;
     }
 
