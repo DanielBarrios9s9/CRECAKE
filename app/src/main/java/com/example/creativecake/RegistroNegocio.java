@@ -51,7 +51,7 @@ public class RegistroNegocio extends AppCompatActivity
                 StoreHelperClass storeHelperClass = new StoreHelperClass(nombreNegocio, correoNegocio, direccionNegocio, telefonoNegocio, passwordNegocio);
 
                 reference.child(telefonoNegocio).setValue(storeHelperClass);
-                ref2.child(telefonoNegocio);
+                ref2.child(telefonoNegocio).setValue(" ");
 
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -20,10 +21,12 @@ import java.util.ArrayList;
 public class AdaptadorProductoCatalogo extends RecyclerView.Adapter<AdaptadorProductoCatalogo.CatalogoviewHolder>{
     ArrayList<producto_ejemplo> listaProductos;
     Context globalContext;
+    String telefono;
 
-    public AdaptadorProductoCatalogo(ArrayList<producto_ejemplo> listaProductos, Context globalContext) {
+    public AdaptadorProductoCatalogo(ArrayList<producto_ejemplo> listaProductos, Context globalContext, String telefono) {
         this.listaProductos = listaProductos;
         this.globalContext = globalContext;
+        this.telefono=telefono;
     }
 
     @NonNull
@@ -64,7 +67,14 @@ public class AdaptadorProductoCatalogo extends RecyclerView.Adapter<AdaptadorPro
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Dialog_product dialog_product = new Dialog_product(globalContext, producto);
+                Dialog_product dialog_product = new Dialog_product(globalContext, producto, telefono);
+            }
+        });
+
+        holder.card2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dialog_product dialog_product = new Dialog_product(globalContext, producto, telefono);
             }
         });
 
@@ -77,7 +87,7 @@ public class AdaptadorProductoCatalogo extends RecyclerView.Adapter<AdaptadorPro
 
     public  class  CatalogoviewHolder extends RecyclerView.ViewHolder {
 
-        CardView card;
+        CardView card, card2;
         ImageView imagenProducto;
         TextView nombreProducto, valorProducto, pasteleriaProducto, tipoProducto, ofertaProducto;
         RatingBar ratingProducto;
@@ -85,7 +95,8 @@ public class AdaptadorProductoCatalogo extends RecyclerView.Adapter<AdaptadorPro
         public CatalogoviewHolder(@NonNull View itemView) {
             super(itemView);
 
-            card =  itemView.findViewById(R.id.card_producto);
+            card =  (CardView) itemView.findViewById(R.id.card_item);
+            card2 =  (CardView) itemView.findViewById(R.id.card_producto);
             imagenProducto= (ImageView) itemView.findViewById(R.id.imagen_producto);
             nombreProducto= (TextView) itemView.findViewById(R.id.nombre_producto);
             valorProducto= (TextView) itemView.findViewById(R.id.precio_producto);

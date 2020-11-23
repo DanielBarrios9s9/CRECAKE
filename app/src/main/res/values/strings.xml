@@ -209,5 +209,8 @@
     <string name="filtrar">Filtrar</string>
     <string name="mostrar">mostrar</string>
     <string name="deseas_eliminar_este_producto_del_inventario">¿Deseas eliminar este producto del Inventario?</string>
+    <string name="descargar_factura">Descargar Factura</string>
+    <string name="key_del_pago_en_el_carrito_del_usuario">Key del pago en el carrito del usuario</string>
+    <string name="volver">volver</string>
 
 </resources>

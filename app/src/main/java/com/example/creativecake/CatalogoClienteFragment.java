@@ -2,6 +2,7 @@ package com.example.creativecake;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -41,6 +42,7 @@ public class CatalogoClienteFragment extends Fragment {
     CheckBox tipoTorta, tipoPostre, tipoHojaldre, tipoOtro, oferta;
     EditText precio;
     Button botonFiltrar;
+    String telefono;
     private Context globalContext = null;
 
     public CatalogoClienteFragment() {
@@ -77,10 +79,14 @@ public class CatalogoClienteFragment extends Fragment {
     }
 
     public void Inicializar(){
+
+        Intent intent1 = getActivity().getIntent();
+        telefono = intent1.getStringExtra("telefono");
+
         recyclerProductos = (RecyclerView) v.findViewById(R.id.recyclerview);
         recyclerProductos.setLayoutManager(new LinearLayoutManager(getContext()));
         listaProductos = new ArrayList<>();
-        adaptador = new AdaptadorProductoCatalogo(listaProductos, globalContext);
+        adaptador = new AdaptadorProductoCatalogo(listaProductos, globalContext, telefono);
         recyclerProductos.setAdapter(adaptador);
 
         botonFiltrar= v.findViewById(R.id.bRefrescar);
@@ -89,7 +95,7 @@ public class CatalogoClienteFragment extends Fragment {
         tipoPostre = (CheckBox) v.findViewById(R.id.checkPostre);
         tipoHojaldre = (CheckBox) v.findViewById(R.id.checkHojaldre);
         tipoOtro = (CheckBox) v.findViewById(R.id.checkOtro);
-        precio= (TextInputEditText) v.findViewById(R.id.Precio_maximo);
+        precio= (EditText) v.findViewById(R.id.Precio_Maximo);
 
         botonFiltrar.setOnClickListener(new View.OnClickListener() {
             @Override

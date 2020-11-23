@@ -24,13 +24,7 @@
             android:layout_height="43dp"
             android:background="@drawable/ic_baseline_menu_24"
             android:contentDescription="@string/todo"
-            android:tint="#FFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/btn_cat"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.045"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.388" />
+            android:tint="#FFFFFF" />
     </LinearLayout>
 
     <LinearLayout
@@ -70,13 +64,7 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="#000000"
                     android:textSize="25sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@+id/btn_carrito"
-                    app:layout_constraintEnd_toStartOf="@+id/btn_coti"
-                    app:layout_constraintHorizontal_bias="0.561"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.622" />
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -103,13 +91,7 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="#000000"
                     android:textSize="25sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@+id/btn_pedido"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.854"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.622" />
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </LinearLayout>
@@ -131,7 +113,6 @@
                     style="@style/Widget.AppCompat.Button"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
-                    android:layout_marginBottom="52dp"
                     android:alpha="1"
                     android:background="@drawable/redondez_botones"
                     android:backgroundTintMode="multiply"
@@ -145,11 +126,7 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="#000000"
                     android:textSize="25sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@+id/btn_ofertas"
-                    app:layout_constraintEnd_toStartOf="@+id/btn_pedido"
-                    app:layout_constraintHorizontal_bias="0.657"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -176,13 +153,7 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="#000000"
                     android:textSize="25sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@+id/btn_usuario"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.854"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.83" />
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </LinearLayout>
@@ -205,13 +176,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#000000"
             android:textSize="25sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/view3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.854"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.773" />
+            android:textStyle="bold" />
     </LinearLayout>
 
     <View
@@ -219,12 +184,6 @@
         android:layout_width="411dp"
         android:layout_height="127dp"
         android:foreground="@drawable/ic_wave"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
         tools:targetApi="m" />
 
 </LinearLayout>

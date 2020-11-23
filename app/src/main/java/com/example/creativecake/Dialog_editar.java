@@ -76,6 +76,7 @@ public class Dialog_editar {
                 for (DataSnapshot ds: snapshot.getChildren()) {
                     if (ds.child("user_name").getValue().equals(producto.getUser_name())) {
                         clave= ds.getKey();
+                        break;
                     }
                 }
             }

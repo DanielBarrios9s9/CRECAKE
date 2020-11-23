@@ -33,7 +33,6 @@ public class InicioClienteFragment extends Fragment {
         Button boton_cotizacion= view.findViewById(R.id.btn_coti);
         Button boton_carrito= view.findViewById(R.id.btn_carrito);
         Button boton_pedido= view.findViewById(R.id.btn_pedido);
-        Button boton_ofertas= view.findViewById(R.id.btn_ofertas);
         Button boton_usuario= view.findViewById(R.id.btn_usuario);
 
         final NavController navController= Navigation.findNavController(view);

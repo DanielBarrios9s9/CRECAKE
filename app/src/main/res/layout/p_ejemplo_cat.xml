@@ -11,6 +11,8 @@
         android:id="@+id/tabla_lista"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:clickable="true"
+        android:focusable="true"
         android:gravity="center">
 
         <androidx.cardview.widget.CardView
@@ -50,6 +52,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/card_item"
             style="@style/Theme.AppCompat.Light.NoActionBar"
             android:layout_width="219dp"
             android:layout_height="172dp"
