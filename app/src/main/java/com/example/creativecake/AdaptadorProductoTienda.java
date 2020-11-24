@@ -49,14 +49,14 @@ public class AdaptadorProductoTienda extends RecyclerView.Adapter<AdaptadorProdu
         holder.b_eliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Dialog_eliminar dialog_product = new Dialog_eliminar(globalContext, producto);
             }
         });
 
         holder.b_editar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Dialog_editar dialog_product = new Dialog_editar(globalContext, producto);
             }
         });
     }

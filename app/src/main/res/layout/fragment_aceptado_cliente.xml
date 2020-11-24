@@ -1,92 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".AceptadoClienteFragment">
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="415dp"
-        android:layout_height="397dp"
-        android:background="#BF5A7F"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="371dp"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="348dp"
+            android:layout_height="56dp"
+            android:text="@string/pago_aceptado"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView43"
+            android:layout_width="324dp"
+            android:layout_height="86dp"
+            android:text="@string/tu_pedido_est_en_camino"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="35sp" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="191dp"
+            android:layout_height="165dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_baseline_playlist_add_check_24" />
+    </LinearLayout>
 
     <View
         android:id="@+id/view4"
         android:layout_width="413dp"
         android:layout_height="106dp"
-        android:layout_marginBottom="228dp"
         android:background="@drawable/ic_wave"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view"
-        app:layout_constraintVertical_bias="0.0"
         tools:targetApi="m" />
-
-    <TextView
-        android:id="@+id/textView33"
-        android:layout_width="348dp"
-        android:layout_height="56dp"
-        android:text="@string/pago_aceptado"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textColor="#FFFFFF"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="0.14" />
-
-    <TextView
-        android:id="@+id/textView43"
-        android:layout_width="324dp"
-        android:layout_height="106dp"
-        android:text="@string/tu_pedido_est_en_camino"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="35sp"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView33"
-        app:layout_constraintVertical_bias="0.166" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="196dp"
-        android:layout_height="219dp"
-        android:contentDescription="@string/todo"
-        android:src="@drawable/ic_baseline_playlist_add_check_24"
-        app:layout_constraintBottom_toBottomOf="@+id/view4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.742" />
 
     <TableRow
         android:id="@+id/tableRow6"
         android:layout_width="350dp"
-        android:layout_height="56dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9"
-        app:layout_constraintVertical_bias="0.643">
+        android:layout_height="56dp">
 
         <TextView
             android:id="@+id/textView46"
@@ -110,13 +78,7 @@
 
     <TableRow
         android:layout_width="349dp"
-        android:layout_height="71dp"
-        app:layout_constraintBottom_toTopOf="@+id/tableRow6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9"
-        app:layout_constraintVertical_bias="0.773">
+        android:layout_height="71dp">
 
         <TextView
             android:id="@+id/textView44"
@@ -138,18 +100,37 @@
             android:textSize="25sp" />
     </TableRow>
 
-    <Button
-        android:id="@+id/button15"
-        android:layout_width="130dp"
-        android:layout_height="50dp"
-        android:background="@drawable/redondez_botones_daniel"
-        android:text="@string/fin"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.899"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="0.976" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/descargar_factura"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="188dp"
+            android:layout_height="85dp"
+            android:layout_margin="20dp"
+            android:backgroundTint="#FFFFFF"
+            android:drawableStart="@drawable/ic_baseline_cloud_download_24"
+            android:elevation="300dp"
+            android:gravity="center"
+            android:singleLine="false"
+            android:text="@string/descargar_factura"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btn_fin"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/redondez_botones_daniel"
+            android:elevation="300dp"
+            android:text="@string/fin"
+            android:textSize="36sp" />
+    </LinearLayout>
+
+</LinearLayout>

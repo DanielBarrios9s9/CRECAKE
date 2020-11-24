@@ -150,14 +150,14 @@
     <!--strings de finalizar compra cliente-->
     <string name="finalizar_compra">Finalizar Compra</string>
     <string name="subtotal">Subtotal =</string>
-    <string name="_40000">$ 40000</string>
+    <string name="_40000">subtotal</string>
     <string name="comisi_n_5">Comisión (5%) =</string>
-    <string name="_2000">$ 2000</string>
+    <string name="_2000">comision</string>
     <string name="descuento">Descuento =</string>
-    <string name="_0">-$ 0</string>
+    <string name="_0">descuento</string>
     <string name="por_favor_consigna_el_valor_total_de_la_compra_con_los_datos_dispuestos_abajo_cuando_lo_hayas_realizado_da_click_en_siguiente_para_confirmar_el_pago">Por favor consigna el valor total de la compra con los datos dispuestos abajo. Cuando lo hayas realizado da click en siguiente para confirmar el pago.</string>
     <string name="total">TOTAL =</string>
-    <string name="_42000">$ 42000</string>
+    <string name="_42000">total</string>
     <string name="siguiente">siguiente</string>
     <string name="c_digo_recaudo_20200714">Código Recaudo: 20200714</string>
     <string name="no_cuenta_013_77060_9">No. Cuenta: 013 - 77060 - 9</string>
@@ -175,7 +175,7 @@
     <string name="cancelar">cancelar</string>
 
     <!--strings de carrito cliente-->
-    <string name="tienes_0_productos">Tienes 0 productos</string>
+    <string name="tienes_0_productos">Total Productos</string>
     <string name="pago_aceptado">Pago Aceptado</string>
 
     <!--strings de pago de compra aceptado cliente-->
@@ -196,7 +196,7 @@
     <string name="agregar">Agregar</string>
     <string name="precio_producto">Precio Producto</string>
     <string name="pasteleria_producto">Pasteleria Producto</string>
-    <string name="total_items">Total Items</string>
+    <string name="total_items">1</string>
     <string name="cantidad">Cantidad</string>
     <string name="descripci_n_del_nuevo_producto">Descripción del nuevo producto</string>
 
@@ -209,6 +209,10 @@
     <string name="botonModificar">Modificar</string>
     <string name="filtrar">Filtrar</string>
     <string name="mostrar">mostrar</string>
+    <string name="deseas_eliminar_este_producto_del_inventario">¿Deseas eliminar este producto del Inventario?</string>
+    <string name="descargar_factura">Descargar Factura</string>
+    <string name="key_del_pago_en_el_carrito_del_usuario">Key del pago en el carrito del usuario</string>
+    <string name="volver">volver</string>
 
 
     <string name="aceptarPago">ACEPTAR</string>

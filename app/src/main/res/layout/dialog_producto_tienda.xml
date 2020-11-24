@@ -34,7 +34,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="197dp"
+                android:layout_height="242dp"
                 android:background="@color/colorPrimaryDark"
                 android:gravity="center"
                 android:orientation="vertical">
@@ -68,6 +68,16 @@
                     android:text="@string/_oferta"
                     android:textColor="#000000"
                     android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/text_cantidad"
+                    android:layout_width="117dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:text="@string/cantidad"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -110,7 +120,7 @@
                     android:layout_height="wrap_content"
                     android:background="#FFFFFF"
                     android:clickable="false"
-                    android:focusable="auto"
+                    android:focusable="false"
                     android:numStars="5"
                     android:progressTint="#BF5A7F"
                     android:rating="5.0" />

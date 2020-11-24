@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/roundedframe"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/edit_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:autofillHints=""
+        android:backgroundTint="#F2F2F2"
+        android:ems="10"
+        android:hint="@string/nombre_del_producto"
+        android:inputType="textPersonName"
+        android:textColor="#000000"
+        android:textColorHint="#8C1C3A" />
+
+    <Spinner
+        android:id="@+id/edit_tipo"
+        android:layout_width="355dp"
+        android:layout_height="37dp"
+        android:layout_margin="15dp"
+        android:background="#8C1C3A"/>
+
+    <EditText
+        android:id="@+id/edit_precio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:autofillHints=""
+        android:backgroundTint="#F2F2F2"
+        android:ems="10"
+        android:hint="@string/precio_producto"
+        android:inputType="number"
+        android:textColor="#000000"
+        android:textColorHint="#8C1C3A" />
+
+    <EditText
+        android:id="@+id/edit_Cantidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:autofillHints=""
+        android:backgroundTint="#F2F2F2"
+        android:ems="10"
+        android:hint="@string/cantidad"
+        android:inputType="number"
+        android:textColor="#000000"
+        android:textColorHint="#8C1C3A" />
+
+    <EditText
+        android:id="@+id/edit_oferta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:autofillHints=""
+        android:backgroundTint="#F2F2F2"
+        android:ems="10"
+        android:hint="@string/_oferta"
+        android:inputType="number"
+        android:textColor="#000000"
+        android:textColorHint="#8C1C3A" />
+
+    <EditText
+        android:id="@+id/edit_descripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:autofillHints=""
+        android:backgroundTint="#F2F2F2"
+        android:ems="10"
+        android:gravity="start|end"
+        android:hint="@string/descripci_n_del_nuevo_producto"
+        android:inputType="textMultiLine"
+        android:lines="8"
+        android:maxLines="10"
+        android:minLines="6"
+        android:scrollbars="vertical"
+        android:textColor="#000000"
+        android:textColorHint="#8C1C3A" />
+
+    <LinearLayout
+        android:layout_width="283dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_actualizar"
+            android:layout_width="101dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/button_rounded"
+            android:text="@string/botonModificar" />
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/button_rounded"
+            android:text="@string/cancelar" />
+
+    </LinearLayout>
+
+</LinearLayout>

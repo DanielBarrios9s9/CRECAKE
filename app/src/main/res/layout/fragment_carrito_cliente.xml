@@ -1,213 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="#FFFFFF"
     android:backgroundTint="#FFFFFF"
     tools:context=".CarritoClienteFragment">
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="410dp"
         android:layout_height="64dp"
-        android:background="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorPrimary">
 
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/carrito"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#FFFFFF"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar" />
+        <ImageButton
+            android:id="@+id/imageButton7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#BF5A7F"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_baseline_menu_24" />
 
-    <ImageButton
-        android:id="@+id/imageButton7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#BF5A7F"
-        android:contentDescription="@string/todo"
-        android:src="@drawable/ic_baseline_menu_24"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toStartOf="@+id/textView15"
-        app:layout_constraintHorizontal_bias="0.021"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.8" />
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/carrito"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#FFFFFF"
+            android:textSize="35sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView37"
-        android:layout_width="309dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="622dp"
-        android:text="@string/tienes_0_productos"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="35sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+    </androidx.appcompat.widget.Toolbar>
 
-    <TableLayout
-        android:id="@+id/tableLayout"
-        android:layout_width="276dp"
-        android:layout_height="163dp"
-        android:layout_marginStart="59dp"
-        android:layout_marginTop="371dp"
-        android:layout_marginEnd="76dp"
-        android:layout_marginBottom="11dp"
-        app:layout_constraintBottom_toTopOf="@+id/button14"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView37">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/textView24"
-                android:layout_width="129dp"
-                android:layout_height="match_parent"
-                android:text="@string/subtotal"
-                android:textColor="#000000"
-                android:textSize="25sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/subtotal_compra"
-                android:layout_width="147dp"
-                android:layout_height="match_parent"
-                android:background="#FFFFFF"
-                android:hapticFeedbackEnabled="false"
-                android:text="@string/_40000"
-                android:textAlignment="viewEnd"
-                android:textColor="#000000"
-                android:textSize="25sp" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/textView34"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/descuento"
-                android:textColor="#000000"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/descuento_total_compra"
-                android:layout_width="132dp"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                android:text="@string/_0"
-                android:textAlignment="viewEnd"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                tools:ignore="RtlCompat" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/textView32"
-                android:layout_width="129dp"
-                android:layout_height="29dp"
-                android:gravity="bottom"
-                android:text="@string/comisi_n_5"
-                android:textColor="#000000"
-                android:textSize="15sp" />
-
-            <TextView
-                android:id="@+id/comision_total_compra"
-                android:layout_width="100dp"
-                android:layout_height="29dp"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                android:text="@string/_2000"
-                android:textAlignment="viewEnd"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                tools:ignore="RtlCompat" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/textView36"
-                android:layout_width="125dp"
-                android:layout_height="62dp"
-                android:gravity="bottom"
-                android:text="@string/total"
-                android:textColor="#000000"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/total_compra"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:text="@string/_42000"
-                android:textAlignment="center"
-                android:textColor="#000000"
-                android:textSize="28sp" />
-        </TableRow>
-
-    </TableLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerviewCarrito"
+        android:layout_width="match_parent"
+        android:layout_height="530dp"
+        android:layout_marginTop="20dp" />
 
     <Button
-        android:id="@+id/button14"
-        android:layout_width="426dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="548dp"
+        android:id="@+id/btn_finalizarCarrito"
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
+        android:layout_marginTop="20dp"
         android:background="@color/colorSecondary"
         android:backgroundTint="@color/colorSecondary"
         android:text="@string/finalizar_compra"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="#FFFFFF"
-        android:textSize="35sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView37" />
+        android:textSize="35sp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerviewCarrito"
-        android:layout_width="355dp"
-        android:layout_height="305dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.347" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

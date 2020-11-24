@@ -1,6 +1,5 @@
 package com.example.creativecake;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -83,6 +82,7 @@ public class fragment_tienda_visualizar_producto extends Fragment {
         productosTienda.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                listaProductos.removeAll(listaProductos);
                 for (DataSnapshot ds: snapshot.getChildren()) {
                     producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
                     listaProductos.add(producto);

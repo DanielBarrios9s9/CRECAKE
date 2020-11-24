@@ -2,16 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center"
+    android:layout_height="200dp"
     android:background="#FFFFFF"
+    android:gravity="center"
     android:orientation="vertical">
 
     <TableRow
         android:id="@+id/tabla_lista"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:layout_height="200dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_producto"
@@ -45,14 +47,15 @@
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/card_item"
             style="@style/Theme.AppCompat.Light.NoActionBar"
-            android:layout_width="209dp"
-            android:layout_height="130dp"
+            android:layout_width="219dp"
+            android:layout_height="172dp"
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:background="#FFFFFF"
@@ -61,68 +64,64 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="5dp">
 
-            <ScrollView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:orientation="vertical">
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/nombre_producto"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#FFFFFF"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:text="@string/nombre_del_producto"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/nombre_producto"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/nombre_del_producto"
-                        android:textColor="#000000"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/precio_producto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/precio_producto"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
 
-                    <TextView
-                        android:id="@+id/precio_producto"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/precio_producto"
-                        android:textColor="#000000"
-                        android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/pasteleria_producto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pasteleria_producto"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
 
-                    <TextView
-                        android:id="@+id/pasteleria_producto"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/pasteleria_producto"
-                        android:textAlignment="center"
-                        android:textColor="#000000"
-                        android:textSize="15sp" />
+                <RatingBar
+                    android:id="@+id/rating_producto"
+                    style="@android:style/Widget.DeviceDefault.Light.RatingBar.Indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="30dp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:progressTint="#BF5A7F"
+                    android:rating="5" />
 
-                    <RatingBar
-                        android:id="@+id/rating_producto"
-                        style="@android:style/Widget.DeviceDefault.Light.RatingBar.Indicator"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:elevation="30dp"
-                        android:isIndicator="true"
-                        android:numStars="5"
-                        android:progressTint="#BF5A7F"
-                        android:rating="5" />
-
-                    <TextView
-                        android:id="@+id/tipo_producto"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text=""
-                        android:textColor="#FFFFFF"
-                        android:textSize="5sp" />
+                <TextView
+                    android:id="@+id/tipo_producto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="#FFFFFF"
+                    android:textSize="5sp"
+                    android:visibility="invisible" />
 
 
-                </LinearLayout>
-            </ScrollView>
+            </LinearLayout>
 
         </androidx.cardview.widget.CardView>
         */
