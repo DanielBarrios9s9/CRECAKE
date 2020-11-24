@@ -92,6 +92,7 @@
     <string name="inicia_sesi_n_cliente">Inicia como cliente</string>
     <string name="inicia_sesi_n_domiciliario">Inicia como domiciliario</string>
     <string name="inicia_sesi_n_negocio">Inicia como negocio</string>
+    <string name="inicia_sesi_n_desarrollador">Inicia como desarrollador</string>
     <string name="reg_strate">Regístrate</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
@@ -208,5 +209,9 @@
     <string name="botonModificar">Modificar</string>
     <string name="filtrar">Filtrar</string>
     <string name="mostrar">mostrar</string>
+
+
+    <string name="aceptarPago">ACEPTAR</string>
+    <string name= "denegarPago">DENEGAR</string>
 
 </resources>

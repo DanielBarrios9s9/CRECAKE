@@ -9,8 +9,8 @@
 
     <Button
         android:id="@+id/iniciaSesionNegocio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="319dp"
+        android:layout_height="40dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
@@ -18,14 +18,13 @@
         android:text="@string/inicia_sesi_n_negocio"
         android:textColor="#F2F2F2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iniciaSesionDomiciliario" />
 
     <Button
         android:id="@+id/iniciaSesionDomiciliario"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="319dp"
+        android:layout_height="40dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
@@ -33,7 +32,6 @@
         android:text="@string/inicia_sesi_n_domiciliario"
         android:textColor="#F2F2F2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iniciaSesionCliente" />
 
@@ -87,16 +85,15 @@
 
     <Button
         android:id="@+id/iniciaSesionCliente"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="319dp"
+        android:layout_height="40dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/button_rounded"
         android:text="@string/inicia_sesi_n_cliente"
         android:textColor="#F2F2F2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idBotonRegistro" />
 
@@ -115,40 +112,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idPasswordMain" />
 
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="5dp"
-        android:background="@drawable/button_social"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton5"
-        app:layout_constraintTop_toBottomOf="@+id/iniciaSesionNegocio"
-        app:srcCompat="@drawable/facebook" />
-
-    <ImageButton
-        android:id="@+id/imageButton6"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="161dp"
-        android:background="@drawable/button_social"
-        android:scaleType="fitCenter"
+    <Button
+        android:id="@+id/iniciaSesionAdmin"
+        android:layout_width="316dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="46dp"
+        android:background="@drawable/button_rounded"
+        android:text="@string/inicia_sesi_n_desarrollador"
+        android:textColor="#F2F2F2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iniciaSesionNegocio"
-        app:srcCompat="@drawable/google" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iniciaSesionNegocio" />
 
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="5dp"
-        android:background="@drawable/button_social"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton6"
-        app:layout_constraintTop_toBottomOf="@+id/iniciaSesionNegocio"
-        app:srcCompat="@drawable/twitter" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

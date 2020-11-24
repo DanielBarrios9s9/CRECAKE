@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button iniciaSesionCliente, registro, iniciaSesionDom, iniciaSesionNeg;
+    private Button iniciaSesionCliente, registro, iniciaSesionDom, iniciaSesionNeg, iniciaSesionAdmin;
     private EditText etTelefono, etPassword;
 
     @Override
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         registro = (Button)findViewById(R.id.idBotonRegistro);
         iniciaSesionDom = (Button)findViewById(R.id.iniciaSesionDomiciliario);
         iniciaSesionNeg = (Button)findViewById(R.id.iniciaSesionNegocio);
+        iniciaSesionAdmin = (Button)findViewById(R.id.iniciaSesionAdmin);
 
         etTelefono = (EditText)findViewById(R.id.idTelefonoMain);
         etPassword = (EditText)findViewById(R.id.idPasswordMain);
@@ -64,6 +65,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 LoginStore();
+            }
+        });
+
+        iniciaSesionAdmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LoginDeveloper();
             }
         });
     }
@@ -129,6 +137,59 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void LoginDeveloper()
+    {
+        if (!validarTelefono() | !validarPassword())
+        {
+            return;
+        }else
+        {
+            isDeveloper();
+        }
+    }
+
+    private void isDeveloper()
+    {
+        final String numeroIngresado = etTelefono.getText().toString().trim();
+        final String passwordIngresado = etPassword.getText().toString().trim();
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("usuarioDev");
+
+        Query checkUsuario = reference.orderByChild("telefono").equalTo(numeroIngresado);
+
+        checkUsuario.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot)
+            {
+                if (snapshot.exists())
+                {
+                    etTelefono.setError(null);
+
+                    String passwordfromDB = snapshot.child(numeroIngresado).child("password").getValue(String.class);
+
+                    if (passwordfromDB.equals(passwordIngresado))
+                    {
+                        Intent intent = new Intent(getApplicationContext(), MainAdministrador.class);
+                        startActivity(intent);
+                        finish();
+                    }else
+                    {
+                        etPassword.setError("Contraeña incorrecta");
+                        etPassword.requestFocus();
+                    }
+                }else
+                {
+                    etTelefono.setError("No está registrado el numero, registrate");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error)
+            {
+
+            }
+        });
+    }
 
 
     private void isUser()
@@ -149,27 +210,10 @@ public class MainActivity extends AppCompatActivity {
                     etTelefono.setError(null);
 
                     String passwordfromDB = snapshot.child(numeroIngresado).child("password").getValue(String.class);
-                    String namefromDB = snapshot.child(numeroIngresado).child("nombre").getValue(String.class);
-                    String addressfromDB = snapshot.child(numeroIngresado).child("direccion").getValue(String.class);
-                    String emailfromDB = snapshot.child(numeroIngresado).child("correo").getValue(String.class);
-                    String phonefromDB = snapshot.child(numeroIngresado).child("telefono").getValue(String.class);
 
                     if (passwordfromDB.equals(passwordIngresado))
                     {
-                        /*Bundle bundle = new Bundle();
-                        bundle.putString("nombre", namefromDB);
-                        bundle.putString("password", passwordfromDB);
-                        bundle.putString("direccion", addressfromDB);
-                        bundle.putString("correo", emailfromDB);
-                        bundle.putString("telefono", phonefromDB);*/
                         Intent intent = new Intent(getApplicationContext(), MainCliente.class);
-
-                        intent.putExtra("nombre", namefromDB);
-                        intent.putExtra("password", passwordfromDB);
-                        intent.putExtra("direccion", addressfromDB);
-                        intent.putExtra("correo", emailfromDB);
-                        intent.putExtra("telefono", phonefromDB);
-
                         startActivity(intent);
                         finish();
                     }else
