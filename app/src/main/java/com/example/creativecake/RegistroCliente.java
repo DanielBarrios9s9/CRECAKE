@@ -54,7 +54,8 @@ public class RegistroCliente extends AppCompatActivity
                 String direccion = etDireccion.getText().toString();
                 String edad = etEdad.getText().toString();
 
-                UserHelperClass helperClass = new UserHelperClass(nombre, correo, password,telefono, direccion, edad);
+                UserHelperClass helperClass = new UserHelperClass(nombre, correo,
+                        password,telefono, direccion, edad);
 
 
                 reference.child(telefono).setValue(helperClass);

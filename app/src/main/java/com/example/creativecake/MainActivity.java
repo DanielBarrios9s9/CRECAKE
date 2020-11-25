@@ -74,6 +74,19 @@ public class MainActivity extends AppCompatActivity {
                 LoginDeveloper();
             }
         });
+
+        System.out.println("HOLa");
+
+        if(SharedPreferences_Util.getPhone_SP(this) != null) {
+            System.out.println(SharedPreferences_Util.getPhone_SP(this));
+            System.out.println("HOLA");
+            if(!SharedPreferences_Util.getPhone_SP(this).equals("")) {
+                System.out.println(SharedPreferences_Util.getPhone_SP(this));
+                Intent intent = new Intent(getApplicationContext(), MainCliente.class);
+                startActivity(intent);
+                finish();
+            }
+        }
     }
 
     private Boolean validarTelefono()
@@ -169,6 +182,8 @@ public class MainActivity extends AppCompatActivity {
 
                     if (passwordfromDB.equals(passwordIngresado))
                     {
+                        SharedPreferences_Util.savePhone_SP(numeroIngresado, getApplication().getApplicationContext());
+                        SharedPreferences_Util.savePassword_SP(passwordIngresado, getApplication().getApplicationContext());
                         Intent intent = new Intent(getApplicationContext(), MainAdministrador.class);
                         startActivity(intent);
                         finish();
@@ -213,6 +228,10 @@ public class MainActivity extends AppCompatActivity {
 
                     if (passwordfromDB.equals(passwordIngresado))
                     {
+                        SharedPreferences_Util.savePhone_SP(numeroIngresado, getApplicationContext());
+                        System.out.println(SharedPreferences_Util.getPhone_SP(getApplicationContext()));
+                        SharedPreferences_Util.savePassword_SP(passwordIngresado, getApplicationContext());
+                        System.out.println(SharedPreferences_Util.getPassword_SP(getApplicationContext()));
                         Intent intent = new Intent(getApplicationContext(), MainCliente.class);
                         startActivity(intent);
                         finish();
@@ -257,6 +276,8 @@ public class MainActivity extends AppCompatActivity {
 
                     if (passwordfromDB.equals(passwordIngresado))
                     {
+                        SharedPreferences_Util.savePhone_SP(numeroIngresado, getApplication().getApplicationContext());
+                        SharedPreferences_Util.savePassword_SP(passwordIngresado, getApplication().getApplicationContext());
                         Intent intent = new Intent(getApplicationContext(), MainDomiciliario.class);
                         startActivity(intent);
                         finish();
@@ -303,10 +324,10 @@ public class MainActivity extends AppCompatActivity {
 
                     if (passwordfromDB.equals(passwordIngresado))
                     {
+                        SharedPreferences_Util.savePhone_SP(numeroIngresado, getApplication().getApplicationContext());
+                        SharedPreferences_Util.savePassword_SP(passwordIngresado, getApplication().getApplicationContext());
                         Intent intent = new Intent(getApplicationContext(), Inicio_tienda.class);
-
                         intent.putExtra("nombreIngresado", namefromDB);
-
                         startActivity(intent);
                         finish();
                     }else

@@ -7,7 +7,8 @@ public class UserHelperClass
     public UserHelperClass() {
     }
 
-    public UserHelperClass(String nombre, String correo, String password, String telefono, String direccion, String edad)
+    public UserHelperClass(String nombre, String correo,
+                           String password, String telefono, String direccion, String edad)
     {
         this.nombre = nombre;
         this.correo = correo;

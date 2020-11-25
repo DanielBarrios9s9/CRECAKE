@@ -177,6 +177,12 @@
             android:textColor="#000000"
             android:textSize="25sp"
             android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button19"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cerrar sesión" />
     </LinearLayout>
 
     <View

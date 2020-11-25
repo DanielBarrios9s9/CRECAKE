@@ -1,5 +1,6 @@
 package com.example.creativecake;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,10 +14,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import java.util.Objects;
+
 public class InicioClienteFragment extends Fragment {
 
     public InicioClienteFragment() {
-        // Required empty public constructor
     }
 
     @Override
@@ -34,6 +36,7 @@ public class InicioClienteFragment extends Fragment {
         Button boton_carrito= view.findViewById(R.id.btn_carrito);
         Button boton_pedido= view.findViewById(R.id.btn_pedido);
         Button boton_usuario= view.findViewById(R.id.btn_usuario);
+        Button boton_cerrar_sesion = view.findViewById(R.id.button19);
 
         final NavController navController= Navigation.findNavController(view);
 
@@ -69,6 +72,18 @@ public class InicioClienteFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.usuarioClienteFragment);
+            }
+        });
+
+        boton_cerrar_sesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences_Util.savePhone_SP("", getActivity());
+                SharedPreferences_Util.savePassword_SP("", getActivity());
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
+                requireActivity().finish();
+
             }
         });
     }
