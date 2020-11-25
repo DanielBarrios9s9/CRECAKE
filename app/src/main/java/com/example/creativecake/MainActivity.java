@@ -229,9 +229,7 @@ public class MainActivity extends AppCompatActivity {
                     if (passwordfromDB.equals(passwordIngresado))
                     {
                         SharedPreferences_Util.savePhone_SP(numeroIngresado, getApplicationContext());
-                        System.out.println(SharedPreferences_Util.getPhone_SP(getApplicationContext()));
                         SharedPreferences_Util.savePassword_SP(passwordIngresado, getApplicationContext());
-                        System.out.println(SharedPreferences_Util.getPassword_SP(getApplicationContext()));
                         Intent intent = new Intent(getApplicationContext(), MainCliente.class);
                         startActivity(intent);
                         finish();

@@ -72,7 +72,7 @@ public class CarritoClienteFragment extends Fragment {
         navController= Navigation.findNavController(v);
 
         Intent intent1 = getActivity().getIntent();
-        telefono = intent1.getStringExtra("telefono");
+        telefono = SharedPreferences_Util.getPhone_SP(globalContext);
 
         listaProductos= new ArrayList<>();
         recyclerProductos = v.findViewById(R.id.recyclerviewCarrito);

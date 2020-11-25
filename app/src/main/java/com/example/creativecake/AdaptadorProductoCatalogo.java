@@ -67,14 +67,14 @@ public class AdaptadorProductoCatalogo extends RecyclerView.Adapter<AdaptadorPro
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Dialog_product dialog_product = new Dialog_product(globalContext, producto, telefono);
+                Dialog_product dialog_product = new Dialog_product(globalContext, producto, SharedPreferences_Util.getPhone_SP(globalContext));
             }
         });
 
         holder.card2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Dialog_product dialog_product = new Dialog_product(globalContext, producto, telefono);
+                Dialog_product dialog_product = new Dialog_product(globalContext, producto, SharedPreferences_Util.getPhone_SP(globalContext));
             }
         });
 
