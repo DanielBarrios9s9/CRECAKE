@@ -1,5 +1,6 @@
 package com.example.creativecake;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -67,6 +68,7 @@ public class fragment_tienda_inicio extends Fragment {
         Button button3 = view.findViewById(R.id.botonSiguiente);
         Button button = view.findViewById(R.id.button);
         Button button2 = view.findViewById(R.id.button2);
+        Button cerrarSesion = view.findViewById(R.id.button9);
 
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +88,18 @@ public class fragment_tienda_inicio extends Fragment {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(v).navigate(R.id.fragment_tienda_estadisticas);
+            }
+        });
+
+        cerrarSesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences_Util.savePhone_SP("", getActivity());
+                SharedPreferences_Util.savePassword_SP("", getActivity());
+                SharedPreferences_Util.saveType_SP("", getActivity());
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
+                requireActivity().finish();
             }
         });
     }

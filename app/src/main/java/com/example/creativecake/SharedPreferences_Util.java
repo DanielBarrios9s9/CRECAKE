@@ -35,4 +35,16 @@ public class SharedPreferences_Util {
         return prefs.getString(SharedPreferences_Constantes.KEY_PASSWORD, null);
     }
 
+    public static boolean saveType_SP(String phone, Context context){
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor prefsEditor = prefs.edit();
+        prefsEditor.putString(SharedPreferences_Constantes.KEY_TYPE, phone);
+        prefsEditor.apply();
+        return true;
+    }
+
+    public static String getType_SP(Context context){
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        return prefs.getString(SharedPreferences_Constantes.KEY_TYPE, null);
+    }
 }

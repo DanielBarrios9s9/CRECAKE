@@ -80,6 +80,7 @@ public class InicioClienteFragment extends Fragment {
             public void onClick(View v) {
                 SharedPreferences_Util.savePhone_SP("", getActivity());
                 SharedPreferences_Util.savePassword_SP("", getActivity());
+                SharedPreferences_Util.saveType_SP("", getActivity());
                 Intent intent = new Intent(getActivity(), MainActivity.class);
                 startActivity(intent);
                 requireActivity().finish();

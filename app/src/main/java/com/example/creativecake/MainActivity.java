@@ -75,16 +75,29 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        System.out.println("HOLa");
+        System.out.println(SharedPreferences_Util.getPhone_SP(this));
+        System.out.println(SharedPreferences_Util.getPassword_SP(this));
+        System.out.println(SharedPreferences_Util.getType_SP(this));
 
         if(SharedPreferences_Util.getPhone_SP(this) != null) {
-            System.out.println(SharedPreferences_Util.getPhone_SP(this));
-            System.out.println("HOLA");
             if(!SharedPreferences_Util.getPhone_SP(this).equals("")) {
-                System.out.println(SharedPreferences_Util.getPhone_SP(this));
-                Intent intent = new Intent(getApplicationContext(), MainCliente.class);
-                startActivity(intent);
-                finish();
+                if(SharedPreferences_Util.getType_SP(this).equals("User")) {
+                    Intent intent = new Intent(getApplicationContext(), MainCliente.class);
+                    startActivity(intent);
+                    finish();
+                } else if (SharedPreferences_Util.getType_SP(this).equals("Tienda")) {
+                    Intent intent = new Intent(getApplicationContext(), Inicio_tienda.class);
+                    startActivity(intent);
+                    finish();
+                } else if (SharedPreferences_Util.getType_SP(this).equals("Domiciliario")) {
+                    Intent intent = new Intent(getApplicationContext(), MainDomiciliario.class);
+                    startActivity(intent);
+                    finish();
+                } else if (SharedPreferences_Util.getType_SP(this).equals("Admin")) {
+                    Intent intent = new Intent(getApplicationContext(), MainAdministrador.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         }
     }
@@ -184,6 +197,7 @@ public class MainActivity extends AppCompatActivity {
                     {
                         SharedPreferences_Util.savePhone_SP(numeroIngresado, getApplication().getApplicationContext());
                         SharedPreferences_Util.savePassword_SP(passwordIngresado, getApplication().getApplicationContext());
+                        SharedPreferences_Util.saveType_SP("Admin", getApplication().getApplicationContext());
                         Intent intent = new Intent(getApplicationContext(), MainAdministrador.class);
                         startActivity(intent);
                         finish();
@@ -230,6 +244,7 @@ public class MainActivity extends AppCompatActivity {
                     {
                         SharedPreferences_Util.savePhone_SP(numeroIngresado, getApplicationContext());
                         SharedPreferences_Util.savePassword_SP(passwordIngresado, getApplicationContext());
+                        SharedPreferences_Util.saveType_SP("User", getApplication().getApplicationContext());
                         Intent intent = new Intent(getApplicationContext(), MainCliente.class);
                         startActivity(intent);
                         finish();
@@ -276,6 +291,7 @@ public class MainActivity extends AppCompatActivity {
                     {
                         SharedPreferences_Util.savePhone_SP(numeroIngresado, getApplication().getApplicationContext());
                         SharedPreferences_Util.savePassword_SP(passwordIngresado, getApplication().getApplicationContext());
+                        SharedPreferences_Util.saveType_SP("Domiciliario", getApplication().getApplicationContext());
                         Intent intent = new Intent(getApplicationContext(), MainDomiciliario.class);
                         startActivity(intent);
                         finish();
@@ -324,6 +340,7 @@ public class MainActivity extends AppCompatActivity {
                     {
                         SharedPreferences_Util.savePhone_SP(numeroIngresado, getApplication().getApplicationContext());
                         SharedPreferences_Util.savePassword_SP(passwordIngresado, getApplication().getApplicationContext());
+                        SharedPreferences_Util.saveType_SP("Tienda", getApplication().getApplicationContext());
                         Intent intent = new Intent(getApplicationContext(), Inicio_tienda.class);
                         intent.putExtra("nombreIngresado", namefromDB);
                         startActivity(intent);
