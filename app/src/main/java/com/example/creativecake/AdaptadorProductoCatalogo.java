@@ -27,6 +27,7 @@ public class AdaptadorProductoCatalogo extends RecyclerView.Adapter<AdaptadorPro
         this.listaProductos = listaProductos;
         this.globalContext = globalContext;
         this.telefono=telefono;
+        System.out.println(telefono);
     }
 
     @NonNull

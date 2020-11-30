@@ -25,7 +25,7 @@ import java.util.Date;
 public class CarritoClienteFragment extends Fragment {
     NavController navController;
     RecyclerView recyclerProductos;
-    ArrayList<producto_carrito> listaProductos;
+    ArrayList<Pedido> listaProductos;
     private Context globalContext = null;
     View v;
     AdaptadorProductosCarrito adapter;
@@ -91,8 +91,7 @@ public class CarritoClienteFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 listaProductos.removeAll(listaProductos);
                 for (DataSnapshot ds: snapshot.getChildren()) {
-                    producto_carrito producto = ds.getValue(producto_carrito.class);
-                    producto.setLugar(ds.getKey());
+                    Pedido producto = ds.getValue(Pedido.class);
                     if (producto.getCantidad()!=" "){
                         listaProductos.add(producto);
                     }
@@ -150,7 +149,7 @@ public class CarritoClienteFragment extends Fragment {
         comision = 0;
         total=0;
 
-        for (producto_carrito producto:listaProductos) {
+        for (Pedido producto:listaProductos) {
             if((producto.getOferta()==" ") || (producto.getOferta()=="0")){
                 if(producto.getCantidad()=="1"){
                     try{
