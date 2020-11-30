@@ -1,0 +1,19 @@
+Index: app/src/main/java/com/example/creativecake/MainAdministrador.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.creativecake;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.os.Bundle;\r\n\r\npublic class MainAdministrador extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_main_administrador);\r\n    }\r\n}
+===================================================================
+--- app/src/main/java/com/example/creativecake/MainAdministrador.java	(revision f970818919e28d5576bc1d756afaab8e340eb137)
++++ app/src/main/java/com/example/creativecake/MainAdministrador.java	(date 1606347738044)
+@@ -1,9 +1,9 @@
+ package com.example.creativecake;
+ 
+-import androidx.appcompat.app.AppCompatActivity;
+-
+ import android.os.Bundle;
+ 
++import androidx.appcompat.app.AppCompatActivity;
++
+ public class MainAdministrador extends AppCompatActivity {
+ 
+     @Override
