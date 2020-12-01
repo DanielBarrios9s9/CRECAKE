@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(SharedPreferences_Util.getPassword_SP(this));
         System.out.println(SharedPreferences_Util.getType_SP(this));
 
-        if(SharedPreferences_Util.getPhone_SP(this) != null) {
+        if(SharedPreferences_Util.getPhone_SP(this) != null && SharedPreferences_Util.getType_SP(this) != null) {
             if(!SharedPreferences_Util.getPhone_SP(this).equals("")) {
                 if(SharedPreferences_Util.getType_SP(this).equals("User")) {
                     Intent intent = new Intent(getApplicationContext(), MainCliente.class);

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/roundedframe"
+    android:backgroundTint="#FFFFFF"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:gravity="center"
+         android:orientation="vertical">
+
+         <ImageView
+             android:id="@+id/img_product"
+             android:layout_width="150dp"
+             android:layout_height="150dp"
+             android:layout_margin="10dp"
+             android:contentDescription="@string/todo" />
+
+         <TextView
+             android:id="@+id/text_product"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_margin="10dp"
+             android:gravity="center"
+             android:text="@string/nombre_del_producto"
+             android:textColor="#000000"
+             android:textSize="25sp"
+             android:textStyle="bold" />
+
+         <TextView
+             android:id="@+id/text_precio"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_margin="10dp"
+             android:gravity="center"
+             android:text="@string/precio_producto"
+             android:textColor="#000000"
+             android:textSize="25sp" />
+
+         <TextView
+             android:id="@+id/text_cant"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_margin="10dp"
+             android:gravity="center"
+             android:text="Cantidad"
+             android:textColor="#000000" />
+
+         <TextView
+             android:id="@+id/text_tienda"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_margin="10dp"
+             android:gravity="center"
+             android:text="Tienda"
+             android:textColor="#000000" />
+
+         <Button
+             android:id="@+id/btn_cancelar"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_margin="25dp"
+             android:background="@drawable/button_rounded"
+             android:text="@string/volver" />
+
+        </LinearLayout>
+
+
+</LinearLayout>

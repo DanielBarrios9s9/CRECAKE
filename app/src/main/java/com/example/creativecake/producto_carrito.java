@@ -2,23 +2,18 @@ package com.example.creativecake;
 
 public class producto_carrito {
     private String cantidad;
-    private String imagen;
-    private String producto;
-    private String oferta;
-    private String precio;
-    private String tienda;
-    private String lugar;
+    private String nom_usuario;
+    private String dir_usuario;;
+    private String telefono;
 
     public producto_carrito(){}
 
-    public producto_carrito(String cantidad,String imagen,String producto, String oferta, String precio, String tienda) {
+    public producto_carrito(String cantidad,String nom_usuario,String dir_usuario, String telefono) {
         this.cantidad= cantidad;
-        this.imagen=imagen;
-        this.producto=producto;
-        this.oferta=oferta;
-        this.precio=precio;
-        this.tienda=tienda;
-        this.lugar=lugar;
+        this.nom_usuario=nom_usuario;
+        this.dir_usuario=dir_usuario;
+        this.telefono = telefono;
+
     }
 
     public String getCantidad() {
@@ -29,51 +24,27 @@ public class producto_carrito {
         this.cantidad = cantidad;
     }
 
-    public String getImagen() {
-        return imagen;
+    public String getNom_usuario() {
+        return nom_usuario;
     }
 
-    public void setImagen(String downloadUrl) {
-        this.imagen = downloadUrl;
+    public void setNom_usuario(String nom_usuario) {
+        this.nom_usuario = nom_usuario;
     }
 
-    public String getNombre() {
-        return producto;
+    public String getDir_usuario() {
+        return dir_usuario;
     }
 
-    public void setNombre(String nombre) {
-        this.producto = nombre;
+    public void setDir_usuario(String dir_usuario) {
+        this.dir_usuario = dir_usuario;
     }
 
-    public String getOferta() {
-        return oferta;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void setOferta(String oferta) {
-        this.oferta = oferta;
-    }
-
-    public String getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(String precio) {
-        this.precio = precio;
-    }
-
-    public String getTienda() {
-        return tienda;
-    }
-
-    public void setTienda(String tienda) {
-        this.tienda = tienda;
-    }
-
-    public String getLugar() {
-        return lugar;
-    }
-
-    public void setLugar(String lugar) {
-        this.lugar = lugar;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 }

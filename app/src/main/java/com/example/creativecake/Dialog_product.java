@@ -46,7 +46,7 @@ public class Dialog_product{
        this.producto= producto;
        this.telefono=telefono;
        System.out.println(telefono);
-
+       System.out.println("El telefono:" + telefono);
        final Dialog dialog = new Dialog(context);
        dialog.requestWindowFeature((Window.FEATURE_NO_TITLE));
        dialog.setCancelable(false);

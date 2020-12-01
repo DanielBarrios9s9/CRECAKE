@@ -22,12 +22,12 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class AdaptadorProductosCarrito  extends RecyclerView.Adapter<AdaptadorProductosCarrito.ViewHolderDatosCarrito> {
-    ArrayList<producto_carrito> listaProductos;
+    ArrayList<Pedido> listaProductos;
     Context globalContext;
     String telefono;
     int items;
 
-    public AdaptadorProductosCarrito(ArrayList<producto_carrito> listaProductos, Context context, String telefono) {
+    public AdaptadorProductosCarrito(ArrayList<Pedido> listaProductos, Context context, String telefono) {
         this.listaProductos = listaProductos;
         this.globalContext=context;
         this.telefono=telefono;
@@ -41,13 +41,13 @@ public class AdaptadorProductosCarrito  extends RecyclerView.Adapter<AdaptadorPr
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderDatosCarrito holder, int position) {
-        final producto_carrito producto = listaProductos.get(position);
+        final Pedido producto = listaProductos.get(position);
 
         try {
             items= Integer.parseInt(producto.getCantidad());
 
             Picasso.get().load(producto.getImagen()).placeholder(R.drawable.imagenproducto). error(R.drawable.imagenproducto).resize(150,150).into(holder.imagenProducto);
-            holder.nombreProducto.setText(producto.getNombre());
+            holder.nombreProducto.setText(producto.getProducto());
             holder.valorProducto.setText("$ "+producto.getPrecio());
             holder.ofertaProducto.setText("-"+producto.getOferta()+"%");
 
