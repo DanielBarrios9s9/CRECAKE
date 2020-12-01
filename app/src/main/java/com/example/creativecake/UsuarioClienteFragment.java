@@ -79,7 +79,7 @@ public class UsuarioClienteFragment extends Fragment {
         edTelefono = (TextView)view.findViewById(R.id.edTelefono);
         modificar= (Button) view.findViewById(R.id.idBotonModificar);
 
-        reference = FirebaseDatabase.getInstance().getReference().getRoot().child("usuarioCliente").child(telefono);
+        reference = FirebaseDatabase.getInstance().getReference().getRoot().child("usuarioCliente").child(SharedPreferences_Util.getPhone_SP(getActivity()));
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
