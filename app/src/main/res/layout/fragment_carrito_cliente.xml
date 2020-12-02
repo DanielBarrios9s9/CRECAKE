@@ -18,17 +18,9 @@
         android:layout_marginBottom="10dp"
         android:background="@color/colorPrimary">
 
-        <ImageButton
-            android:id="@+id/imageButton7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#BF5A7F"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/ic_baseline_menu_24" />
-
         <TextView
             android:id="@+id/textView15"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/carrito"

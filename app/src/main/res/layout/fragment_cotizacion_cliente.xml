@@ -1,132 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:contentDescription="@string/todo"
+    android:orientation="vertical"
     tools:context=".CotizacionClienteFragment">
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="411dp"
-        android:layout_height="498dp"
-        android:background="#BF5A7F"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-    <View
-        android:id="@+id/view4"
-        android:layout_width="413dp"
-        android:layout_height="131dp"
-        android:background="@drawable/ic_wave"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="0.825"
-        tools:targetApi="m" />
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="291dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:elevation="35dp"
+            android:gravity="center"
+            android:text="@string/cotizaci_n"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#FFFFFF"
+            android:textSize="35sp"
+            android:textStyle="bold" />
 
-    <ImageButton
-        android:id="@+id/opciones"
-        style="@android:style/Widget.Holo.Light.ImageButton"
-        android:layout_width="58dp"
-        android:layout_height="43dp"
-        android:layout_marginEnd="352dp"
-        android:background="#BF5A7F"
-        android:contentDescription="@string/todo"
-        android:tint="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="0.008"
-        app:srcCompat="@drawable/ic_baseline_menu_24" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="35dp"
-        android:text="@string/cotizaci_n"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#FFFFFF"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/view4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        <ImageButton
+            android:id="@+id/btn_bot"
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:background="@mipmap/pngegg"
+            android:contentDescription="@string/todo" />
+    </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="405dp"
-        android:layout_height="284dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="0.111">
+        android:layout_width="match_parent"
+        android:layout_height="547dp"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editNombreCotizacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/nombre_de_la_cotizac_n"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:textColor="#FFFFFF" />
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="71dp"
+            android:layout_height="65dp"
             android:layout_gravity="center">
 
+            <Spinner
+                android:id="@+id/decoracion"
+                android:layout_width="327dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:spinnerMode="dropdown" />
+
             <ImageView
+                android:id="@+id/img_decoracion"
                 android:layout_width="81dp"
                 android:layout_height="match_parent"
                 android:contentDescription="@string/todo"
-                app:srcCompat="@drawable/ic_baseline_crop_free_24" />
-
-            <Spinner
-                android:id="@+id/tamaño"
-                android:layout_width="327dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:clickable="true"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                android:spinnerMode="dropdown" />
+                app:srcCompat="@drawable/ic_baseline_brush_24" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="71dp"
-            android:layout_gravity="center">
-
-            <Spinner
-                android:id="@+id/cobertura"
-                android:layout_width="327dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:clickable="true"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                android:spinnerMode="dropdown" />
-
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="79dp"
-                android:layout_height="match_parent"
-                android:contentDescription="@string/todo"
-                app:srcCompat="@drawable/ic_baseline_broken_image_24" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="71dp"
+            android:layout_height="64dp"
             android:layout_gravity="center">
 
             <ImageView
+                android:id="@+id/img_sabor"
                 android:layout_width="81dp"
                 android:layout_height="match_parent"
                 android:contentDescription="@string/todo"
@@ -145,11 +102,11 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="71dp"
+            android:layout_height="63dp"
             android:layout_gravity="center">
 
             <Spinner
-                android:id="@+id/decoracion"
+                android:id="@+id/cobertura"
                 android:layout_width="327dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
@@ -159,112 +116,106 @@
                 android:spinnerMode="dropdown" />
 
             <ImageView
-                android:id="@+id/imageView7"
+                android:id="@+id/img_cobertura"
+                android:layout_width="79dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@drawable/ic_baseline_broken_image_24" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/img_tamano"
                 android:layout_width="81dp"
                 android:layout_height="match_parent"
                 android:contentDescription="@string/todo"
-                app:srcCompat="@drawable/ic_baseline_brush_24" />
+                app:srcCompat="@drawable/ic_baseline_crop_free_24" />
+
+            <Spinner
+                android:id="@+id/tamaño"
+                android:layout_width="327dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:spinnerMode="dropdown" />
         </TableRow>
+
+        <EditText
+            android:id="@+id/editPrecio"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:ems="10"
+            android:hint="@string/cu_l_es_tu_presupuesto"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/editFecha"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/para_cu_ndo_necesitas_tu_pedido"
+            android:inputType="date"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/editHora"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:ems="10"
+            android:hint="@string/para_qu_hora_lo_necesitas"
+            android:importantForAutofill="no"
+            android:inputType="time"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/editTextTextMultiLine"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/txtCotiAñadido"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine"
+            android:textColor="#000000" />
+
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_enviar"
-        android:layout_width="230dp"
-        android:layout_height="54dp"
-        android:background="@drawable/redondez_botones_daniel"
-        android:text="@string/txtCotiBoton"
-        android:textColor="#F2F2F2"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.088"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view"
-        app:layout_constraintVertical_bias="0.586" />
-
-    <com.google.android.material.textfield.TextInputLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColorHint="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.0">
+        android:layout_height="115dp"
+        android:background="@drawable/ic_wave"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btn_enviar"
+            android:layout_width="196dp"
             android:layout_height="wrap_content"
-            android:hint="@string/nombre_de_la_cotizac_n"
+            android:layout_margin="5dp"
+            android:background="@drawable/redondez_botones_daniel"
+            android:text="@string/txtCotiBoton"
+            android:textColor="#F2F2F2"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_revisar"
+            android:layout_width="183dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/redondez_botones"
+            android:text="@string/revisar_cotizaci_n"
             android:textColor="#000000"
-            android:textColorHint="#000000" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:textSize="15sp" />
+    </LinearLayout>
 
-    <EditText
-        android:id="@+id/presupuesto"
-        style="@style/Widget.MaterialComponents.TextInputEditText.FilledBox"
-        android:layout_width="407dp"
-        android:layout_height="56dp"
-        android:autofillHints=""
-        android:backgroundTint="#FFFFFF"
-        android:ems="10"
-        android:hint="@string/cu_l_es_tu_presupuesto"
-        android:inputType="numberSigned"
-        android:textColor="#000000"
-        android:textColorHint="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.561" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="413dp"
-        android:layout_height="131dp"
-        android:textColorHint="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.724">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/txtCotiAñadido"
-            android:textColorHint="#000000" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
-        android:id="@+id/btn_revisar"
-        android:layout_width="183dp"
-        android:layout_height="36dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/redondez_botones"
-        android:text="@string/revisar_cotizaci_n"
-        android:textColor="#000000"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_enviar"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <ImageButton
-        android:id="@+id/btn_bot"
-        android:layout_width="90dp"
-        android:layout_height="86dp"
-        android:background="@mipmap/pngegg"
-        android:contentDescription="@string/todo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.925"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.903" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

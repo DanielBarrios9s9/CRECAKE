@@ -15,14 +15,6 @@
         android:background="@color/colorPrimary"
         android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#BF5A7F"
-            android:contentDescription="@string/menu_cat"
-            app:srcCompat="@drawable/ic_baseline_menu_24" />
-
         <TextView
             android:id="@+id/edTelefono"
             android:layout_width="0dp"
@@ -36,7 +28,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="168dp"
+        android:layout_height="186dp"
         android:background="@color/colorPrimary"
         android:gravity="center"
         android:orientation="horizontal">
@@ -51,12 +43,6 @@
             android:textSize="35sp"
             android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/todo"
-            tools:srcCompat="@tools:sample/avatars" />
     </LinearLayout>
 
     <View

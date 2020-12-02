@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".fragment_inventario_nuevoproducto">
@@ -12,19 +13,19 @@
         android:id="@+id/editNombrenuevoproducto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="15dp"
         android:autofillHints=""
         android:backgroundTint="#F2F2F2"
         android:ems="10"
         android:hint="@string/nombre_del_producto"
         android:inputType="textPersonName"
-        android:textColorHint="#F2F2F2"
-        android:layout_margin="15dp"/>
+        android:textColorHint="#F2F2F2" />
 
     <Spinner
         android:id="@+id/spinnerNuevoProducto"
         android:layout_width="355dp"
         android:layout_height="37dp"
-        android:layout_margin="15dp"/>
+        android:layout_margin="15dp" />
 
     <EditText
         android:id="@+id/editPrecionuevoproducto"
@@ -42,13 +43,13 @@
         android:id="@+id/editCantidad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="15dp"
         android:autofillHints=""
         android:backgroundTint="#F2F2F2"
         android:ems="10"
         android:hint="@string/cantidad"
         android:inputType="number"
-        android:textColorHint="#F2F2F2"
-        android:layout_margin="15dp"/>
+        android:textColorHint="#F2F2F2" />
 
     <EditText
         android:id="@+id/ofertaNuevaProducto"
@@ -83,10 +84,9 @@
         android:id="@+id/buttonAgregarnuevoproducto"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
         android:backgroundTint="@color/colorSecondary"
-        android:text="@string/siguiente"
-        android:layout_margin="20dp"/>
-
+        android:text="@string/siguiente" />
 
 
 </LinearLayout>

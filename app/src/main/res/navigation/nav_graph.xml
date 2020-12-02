@@ -21,15 +21,6 @@
             app:destination="@id/fragment_tienda_visualizar_producto" />
     </fragment>
     <fragment
-        android:id="@+id/fragment_tienda_estadisticas"
-        android:name="com.example.creativecake.fragment_tienda_estadisticas"
-        android:label="fragment_tienda_estadisticas"
-        tools:layout="@layout/fragment_tienda_estadisticas" >
-        <action
-            android:id="@+id/action_fragment_tienda_estadisticas_to_fragment_tienda_inicio"
-            app:destination="@id/fragment_tienda_inicio" />
-    </fragment>
-    <fragment
         android:id="@+id/fragment_tienda_inicio"
         android:name="com.example.creativecake.fragment_tienda_inicio"
         android:label="fragment_tienda_inicio"
@@ -38,11 +29,8 @@
             android:id="@+id/action_fragment_tienda_inicio_to_fragment_tienda_inventario"
             app:destination="@id/fragment_tienda_inventario" />
         <action
-            android:id="@+id/action_fragment_tienda_inicio_to_fragment_tienda_estadisticas"
-            app:destination="@id/fragment_tienda_estadisticas" />
-        <action
-            android:id="@+id/action_fragment_tienda_inicio_to_fragment_tienda_ventas2"
-            app:destination="@id/fragment_tienda_ventas" />
+            android:id="@+id/action_fragment_tienda_inicio_to_inicioVentasTiendaFragment"
+            app:destination="@id/inicioVentasTiendaFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragment_tienda_ventas"
@@ -50,8 +38,8 @@
         android:label="fragment_tienda_ventas"
         tools:layout="@layout/fragment_tienda_ventas" >
         <action
-            android:id="@+id/action_fragment_tienda_ventas_to_fragment_tienda_inicio"
-            app:destination="@id/fragment_tienda_inicio" />
+            android:id="@+id/action_fragment_tienda_ventas_to_inicioVentasTiendaFragment"
+            app:destination="@id/inicioVentasTiendaFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragment_inventario_nuevoproducto"
@@ -79,5 +67,29 @@
         <action
             android:id="@+id/action_subirImagen1_to_fragment_tienda_inventario"
             app:destination="@id/fragment_tienda_inventario" />
+    </fragment>
+    <fragment
+        android:id="@+id/inicioVentasTiendaFragment"
+        android:name="com.example.creativecake.InicioVentasTiendaFragment"
+        android:label="fragment_inicio_ventas_tienda"
+        tools:layout="@layout/fragment_inicio_ventas_tienda" >
+        <action
+            android:id="@+id/action_inicioVentasTiendaFragment_to_fragment_tienda_inicio"
+            app:destination="@id/fragment_tienda_inicio" />
+        <action
+            android:id="@+id/action_inicioVentasTiendaFragment_to_fragment_tienda_ventas"
+            app:destination="@id/fragment_tienda_ventas" />
+        <action
+            android:id="@+id/action_inicioVentasTiendaFragment_to_cotizacionesTiendaFragment"
+            app:destination="@id/cotizacionesTiendaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cotizacionesTiendaFragment"
+        android:name="com.example.creativecake.CotizacionesTiendaFragment"
+        android:label="fragment_cotizaciones_tienda"
+        tools:layout="@layout/fragment_cotizaciones_tienda" >
+        <action
+            android:id="@+id/action_cotizacionesTiendaFragment_to_inicioVentasTiendaFragment"
+            app:destination="@id/inicioVentasTiendaFragment" />
     </fragment>
 </navigation>

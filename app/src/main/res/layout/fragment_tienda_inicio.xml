@@ -1,146 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:gravity="center"
+    android:orientation="vertical">
 
     <ImageView
         android:id="@+id/imagen_producto"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_gravity="center|top"
-        android:layout_marginTop="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/botonSiguiente"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="10dp"
+        android:contentDescription="@string/todo"
         app:srcCompat="@drawable/wallet" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="326dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="8dp"
-        android:text="Revisa tus ventas junto con las solicitudes de cotización"
-        android:textColor="#F2F2F2"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/botonSiguiente"
-        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/botonSiguiente"
         android:layout_width="326dp"
         android:layout_height="40dp"
-        android:layout_marginTop="72dp"
         android:background="@color/colorSecondary"
-        android:text="Ventas"
-        android:textColor="#F2F2F2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.127" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="80dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.262"
-        app:srcCompat="@drawable/statistical" />
+        android:text="@string/ventas"
+        android:textColor="#F2F2F2" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="326dp"
-        android:layout_height="32dp"
+        android:id="@+id/textView3"
+        android:layout_width="343dp"
+        android:layout_height="102dp"
         android:layout_marginTop="8dp"
-        android:text="Revisa las ultimas estadísticas relacionadas con tu negocio"
+        android:text="@string/revisa_tus_ventas_junto_con_las_solicitudes_de_cotizaci_n"
+        android:textAlignment="center"
         android:textColor="#F2F2F2"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="326dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/colorSecondary"
-        android:text="@string/estadisticas"
-        android:textColor="#F2F2F2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="326dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="12dp"
-        android:background="@color/colorSecondary"
-        android:text="Inventario"
-        android:textColor="#F2F2F2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="326dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="8dp"
-        android:text="Podras añadir, editar y eliminar productos de tu inventario"
-        android:textColor="#F2F2F2"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.0" />
+        android:textSize="24sp" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.447"
+        android:layout_margin="10dp"
+        android:contentDescription="@string/todo"
         app:srcCompat="@drawable/clipboard" />
 
     <Button
-        android:id="@+id/button9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Cerrar Sesión"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/button"
+        android:layout_width="326dp"
+        android:layout_height="40dp"
+        android:background="@color/colorSecondary"
+        android:text="@string/inventario"
+        android:textColor="#F2F2F2" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="398dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/podras_ver_a_adir_editar_y_eliminar_productos_de_tu_inventario"
+        android:textAlignment="center"
+        android:textColor="#F2F2F2"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/redondez_botones"
+        android:text="@string/cerrar_sss"
+        android:textColor="@color/colorSecondary" />
+
+</LinearLayout>

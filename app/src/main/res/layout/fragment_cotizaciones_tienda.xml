@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     android:orientation="vertical"
-    android:background="@color/colorPrimary"
-    tools:context=".fragment_tienda_visualizar_producto">
+    tools:context=".CotizacionesTiendaFragment">
+
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="411dp"
+        android:id="@+id/toolbar4"
+        android:layout_width="match_parent"
         android:layout_height="57dp"
         android:background="@color/colorPrimary"
         android:elevation="30dp">
@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:elevation="35dp"
             android:gravity="center"
-            android:text="@string/tu_inventario"
+            android:text="@string/atrapa_cotizaciones"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#FFFFFF"
             android:textSize="35sp"
@@ -30,10 +30,7 @@
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerTienda"
+        android:id="@+id/recyclerCotizaciones"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </androidx.recyclerview.widget.RecyclerView>
-
+        android:layout_height="match_parent" />
 </LinearLayout>

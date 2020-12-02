@@ -15,17 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:background="@color/colorPrimaryDark"
-        android:orientation="vertical">
-
-        <ImageButton
-            android:id="@+id/opciones"
-            style="@android:style/Widget.Holo.Light.ImageButton"
-            android:layout_width="58dp"
-            android:layout_height="43dp"
-            android:background="@drawable/ic_baseline_menu_24"
-            android:contentDescription="@string/todo"
-            android:tint="#FFFFFF" />
-    </LinearLayout>
+        android:orientation="vertical"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -158,12 +148,20 @@
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/button19"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_rounded"
-            android:text="Cerrar sesión" />
+            android:layout_height="138dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button19"
+                android:layout_width="221dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_rounded"
+                android:text="@string/cerrar_sss" />
+        </LinearLayout>
+
     </LinearLayout>
 
     <View

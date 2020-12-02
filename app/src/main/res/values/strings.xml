@@ -13,9 +13,9 @@
     <string name="cat_logo">Catálogo</string>
 
     <!--strings de cotización cliente-->
-    <string name="txtCotiAñadido">Añadido</string>
+    <string name="txtCotiAñadido">Especificaciones adicionales sobre tu pedido</string>
     <string name="txtCotiBoton">Enviar cotización</string>
-    <string name="cu_l_es_tu_presupuesto">¿Cuál es tu presupuesto?</string>
+    <string name="cu_l_es_tu_presupuesto">¿Cuánto pagarás por tu pedido?</string>
     <string name="revisar_cotizaci_n">Revisar Cotización</string>
     <string name="nombre_de_la_cotizac_n">Nombre de la Cotización</string>
 
@@ -138,13 +138,6 @@
     <string name="especificaciones">Especificaciones</string>
     <string name="especificaciones_aqu">Especificaciones aquí</string>
     <string name="comprar">Comprar</string>
-
-    <!--strings de ajustes usuario cliente-->
-    <string name="juan_rodriguez">Juan Rodriguez</string>
-    <string name="juan38_gmail_com">juan38@gmail.com</string>
-    <string name="____">*****</string>
-    <string name="_3153456789">3153456789</string>
-    <string name="calle_26_a_35">Calle 26A #35</string>
     <string name="guardar_cambios">Guardar Cambios</string>
 
     <!--strings de finalizar compra cliente-->
@@ -216,8 +209,24 @@
 
 
     <string name="aceptarPago">ACEPTAR</string>
-    <string name= "denegarPago">DENEGAR</string>
-
+    <string name="denegarPago">DENEGAR</string>
+    <string name="cerrar_sss">Cerrar sesión</string>
+    <string name="para_cu_ndo_necesitas_tu_pedido">¿Para cuándo necesitas tu pedido?</string>
+    <string name="para_qu_hora_lo_necesitas">¿Para qué hora lo necesitas?</string>
+    <string name="revisa_tus_ventas_junto_con_las_solicitudes_de_cotizaci_n">Revisa tus ventas junto con las solicitudes de cotización</string>
+    <string name="inventario">Inventario</string>
+    <string name="podras_ver_a_adir_editar_y_eliminar_productos_de_tu_inventario">Podras ver, añadir, editar y eliminar productos de tu inventario</string>
+    <string name="ventas">Ventas</string>
+    <string name="pedidos_por_entregar">Pedidos por Entregar</string>
+    <string name="atrapa_cotizaciones">Atrapa Cotizaciones</string>
+    <string name="muy_pronto_llegar_el_domiciliario_a_recoger_los_siguientes_productos_que_han_comprado_tus_clientes">¡Muy pronto llegará el domiciliario a recoger los siguientes productos que han comprado tus clientes!</string>
+    <string name="revisa_tu_cuenta_bancaria_ya_hemos_consignado_el_valor_de_estos_productos">Revisa tu cuenta bancaria. Ya hemos consignado el valor de estos productos.</string>
+    <string name="nombre_de_la_cotizaci_n">Nombre de la Cotización</string>
+    <string name="nombre_del_cliente_que_cotiza">Nombre del cliente que Cotiza</string>
+    <string name="celular_del_cliente">Celular del Cliente</string>
+    <string name="requerido_para">Requerido para:</string>
+    <string name="hora_del_pedido">Hora del Pedido</string>
+    <string name="fecha_del_pedido">Fecha del Pedido</string>
 
 
 </resources>

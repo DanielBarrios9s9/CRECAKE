@@ -39,9 +39,6 @@ public class CatalogoClienteFragment extends Fragment {
     private RecyclerView recyclerProductos;
     private ArrayList<producto_ejemplo> listaProductos;
     private DatabaseReference datosCatRef;
-    CheckBox tipoTorta, tipoPostre, tipoHojaldre, tipoOtro, oferta;
-    EditText precio;
-    Button botonFiltrar;
     String telefono;
     private Context globalContext = null;
 
@@ -88,180 +85,16 @@ public class CatalogoClienteFragment extends Fragment {
         listaProductos = new ArrayList<>();
         adaptador = new AdaptadorProductoCatalogo(listaProductos, globalContext, telefono);
         recyclerProductos.setAdapter(adaptador);
-
-        botonFiltrar= v.findViewById(R.id.bRefrescar);
-        oferta = (CheckBox) v.findViewById(R.id.checkOferta);
-        tipoTorta = (CheckBox) v.findViewById(R.id.checkTorta);
-        tipoPostre = (CheckBox) v.findViewById(R.id.checkPostre);
-        tipoHojaldre = (CheckBox) v.findViewById(R.id.checkHojaldre);
-        tipoOtro = (CheckBox) v.findViewById(R.id.checkOtro);
-        precio= (EditText) v.findViewById(R.id.Precio_Maximo);
-
-        botonFiltrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listaProductos.clear();
-
-                if (tipoTorta.isChecked()) {
-                    BaseTorta();
-                }
-                else if(tipoPostre.isChecked()){
-                    BasePostre();
-                }
-                else if(tipoHojaldre.isChecked()){
-                    BaseHojaldre();
-                }
-                else if(tipoOtro.isChecked()){
-                    BaseOtro();
-                }
-                else if(oferta.isChecked()){
-                    BaseOferta();
-                }
-                /*else if ((precio.getText().toString() != " ") || (precio.getText().toString() != "")){
-                    BasePrecio();
-                }*/
-                else{
-                    Base();
-                }
-            }
-        });
     }
 
-    public void Base(){
+    public void Base() {
 
-        datosCatRef= FirebaseDatabase.getInstance().getReference().getRoot().child("productoTienda");
+        datosCatRef = FirebaseDatabase.getInstance().getReference().getRoot().child("productoTienda");
         datosCatRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 listaProductos.removeAll(listaProductos);
-                for (DataSnapshot ds: snapshot.getChildren()) {
-                    producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
-                    listaProductos.add(producto);
-                }
-                adaptador.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
-
-    public void BaseOferta(){ //Arreglar
-
-        datosCatRef= FirebaseDatabase.getInstance().getReference("productoTienda");
-        Query productosTienda = datosCatRef.orderByChild("oferta").equalTo("50");
-        productosTienda.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                listaProductos.removeAll(listaProductos);
-                for (DataSnapshot ds: snapshot.getChildren()) {
-                    producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
-                    listaProductos.add(producto);
-                }
-                adaptador.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-    }
-
-    public void BasePostre(){
-        datosCatRef= FirebaseDatabase.getInstance().getReference("productoTienda");
-        Query productosTienda = datosCatRef.orderByChild("tipo").equalTo("Postre");
-        productosTienda.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                listaProductos.removeAll(listaProductos);
-                for (DataSnapshot ds: snapshot.getChildren()) {
-                    producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
-                    listaProductos.add(producto);
-                }
-                adaptador.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
-    public void BaseTorta(){
-        datosCatRef= FirebaseDatabase.getInstance().getReference("productoTienda");
-        Query productosTienda = datosCatRef.orderByChild("tipo").equalTo("Torta");
-        productosTienda.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                listaProductos.removeAll(listaProductos);
-                for (DataSnapshot ds: snapshot.getChildren()) {
-                    producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
-                    listaProductos.add(producto);
-                }
-                adaptador.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-    }
-    public void BaseHojaldre(){
-        datosCatRef= FirebaseDatabase.getInstance().getReference("productoTienda");
-        Query productosTienda = datosCatRef.orderByChild("tipo").equalTo("Hojaldre");
-        productosTienda.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                listaProductos.removeAll(listaProductos);
-                for (DataSnapshot ds: snapshot.getChildren()) {
-                    producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
-                    listaProductos.add(producto);
-                }
-                adaptador.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-    }
-    public void BaseOtro(){
-        datosCatRef= FirebaseDatabase.getInstance().getReference("productoTienda");
-        Query productosTienda = datosCatRef.orderByChild("tipo").equalTo("Otro");
-        productosTienda.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                listaProductos.removeAll(listaProductos);
-                for (DataSnapshot ds: snapshot.getChildren()) {
-                    producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
-                    listaProductos.add(producto);
-                }
-                adaptador.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-    }
-    public void BasePrecio(){ //Arreglar
-        datosCatRef= FirebaseDatabase.getInstance().getReference("productoTienda");
-        Query productosTienda = datosCatRef.orderByChild("precio").equalTo("5000");
-        productosTienda.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                listaProductos.removeAll(listaProductos);
-                for (DataSnapshot ds: snapshot.getChildren()) {
+                for (DataSnapshot ds : snapshot.getChildren()) {
                     producto_ejemplo producto = ds.getValue(producto_ejemplo.class);
                     listaProductos.add(producto);
                 }

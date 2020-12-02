@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@color/colorPrimaryDark"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/Card_cotizacion"
+        android:layout_width="394dp"
+        android:layout_height="185dp"
+        android:background="@color/colorAccent"
+        android:backgroundTint="@color/colorAccent"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="15dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nombre_CotizacionT"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="@string/nombre_de_la_cotizaci_n"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/nombre_ClienteT"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:text="@string/nombre_del_cliente_que_cotiza"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/celular_ClienteT"
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:text="@string/celular_del_cliente"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/descripcion_CotizacionT"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:text="@string/descripci_n_del_nuevo_producto"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="175dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="91dp"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/ic_baseline_history_24" />
+
+                <TextView
+                    android:id="@+id/textView58"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/requerido_para"
+                    android:textAlignment="textStart"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/hora_PedidoT"
+                    android:layout_width="match_parent"
+                    android:layout_height="33dp"
+                    android:text="@string/hora_del_pedido"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/fecha_pedidoT"
+                    android:layout_width="match_parent"
+                    android:layout_height="33dp"
+                    android:text="@string/fecha_del_pedido"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
