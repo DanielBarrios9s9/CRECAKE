@@ -217,6 +217,8 @@
 
     <string name="aceptarPago">ACEPTAR</string>
     <string name= "denegarPago">DENEGAR</string>
+    <string name="cerrarSesion">Cerrar sesión</string>
+    <string name="numeroPedido">Número de pedido</string>
 
 
 
