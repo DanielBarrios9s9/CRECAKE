@@ -65,6 +65,7 @@ public class Dialog_product{
 
        ofertaProducto.setVisibility(View.GONE);
 
+
        Picasso.get().load(producto.getDownloadUrl()).placeholder(R.drawable.imagenproducto). error(R.drawable.imagenproducto).resize(130,130).into(img);
        nombre_producto.setText(producto.getNombre());
        precio_producto.setText("$ " + producto.getPrecio());
