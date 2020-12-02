@@ -136,20 +136,20 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btn_pedido"
+                    android:id="@+id/btn_usuario"
                     style="@style/Widget.AppCompat.Button"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:alpha="1"
                     android:background="@drawable/redondez_botones"
                     android:backgroundTintMode="multiply"
-                    android:drawableTop="@drawable/ic_baseline_assignment_24"
+                    android:drawableTop="@drawable/ic_baseline_user"
                     android:elevation="100sp"
                     android:gravity="center"
                     android:outlineProvider="none"
                     android:singleLine="true"
                     android:soundEffectsEnabled="true"
-                    android:text="@string/pedido"
+                    android:text="@string/usuario"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="#000000"
                     android:textSize="25sp"
@@ -157,26 +157,6 @@
             </LinearLayout>
 
         </LinearLayout>
-
-        <Button
-            android:id="@+id/btn_usuario"
-            style="@style/Widget.AppCompat.Button"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:alpha="1"
-            android:background="@drawable/redondez_botones"
-            android:backgroundTintMode="multiply"
-            android:drawableTop="@drawable/ic_baseline_user"
-            android:elevation="100sp"
-            android:gravity="center"
-            android:outlineProvider="none"
-            android:singleLine="true"
-            android:soundEffectsEnabled="true"
-            android:text="@string/usuario"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="#000000"
-            android:textSize="25sp"
-            android:textStyle="bold" />
 
         <Button
             android:id="@+id/button19"
