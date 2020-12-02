@@ -61,12 +61,6 @@ public class InicioClienteFragment extends Fragment {
             }
         });
 
-        boton_pedido.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.estadoPedidoFragment);
-            }
-        });
 
         boton_usuario.setOnClickListener(new View.OnClickListener() {
             @Override

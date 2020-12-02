@@ -19,9 +19,6 @@
             android:id="@+id/action_inicioClienteFragment_to_carritoClienteFragment"
             app:destination="@id/carritoClienteFragment" />
         <action
-            android:id="@+id/action_inicioClienteFragment_to_estadoPedidoFragment"
-            app:destination="@id/estadoPedidoFragment" />
-        <action
             android:id="@+id/action_inicioClienteFragment_to_usuarioClienteFragment"
             app:destination="@id/usuarioClienteFragment" />
     </fragment>
@@ -62,15 +59,6 @@
             app:destination="@id/revisarCotiClienteFragment" />
         <action
             android:id="@+id/action_cotizacionClienteFragment_to_inicioClienteFragment"
-            app:destination="@id/inicioClienteFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/estadoPedidoFragment"
-        android:name="com.example.creativecake.EstadoPedidoFragment"
-        android:label="fragment_estado_pedido"
-        tools:layout="@layout/fragment_estado_pedido" >
-        <action
-            android:id="@+id/action_estadoPedidoFragment_to_inicioClienteFragment"
             app:destination="@id/inicioClienteFragment" />
     </fragment>
     <fragment
