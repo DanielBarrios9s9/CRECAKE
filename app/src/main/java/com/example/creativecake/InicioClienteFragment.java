@@ -34,7 +34,7 @@ public class InicioClienteFragment extends Fragment {
         Button boton_catalogo= view.findViewById(R.id.btn_cat);
         Button boton_cotizacion= view.findViewById(R.id.btn_coti);
         Button boton_carrito= view.findViewById(R.id.btn_carrito);
-        Button boton_pedido= view.findViewById(R.id.btn_pedido);
+
         Button boton_usuario= view.findViewById(R.id.btn_usuario);
         Button boton_cerrar_sesion = view.findViewById(R.id.button19);
 

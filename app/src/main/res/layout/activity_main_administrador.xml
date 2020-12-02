@@ -7,45 +7,60 @@
     tools:context=".MainAdministrador"
     android:background="#BF5A7F">
 
-    <TextView
-        android:id="@+id/textView29"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="66dp"
-        android:layout_marginTop="90dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginBottom="492dp"
-        android:text="@string/aceptarPago"
+        android:id="@+id/btnAceptar"
+        android:layout_width="122dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="396dp"
         android:background="@drawable/button_rounded"
+        android:text="@string/aceptarPago"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="92dp"
-        android:layout_marginBottom="492dp"
-        android:text="@string/denegarPago"
+        android:id="@+id/btnDenegar"
+        android:layout_width="122dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="396dp"
         android:background="@drawable/button_rounded"
+        android:text="@string/denegarPago"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/button14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Cerrar Sesión"
+        android:layout_width="348dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="496dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/button_rounded"
+        android:text="@string/cerrarSesion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/noPedidoAceptar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="61dp"
+        android:layout_marginEnd="104dp"
+        android:ems="10"
+        android:hint="@string/numeroPedido"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/numeroAceptar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="104dp"
+        android:ems="10"
+        android:hint="@string/telefono"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noPedidoAceptar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -209,7 +209,6 @@
 
 
     <string name="aceptarPago">ACEPTAR</string>
-    <string name="denegarPago">DENEGAR</string>
     <string name="cerrar_sss">Cerrar sesión</string>
     <string name="para_cu_ndo_necesitas_tu_pedido">¿Para cuándo necesitas tu pedido?</string>
     <string name="para_qu_hora_lo_necesitas">¿Para qué hora lo necesitas?</string>
@@ -227,6 +226,10 @@
     <string name="requerido_para">Requerido para:</string>
     <string name="hora_del_pedido">Hora del Pedido</string>
     <string name="fecha_del_pedido">Fecha del Pedido</string>
+    <string name= "denegarPago">DENEGAR</string>
+    <string name="cerrarSesion">Cerrar sesión</string>
+    <string name="numeroPedido">Número de pedido</string>
+
 
 
 </resources>
