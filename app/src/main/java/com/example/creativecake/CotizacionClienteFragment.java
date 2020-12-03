@@ -65,8 +65,7 @@ public class CotizacionClienteFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Intent intent1 = getActivity().getIntent();
-        telefono = intent1.getStringExtra("telefono");
+        telefono = SharedPreferences_Util.getPhone_SP(globalContext);
 
         Button boton_enviar_coti= view.findViewById(R.id.btn_enviar);
         Button boton_revisar_coti= view.findViewById(R.id.btn_revisar);

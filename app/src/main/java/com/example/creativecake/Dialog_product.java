@@ -93,7 +93,10 @@ public class Dialog_product{
                queryT.addListenerForSingleValueEvent(new ValueEventListener() {
                    @Override
                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                       tienda = snapshot.getValue(StoreHelperClass.class);
+                       for(DataSnapshot shot: snapshot.getChildren()){
+                           tienda = shot.getValue(StoreHelperClass.class);
+                           break;
+                       }
                    }
 
                    @Override
@@ -109,7 +112,7 @@ public class Dialog_product{
                    public void onDataChange(@NonNull DataSnapshot snapshot) {
                        for (DataSnapshot ds: snapshot.getChildren()) {
                            item = ds.getKey();
-                           ItemHelperClass product = new ItemHelperClass(producto.getNombre(),"1", tienda.getNombre(), tienda.getDireccion(),
+                           ItemHelperClass product = new ItemHelperClass(producto.getNombre(),"1", producto.getUser_name(), tienda.getDireccion(),
                                    tienda.getTelefono(), usuario.getNombre(), usuario.getDireccion(),telefono,
                                    producto.getDownloadUrl(),producto.getOferta(),producto.getPrecio(), " ", " ");
 

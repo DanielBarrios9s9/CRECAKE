@@ -39,22 +39,7 @@ public class AdaptadorProductoCatalogo extends RecyclerView.Adapter<AdaptadorPro
 
     @Override
     public void onBindViewHolder(@NonNull CatalogoviewHolder holder, int position) {
-        holder.ofertaProducto.setVisibility(View.GONE);
         final producto_ejemplo producto = listaProductos.get(position);
-
-        if (producto.getOferta()==""){
-            holder.ofertaProducto.setVisibility(View.INVISIBLE);
-        }
-        else if (producto.getOferta()==" ") {
-            holder.ofertaProducto.setVisibility(View.INVISIBLE);
-        }
-        else if (producto.getOferta()=="0") {
-            holder.ofertaProducto.setVisibility(View.INVISIBLE);
-        }
-        else{
-            holder.ofertaProducto.setVisibility(View.VISIBLE);
-            holder.ofertaProducto.setText("- "+producto.getOferta()+" %");
-        }
 
         Picasso.get().load(producto.getDownloadUrl()).placeholder(R.drawable.imagenproducto). error(R.drawable.imagenproducto).resize(150,150).into(holder.imagenProducto);
         holder.nombreProducto.setText(producto.getNombre());
@@ -62,6 +47,7 @@ public class AdaptadorProductoCatalogo extends RecyclerView.Adapter<AdaptadorPro
         holder.pasteleriaProducto.setText("Pastelería "+producto.getUser_name());
         holder.tipoProducto.setText(producto.getTipo());
         holder.ratingProducto.setRating(Float.parseFloat(producto.getRating()));
+        holder.ofertaProducto.setText("- "+producto.getOferta()+" %");
 
 
 

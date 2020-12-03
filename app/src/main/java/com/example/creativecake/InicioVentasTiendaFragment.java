@@ -83,7 +83,7 @@ public class InicioVentasTiendaFragment extends Fragment {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.fragment_tienda_inventario);
+                Navigation.findNavController(v).navigate(R.id.fragment_tienda_ventas);
             }
         });
     }

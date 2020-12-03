@@ -28,9 +28,11 @@ public class fragment_tienda_visualizar_producto extends Fragment {
     RecyclerView recyclerProductos;
     private Context globalContext = null;
     View v;
+    StoreHelperClass tienda;
+    String telefono;
     AdaptadorProductoTienda adaptador;
     private ArrayList<producto_ejemplo> listaProductos;
-    private DatabaseReference datosStoreRef;
+    private DatabaseReference datosStoreRef, datosUsuario;
 
     public fragment_tienda_visualizar_producto() {
         // Required empty public constructor
@@ -74,11 +76,31 @@ public class fragment_tienda_visualizar_producto extends Fragment {
     }
 
     private void Base() {
-        Intent intent1 = getActivity().getIntent();
-        final String user_name = "Pastelería " + intent1.getStringExtra("nombreIngresado");
+        telefono = SharedPreferences_Util.getPhone_SP(globalContext);
+        datosUsuario= FirebaseDatabase.getInstance().getReference("usuarioNegocio").child(telefono);
+        datosUsuario.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                tienda =snapshot.getValue(StoreHelperClass.class);
+                try {
+                    System.out.println(tienda.getNombre());
+                    Buscar();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    private void Buscar(){
         datosStoreRef= FirebaseDatabase.getInstance().getReference("productoTienda");
-        Query productosTienda = datosStoreRef.orderByChild("user_name").equalTo(user_name);
+        Query productosTienda = datosStoreRef.orderByChild("user_name").equalTo(tienda.getNombre());
         productosTienda.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -96,4 +118,5 @@ public class fragment_tienda_visualizar_producto extends Fragment {
             }
         });
     }
+
 }

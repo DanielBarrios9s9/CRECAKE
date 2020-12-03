@@ -70,8 +70,7 @@ public class FinCompraClienteFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Intent intent1 = getActivity().getIntent();
-        //telefono = intent1.getStringExtra("telefono"); null pointer error, telefono no tiene valor
+
         telefono = SharedPreferences_Util.getPhone_SP(globalContext);
 
         navController= Navigation.findNavController(view);
@@ -120,7 +119,7 @@ public class FinCompraClienteFragment extends Fragment {
                     @RequiresApi(api = Build.VERSION_CODES.O)
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        item = snapshot.getKey();
+                        for(DataSnapshot snap: snapshot.getChildren()){item = snap.getKey();}
                         pagoCarr.child(item).child("fecha").setValue(LocalDate.now().toString());
                         pagoCarr.child(item).child("hora").setValue(LocalTime.now().toString()).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
