@@ -46,6 +46,7 @@ public class RegistroCliente extends AppCompatActivity
                 DatabaseReference ref2 = database.getReference().child("carrito");
                 DatabaseReference ref3 = database.getReference("chat");
                 DatabaseReference ref4 = database.getReference().child("pagoCarrito");
+                DatabaseReference ref5 = database.getReference().child("cotizaciones");
 
                 String nombre = etNombre.getText().toString();
                 String correo = etCorreo.getText().toString();
@@ -61,6 +62,7 @@ public class RegistroCliente extends AppCompatActivity
                 ref2.child(telefono).child("1").setValue(" ");
                 ref3.child(telefono).setValue(" ");
                 ref4.child(telefono).child("1").setValue(" ");
+                ref5.child(telefono).setValue(" ");
 
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
 
