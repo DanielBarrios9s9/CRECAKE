@@ -15,12 +15,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class CotizacionClienteFragment extends Fragment {
 
+    FirebaseDatabase database;
+    DatabaseReference reference;
+
+    EditText nombre_cotizacion, precio, fecha, hora, especificaciones;
     Spinner tamaño;
     Spinner cobertura;
     Spinner sabor;
@@ -50,14 +58,16 @@ public class CotizacionClienteFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {}
+        if (getArguments() != null) {
+
+        }
         globalContext = this.getActivity();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        vista=inflater.inflate(R.layout.fragment_cotizacion_cliente, container, false);
+        vista = inflater.inflate(R.layout.fragment_cotizacion_cliente, container, false);
         return vista;
     }
 
@@ -65,17 +75,52 @@ public class CotizacionClienteFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        Intent intent1 = getActivity().getIntent();
+
         telefono = SharedPreferences_Util.getPhone_SP(globalContext);
 
-        Button boton_enviar_coti= view.findViewById(R.id.btn_enviar);
-        Button boton_revisar_coti= view.findViewById(R.id.btn_revisar);
-        ImageButton boton_bot= view.findViewById(R.id.btn_bot);
+        Button boton_enviar_coti= vista.findViewById(R.id.btn_enviar);
+        Button boton_revisar_coti= vista.findViewById(R.id.btn_revisar);
+        ImageButton boton_bot= vista.findViewById(R.id.btn_bot);
+
+        nombre_cotizacion = (EditText) vista.findViewById(R.id.editNombreCotizacion);
+        decoración = (Spinner) vista.findViewById(R.id.decoracion);
+        sabor = (Spinner) vista.findViewById(R.id.sabor);
+        cobertura = (Spinner) vista.findViewById(R.id.cobertura);
+        tamaño = (Spinner) vista.findViewById(R.id.tamaño);
+        precio = (EditText) vista.findViewById(R.id.editPrecio);
+        fecha = (EditText) vista.findViewById(R.id.editFecha);
+        hora = (EditText) vista.findViewById(R.id.editHora);
+        especificaciones = (EditText) vista.findViewById(R.id.editTextTextMultiLine);
+
 
         final NavController navController= Navigation.findNavController(view);
 
         boton_enviar_coti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+                String nombre_ = nombre_cotizacion.getText().toString();
+                String decoracion_ = decoración.getSelectedItem().toString();
+                String sabor_ = sabor.getSelectedItem().toString();
+                String cobertura_ = cobertura.getSelectedItem().toString();
+                String tamaño_ = tamaño.getSelectedItem().toString();
+                String precio_ = precio.getText().toString();
+                String fecha_ = fecha.getText().toString();
+                String hora_ = hora.getText().toString();
+                String especificaciones_ = especificaciones.getText().toString();
+
+                database = FirebaseDatabase.getInstance();
+                reference = database.getReference("cotizaciones");
+
+                final CotizacionHelperClass helperClass = new CotizacionHelperClass(nombre_,
+                        decoracion_, sabor_, cobertura_, tamaño_, precio_, fecha_, hora_, especificaciones_);
+
+                reference.child(telefono).push().setValue(helperClass);
+
+
+
                 Toast.makeText(getActivity(), "Cotización enviada", Toast.LENGTH_SHORT).show();
             }
         });
