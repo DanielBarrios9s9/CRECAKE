@@ -51,4 +51,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/btn_finalizarCompra"
+        android:layout_width="196dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/redondez_botones_daniel"
+        android:text="@string/finalizar_compra"
+        android:textColor="#F2F2F2"
+        android:textSize="18sp" />
+
+    </LinearLayout>
+
 </LinearLayout>

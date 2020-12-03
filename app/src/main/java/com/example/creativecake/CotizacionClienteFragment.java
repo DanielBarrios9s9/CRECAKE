@@ -17,6 +17,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class CotizacionClienteFragment extends Fragment {
 
@@ -28,8 +29,9 @@ public class CotizacionClienteFragment extends Fragment {
     private Context globalContext = null;
     View vista;
 
-    //Crear rama "Cotizaciones", subir con push todos los datos que el cliente llene en el layout,
-    //setOnClicklistener en botón "revisar cotización" que lleve al fragment con el que estpa conectado
+    //Crear rama "Cotizaciones", subir con push todos los datos que el cliente llene en el layout, HACER DESPUÉS
+
+    //setOnClicklistener en botón "revisar cotización" que lleve al fragment con el que esta conectado, LISTO
     //revisar cotización, crear textView con la información de la tienda y la dirección, botón que diga finalizar compra,
     //Cuando la tienda acepte el pedido, le avisa en cuanto va a hacer el pedido, conectar botón con finCompraCliente
     //
@@ -75,7 +77,7 @@ public class CotizacionClienteFragment extends Fragment {
         boton_enviar_coti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //navController.navigate(R.id.catalogoClienteFragment); falta saber qué enviar
+                Toast.makeText(getActivity(), "Cotización enviada", Toast.LENGTH_SHORT).show();
             }
         });
 
