@@ -2,10 +2,12 @@ package com.example.creativecake;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.constraintlayout.solver.widgets.Helper;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
@@ -27,6 +29,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 
 public class FinCompraClienteFragment extends Fragment {
@@ -83,7 +87,7 @@ public class FinCompraClienteFragment extends Fragment {
 
     public void Valores(){
 
-        pagoC= FirebaseDatabase.getInstance().getReference("pagoCarrito").child(telefono);
+        pagoC= FirebaseDatabase.getInstance().getReference().child("pagoCarrito").child(telefono);
         Query query = pagoC.limitToLast(1);
         query.addValueEventListener(new ValueEventListener() {
             @Override
@@ -109,25 +113,18 @@ public class FinCompraClienteFragment extends Fragment {
         verificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pagoCarr= FirebaseDatabase.getInstance().getReference("pagoCarrito").child(telefono);
+                pagoCarr= FirebaseDatabase.getInstance().getReference().child("pagoCarrito").child(telefono);
                 Query query = pagoCarr.limitToLast(1);
                 query.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @RequiresApi(api = Build.VERSION_CODES.O)
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        for (DataSnapshot ds: snapshot.getChildren()) { item = ds.getKey();}
-                        pagoCarr.child(item).child("fecha").setValue(new Date().toString());
-                        pagoCarr.child(item).child("confirmacion").setValue("pendiente").addOnSuccessListener(new OnSuccessListener<Void>() {
+                        item = snapshot.getKey();
+                        pagoCarr.child(item).child("fecha").setValue(LocalDate.now().toString());
+                        pagoCarr.child(item).child("hora").setValue(LocalTime.now().toString()).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                Toast.makeText(globalContext, "Estado de confirmación: pendiente", Toast.LENGTH_SHORT).show();
-                               /* int numItem = Integer.parseInt(item) + 1;
-                                String newItem = String.valueOf(numItem);
-                                pagoCarr.child(newItem).child("fecha").setValue(" ");
-                                pagoCarr.child(newItem).child("valor").setValue(" ");
-                                pagoCarr.child(newItem).child("comision").setValue(" ");
-                                pagoCarr.child(newItem).child("subtotal").setValue(" ");
-                                pagoCarr.child(newItem).child("descuento").setValue(" ");
-                                pagoCarr.child(newItem).child("confirmacion").setValue(" ");*/ //esto va en el boton fin junto con el vacio del carrito
+                                Toast.makeText(globalContext, "Estado de confirmación: Pendiente", Toast.LENGTH_SHORT).show();
 
                                 navController.navigate(R.id.vrifPagoClienteFragment);
                             }

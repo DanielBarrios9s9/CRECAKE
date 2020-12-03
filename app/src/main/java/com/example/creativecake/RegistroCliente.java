@@ -43,9 +43,9 @@ public class RegistroCliente extends AppCompatActivity
             {
                 database = FirebaseDatabase.getInstance();
                 reference = database.getReference("usuarioCliente");
-                DatabaseReference ref2 = database.getReference("carrito");
+                DatabaseReference ref2 = database.getReference().child("carrito");
                 DatabaseReference ref3 = database.getReference("chat");
-                DatabaseReference ref4 = database.getReference("pagoCarrito");
+                DatabaseReference ref4 = database.getReference().child("pagoCarrito");
 
                 String nombre = etNombre.getText().toString();
                 String correo = etCorreo.getText().toString();
@@ -57,21 +57,10 @@ public class RegistroCliente extends AppCompatActivity
                 UserHelperClass helperClass = new UserHelperClass(nombre, correo,
                         password,telefono, direccion, edad);
 
-
                 reference.child(telefono).setValue(helperClass);
-                ref2.child(telefono).child("1").child("producto").setValue(" ");
-                ref2.child(telefono).child("1").child("cantidad").setValue(" ");
-                ref2.child(telefono).child("1").child("tienda").setValue(" ");
-                ref2.child(telefono).child("1").child("imagen").setValue(" ");
-                ref2.child(telefono).child("1").child("oferta").setValue(" ");
-                ref2.child(telefono).child("1").child("precio").setValue(" ");
+                ref2.child(telefono).child("1").setValue(" ");
                 ref3.child(telefono).setValue(" ");
-                ref4.child(telefono).child("1").child("fecha").setValue(" ");
-                ref4.child(telefono).child("1").child("valor").setValue(" ");
-                ref4.child(telefono).child("1").child("subtotal").setValue(" ");
-                ref4.child(telefono).child("1").child("descuento").setValue(" ");
-                ref4.child(telefono).child("1").child("confirmacion").setValue(" ");
-                ref4.child(telefono).child("1").child("comision").setValue(" ");
+                ref4.child(telefono).child("1").setValue(" ");
 
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
 

@@ -59,7 +59,7 @@ public class AdaptadorProductoCatalogo extends RecyclerView.Adapter<AdaptadorPro
         Picasso.get().load(producto.getDownloadUrl()).placeholder(R.drawable.imagenproducto). error(R.drawable.imagenproducto).resize(150,150).into(holder.imagenProducto);
         holder.nombreProducto.setText(producto.getNombre());
         holder.valorProducto.setText("$ "+producto.getPrecio());
-        holder.pasteleriaProducto.setText(producto.getUser_name());
+        holder.pasteleriaProducto.setText("Pastelería "+producto.getUser_name());
         holder.tipoProducto.setText(producto.getTipo());
         holder.ratingProducto.setRating(Float.parseFloat(producto.getRating()));
 

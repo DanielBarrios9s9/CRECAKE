@@ -1,5 +1,7 @@
 package com.example.creativecake;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -22,6 +24,8 @@ public class CotizacionClienteFragment extends Fragment {
     Spinner cobertura;
     Spinner sabor;
     Spinner decoración;
+    String telefono;
+    private Context globalContext = null;
     View vista;
 
     //Crear rama "Cotizaciones", subir con push todos los datos que el cliente llene en el layout,
@@ -29,6 +33,24 @@ public class CotizacionClienteFragment extends Fragment {
     //revisar cotización, crear textView con la información de la tienda y la dirección, botón que diga finalizar compra,
     //Cuando la tienda acepte el pedido, le avisa en cuanto va a hacer el pedido, conectar botón con finCompraCliente
     //
+
+    public CotizacionClienteFragment() {
+        // Required empty public constructor
+    }
+
+    public static CotizacionClienteFragment newInstance(String param1, String param2) {
+        CotizacionClienteFragment fragment = new CotizacionClienteFragment();
+        Bundle args = new Bundle();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {}
+        globalContext = this.getActivity();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,6 +62,9 @@ public class CotizacionClienteFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        Intent intent1 = getActivity().getIntent();
+        telefono = intent1.getStringExtra("telefono");
 
         Button boton_enviar_coti= view.findViewById(R.id.btn_enviar);
         Button boton_revisar_coti= view.findViewById(R.id.btn_revisar);

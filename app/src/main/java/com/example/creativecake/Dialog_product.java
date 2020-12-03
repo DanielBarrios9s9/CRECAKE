@@ -35,8 +35,10 @@ import com.squareup.picasso.Picasso;
 public class Dialog_product{
 
     producto_ejemplo producto;
+    UserHelperClass usuario;
+    StoreHelperClass tienda;
     String telefono, item;
-    DatabaseReference datosCarrito;
+    DatabaseReference datosCarrito, datosUsuario, datosTienda;
     ImageView img;
     RatingBar ratingProducto;
     TextView nombre_producto, precio_producto, tipo_producto, descripcionProducto, ofertaProducto;
@@ -45,8 +47,6 @@ public class Dialog_product{
 
        this.producto= producto;
        this.telefono=telefono;
-       System.out.println(telefono);
-       System.out.println("El telefono:" + telefono);
        final Dialog dialog = new Dialog(context);
        dialog.requestWindowFeature((Window.FEATURE_NO_TITLE));
        dialog.setCancelable(false);
@@ -63,8 +63,6 @@ public class Dialog_product{
        ofertaProducto = (TextView) dialog.findViewById(R.id.txt_off);
        ratingProducto =(RatingBar) dialog.findViewById(R.id.ratingBar);
 
-       ofertaProducto.setVisibility(View.GONE);
-
 
        Picasso.get().load(producto.getDownloadUrl()).placeholder(R.drawable.imagenproducto). error(R.drawable.imagenproducto).resize(130,130).into(img);
        nombre_producto.setText(producto.getNombre());
@@ -72,48 +70,56 @@ public class Dialog_product{
        tipo_producto.setText(producto.getTipo());
        descripcionProducto.setText(producto.getDescripción());
        ratingProducto.setRating(Float.parseFloat(producto.getRating()));
-
-       if (producto.getOferta()==""){
-           ofertaProducto.setVisibility(View.INVISIBLE);
-       }
-       else if (producto.getOferta()==" ") {
-           ofertaProducto.setVisibility(View.INVISIBLE);
-       }
-       else if (producto.getOferta()=="0") {
-           ofertaProducto.setVisibility(View.INVISIBLE);
-       }
-       else{
-           ofertaProducto.setVisibility(View.VISIBLE);
-           ofertaProducto.setText("- "+producto.getOferta()+" %");
-       }
+       ofertaProducto.setText("- "+producto.getOferta()+" %");
 
        btn_agregar.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               datosCarrito= FirebaseDatabase.getInstance().getReference("carrito").child(telefono);
+               datosUsuario= FirebaseDatabase.getInstance().getReference("usuarioCliente").child(telefono);
+               datosUsuario.addListenerForSingleValueEvent(new ValueEventListener() {
+                   @Override
+                   public void onDataChange(@NonNull DataSnapshot snapshot) {
+                       usuario =snapshot.getValue(UserHelperClass.class);
+                   }
+
+                   @Override
+                   public void onCancelled(@NonNull DatabaseError error) {
+
+                   }
+               });
+
+               datosTienda= FirebaseDatabase.getInstance().getReference("usuarioNegocio");
+               Query queryT = datosTienda.orderByChild("nombre").equalTo(producto.getUser_name());
+               queryT.addListenerForSingleValueEvent(new ValueEventListener() {
+                   @Override
+                   public void onDataChange(@NonNull DataSnapshot snapshot) {
+                       tienda = snapshot.getValue(StoreHelperClass.class);
+                   }
+
+                   @Override
+                   public void onCancelled(@NonNull DatabaseError error) {
+
+                   }
+               });
+
+               datosCarrito= FirebaseDatabase.getInstance().getReference().child("carrito").child(telefono);
                Query query = datosCarrito.limitToLast(1);
                query.addListenerForSingleValueEvent(new ValueEventListener() {
                    @Override
                    public void onDataChange(@NonNull DataSnapshot snapshot) {
                        for (DataSnapshot ds: snapshot.getChildren()) {
                            item = ds.getKey();
-                           datosCarrito.child(item).child("cantidad").setValue("1");
-                           datosCarrito.child(item).child("producto").setValue(producto.getNombre());
-                           datosCarrito.child(item).child("imagen").setValue(producto.getDownloadUrl());
-                           datosCarrito.child(item).child("precio").setValue(producto.getPrecio());
-                           datosCarrito.child(item).child("oferta").setValue(producto.getOferta());
-                           datosCarrito.child(item).child("tienda").setValue(producto.getUser_name()).addOnSuccessListener(new OnSuccessListener<Void>() {
+                           ItemHelperClass product = new ItemHelperClass(producto.getNombre(),"1", tienda.getNombre(), tienda.getDireccion(),
+                                   tienda.getTelefono(), usuario.getNombre(), usuario.getDireccion(),telefono,
+                                   producto.getDownloadUrl(),producto.getOferta(),producto.getPrecio(), " ", " ");
+
+                           datosCarrito.child(item).setValue(product).addOnSuccessListener(new OnSuccessListener<Void>() {
                                @Override
                                public void onSuccess(Void aVoid) {
                                    Toast.makeText(context, "Producto agregado al Carrito", Toast.LENGTH_SHORT).show();
                                    int numItem = Integer.parseInt(item) + 1;
                                    String newItem = String.valueOf(numItem);
-                                   datosCarrito.child(newItem).child("cantidad").setValue(" ");
-                                   datosCarrito.child(newItem).child("producto").setValue(" ");
-                                   datosCarrito.child(newItem).child("tienda").setValue(" ");
-                                   datosCarrito.child(newItem).child("imagen").setValue(" ");
-                                   datosCarrito.child(newItem).child("precio").setValue(" ");
-                                   datosCarrito.child(newItem).child("oferta").setValue(" ");
+                                   datosCarrito.child(newItem).setValue(" ");
                                }
                            }).addOnFailureListener(new OnFailureListener() {
                                @Override

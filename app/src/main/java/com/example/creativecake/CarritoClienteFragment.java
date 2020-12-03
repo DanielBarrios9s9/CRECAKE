@@ -94,7 +94,7 @@ public class CarritoClienteFragment extends Fragment {
 
     private void Base() {
 
-        datosCarrito= FirebaseDatabase.getInstance().getReference("carrito").child(telefono);
+        datosCarrito= FirebaseDatabase.getInstance().getReference().child("carrito").child(telefono);
         datosCarrito.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -118,19 +118,17 @@ public class CarritoClienteFragment extends Fragment {
         finalizarCompra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Comprar();
 
-                /*Comprar();
-
-                pagoCa= FirebaseDatabase.getInstance().getReference("pagoCarrito").child(telefono);
+                pagoCa= FirebaseDatabase.getInstance().getReference().child("pagoCarrito").child(telefono);
                 Query query = pagoCa.limitToLast(1);
                 query.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        for (DataSnapshot ds: snapshot.getChildren()) { item = ds.getKey();}
-                        pagoCa.child(item).child("subtotal").setValue(String.valueOf(subTotal));
-                        pagoCa.child(item).child("descuento").setValue(String.valueOf(descuento));
-                        pagoCa.child(item).child("comision").setValue(String.valueOf(comision));
-                        pagoCa.child(item).child("valor").setValue(String.valueOf(total)).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        item = snapshot.getKey();
+                        HelperValor compra = new HelperValor(String.valueOf(total),String.valueOf(subTotal),String.valueOf(descuento),String.valueOf(comision),"PENDIENTE"," "," ");
+
+                        pagoCa.child(item).setValue(compra).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
                                 Toast.makeText(globalContext, "Valores guardados", Toast.LENGTH_SHORT).show();
@@ -148,7 +146,7 @@ public class CarritoClienteFragment extends Fragment {
                     public void onCancelled(@NonNull DatabaseError error) {
 
                     }
-                });*/
+                });
             }
         });
     }
