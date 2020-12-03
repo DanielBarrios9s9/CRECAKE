@@ -11,12 +11,14 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity android:name=".MainAdministrador"></activity>
 
@@ -35,19 +37,28 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBhG2xNtDxtu3nV69Zw1v9u1C_si-Tf67Y" />
 
-        <activity android:name=".MainDomiciliario" />
-        <activity android:name=".MainCliente" />
+        <activity android:name=".MainDomiciliario"
+            android:screenOrientation="userPortrait"/>
+        <activity android:name=".MainCliente"
+            android:screenOrientation="userPortrait"/>
         <activity android:name=".Ganancias" />
-        <activity android:name=".Inicio_domiciliario" />
-        <activity android:name=".Inicio_tienda" />
-        <activity android:name=".Menu_provisional" />
-        <activity android:name=".Registro" />
-        <activity android:name=".RegistroCliente" />
-        <activity android:name=".RegistroDomiciliario" />
-        <activity android:name=".RegistroNegocio" />
+        <activity android:name=".Inicio_domiciliario"
+            android:screenOrientation="userPortrait"/>
+        <activity android:name=".Inicio_tienda"
+            android:screenOrientation="userPortrait"/>
+
+        <activity android:name=".Registro"
+            android:screenOrientation="userPortrait"/>
+        <activity android:name=".RegistroCliente"
+            android:screenOrientation="userPortrait"/>
+        <activity android:name=".RegistroDomiciliario"
+            android:screenOrientation="userPortrait"/>
+        <activity android:name=".RegistroNegocio"
+            android:screenOrientation="userPortrait"/>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
+            android:screenOrientation="userPortrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
