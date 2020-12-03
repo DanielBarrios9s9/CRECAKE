@@ -67,7 +67,8 @@ public class FinCompraClienteFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         Intent intent1 = getActivity().getIntent();
-        telefono = intent1.getStringExtra("telefono");
+        //telefono = intent1.getStringExtra("telefono"); null pointer error, telefono no tiene valor
+        telefono = SharedPreferences_Util.getPhone_SP(globalContext);
 
         navController= Navigation.findNavController(view);
 
