@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,6 +22,8 @@ public class MainAdministrador extends AppCompatActivity {
     //button14
     private Button cerrarsesion, btnAceptar, btnDenegar;
     private EditText noPedido, numeroAceptar;
+    private HelperValor valor;
+    DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,12 +68,39 @@ public class MainAdministrador extends AppCompatActivity {
 
     public void aceptarPago()
     {
-        final String pedido = noPedido.getText().toString().trim();
         final String telefono = numeroAceptar.getText().toString().trim();
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("pagoCarrito").child(telefono).child(pedido);
+        reference = FirebaseDatabase.getInstance().getReference("pagoCarrito").child(telefono);
 
-        reference.child("confirmacion").setValue("ACEPTADO");
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot ds: snapshot.getChildren()){
+                    if(!ds.getValue().equals(" ")){
+                        valor =snapshot.getValue(HelperValor.class);
+                        try {
+                            System.out.println(valor.getValor());
+                        }catch (Exception e){
+                            e.printStackTrace();
+                        }
+                        if(valor.getConfirmacion().equals("PENDIENTE")){
+                            String llave = ds.getKey();
+                            reference.child(llave).child("confirmacion").setValue("ACEPTADO");
+                        }
+                    }else {
+                        Toast.makeText(getApplicationContext(), "No existe registro de esta compra", Toast.LENGTH_SHORT).show();
+                        break;
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
 
         noPedido.setText("");
         numeroAceptar.setText("");

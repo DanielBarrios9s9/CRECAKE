@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/redondez_botones"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nombrePedidoC"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:layout_margin="10dp"
+                android:text="@string/nombre_de_la_cotizaci_n"
+                android:textAlignment="center"
+                android:textColor="@color/colorSecondary"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nombreClienteC"
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                android:text="@string/nombre_cliente"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/textView53"
+                        android:layout_width="171dp"
+                        android:layout_height="40dp"
+                        android:gravity="center"
+                        android:text="@string/sabor"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorSecondary"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/saborCotizacionT"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:gravity="center"
+                        android:text="@string/sabor"
+                        android:textAlignment="center"
+                        android:textColor="#000000"
+                        android:textSize="25sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/textView55"
+                        android:layout_width="wrap_content"
+                        android:layout_height="49dp"
+                        android:gravity="center"
+                        android:text="@string/tama_o"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorSecondary"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tamañoCotizacionT"
+                        android:layout_width="wrap_content"
+                        android:layout_height="49dp"
+                        android:gravity="center"
+                        android:text="@string/sabor"
+                        android:textAlignment="center"
+                        android:textColor="#000000"
+                        android:textSize="25sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/textView57"
+                        android:layout_width="154dp"
+                        android:layout_height="41dp"
+                        android:gravity="center"
+                        android:text="@string/cobertura"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorSecondary"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/coberturaCotizacionT"
+                        android:layout_width="221dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/sabor"
+                        android:textAlignment="center"
+                        android:textColor="#000000"
+                        android:textSize="25sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/textView61"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:gravity="center"
+                        android:text="@string/decoracion"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorSecondary"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/decoracionCotizacionT"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/sabor"
+                        android:textAlignment="center"
+                        android:textColor="#000000"
+                        android:textSize="25sp" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/especificacionesCotizacionT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/especificaciones_aqu"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView64"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:text="@string/lo_necesito_para_la_siguiente_fecha_y_hora"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="94dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/textView67"
+                        android:layout_width="155dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/fecha"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorSecondary"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/fechaCotizacionT"
+                        android:layout_width="wrap_content"
+                        android:layout_height="54dp"
+                        android:gravity="center"
+                        android:text="@string/fecha"
+                        android:textAlignment="center"
+                        android:textColor="#000000"
+                        android:textSize="25sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/textView70"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/hora"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorSecondary"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/horaCotizacionT"
+                        android:layout_width="215dp"
+                        android:layout_height="57dp"
+                        android:gravity="center"
+                        android:text="@string/fecha"
+                        android:textAlignment="center"
+                        android:textColor="#000000"
+                        android:textSize="25sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="62dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/textView72"
+                        android:layout_width="143dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/pagar"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorSecondary"
+                        android:textSize="27sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/dineroCotizacionT"
+                        android:layout_width="wrap_content"
+                        android:layout_height="53dp"
+                        android:gravity="center"
+                        android:text="@string/precio_producto"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="#000000"
+                        android:textSize="27sp"
+                        android:textStyle="bold" />
+                </TableRow>
+
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/textView73"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:text="@string/estar_atent_a_tu_llamada_para_cuadrar_cualquier_detalle"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/cotizacionNumeroC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/celular_del_cliente"
+                android:textAlignment="center"
+                android:textColor="@color/colorSecondary"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_Aceptar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_rounded"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:text="@string/aceptar"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/btn_Volver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_rounded"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:text="@string/volver"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

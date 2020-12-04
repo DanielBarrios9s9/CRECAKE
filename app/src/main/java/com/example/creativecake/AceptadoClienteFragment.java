@@ -1,15 +1,19 @@
 package com.example.creativecake;
 
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.pdf.PdfDocument;
 import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -18,8 +22,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,39 +38,34 @@ import com.google.firebase.database.ValueEventListener;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.concurrent.CountDownLatch;
 
 
 public class AceptadoClienteFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
     private Button botonFactura, botonFin;
     private NavController navController;
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private Context globalContext;
+    String telefono;
+    DatabaseReference pago,domicilios, ventas, carrito;
+    List<ItemHelperClass> listadoCompras;
+    CountDownLatch count;
+    Boolean n;
+    TextView ITEM;
+    int i;
+    ProgressBar progressBar;
+    View v;
 
     public AceptadoClienteFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment AceptadoClienteFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static AceptadoClienteFragment newInstance(String param1, String param2) {
         AceptadoClienteFragment fragment = new AceptadoClienteFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -71,9 +74,8 @@ public class AceptadoClienteFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        globalContext=this.getActivity();
     }
 
     @Override
@@ -87,10 +89,11 @@ public class AceptadoClienteFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        navController= Navigation.findNavController(view);
+        v = view;
 
         botonFactura = (Button)view.findViewById(R.id.descargar_factura);
         botonFin = (Button)view.findViewById(R.id.btn_fin);
+        progressBar =(ProgressBar) view.findViewById(R.id.progressBar2);
 
         botonFactura.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,7 +105,9 @@ public class AceptadoClienteFragment extends Fragment {
         botonFin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.inicioClienteFragment);
+                Reordenar verificar = new Reordenar();
+                verificar.execute();
+
             }
         });
 
@@ -182,5 +187,113 @@ public class AceptadoClienteFragment extends Fragment {
                 Toast.makeText(getActivity(),"No hay aplicación de leer PDFs", Toast.LENGTH_SHORT);
             }
 
+    }
+
+    private class Reordenar extends AsyncTask<Void,Integer,Boolean> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            navController= Navigation.findNavController(v);
+            listadoCompras= new LinkedList<>();
+            telefono = SharedPreferences_Util.getPhone_SP(globalContext);
+
+            pago= FirebaseDatabase.getInstance().getReference().child("pagoCarrito").child(telefono);
+            domicilios=FirebaseDatabase.getInstance().getReference().child("domicilios");
+            ventas = FirebaseDatabase.getInstance().getReference().child("Ventas");
+            carrito = FirebaseDatabase.getInstance().getReference().child("carrito");
+
+            ITEM= (TextView) getActivity().findViewById(R.id.ITEM);
+            n=false;
+            botonFin.setEnabled(false);
+            progressBar.setVisibility(View.VISIBLE);
+            progressBar.setMax(100);
+            progressBar.setProgress(0);
+            i=0;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean aBoolean) {
+            Toast.makeText(globalContext, "¡Pronto el domiciliario recogerá tu pedido y lo llevará hasta tu puerta!", Toast.LENGTH_SHORT).show();
+            carrito.child(telefono).child("1").setValue(" ").addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    progressBar.setProgress(100);
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            progressBar.setVisibility(View.INVISIBLE);
+            botonFin.setEnabled(true);
+            navController.navigate(R.id.inicioClienteFragment);
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            super.onProgressUpdate(values);
+            progressBar.setProgress(values[0].intValue());
+        }
+
+        @Override
+        protected void onCancelled() {
+            super.onCancelled();
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... voids) {
+            count = new CountDownLatch(3);
+            carrito.child(telefono).addListenerForSingleValueEvent(new ValueEventListener() {
+                @RequiresApi(api = Build.VERSION_CODES.O)
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    listadoCompras.removeAll(listadoCompras);
+                    for(DataSnapshot snap: snapshot.getChildren()){
+                        if (!snap.getValue().equals(" ")){
+                            ItemHelperClass producto = snap.getValue(ItemHelperClass.class);
+                            producto.setFecha(LocalDate.now().toString());
+                            producto.setHora(LocalTime.now().toString());
+                            ventas.child(producto.getNumeroTienda()).push().setValue(producto).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    i+=2;
+                                    publishProgress(i);
+                                }
+                            });
+                            listadoCompras.add(producto);
+                        }
+                        else{ break;}
+                    }
+                    count.countDown();
+                    domicilios.push().setValue(listadoCompras).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            i+=2;
+                            publishProgress(i);
+                            count.countDown();
+                            carrito.child(telefono).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    i+=2;
+                                    publishProgress(i);
+                                    count.countDown();
+                                }
+                            });
+
+                        }
+                    });
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {}});
+            try {
+                count.await();
+            }catch (InterruptedException in){
+                in.printStackTrace();
+            }
+            publishProgress(90);
+            return true;
+        }
     }
 }

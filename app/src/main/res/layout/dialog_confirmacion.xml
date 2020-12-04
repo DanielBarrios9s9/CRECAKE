@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:background="@drawable/roundedframe"
+    android:backgroundTint="#FFFFFF"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="match_parent"
+        android:layout_height="224dp"
+        android:gravity="center"
+        android:text="@string/puedes_cumplir_con_todas_las_especificaciones_de_esta_cotizaci_n_en_el_tiempo_requerido"
+        android:textAlignment="gravity"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/nomCoti"
+        android:layout_width="308dp"
+        android:layout_height="70dp"
+        android:text="@string/nombre_del_producto"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="25sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_SIpuedo"
+            android:layout_width="29dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_rounded"
+            android:text="@string/s"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_NoPuedo"
+            android:layout_width="21dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_rounded"
+            android:text="@string/no"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -20,13 +20,17 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class CotizacionClienteFragment extends Fragment {
 
     FirebaseDatabase database;
-    DatabaseReference reference;
+    DatabaseReference reference, datosUsuario;
+    UserHelperClass usuario;
 
     EditText nombre_cotizacion, precio, fecha, hora, especificaciones;
     Spinner tamaño;
@@ -36,13 +40,6 @@ public class CotizacionClienteFragment extends Fragment {
     String telefono;
     private Context globalContext = null;
     View vista;
-
-    //Crear rama "Cotizaciones", subir con push todos los datos que el cliente llene en el layout, HACER DESPUÉS
-
-    //setOnClicklistener en botón "revisar cotización" que lleve al fragment con el que esta conectado, LISTO
-    //revisar cotización, crear textView con la información de la tienda y la dirección, botón que diga finalizar compra,
-    //Cuando la tienda acepte el pedido, le avisa en cuanto va a hacer el pedido, conectar botón con finCompraCliente
-    //
 
     public CotizacionClienteFragment() {
         // Required empty public constructor
@@ -75,8 +72,6 @@ public class CotizacionClienteFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Intent intent1 = getActivity().getIntent();
-
         telefono = SharedPreferences_Util.getPhone_SP(globalContext);
 
         Button boton_enviar_coti= vista.findViewById(R.id.btn_enviar);
@@ -100,6 +95,20 @@ public class CotizacionClienteFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
+                datosUsuario= FirebaseDatabase.getInstance().getReference("usuarioCliente").child(telefono);
+                datosUsuario.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        usuario =snapshot.getValue(UserHelperClass.class);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+
 
                 String nombre_ = nombre_cotizacion.getText().toString();
                 String decoracion_ = decoración.getSelectedItem().toString();
@@ -115,7 +124,9 @@ public class CotizacionClienteFragment extends Fragment {
                 reference = database.getReference("cotizaciones");
 
                 final CotizacionHelperClass helperClass = new CotizacionHelperClass(nombre_,
-                        decoracion_, sabor_, cobertura_, tamaño_, precio_, fecha_, hora_, especificaciones_);
+                        decoracion_, sabor_, cobertura_, tamaño_, precio_, fecha_, hora_,
+                        usuario.getDireccion(), usuario.getTelefono(), usuario.getNombre(),
+                        especificaciones_,"PENDIENTE");
 
                 reference.child(telefono).push().setValue(helperClass);
 

@@ -1,5 +1,6 @@
 package com.example.creativecake;
 
+import android.content.ClipData;
 import android.content.Context;
 import android.os.Bundle;
 
@@ -27,7 +28,7 @@ public class fragment_tienda_ventas extends Fragment {
     View v;
     AdaptadorPedidosTienda adaptador;
     private RecyclerView recyclerProductos;
-    private ArrayList<PedidoTienda> listaProductos;
+    private ArrayList<ItemHelperClass> listaProductos;
     private DatabaseReference datosPedidos;
     String telefono;
     private Context globalContext = null;
@@ -83,8 +84,11 @@ public class fragment_tienda_ventas extends Fragment {
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     listaProductos.removeAll(listaProductos);
                     for (DataSnapshot ds : snapshot.getChildren()) {
-                        PedidoTienda producto = ds.getValue(PedidoTienda.class);
-                        listaProductos.add(producto);
+                        if(!ds.getValue().equals(" ")){
+                            ItemHelperClass producto = ds.getValue(ItemHelperClass.class);
+                            listaProductos.add(producto);
+                        }else{break;}
+
                     }
                     adaptador.notifyDataSetChanged();
                 }

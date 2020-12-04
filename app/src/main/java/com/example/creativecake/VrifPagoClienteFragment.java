@@ -15,6 +15,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -30,16 +31,19 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
 
 public class VrifPagoClienteFragment extends Fragment {
     private Context globalContext = null;
     NavController navController;
     String telefono, item;
-    DatabaseReference pago, domicilios, ventas, carrito;
+    View v;
+    DatabaseReference pago;
     Boolean n, r;
     Query query;
     HelperValor compra;
-    List<ItemHelperClass> listadoCompras;
+    CountDownLatch count;
+    TextView ITEM;
 
     public VrifPagoClienteFragment() {
         // Required empty public constructor
@@ -70,114 +74,97 @@ public class VrifPagoClienteFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        navController= Navigation.findNavController(view);
+        v=view;
         Verificacion verificar = new Verificacion();
         verificar.execute();
     }
 
-    private class Verificacion extends AsyncTask<Void,Void,Boolean>{
+    private class Verificacion extends AsyncTask<Void,String,String>{
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            listadoCompras= new LinkedList<>();
-
+            navController= Navigation.findNavController(v);
             telefono = SharedPreferences_Util.getPhone_SP(globalContext);
-
-
             pago= FirebaseDatabase.getInstance().getReference().child("pagoCarrito").child(telefono);
-            domicilios=FirebaseDatabase.getInstance().getReference().child("domicilios");
-            ventas = FirebaseDatabase.getInstance().getReference().child("Ventas");
-            carrito = FirebaseDatabase.getInstance().getReference().child("carrito").child(telefono);
-            n=false;
-            r=false;
-            query = pago.limitToLast(1);
+            ITEM= (TextView) v.findViewById(R.id.ITEM);
         }
 
         @Override
-        protected Boolean doInBackground(Void... voids) {
-
+        protected String doInBackground(Void... voids) {
+            query = pago.limitToLast(1);
+            item=" ";
+            n=false;
+            r=false;
             while(true){
+                count = new CountDownLatch(1);
+                publishProgress("1");
                 query.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        for(DataSnapshot snap: snapshot.getChildren()){compra = snap.getValue(HelperValor.class);}
-                        if(compra.getConfirmacion().equals("ACEPTADO")){
-                            item=snapshot.getKey();
-                            n=true;
-                            r=true;
-                            carrito.addListenerForSingleValueEvent(new ValueEventListener() {
-                                @RequiresApi(api = Build.VERSION_CODES.O)
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                    listadoCompras.removeAll(listadoCompras);
-                                    for(DataSnapshot snap: snapshot.getChildren()){
-                                        ItemHelperClass producto = snap.getValue(ItemHelperClass.class);
-                                        producto.setFecha(LocalDate.now().toString());
-                                        producto.setHora(LocalTime.now().toString());
-                                        listadoCompras.add(producto);
-                                    }
-                                    domicilios.push().setValue(listadoCompras).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void aVoid) {
-                                            Toast.makeText(globalContext, "Productos listos para asignar a domiciliario", Toast.LENGTH_SHORT).show();
-                                            carrito.removeValue();
-                                            carrito.child(telefono).child("1").setValue(" ").addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                @Override
-                                                public void onSuccess(Void aVoid) {
-                                                    Toast.makeText(globalContext, "Carrito listo para nueva compra", Toast.LENGTH_SHORT).show();
-                                                }
-                                            }).addOnFailureListener(new OnFailureListener() {
-                                                @Override
-                                                public void onFailure(@NonNull Exception e) {
-                                                    Toast.makeText(globalContext, "Error al vaciar el carrito", Toast.LENGTH_SHORT).show();
-                                                }
-                                            });
-                                        }
-                                    }).addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            Toast.makeText(globalContext, "Error al agregar los productos a domicilios", Toast.LENGTH_SHORT).show();
-                                        }
-                                    });
-                                }
-
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError error) {
-
-                                }
-                            });
-                            int numItem = Integer.parseInt(item) + 1;
-                            String newItem = String.valueOf(numItem);
-                            pago.child(newItem).setValue(" ");
+                        publishProgress("2");
+                        publishProgress("entró al query");
+                        for(DataSnapshot snap: snapshot.getChildren()){
+                            compra = snap.getValue(HelperValor.class);
+                            publishProgress("3");
+                            publishProgress("bajó una compra");
+                            if(compra.getConfirmacion().equals("ACEPTADO")){
+                                publishProgress("4 SI");
+                                item=snapshot.getKey();
+                                ITEM.setText(item);
+                                n=true;
+                                r=true;
+                                publishProgress("ya fue aceptado");
+                                count.countDown();
+                                break;
+                            }
+                            else if(compra.getConfirmacion().equals("DENEGADO")){
+                                publishProgress("4 NO");
+                                item=snapshot.getKey();
+                                ITEM.setText(item);
+                                r=true;
+                                n=true;
+                                publishProgress("ya fue denegado");
+                                count.countDown();
+                                break;
+                            }else{
+                                publishProgress("4 Pendiente");
+                                count.countDown();
+                                break;
+                            }
                         }
-                        else if(compra.getConfirmacion().equals("DENEGADO")){
-                            r=true;
-                            n=true;
-                        }
+
                     }
-
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
 
-                    }
-                });
-                if(n){ break;}
+                    }});
+                try {
+                    count.await();
+                }catch (InterruptedException in){
+                    in.printStackTrace();
+                }
+
+                publishProgress("5");
+                if(n){break;}
                 if(isCancelled()){break;}
+                publishProgress("reinicia el loop");
             }
 
-            Boolean s = false;
-            if(n && r){s=true;}
-            else if (n && (!r)){s=false;}
-
-            return s;
+            return item;
         }
 
         @Override
-        protected void onPostExecute(Boolean resultado) {
+        protected void onProgressUpdate(String... values) {
+            super.onProgressUpdate(values);
+            System.out.println(values[0]);
+        }
+
+        @Override
+        protected void onPostExecute(String resultado) {
             //super.onPostExecute(aBoolean);
-            if(resultado){navController.navigate(R.id.denegadoClienteFragment);
-            }else {navController.navigate(R.id.aceptadoClienteFragment);}
+            if(resultado.equals(" ")){ navController.navigate(R.id.denegadoClienteFragment);}
+            else {navController.navigate(R.id.aceptadoClienteFragment);}
         }
 
         @Override
@@ -185,6 +172,7 @@ public class VrifPagoClienteFragment extends Fragment {
             super.onCancelled();
             Toast.makeText(globalContext, "No se ha respondido tu solicitud de compra. Repite el proceso", Toast.LENGTH_SHORT).show();
         }
+
     }
 
 

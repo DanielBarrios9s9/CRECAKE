@@ -93,11 +93,14 @@ public class FinCompraClienteFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot ds: snapshot.getChildren()) {
-                    HelperValor valor_carrito = ds.getValue(HelperValor.class);
-                    subT.setText(String.valueOf(valor_carrito.getSubtotal()));
-                    des.setText(String.valueOf(valor_carrito.getDescuento()));
-                    com.setText(String.valueOf(valor_carrito.getComision()));
-                    tol.setText(String.valueOf(valor_carrito.getValor()));
+                    if(!ds.getValue().equals(" ")){
+                        HelperValor valor_carrito = ds.getValue(HelperValor.class);
+                        subT.setText(String.valueOf(valor_carrito.getSubtotal()));
+                        des.setText(String.valueOf(valor_carrito.getDescuento()));
+                        com.setText(String.valueOf(valor_carrito.getComision()));
+                        tol.setText(String.valueOf(valor_carrito.getValor()));
+                    }
+                    else{break;}
                 }
             }
 

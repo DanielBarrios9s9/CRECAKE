@@ -1,6 +1,7 @@
 package com.example.creativecake;
 
 import android.app.Dialog;
+import android.content.ClipData;
 import android.content.Context;
 import android.view.View;
 import android.view.Window;
@@ -20,12 +21,12 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class Dialog_entregado {
-    PedidoTienda producto;
+    ItemHelperClass producto;
     String telefono;
     Button si, no;
     DatabaseReference datos;
 
-    public Dialog_entregado(final Context context,final PedidoTienda producto, final String telefono) {
+    public Dialog_entregado(final Context context,final ItemHelperClass producto, final String telefono) {
         this.producto = producto;
         this.telefono = telefono;
 
@@ -42,7 +43,7 @@ public class Dialog_entregado {
             public void onClick(View v) {
                 try{
                     datos= FirebaseDatabase.getInstance().getReference().child("Ventas").child(telefono);
-                    Query deleteTienda = datos.orderByChild("nombre").equalTo(producto.getNombre());
+                    Query deleteTienda = datos.orderByChild("nombre").equalTo(producto.getProducto());
                     deleteTienda.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -51,7 +52,7 @@ public class Dialog_entregado {
                                 datos.child(clave).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {
-                                        Toast.makeText(context, "¡Gracias por cumplis con tu pedido!", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(context, "¡Gracias por cumplir con tu pedido!", Toast.LENGTH_SHORT).show();
                                         dialog.dismiss();
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {

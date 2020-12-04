@@ -17,11 +17,11 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class AdaptadorPedidosTienda extends RecyclerView.Adapter<AdaptadorPedidosTienda.PedidosviewHolder>{
-    ArrayList<PedidoTienda> listaProductos;
+    ArrayList<ItemHelperClass> listaProductos;
     Context globalContext;
     String telefono;
 
-    public AdaptadorPedidosTienda(ArrayList<PedidoTienda> listaProductos, Context globalContext, String telefono) {
+    public AdaptadorPedidosTienda(ArrayList<ItemHelperClass> listaProductos, Context globalContext, String telefono) {
         this.listaProductos = listaProductos;
         this.globalContext = globalContext;
         this.telefono = telefono;
@@ -36,11 +36,12 @@ public class AdaptadorPedidosTienda extends RecyclerView.Adapter<AdaptadorPedido
 
     @Override
     public void onBindViewHolder(@NonNull PedidosviewHolder holder, int position) {
-        final PedidoTienda producto = listaProductos.get(position);
+        final ItemHelperClass producto = listaProductos.get(position);
 
-        Picasso.get().load(producto.getImagen()).placeholder(R.drawable.imagenproducto). error(R.drawable.imagenproducto).resize(150,150).into(holder.imagenProducto);
-        holder.nombreProducto.setText(producto.getNombre());
+        Picasso.get().load(producto.getImagen()).placeholder(R.drawable.imagenproducto). error(R.drawable.imagenproducto).resize(100,100).into(holder.imagenProducto);
+        holder.nombreProducto.setText(producto.getProducto());
         holder.cantidadProducto.setText("x "+producto.getCantidad());
+        holder.fechaEntrega.setText(producto.getFecha());
 
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +61,7 @@ public class AdaptadorPedidosTienda extends RecyclerView.Adapter<AdaptadorPedido
 
         CardView card;
         ImageView imagenProducto;
-        TextView nombreProducto, cantidadProducto;
+        TextView nombreProducto, cantidadProducto, fechaEntrega;
 
         public PedidosviewHolder(@NonNull View itemView) {
             super(itemView);
@@ -69,6 +70,7 @@ public class AdaptadorPedidosTienda extends RecyclerView.Adapter<AdaptadorPedido
             imagenProducto= (ImageView) itemView.findViewById(R.id.imagen_Pedido);
             nombreProducto= (TextView) itemView.findViewById(R.id.Nombre_Pedido);
             cantidadProducto= (TextView) itemView.findViewById(R.id.Cantidad_Pedido);
+            fechaEntrega= (TextView) itemView.findViewById(R.id.Fecha_PedidoHoy);
         }
     }
 }

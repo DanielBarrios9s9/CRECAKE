@@ -2,10 +2,11 @@ package com.example.creativecake;
 
 public class CotizacionHelperClass {
 
-    String nombre, decoracion, sabor, cobertura, tamaño, precio, fecha, hora, especificaciones;
+    String nombre, decoracion, sabor, cobertura, tamaño,
+            precio, fecha, hora, especificaciones, direccionCliente, numeroCliente, nombreCliente, estadoPago;
 
     public CotizacionHelperClass(String nombre, String decoracion, String sabor, String cobertura,
-    String tamaño, String precio, String fecha, String hora, String especificaciones){
+    String tamaño, String precio, String fecha, String hora, String direccionCliente, String numeroCliente, String nombreCliente, String especificaciones, String estadoPago){
         this.nombre = nombre;
         this.decoracion = decoracion;
         this.sabor = sabor;
@@ -15,6 +16,10 @@ public class CotizacionHelperClass {
         this.fecha = fecha;
         this.hora = hora;
         this.especificaciones = especificaciones;
+        this.direccionCliente=direccionCliente;
+        this.nombreCliente= nombreCliente;
+        this.numeroCliente=numeroCliente;
+        this.estadoPago=estadoPago;
     }
 
     public String getNombre() {
@@ -87,5 +92,37 @@ public class CotizacionHelperClass {
 
     public void setEspecificaciones(String especificaciones) {
         this.especificaciones = especificaciones;
+    }
+
+    public String getDireccionCliente() {
+        return direccionCliente;
+    }
+
+    public void setDireccionCliente(String direccionCliente) {
+        this.direccionCliente = direccionCliente;
+    }
+
+    public String getNumeroCliente() {
+        return numeroCliente;
+    }
+
+    public void setNumeroCliente(String numeroCliente) {
+        this.numeroCliente = numeroCliente;
+    }
+
+    public String getNombreCliente() {
+        return nombreCliente;
+    }
+
+    public void setNombreCliente(String nombreCliente) {
+        this.nombreCliente = nombreCliente;
+    }
+
+    public String getEstadoPago() {
+        return estadoPago;
+    }
+
+    public void setEstadoPago(String estadoPago) {
+        this.estadoPago = estadoPago;
     }
 }
