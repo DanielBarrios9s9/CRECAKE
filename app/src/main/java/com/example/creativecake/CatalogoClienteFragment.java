@@ -77,9 +77,8 @@ public class CatalogoClienteFragment extends Fragment {
 
     public void Inicializar(){
 
-        Intent intent1 = getActivity().getIntent();
-        telefono = intent1.getStringExtra("telefono");
-        System.out.println(telefono);
+        telefono = SharedPreferences_Util.getPhone_SP(globalContext);
+
         recyclerProductos = (RecyclerView) v.findViewById(R.id.recyclerview);
         recyclerProductos.setLayoutManager(new LinearLayoutManager(getContext()));
         listaProductos = new ArrayList<>();

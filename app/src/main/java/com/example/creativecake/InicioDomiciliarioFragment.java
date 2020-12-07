@@ -88,8 +88,10 @@ public class InicioDomiciliarioFragment extends Fragment {
                     pedido.setNom_usuario("Anderson Morales");
                     int count = 0;
                     for(DataSnapshot ds1: ds.getChildren()){
-                        if(!ds1.child("cantidad").getValue().equals(" ")){
-                            count++;
+                        if(ds1.child("cantidad").getValue() != null) {
+                            if (!ds1.child("cantidad").getValue().equals("")) {
+                                count++;
+                            }
                         }
                     }
                     String countR = String.valueOf(count);

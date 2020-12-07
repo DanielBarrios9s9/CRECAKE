@@ -35,6 +35,7 @@ public class UsuarioClienteFragment extends Fragment {
     EditText etNombre, etCorreo, etPassword, etDireccion, etEdad;
     TextView tvNombreGrande,edTelefono;
     Button modificar;
+    String telefono;
     private DatabaseReference reference;
     private Context globalContext = null;
 
@@ -67,8 +68,7 @@ public class UsuarioClienteFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Intent intent1 = getActivity().getIntent();
-        final String telefono = intent1.getStringExtra("telefono");
+        telefono = SharedPreferences_Util.getPhone_SP(globalContext);
 
         tvNombreGrande = (TextView) view.findViewById(R.id.idNombrePerfilGrande);
         etNombre = (EditText)view.findViewById(R.id.idNombrePerfil);

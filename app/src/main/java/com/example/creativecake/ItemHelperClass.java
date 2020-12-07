@@ -14,6 +14,7 @@ public class ItemHelperClass {
     private String precio;
     private String fecha;
     private String hora;
+    private String lugar;
 
     public ItemHelperClass(){}
 
@@ -137,5 +138,13 @@ public class ItemHelperClass {
 
     public void setHora(String hora) {
         this.hora = hora;
+    }
+
+    public String getLugar() {
+        return lugar;
+    }
+
+    public void setLugar(String lugar) {
+        this.lugar = lugar;
     }
 }

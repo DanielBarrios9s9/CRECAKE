@@ -55,4 +55,6 @@ public class StoreHelperClass
     public void setPassword(String password) {
         this.password = password;
     }
+
+
 }

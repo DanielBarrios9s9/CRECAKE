@@ -35,9 +35,11 @@ import com.squareup.picasso.Picasso;
 public class Dialog_product{
 
     producto_ejemplo producto;
+    Context context;
     UserHelperClass usuario;
     StoreHelperClass tienda;
     String telefono, item;
+    Boolean n;
     DatabaseReference datosCarrito, datosUsuario, datosTienda;
     ImageView img;
     RatingBar ratingProducto;
@@ -47,6 +49,7 @@ public class Dialog_product{
 
        this.producto= producto;
        this.telefono=telefono;
+       this.context=context;
        final Dialog dialog = new Dialog(context);
        dialog.requestWindowFeature((Window.FEATURE_NO_TITLE));
        dialog.setCancelable(false);
@@ -75,11 +78,18 @@ public class Dialog_product{
        btn_agregar.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
+               n=false;
                datosUsuario= FirebaseDatabase.getInstance().getReference("usuarioCliente").child(telefono);
                datosUsuario.addListenerForSingleValueEvent(new ValueEventListener() {
                    @Override
                    public void onDataChange(@NonNull DataSnapshot snapshot) {
                        usuario =snapshot.getValue(UserHelperClass.class);
+                       try {
+                           System.out.println(usuario.getNombre());
+                           n=true;
+                       }catch (Exception e){
+                           e.printStackTrace();
+                       }
                    }
 
                    @Override
@@ -93,42 +103,19 @@ public class Dialog_product{
                queryT.addListenerForSingleValueEvent(new ValueEventListener() {
                    @Override
                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                       tienda = snapshot.getValue(StoreHelperClass.class);
-                   }
-
-                   @Override
-                   public void onCancelled(@NonNull DatabaseError error) {
-
-                   }
-               });
-
-               datosCarrito= FirebaseDatabase.getInstance().getReference().child("carrito").child(telefono);
-               Query query = datosCarrito.limitToLast(1);
-               query.addListenerForSingleValueEvent(new ValueEventListener() {
-                   @Override
-                   public void onDataChange(@NonNull DataSnapshot snapshot) {
-                       for (DataSnapshot ds: snapshot.getChildren()) {
-                           item = ds.getKey();
-                           ItemHelperClass product = new ItemHelperClass(producto.getNombre(),"1", tienda.getNombre(), tienda.getDireccion(),
-                                   tienda.getTelefono(), usuario.getNombre(), usuario.getDireccion(),telefono,
-                                   producto.getDownloadUrl(),producto.getOferta(),producto.getPrecio(), " ", " ");
-
-                           datosCarrito.child(item).setValue(product).addOnSuccessListener(new OnSuccessListener<Void>() {
-                               @Override
-                               public void onSuccess(Void aVoid) {
-                                   Toast.makeText(context, "Producto agregado al Carrito", Toast.LENGTH_SHORT).show();
-                                   int numItem = Integer.parseInt(item) + 1;
-                                   String newItem = String.valueOf(numItem);
-                                   datosCarrito.child(newItem).setValue(" ");
+                       for(DataSnapshot snap : snapshot.getChildren()){
+                           tienda =snap.getValue(StoreHelperClass.class);
+                           try {
+                               System.out.println(tienda.getNombre());
+                               if(n && (!tienda.getNombre().equals(null))){
+                                   Agregar();
                                }
-                           }).addOnFailureListener(new OnFailureListener() {
-                               @Override
-                               public void onFailure(@NonNull Exception e) {
-                                   Toast.makeText(context, "Error al agregar el producto", Toast.LENGTH_SHORT).show();
-                               }
-                           });
-
+                           }catch (Exception e){
+                               e.printStackTrace();
+                           }
+                           break;
                        }
+
                    }
 
                    @Override
@@ -136,6 +123,8 @@ public class Dialog_product{
 
                    }
                });
+
+
            }
        });
 
@@ -151,6 +140,42 @@ public class Dialog_product{
        dialog.show();
    }
 
+   private void Agregar(){
+       datosCarrito= FirebaseDatabase.getInstance().getReference().child("carrito").child(telefono);
+       Query query = datosCarrito.limitToLast(1);
+       query.addListenerForSingleValueEvent(new ValueEventListener() {
+           @Override
+           public void onDataChange(@NonNull DataSnapshot snapshot) {
+               for (DataSnapshot ds: snapshot.getChildren()) {
+                   item = ds.getKey();
+                   ItemHelperClass product = new ItemHelperClass(producto.getNombre(),"1", producto.getUser_name(), tienda.getDireccion(),
+                           tienda.getTelefono(), usuario.getNombre(), usuario.getDireccion(),telefono,
+                           producto.getDownloadUrl(),producto.getOferta(),producto.getPrecio(), " ", " ");
+
+                   datosCarrito.child(item).setValue(product).addOnSuccessListener(new OnSuccessListener<Void>() {
+                       @Override
+                       public void onSuccess(Void aVoid) {
+                           Toast.makeText(context, "Producto agregado al Carrito", Toast.LENGTH_SHORT).show();
+                           int numItem = Integer.parseInt(item) + 1;
+                           String newItem = String.valueOf(numItem);
+                           datosCarrito.child(newItem).setValue(" ");
+                       }
+                   }).addOnFailureListener(new OnFailureListener() {
+                       @Override
+                       public void onFailure(@NonNull Exception e) {
+                           Toast.makeText(context, "Error al agregar el producto", Toast.LENGTH_SHORT).show();
+                       }
+                   });
+
+               }
+           }
+
+           @Override
+           public void onCancelled(@NonNull DatabaseError error) {
+
+           }
+       });
+   }
 
 
 

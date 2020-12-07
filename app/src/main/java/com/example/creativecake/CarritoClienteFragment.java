@@ -34,7 +34,7 @@ import java.util.Date;
 public class CarritoClienteFragment extends Fragment {
     NavController navController;
     RecyclerView recyclerProductos;
-    ArrayList<Pedido> listaProductos;
+    ArrayList<ItemHelperClass> listaProductos;
     private Context globalContext = null;
     View v;
     AdaptadorProductosCarrito adapter;
@@ -79,8 +79,6 @@ public class CarritoClienteFragment extends Fragment {
     public void Inicializar(){
 
         navController= Navigation.findNavController(v);
-
-        Intent intent1 = getActivity().getIntent();
         telefono = SharedPreferences_Util.getPhone_SP(globalContext);
 
         listaProductos= new ArrayList<>();
@@ -94,14 +92,14 @@ public class CarritoClienteFragment extends Fragment {
 
     private void Base() {
 
-        datosCarrito= FirebaseDatabase.getInstance().getReference().child("carrito").child(telefono);
+        datosCarrito = FirebaseDatabase.getInstance().getReference().getRoot().child("carrito").child(telefono);
         datosCarrito.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                listaProductos.removeAll(listaProductos);
-                for (DataSnapshot ds: snapshot.getChildren()) {
-                    Pedido producto = ds.getValue(Pedido.class);
-                    if (producto.getCantidad()!=" "){
+                for (DataSnapshot ds : snapshot.getChildren()) {
+                    if (!ds.getValue().equals(" ")){
+                        ItemHelperClass producto = ds.getValue(ItemHelperClass.class);
+                        producto.setLugar(ds.getKey());
                         listaProductos.add(producto);
                     }
                     else{ break;}
@@ -125,21 +123,62 @@ public class CarritoClienteFragment extends Fragment {
                 query.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        item = snapshot.getKey();
-                        HelperValor compra = new HelperValor(String.valueOf(total),String.valueOf(subTotal),String.valueOf(descuento),String.valueOf(comision),"PENDIENTE"," "," ");
+                        for(DataSnapshot snap: snapshot.getChildren()){
+                            item = snap.getKey();
+                            if (!snap.getValue().equals(" ")){
+                                HelperValor compraA = snap.getValue(HelperValor.class);
+                                if(compraA.getConfirmacion().equals("ACEPTADO")){
+                                    int numItem = Integer.parseInt(item) + 1;
+                                    String newItem = String.valueOf(numItem);
+                                    pagoCa.child(newItem).setValue(" ");
+                                    HelperValor compra = new HelperValor(String.valueOf(total),String.valueOf(subTotal),String.valueOf(descuento),String.valueOf(comision),"PENDIENTE"," "," ");
+                                    pagoCa.child(newItem).setValue(compra).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            Toast.makeText(globalContext, "Valores guardados", Toast.LENGTH_SHORT).show();
+                                            navController.navigate(R.id.finCompraClienteFragment);
+                                        }
+                                    }).addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Toast.makeText(globalContext, "Error al guardar los valores", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                                }else{
+                                    HelperValor compra = new HelperValor(String.valueOf(total),String.valueOf(subTotal),String.valueOf(descuento),String.valueOf(comision),"PENDIENTE"," "," ");
+                                    pagoCa.child(item).setValue(compra).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            Toast.makeText(globalContext, "Valores guardados", Toast.LENGTH_SHORT).show();
+                                            navController.navigate(R.id.finCompraClienteFragment);
+                                        }
+                                    }).addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Toast.makeText(globalContext, "Error al guardar los valores", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                                    break;
+                                }
+                            }
+                            else{
+                                HelperValor compra = new HelperValor(String.valueOf(total),String.valueOf(subTotal),String.valueOf(descuento),String.valueOf(comision),"PENDIENTE"," "," ");
+                                pagoCa.child(item).setValue(compra).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Toast.makeText(globalContext, "Valores guardados", Toast.LENGTH_SHORT).show();
+                                        navController.navigate(R.id.finCompraClienteFragment);
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Toast.makeText(globalContext, "Error al guardar los valores", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                                break;
+                            }
 
-                        pagoCa.child(item).setValue(compra).addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
-                                Toast.makeText(globalContext, "Valores guardados", Toast.LENGTH_SHORT).show();
-                                navController.navigate(R.id.finCompraClienteFragment);
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(globalContext, "Error al guardar los valores", Toast.LENGTH_SHORT).show();
-                            }
-                        });
+                        }
                     }
 
                     @Override
@@ -157,7 +196,7 @@ public class CarritoClienteFragment extends Fragment {
         comision = 0;
         total=0;
 
-        for (Pedido producto:listaProductos) {
+        for (ItemHelperClass producto:listaProductos) {
             if((producto.getOferta()==" ") || (producto.getOferta()=="0")){
                 if(producto.getCantidad()=="1"){
                     try{
@@ -195,7 +234,6 @@ public class CarritoClienteFragment extends Fragment {
                         subTotal = subTotal + ((Integer.parseInt(producto.getPrecio())*items)-desc);
                         descuento = descuento + desc;
                     }catch (Exception e){
-                        Toast.makeText(globalContext, "Fin del listado de productos en el carrito", Toast.LENGTH_SHORT).show();
                         break;
                     }
 

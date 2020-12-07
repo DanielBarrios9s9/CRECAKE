@@ -10,6 +10,13 @@
     android:orientation="vertical"
     tools:context=".VrifPagoClienteFragment">
 
+    <TextView
+        android:id="@+id/ITEM"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/espacio"
+        android:visibility="invisible" />
+
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"

@@ -1,8 +1,7 @@
 package com.example.creativecake;
 
 import android.content.Context;
-import android.content.Intent;
-import android.icu.util.LocaleData;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -16,7 +15,6 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,19 +29,21 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.ListIterator;
+import java.util.concurrent.CountDownLatch;
 
 public class VrifPagoClienteFragment extends Fragment {
     private Context globalContext = null;
     NavController navController;
     String telefono, item;
-    DatabaseReference pago, domicilios, ventas, carrito;
+    View v;
+    DatabaseReference pago;
     Boolean n, r;
-    List<ItemHelperClass> listadoCompras;
+    Query query;
+    HelperValor compra;
+    CountDownLatch count;
+    TextView ITEM;
 
     public VrifPagoClienteFragment() {
         // Required empty public constructor
@@ -74,90 +74,105 @@ public class VrifPagoClienteFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        listadoCompras= new LinkedList<>();
+        v=view;
+        Verificacion verificar = new Verificacion();
+        verificar.execute();
+    }
 
-        Intent intent1 = getActivity().getIntent();
-        telefono = intent1.getStringExtra("telefono");
+    private class Verificacion extends AsyncTask<Void,String,String>{
 
-        navController= Navigation.findNavController(view);
-        pago= FirebaseDatabase.getInstance().getReference().child("pagoCarrito").child(telefono);
-        domicilios=FirebaseDatabase.getInstance().getReference().child("domicilios");
-        ventas = FirebaseDatabase.getInstance().getReference().child("Ventas");
-        carrito = FirebaseDatabase.getInstance().getReference().child("carrito").child(telefono);
-        n=false;
-        r=false;
-        Query query = pago.limitToLast(1);
-
-        while(true){
-            query.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    HelperValor compra = snapshot.getValue(HelperValor.class);
-                    if(compra.getConfirmacion().equals("ACEPTADO")){
-                        item=snapshot.getKey();
-                        n=true;
-                        r=false;
-                        carrito.addListenerForSingleValueEvent(new ValueEventListener() {
-                            @RequiresApi(api = Build.VERSION_CODES.O)
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                listadoCompras.removeAll(listadoCompras);
-                                for(DataSnapshot snap: snapshot.getChildren()){
-                                    ItemHelperClass producto = snap.getValue(ItemHelperClass.class);
-                                    producto.setFecha(LocalDate.now().toString());
-                                    producto.setHora(LocalTime.now().toString());
-                                    listadoCompras.add(producto);
-                                }
-                                domicilios.push().setValue(listadoCompras).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void aVoid) {
-                                        Toast.makeText(globalContext, "Productos listos para asignar a domiciliario", Toast.LENGTH_SHORT).show();
-                                        carrito.removeValue();
-                                        carrito.child(telefono).child("1").setValue(" ").addOnSuccessListener(new OnSuccessListener<Void>() {
-                                            @Override
-                                            public void onSuccess(Void aVoid) {
-                                                Toast.makeText(globalContext, "Carrito listo para nueva compra", Toast.LENGTH_SHORT).show();
-                                            }
-                                        }).addOnFailureListener(new OnFailureListener() {
-                                            @Override
-                                            public void onFailure(@NonNull Exception e) {
-                                                Toast.makeText(globalContext, "Error al vaciar el carrito", Toast.LENGTH_SHORT).show();
-                                            }
-                                        });
-                                    }
-                                }).addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Toast.makeText(globalContext, "Error al agregar los productos a domicilios", Toast.LENGTH_SHORT).show();
-                                    }
-                                });
-                            }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError error) {
-
-                            }
-                        });
-                        int numItem = Integer.parseInt(item) + 1;
-                        String newItem = String.valueOf(numItem);
-                        pago.child(newItem).setValue(" ");
-                    }
-                    else if(compra.getConfirmacion().equals("DENEGADO")){
-                        r=true;
-                        n=true;
-                    }
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-
-                }
-            });
-            if(n){ break;}
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            navController= Navigation.findNavController(v);
+            telefono = SharedPreferences_Util.getPhone_SP(globalContext);
+            pago= FirebaseDatabase.getInstance().getReference().child("pagoCarrito").child(telefono);
+            ITEM= (TextView) v.findViewById(R.id.ITEM);
         }
 
-        if(n && r){navController.navigate(R.id.denegadoClienteFragment);}
-        else if (n && (!r)){navController.navigate(R.id.aceptadoClienteFragment);}
+        @Override
+        protected String doInBackground(Void... voids) {
+            query = pago.limitToLast(1);
+            item=" ";
+            n=false;
+            r=false;
+            while(true){
+                count = new CountDownLatch(1);
+                publishProgress("1");
+                query.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        publishProgress("2");
+                        publishProgress("entró al query");
+                        for(DataSnapshot snap: snapshot.getChildren()){
+                            compra = snap.getValue(HelperValor.class);
+                            publishProgress("3");
+                            publishProgress("bajó una compra");
+                            if(compra.getConfirmacion().equals("ACEPTADO")){
+                                publishProgress("4 SI");
+                                item=snapshot.getKey();
+                                ITEM.setText(item);
+                                n=true;
+                                r=true;
+                                publishProgress("ya fue aceptado");
+                                count.countDown();
+                                break;
+                            }
+                            else if(compra.getConfirmacion().equals("DENEGADO")){
+                                publishProgress("4 NO");
+                                item=snapshot.getKey();
+                                ITEM.setText(item);
+                                r=true;
+                                n=true;
+                                publishProgress("ya fue denegado");
+                                count.countDown();
+                                break;
+                            }else{
+                                publishProgress("4 Pendiente");
+                                count.countDown();
+                                break;
+                            }
+                        }
+
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }});
+                try {
+                    count.await();
+                }catch (InterruptedException in){
+                    in.printStackTrace();
+                }
+
+                publishProgress("5");
+                if(n){break;}
+                if(isCancelled()){break;}
+                publishProgress("reinicia el loop");
+            }
+
+            return item;
+        }
+
+        @Override
+        protected void onProgressUpdate(String... values) {
+            super.onProgressUpdate(values);
+            System.out.println(values[0]);
+        }
+
+        @Override
+        protected void onPostExecute(String resultado) {
+            //super.onPostExecute(aBoolean);
+            if(resultado.equals(" ")){ navController.navigate(R.id.denegadoClienteFragment);}
+            else {navController.navigate(R.id.aceptadoClienteFragment);}
+        }
+
+        @Override
+        protected void onCancelled() {
+            super.onCancelled();
+            Toast.makeText(globalContext, "No se ha respondido tu solicitud de compra. Repite el proceso", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
 

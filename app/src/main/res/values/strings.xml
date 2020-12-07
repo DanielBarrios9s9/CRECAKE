@@ -28,8 +28,8 @@
         <item>15 porciones</item>
         <item>25 porciones</item>
         <item>35 porciones</item>
-        <item>2 piezas</item>
-        <item>3 piezas</item>
+        <item>2 pisos</item>
+        <item>3 pisos</item>
     </string-array>
     <string-array name="cobertura">
         <item>Cobertura</item>
@@ -229,7 +229,22 @@
     <string name= "denegarPago">DENEGAR</string>
     <string name="cerrarSesion">Cerrar sesión</string>
     <string name="numeroPedido">Número de pedido</string>
-
+    <string name="ya_estregaste_este_pedido">¿Ya estregaste este pedido?</string>
+    <string name="s">Sí</string>
+    <string name="no">No</string>
+    <string name="sabor">Sabor:</string>
+    <string name="tama_o">Tamaño:</string>
+    <string name="cobertura">Cobertura:</string>
+    <string name="decoracion">Decoracion:</string>
+    <string name="fecha">Fecha:</string>
+    <string name="hora">Hora:</string>
+    <string name="pagar">Pagaré :</string>
+    <string name="lo_necesito_para_la_siguiente_fecha_y_hora">Lo necesito para la siguiente fecha y hora:</string>
+    <string name="estar_atent_a_tu_llamada_para_cuadrar_cualquier_detalle">Estaré atent@ a tu llamada para cuadrar cualquier detalle:</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="puedes_cumplir_con_todas_las_especificaciones_de_esta_cotizaci_n_en_el_tiempo_requerido">¿Puedes cumplir con todas las especificaciones de esta cotización en el tiempo requerido?</string>
+    <string name="espacio" />
+    <string name="administraci_n">Administración</string>
 
 
 </resources>

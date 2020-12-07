@@ -30,8 +30,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -46,7 +49,9 @@ public class SubirImagen1 extends Fragment {
     EditText nombre, precio, descripcion, cantidad, oferta;
     Spinner tipo;
     ProgressDialog cargando;
-    String ratingProducto;
+    String ratingProducto, telefono;
+    StoreHelperClass tienda;
+    DatabaseReference datosUsuario;
 
     private Context globalContext = null;
 
@@ -116,9 +121,26 @@ public class SubirImagen1 extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        telefono = SharedPreferences_Util.getPhone_SP(globalContext);
+        System.out.println(telefono);
+        datosUsuario= FirebaseDatabase.getInstance().getReference("usuarioNegocio").child(telefono);
+        datosUsuario.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                tienda =snapshot.getValue(StoreHelperClass.class);
+                try {
+                    System.out.println(tienda.getNombre());
+                }
+                catch(Exception e){
+                    System.out.println("F");
+                }
+            }
 
-        Intent intent1 = getActivity().getIntent();
-        final String user_name = intent1.getStringExtra("nombreIngresado");
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         if(requestCode == PICK_PHOTO && resultCode == Activity.RESULT_OK && data != null && data.getData() != null){
 
@@ -187,7 +209,7 @@ public class SubirImagen1 extends Fragment {
                                 ratingProducto = "5.0";
 
                                 final ProductHelperClass helperClass = new ProductHelperClass(nombreProducto, precioProducto
-                                        , descripcionProducto, tipoProducto, user_name, downloadUri.toString(), cantidadProducto, ofertaProducto, ratingProducto);
+                                        , descripcionProducto, tipoProducto, tienda.getNombre(), downloadUri.toString(), cantidadProducto, ofertaProducto, ratingProducto);
 
                                 reference.push().setValue(helperClass);
                                 cargando.dismiss();

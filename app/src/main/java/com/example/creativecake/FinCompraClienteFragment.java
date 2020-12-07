@@ -70,8 +70,7 @@ public class FinCompraClienteFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Intent intent1 = getActivity().getIntent();
-        //telefono = intent1.getStringExtra("telefono"); null pointer error, telefono no tiene valor
+
         telefono = SharedPreferences_Util.getPhone_SP(globalContext);
 
         navController= Navigation.findNavController(view);
@@ -94,11 +93,14 @@ public class FinCompraClienteFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot ds: snapshot.getChildren()) {
-                    HelperValor valor_carrito = ds.getValue(HelperValor.class);
-                    subT.setText(String.valueOf(valor_carrito.getSubtotal()));
-                    des.setText(String.valueOf(valor_carrito.getDescuento()));
-                    com.setText(String.valueOf(valor_carrito.getComision()));
-                    tol.setText(String.valueOf(valor_carrito.getValor()));
+                    if(!ds.getValue().equals(" ")){
+                        HelperValor valor_carrito = ds.getValue(HelperValor.class);
+                        subT.setText(String.valueOf(valor_carrito.getSubtotal()));
+                        des.setText(String.valueOf(valor_carrito.getDescuento()));
+                        com.setText(String.valueOf(valor_carrito.getComision()));
+                        tol.setText(String.valueOf(valor_carrito.getValor()));
+                    }
+                    else{break;}
                 }
             }
 
@@ -120,7 +122,7 @@ public class FinCompraClienteFragment extends Fragment {
                     @RequiresApi(api = Build.VERSION_CODES.O)
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        item = snapshot.getKey();
+                        for(DataSnapshot snap: snapshot.getChildren()){item = snap.getKey();}
                         pagoCarr.child(item).child("fecha").setValue(LocalDate.now().toString());
                         pagoCarr.child(item).child("hora").setValue(LocalTime.now().toString()).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
