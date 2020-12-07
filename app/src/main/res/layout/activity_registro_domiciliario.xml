@@ -170,17 +170,6 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button5"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_margin="20dp"
-            android:background="@drawable/redondez_botones_daniel"
-            android:shadowColor="#FFFFFF"
-            android:text="@string/back"
-            android:textColor="#F2F2F2"
-            android:textSize="18sp" />
-
-        <Button
             android:id="@+id/idBotonRegistro"
             android:layout_width="150dp"
             android:layout_height="50dp"

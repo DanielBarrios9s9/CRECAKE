@@ -46,7 +46,6 @@
             android:screenOrientation="userPortrait"/>
         <activity android:name=".Inicio_tienda"
             android:screenOrientation="userPortrait"/>
-
         <activity android:name=".Registro"
             android:screenOrientation="userPortrait"/>
         <activity android:name=".RegistroCliente"
