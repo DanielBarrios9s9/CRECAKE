@@ -27,9 +27,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:ems="10"
-        android:hint="@string/nombre_cliente"
-        android:inputType="textPersonName"
-        android:importantForAutofill="no" />
+        android:hint="@string/numeroPedido"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/numeroAceptar"
