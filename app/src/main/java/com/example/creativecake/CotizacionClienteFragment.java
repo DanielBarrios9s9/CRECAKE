@@ -130,30 +130,6 @@ public class CotizacionClienteFragment extends Fragment {
                     }
                 });
 
-
-
-               /* String nombre_ = nombre_cotizacion.getText().toString();
-                String decoracion_ = decoración.getSelectedItem().toString();
-                String sabor_ = sabor.getSelectedItem().toString();
-                String cobertura_ = cobertura.getSelectedItem().toString();
-                String tamaño_ = tamaño.getSelectedItem().toString();
-                String precio_ = precio.getText().toString();
-                String fecha_ = fecha.getText().toString();
-                String hora_ = hora.getText().toString();
-                String especificaciones_ = especificaciones.getText().toString();
-
-                database = FirebaseDatabase.getInstance();
-                reference = database.getReference("cotizaciones");
-
-                final CotizacionHelperClass helperClass = new CotizacionHelperClass(nombre_,
-                        decoracion_, sabor_, cobertura_, tamaño_, precio_, fecha_, hora_,
-                        , usuario.getTelefono(), usuario.getNombre(),
-                        especificaciones_,"PENDIENTE");
-
-                reference.child(telefono).setValue(helperClass);*/
-
-
-
                 Toast.makeText(getActivity(), "Cotización enviada", Toast.LENGTH_SHORT).show();
             }
         });
