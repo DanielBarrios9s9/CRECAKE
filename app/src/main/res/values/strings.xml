@@ -161,7 +161,7 @@
     <string name="gracias_por_la_espera_estamos_verificando_tu_pago">Gracias por la espera. Estamos verificando tu pago.</string>
 
     <!--strings de pago de compra denegado cliente-->
-    <string name="a_ocurrido_un_error_con_tu_pago">A ocurrido un error con tu pago</string>
+    <string name="a_ocurrido_un_error_con_tu_pago">Ha ocurrido un error con tu pago</string>
     <string name="por_favor_verifica_que_hayas_efectuado_correctamente_el_pago">Por favor verifica que hayas efectuado correctamente el pago</string>
     <string name="volver_al_carrito">Volver al carrito</string>
     <string name="verificar">Verificar</string>
