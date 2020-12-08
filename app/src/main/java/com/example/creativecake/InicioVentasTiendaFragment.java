@@ -72,6 +72,7 @@ public class InicioVentasTiendaFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         Button button3 = view.findViewById(R.id.btn_Pedidos);
         Button button = view.findViewById(R.id.btn_Cotizaciones);
+        Button progress = view.findViewById(R.id.btn_Progreso);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +85,13 @@ public class InicioVentasTiendaFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(v).navigate(R.id.fragment_tienda_ventas);
+            }
+        });
+
+        progress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.progresoTiendaFragment);
             }
         });
     }

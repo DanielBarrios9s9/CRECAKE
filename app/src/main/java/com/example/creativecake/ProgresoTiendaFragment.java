@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,20 +21,27 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class CotizacionesTiendaFragment extends Fragment {
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link ProgresoTiendaFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class ProgresoTiendaFragment extends Fragment {
     View v;
-    AdaptadorCotizacionesTienda adaptador;
+    AdapCotizaciones adaptador;
     private RecyclerView recyclerProductos;
     private ArrayList<CotizacionHelperClass> listaProductos;
     private DatabaseReference datosCotizaciones;
     String telefono;
     private Context globalContext = null;
 
-    public CotizacionesTiendaFragment() {
+
+    public ProgresoTiendaFragment() {
         // Required empty public constructor
     }
-    public static CotizacionesTiendaFragment newInstance(String param1, String param2) {
-        CotizacionesTiendaFragment fragment = new CotizacionesTiendaFragment();
+
+    public static ProgresoTiendaFragment newInstance(String param1, String param2) {
+        ProgresoTiendaFragment fragment = new ProgresoTiendaFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -44,8 +50,7 @@ public class CotizacionesTiendaFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-        }
+        if (getArguments() != null) {}
         globalContext = this.getActivity();
     }
 
@@ -53,7 +58,7 @@ public class CotizacionesTiendaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cotizaciones_tienda, container, false);
+        return inflater.inflate(R.layout.fragment_progreso_tienda, container, false);
     }
 
     @Override
@@ -68,29 +73,23 @@ public class CotizacionesTiendaFragment extends Fragment {
 
         telefono = SharedPreferences_Util.getPhone_SP(globalContext);
 
-        recyclerProductos = (RecyclerView) v.findViewById(R.id.recyclerCotizaciones);
+        recyclerProductos = (RecyclerView) v.findViewById(R.id.recyclerProgreso);
         recyclerProductos.setLayoutManager(new LinearLayoutManager(getContext()));
         listaProductos = new ArrayList<>();
-        adaptador = new AdaptadorCotizacionesTienda(listaProductos, globalContext, telefono);
+        adaptador = new AdapCotizaciones(listaProductos, globalContext, telefono);
         recyclerProductos.setAdapter(adaptador);
     }
 
     public void Base() {
 
-        datosCotizaciones = FirebaseDatabase.getInstance().getReference().getRoot().child("cotizaciones");
-        datosCotizaciones.addValueEventListener(new ValueEventListener() {
+        datosCotizaciones = FirebaseDatabase.getInstance().getReference().getRoot().child("cotiTienda").child(telefono);
+        datosCotizaciones.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 listaProductos.removeAll(listaProductos);
                 for (DataSnapshot ds : snapshot.getChildren()) {
-                    if (!ds.getValue().equals(" ")){
-                        CotizacionHelperClass producto = ds.getValue(CotizacionHelperClass.class);
-                        if(producto.getEstadoPago().equals("PENDIENTE")){
-                            listaProductos.add(producto);
-                            System.out.println(listaProductos.toString());
-                        }
-
-                    }
+                    CotizacionHelperClass producto = ds.getValue(CotizacionHelperClass.class);
+                    listaProductos.add(producto);
                 }
                 adaptador.notifyDataSetChanged();
             }

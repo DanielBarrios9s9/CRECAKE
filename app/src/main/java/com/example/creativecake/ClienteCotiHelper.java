@@ -9,6 +9,8 @@ public class ClienteCotiHelper {
     private String horaEntrega;
     private String precio;
 
+    public ClienteCotiHelper() {}
+
     public ClienteCotiHelper(String tienda, String direccionTienda, String numeroTienda,
                              String nombreCotizacion, String fechaEntrega, String horaEntrega, String precio) {
         this.tienda = tienda;

@@ -43,12 +43,14 @@ public class Dialog_entregado {
             public void onClick(View v) {
                 try{
                     datos= FirebaseDatabase.getInstance().getReference().child("Ventas").child(telefono);
-                    Query deleteTienda = datos.orderByChild("nombre").equalTo(producto.getProducto());
+                    System.out.println(telefono);
+                    Query deleteTienda = datos.orderByChild("producto").equalTo(producto.getProducto());
                     deleteTienda.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             for (DataSnapshot ds: snapshot.getChildren()) {
                                 String clave= ds.getKey();
+                                System.out.println(clave);
                                 datos.child(clave).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {

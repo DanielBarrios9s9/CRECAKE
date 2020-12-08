@@ -113,8 +113,9 @@ public class AceptadoClienteFragment extends Fragment {
 
     }
 
-    public void generarPDF()
-    {
+    public void generarPDF() {
+
+
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("usuarioCliente");
         Query checkUsuario = reference.orderByChild("telefono").equalTo(SharedPreferences_Util.getPhone_SP(getActivity()));
         checkUsuario.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -253,16 +254,20 @@ public class AceptadoClienteFragment extends Fragment {
                     for(DataSnapshot snap: snapshot.getChildren()){
                         if (!snap.getValue().equals(" ")){
                             ItemHelperClass producto = snap.getValue(ItemHelperClass.class);
-                            producto.setFecha(LocalDate.now().toString());
-                            producto.setHora(LocalTime.now().toString());
-                            ventas.child(producto.getNumeroTienda()).push().setValue(producto).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    i+=2;
-                                    publishProgress(i);
+                            if(producto.getFecha().equals(" ")){
+                                if(producto.getHora().equals(" ")){
+                                    producto.setFecha(LocalDate.now().toString());
+                                    producto.setHora(LocalTime.now().toString());
+                                    ventas.child(producto.getNumeroTienda()).push().setValue(producto).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            i+=2;
+                                            publishProgress(i);
+                                        }
+                                    });
+                                    listadoCompras.add(producto);
                                 }
-                            });
-                            listadoCompras.add(producto);
+                            }
                         }
                         else{ break;}
                     }

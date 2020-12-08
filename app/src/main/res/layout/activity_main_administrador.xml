@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:ems="10"
-        android:hint="@string/numeroPedido"
+        android:hint="@string/nombre_cli"
         android:importantForAutofill="no"
         android:inputType="textPersonName" />
 

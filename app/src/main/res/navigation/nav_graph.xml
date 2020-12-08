@@ -82,6 +82,9 @@
         <action
             android:id="@+id/action_inicioVentasTiendaFragment_to_cotizacionesTiendaFragment"
             app:destination="@id/cotizacionesTiendaFragment" />
+        <action
+            android:id="@+id/action_inicioVentasTiendaFragment_to_progresoTiendaFragment"
+            app:destination="@id/progresoTiendaFragment" />
     </fragment>
     <fragment
         android:id="@+id/cotizacionesTiendaFragment"
@@ -90,6 +93,15 @@
         tools:layout="@layout/fragment_cotizaciones_tienda" >
         <action
             android:id="@+id/action_cotizacionesTiendaFragment_to_inicioVentasTiendaFragment"
+            app:destination="@id/inicioVentasTiendaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/progresoTiendaFragment"
+        android:name="com.example.creativecake.ProgresoTiendaFragment"
+        android:label="fragment_progreso_tienda"
+        tools:layout="@layout/fragment_progreso_tienda" >
+        <action
+            android:id="@+id/action_progresoTiendaFragment_to_inicioVentasTiendaFragment"
             app:destination="@id/inicioVentasTiendaFragment" />
     </fragment>
 </navigation>

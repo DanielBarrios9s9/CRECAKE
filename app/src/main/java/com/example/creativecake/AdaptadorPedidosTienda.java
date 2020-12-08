@@ -42,6 +42,7 @@ public class AdaptadorPedidosTienda extends RecyclerView.Adapter<AdaptadorPedido
         holder.nombreProducto.setText(producto.getProducto());
         holder.cantidadProducto.setText("x "+producto.getCantidad());
         holder.fechaEntrega.setText(producto.getFecha());
+        holder.nombreCliente.setText("Cliente: "+producto.getNumeroUsuario());
 
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +62,7 @@ public class AdaptadorPedidosTienda extends RecyclerView.Adapter<AdaptadorPedido
 
         CardView card;
         ImageView imagenProducto;
-        TextView nombreProducto, cantidadProducto, fechaEntrega;
+        TextView nombreProducto, cantidadProducto, fechaEntrega, nombreCliente;
 
         public PedidosviewHolder(@NonNull View itemView) {
             super(itemView);
@@ -71,6 +72,7 @@ public class AdaptadorPedidosTienda extends RecyclerView.Adapter<AdaptadorPedido
             nombreProducto= (TextView) itemView.findViewById(R.id.Nombre_Pedido);
             cantidadProducto= (TextView) itemView.findViewById(R.id.Cantidad_Pedido);
             fechaEntrega= (TextView) itemView.findViewById(R.id.Fecha_PedidoHoy);
+            nombreCliente = (TextView) itemView.findViewById(R.id.Nombre_Cli_P);
         }
     }
 }

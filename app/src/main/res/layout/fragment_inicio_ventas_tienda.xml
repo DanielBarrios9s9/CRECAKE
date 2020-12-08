@@ -26,4 +26,13 @@
         android:background="@drawable/redondez_botones_daniel"
         android:text="@string/cotizaci_n"
         android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/btn_Progreso"
+        android:layout_width="327dp"
+        android:layout_height="88dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/redondez_botones_daniel"
+        android:text="@string/cotizaiones_en_proceso"
+        android:textSize="24sp" />
 </LinearLayout>

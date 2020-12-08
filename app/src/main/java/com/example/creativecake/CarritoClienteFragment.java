@@ -96,6 +96,7 @@ public class CarritoClienteFragment extends Fragment {
         datosCarrito.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                listaProductos.removeAll(listaProductos);
                 for (DataSnapshot ds : snapshot.getChildren()) {
                     if (!ds.getValue().equals(" ")){
                         ItemHelperClass producto = ds.getValue(ItemHelperClass.class);

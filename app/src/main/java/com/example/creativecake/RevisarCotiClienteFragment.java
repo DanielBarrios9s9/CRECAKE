@@ -1,5 +1,6 @@
 package com.example.creativecake;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,41 +13,34 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link RevisarCotiClienteFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import org.w3c.dom.Text;
+
 public class RevisarCotiClienteFragment extends Fragment {
+    DatabaseReference pagoCa, pagoCarrito;
+    String telefono, item,subTotal, comision, total;
+    TextView tienda, numero, direccion, nombre, fecha, hora;
+    private Context globalContext = null;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public RevisarCotiClienteFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment RevisarCotiClienteFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static RevisarCotiClienteFragment newInstance(String param1, String param2) {
         RevisarCotiClienteFragment fragment = new RevisarCotiClienteFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -55,9 +49,8 @@ public class RevisarCotiClienteFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        globalContext = this.getActivity();
     }
 
     @Override
@@ -69,21 +62,121 @@ public class RevisarCotiClienteFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        telefono = SharedPreferences_Util.getPhone_SP(globalContext);
+
+        tienda= (TextView) view.findViewById(R.id.nomTiemdaCli);
+        numero=(TextView) view.findViewById(R.id.telTiendaCLi);
+        direccion=(TextView) view.findViewById(R.id.direccionTiendaCli);
+        nombre=(TextView) view.findViewById(R.id.nombreCotiCli) ;
+        fecha= (TextView) view.findViewById(R.id.fechaEntregaCli);
+        hora=(TextView)view.findViewById(R.id.horaEntregaCli);
 
         Button btn_finalizarCompra = view.findViewById(R.id.btn_finalizarCompra);
 
         final NavController navController= Navigation.findNavController(view);
+//Llenado de los textView------------------------------------------------
+        pagoCa= FirebaseDatabase.getInstance().getReference().child("chat").child(telefono);
+        pagoCa.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (!snapshot.getValue().equals(" ")){
+                    ClienteCotiHelper compraA = snapshot.getValue(ClienteCotiHelper.class);
+                    subTotal=compraA.getPrecio();
+                    comision=String.valueOf((5*100)/Integer.parseInt(compraA.getPrecio()));
+                    total= String.valueOf(Integer.parseInt(compraA.getPrecio())+((5*100)/Integer.parseInt(compraA.getPrecio())));
 
+                    tienda.setText(compraA.getTienda());
+                    numero.setText(compraA.getNumeroTienda());
+                    direccion.setText(compraA.getDireccionTienda());
+                    nombre.setText(compraA.getNombreCotizacion());
+                    fecha.setText(compraA.getFechaEntrega());
+                    hora.setText(compraA.getHoraEntrega());
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+//--------------------------------------------------------------------
         btn_finalizarCompra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.finCompraClienteFragment);
+                pagoCarrito= FirebaseDatabase.getInstance().getReference().child("pagoCarrito").child(telefono);
+                Query query = pagoCarrito.limitToLast(1);
+                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for(DataSnapshot snap: snapshot.getChildren()){
+                            item = snap.getKey();
+                            if (!snap.getValue().equals(" ")){
+                                HelperValor compraA = snap.getValue(HelperValor.class);
+                                if(compraA.getConfirmacion().equals("ACEPTADO")){
+                                    int numItem = Integer.parseInt(item) + 1;
+                                    String newItem = String.valueOf(numItem);
+                                    pagoCarrito.child(newItem).setValue(" ");
+                                    HelperValor compra = new HelperValor(total,subTotal,"0",comision,"PENDIENTE"," "," ");
+                                    pagoCarrito.child(newItem).setValue(compra).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            Toast.makeText(globalContext, "Valores guardados", Toast.LENGTH_SHORT).show();
+                                            navController.navigate(R.id.finCompraClienteFragment);
+                                        }
+                                    }).addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Toast.makeText(globalContext, "Error al guardar los valores", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                                }else{
+                                    HelperValor compra = new HelperValor(total,subTotal,"0",comision,"PENDIENTE"," "," ");
+                                    pagoCarrito.child(item).setValue(compra).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            Toast.makeText(globalContext, "Valores guardados", Toast.LENGTH_SHORT).show();
+                                            navController.navigate(R.id.finCompraClienteFragment);
+                                        }
+                                    }).addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Toast.makeText(globalContext, "Error al guardar los valores", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                                    break;
+                                }
+                            }
+                            else{
+                                HelperValor compra = new HelperValor(total,subTotal,"0",comision,"PENDIENTE"," "," ");
+                                pagoCarrito.child(item).setValue(compra).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Toast.makeText(globalContext, "Valores guardados", Toast.LENGTH_SHORT).show();
+                                        navController.navigate(R.id.finCompraClienteFragment);
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Toast.makeText(globalContext, "Error al guardar los valores", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                                break;
+                            }
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
             }
         });
 
-
-
-
-
     }
+
+
 }

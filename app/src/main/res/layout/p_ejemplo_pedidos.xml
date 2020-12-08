@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="410dp"
-    android:layout_height="150dp"
+    android:layout_height="200dp"
     android:background="@color/colorPrimary"
     android:gravity="center"
     android:orientation="vertical">
@@ -10,16 +10,17 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/Card_Pedido"
         android:layout_width="391dp"
-        android:layout_height="143dp"
+        android:layout_height="185dp"
         android:clickable="true"
+        android:focusable="true"
         app:cardBackgroundColor="@color/colorAccent"
         app:cardCornerRadius="15dp"
-        app:cardElevation="15dp"
-        android:focusable="true">
+        app:cardElevation="15dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="143dp"
+            android:layout_height="185dp"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <ImageView
@@ -53,6 +54,15 @@
                     android:textAlignment="center"
                     android:textColor="#000000"
                     android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/Nombre_Cli_P"
+                    android:layout_width="match_parent"
+                    android:layout_height="39dp"
+                    android:text="@string/nombre_cliente"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/Fecha_PedidoHoy"

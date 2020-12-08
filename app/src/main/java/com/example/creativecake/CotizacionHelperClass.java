@@ -5,8 +5,10 @@ public class CotizacionHelperClass {
     String nombre, decoracion, sabor, cobertura, tamaño,
             precio, fecha, hora, especificaciones, direccionCliente, numeroCliente, nombreCliente, estadoPago;
 
+    public CotizacionHelperClass() {}
+
     public CotizacionHelperClass(String nombre, String decoracion, String sabor, String cobertura,
-    String tamaño, String precio, String fecha, String hora, String direccionCliente, String numeroCliente, String nombreCliente, String especificaciones, String estadoPago){
+                                 String tamaño, String precio, String fecha, String hora, String direccionCliente, String numeroCliente, String nombreCliente, String especificaciones, String estadoPago){
         this.nombre = nombre;
         this.decoracion = decoracion;
         this.sabor = sabor;

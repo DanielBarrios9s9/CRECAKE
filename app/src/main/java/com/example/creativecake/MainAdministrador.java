@@ -77,7 +77,7 @@ public class MainAdministrador extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot ds: snapshot.getChildren()){
                     if(!ds.getValue().equals(" ")){
-                        valor =snapshot.getValue(HelperValor.class);
+                        valor =ds.getValue(HelperValor.class);
                         try {
                             System.out.println(valor.getValor());
                         }catch (Exception e){
@@ -118,7 +118,7 @@ public class MainAdministrador extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot ds: snapshot.getChildren()){
                     if(!ds.getValue().equals(" ")){
-                        valor =snapshot.getValue(HelperValor.class);
+                        valor =ds.getValue(HelperValor.class);
                         try {
                             System.out.println(valor.getValor());
                         }catch (Exception e){

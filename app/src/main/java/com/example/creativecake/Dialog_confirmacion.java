@@ -21,7 +21,7 @@ public class Dialog_confirmacion {
     String telefono;
     StoreHelperClass tienda;
     Context globalContext;
-    DatabaseReference ventas, domicilios, cotizaciones, chat,datosUsuario;
+    DatabaseReference ventas, domicilios, cotizaciones, chat,datosUsuario, cotiCliente;
 
     public Dialog_confirmacion(final CotizacionHelperClass cotizacion, final String telefono, final Context globalContext) {
         this.cotizacion = cotizacion;
@@ -35,6 +35,7 @@ public class Dialog_confirmacion {
 
         domicilios= FirebaseDatabase.getInstance().getReference().child("domicilios");
         ventas = FirebaseDatabase.getInstance().getReference().child("Ventas");
+        cotiCliente = FirebaseDatabase.getInstance().getReference().child("cotizaciones");
         cotizaciones =FirebaseDatabase.getInstance().getReference().child("cotiTienda");
         chat =FirebaseDatabase.getInstance().getReference().child("chat");
         datosUsuario= FirebaseDatabase.getInstance().getReference("usuarioNegocio").child(telefono);
@@ -69,8 +70,8 @@ public class Dialog_confirmacion {
                 ventas.child(telefono).push().setValue(producto);
                 domicilios.push().setValue(producto);
                 chat.child(cotizacion.getNumeroCliente()).setValue(respuesta);
-                cotizaciones.push().setValue(cotizacion);
-                Toast.makeText(globalContext, "Recuerda seguir el estado del pago de este pedido en Pedidos Especiales", Toast.LENGTH_SHORT).show();
+                cotizaciones.child(tienda.getTelefono()).push().setValue(cotizacion);
+                cotiCliente.child(cotizacion.getNumeroCliente()).child("estadoPago").setValue("EN PROGRESO");
                 Toast.makeText(globalContext, "¡Comienza a hacer tu pedido!", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
             }

@@ -226,7 +226,7 @@
     <string name="requerido_para">Requerido para:</string>
     <string name="hora_del_pedido">Hora del Pedido</string>
     <string name="fecha_del_pedido">Fecha del Pedido</string>
-    <string name= "denegarPago">DENEGAR</string>
+    <string name="denegarPago">DENEGAR</string>
     <string name="cerrarSesion">Cerrar sesión</string>
     <string name="numeroPedido">Número de pedido</string>
     <string name="ya_estregaste_este_pedido">¿Ya estregaste este pedido?</string>
@@ -245,6 +245,12 @@
     <string name="puedes_cumplir_con_todas_las_especificaciones_de_esta_cotizaci_n_en_el_tiempo_requerido">¿Puedes cumplir con todas las especificaciones de esta cotización en el tiempo requerido?</string>
     <string name="espacio" />
     <string name="administraci_n">Administración</string>
+    <string name="tel_fono">Teléfono:</string>
+    <string name="direeci_n">Direeción:</string>
+    <string name="tienda___">Tienda:</string>
+    <string name="cotizaiones_en_proceso">Cotizaciones en Proceso</string>
+    <string name="nombre_cli">Nombre Cliente</string>
+    <string name="en_progreso">En Progreso</string>
 
 
 </resources>

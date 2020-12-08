@@ -29,12 +29,6 @@
             android:textSize="35sp"
             android:textStyle="bold" />
 
-        <ImageButton
-            android:id="@+id/btn_bot"
-            android:layout_width="56dp"
-            android:layout_height="match_parent"
-            android:background="@mipmap/pngegg"
-            android:contentDescription="@string/todo" />
     </LinearLayout>
 
     <LinearLayout
@@ -156,30 +150,37 @@
             android:inputType="number"
             android:textColor="#FFFFFF" />
 
-        <EditText
-            android:id="@+id/editFecha"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="57dp"
-            android:autofillHints=""
-            android:ems="10"
-            android:hint="@string/para_cu_ndo_necesitas_tu_pedido"
-            android:inputType="date"
-            android:textColor="#FFFFFF" />
+            android:layout_height="67dp"
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/editHora"
-            android:layout_width="match_parent"
-            android:layout_height="59dp"
-            android:ems="10"
-            android:hint="@string/para_qu_hora_lo_necesitas"
-            android:importantForAutofill="no"
-            android:inputType="time"
-            android:textColor="#FFFFFF" />
+            <Button
+                android:id="@+id/editFecha"
+                android:layout_width="199dp"
+                android:layout_height="wrap_content"
+                android:text="@string/fecha_del_pedido"
+                android:layout_margin="5dp"
+                android:background="@drawable/redondez_botones"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/editHora"
+                android:layout_width="176dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/hora_del_pedido"
+                android:layout_margin="5dp"
+                android:background="@drawable/redondez_botones"
+                android:textColor="#000000"
+                android:textSize="15sp"  />
+        </LinearLayout>
 
         <EditText
             android:id="@+id/editTextTextMultiLine"
             android:layout_width="match_parent"
-            android:layout_height="67dp"
+            android:layout_height="119dp"
             android:ems="10"
             android:gravity="start|top"
             android:hint="@string/txtCotiAñadido"
