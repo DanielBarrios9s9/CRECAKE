@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -46,7 +48,12 @@ public class RegistroDomiciliario extends AppCompatActivity
 
                 DomiciliaryHelperClass domiciliaryHelperClass = new DomiciliaryHelperClass(nombre, correo, cuenta, telefono,password);
 
-                reference.child(telefono).setValue(domiciliaryHelperClass);
+                reference.child(telefono).setValue(domiciliaryHelperClass).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(getApplicationContext(), "Nuevo usuario registrado", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);

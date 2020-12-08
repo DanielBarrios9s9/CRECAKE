@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -51,7 +53,12 @@ public class RegistroNegocio extends AppCompatActivity
                 StoreHelperClass storeHelperClass = new StoreHelperClass(nombreNegocio, correoNegocio, direccionNegocio, telefonoNegocio, passwordNegocio);
 
                 reference.child(telefonoNegocio).setValue(storeHelperClass);
-                ref2.child(telefonoNegocio).setValue(" ");
+                ref2.child(telefonoNegocio).setValue(" ").addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(getApplicationContext(), "Nuevo usuario registrado", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);

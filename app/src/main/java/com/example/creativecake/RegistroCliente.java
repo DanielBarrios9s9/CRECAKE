@@ -5,10 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.common.data.DataBufferObserverSet;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -62,7 +64,12 @@ public class RegistroCliente extends AppCompatActivity
                 ref2.child(telefono).child("1").setValue(" ");
                 ref3.child(telefono).setValue(" ");
                 ref4.child(telefono).child("1").setValue(" ");
-                ref5.child(telefono).setValue(" ");
+                ref5.child(telefono).setValue(" ").addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(getApplicationContext(), "Nuevo usuario registrado", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
 

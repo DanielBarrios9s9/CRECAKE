@@ -109,12 +109,39 @@ public class MainAdministrador extends AppCompatActivity {
 
     public void denegarPago()
     {
-        final String pedido = noPedido.getText().toString().trim();
         final String telefono = numeroAceptar.getText().toString().trim();
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("pagoCarrito").child(telefono).child(pedido);
+        reference = FirebaseDatabase.getInstance().getReference("pagoCarrito").child(telefono);
 
-        reference.child("confirmacion").setValue("DENEGADO");
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot ds: snapshot.getChildren()){
+                    if(!ds.getValue().equals(" ")){
+                        valor =snapshot.getValue(HelperValor.class);
+                        try {
+                            System.out.println(valor.getValor());
+                        }catch (Exception e){
+                            e.printStackTrace();
+                        }
+                        if(valor.getConfirmacion().equals("PENDIENTE")){
+                            String llave = ds.getKey();
+                            reference.child(llave).child("confirmacion").setValue("DENEGADO");
+                        }
+                    }else {
+                        Toast.makeText(getApplicationContext(), "No existe registro de esta compra", Toast.LENGTH_SHORT).show();
+                        break;
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
 
         noPedido.setText("");
         numeroAceptar.setText("");
