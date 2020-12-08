@@ -116,6 +116,7 @@ public class AceptadoClienteFragment extends Fragment {
     public void generarPDF() {
 
 
+
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("usuarioCliente");
         Query checkUsuario = reference.orderByChild("telefono").equalTo(SharedPreferences_Util.getPhone_SP(getActivity()));
         checkUsuario.addListenerForSingleValueEvent(new ValueEventListener() {

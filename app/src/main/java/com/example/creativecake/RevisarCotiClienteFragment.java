@@ -82,8 +82,11 @@ public class RevisarCotiClienteFragment extends Fragment {
                 if (!snapshot.getValue().equals(" ")){
                     ClienteCotiHelper compraA = snapshot.getValue(ClienteCotiHelper.class);
                     subTotal=compraA.getPrecio();
-                    comision=String.valueOf((5*100)/Integer.parseInt(compraA.getPrecio()));
-                    total= String.valueOf(Integer.parseInt(compraA.getPrecio())+((5*100)/Integer.parseInt(compraA.getPrecio())));
+                    int comi=Integer.parseInt(compraA.getPrecio());
+                    int too= (5*100)/comi;
+                    comision=String.valueOf(too);
+                    int tota= comi+too;
+                    total= String.valueOf(tota);
 
                     tienda.setText(compraA.getTienda());
                     numero.setText(compraA.getNumeroTienda());
