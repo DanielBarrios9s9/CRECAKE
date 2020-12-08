@@ -20,6 +20,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import android.os.Environment;
+import android.os.FileUriExposedException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -144,6 +145,7 @@ public class AceptadoClienteFragment extends Fragment {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("usuarioCliente");
         Query checkUsuario = reference.orderByChild("telefono").equalTo(SharedPreferences_Util.getPhone_SP(getActivity()));
         checkUsuario.addListenerForSingleValueEvent(new ValueEventListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String nombre = snapshot.child(SharedPreferences_Util.getPhone_SP(getActivity())).child("nombre").getValue(String.class);
@@ -151,7 +153,7 @@ public class AceptadoClienteFragment extends Fragment {
                 String direccion = snapshot.child(SharedPreferences_Util.getPhone_SP(getActivity())).child("direccion").getValue(String.class);
 
                 PdfDocument factura = new PdfDocument();
-                PdfDocument.PageInfo facturaInfo = new PdfDocument.PageInfo.Builder(350, 400, 1).create();
+                PdfDocument.PageInfo facturaInfo = new PdfDocument.PageInfo.Builder(350, 285, 1).create();
                 Paint paint = new Paint();
                 PdfDocument.Page paginaPDF = factura.startPage(facturaInfo);
                 Canvas canvas = paginaPDF.getCanvas();
@@ -173,35 +175,45 @@ public class AceptadoClienteFragment extends Fragment {
 
                 for(ItemHelperClass producto: listadoFactura){
                     canvas.drawText(producto.getProducto()+" | "+producto.getCantidad()+" | $"+producto.getPrecio()+" c/u | Pastelería "+producto.getTienda()+" | -"+producto.getOferta()+" %",20,distanciay, paint);
-                    distanciay=distanciay+20;
                 }
 
-                canvas.drawLine(10,80,340,distanciay,paint);
                 distanciay=distanciay+20;
+                canvas.drawLine(10, distanciay,340,distanciay,paint);
+                distanciay=distanciay+20;
+
                 canvas.drawText("Subtotal: "+subTotal,20,distanciay, paint);
                 distanciay=distanciay+20;
+
                 canvas.drawText("Descuento: "+descuento,20,distanciay, paint);
                 distanciay=distanciay+20;
+
                 canvas.drawText("Comision: "+comision,20,distanciay, paint);
                 distanciay=distanciay+20;
+
                 canvas.drawText("Total + IVA: "+total,20,distanciay, paint);
                 distanciay=distanciay+20;
-                canvas.drawLine(10,80,340,distanciay,paint);
+
+                canvas.drawLine(10,distanciay,340,distanciay,paint);
+                distanciay = distanciay+20;
+
+                paint.setTextAlign(Paint.Align.CENTER);
+                canvas.drawText("¡Gracias por elegirnos!",canvas.getWidth()/2,distanciay,paint);
+                distanciay= distanciay+10;
+                paint.setTextAlign(Paint.Align.LEFT);
+                paint.setTextSize(5.5f);
+                canvas.drawText("El equipo de CreativeCake", 275, canvas.getHeight()-10, paint);
 
                 factura.finishPage(paginaPDF);
-                File file = new File(folder, "Factura "+ nombre + ".pdf");
-
-
+                File file = new File(getContext().getExternalFilesDir("../Facturas"), "Factura " + nombre + ".pdf");
                 try {
                     factura.writeTo(new FileOutputStream(file));
                     Toast.makeText(getActivity(), "Factura generada", Toast.LENGTH_SHORT).show();
-                    abrirPDF(nombre);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
 
                 factura.close();
-
+                    //abrirPDF(nombre);
             }
 
             @Override
@@ -211,22 +223,20 @@ public class AceptadoClienteFragment extends Fragment {
         });
     }
 
-    private void abrirPDF(String nombre) {
-        File pdfcreado = new File("/Factura " + nombre + ".pdf");
-
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            Uri uri = Uri.fromFile(pdfcreado);
-            intent.setDataAndType(uri, "application/pdf");
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    private void abrirPDF(String nombre) throws FileUriExposedException {
+        File pdfcreado = new File(getContext().getExternalFilesDir("../Facturas"),"Factura " + nombre + ".pdf");
             try
             {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                Uri uri = Uri.fromFile(pdfcreado);
+                intent.setDataAndType(uri, "application/pdf");
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }catch (ActivityNotFoundException e)
             {
                 Toast.makeText(getActivity(),"No hay aplicación de leer PDFs", Toast.LENGTH_SHORT);
             }
-
     }
 
     private void traerFactura(){
