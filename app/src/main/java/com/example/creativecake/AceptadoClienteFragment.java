@@ -1,6 +1,7 @@
 package com.example.creativecake;
 
 import android.content.ActivityNotFoundException;
+import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
@@ -18,6 +19,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +42,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
@@ -50,14 +53,17 @@ public class AceptadoClienteFragment extends Fragment {
     private NavController navController;
     private Context globalContext;
     String telefono;
+    File folder;
     DatabaseReference pago,domicilios, ventas, carrito;
     List<ItemHelperClass> listadoCompras;
+    ArrayList<ItemHelperClass> listadoFactura;
     CountDownLatch count;
-    Boolean n;
+    Boolean n, f;
     TextView ITEM;
     int i;
     ProgressBar progressBar;
     View v;
+    int subTotal, descuento, comision, total;
 
     public AceptadoClienteFragment() {
         // Required empty public constructor
@@ -91,9 +97,14 @@ public class AceptadoClienteFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         v = view;
 
+        telefono = SharedPreferences_Util.getPhone_SP(globalContext);
+        listadoFactura= new ArrayList<>();
+
         botonFactura = (Button)view.findViewById(R.id.descargar_factura);
         botonFin = (Button)view.findViewById(R.id.btn_fin);
         progressBar =(ProgressBar) view.findViewById(R.id.progressBar2);
+        f=false;
+        traerFactura();
 
         botonFactura.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,8 +116,18 @@ public class AceptadoClienteFragment extends Fragment {
         botonFin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Reordenar verificar = new Reordenar();
-                verificar.execute();
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                if(f){
+                    Reordenar verificar = new Reordenar();
+                    verificar.execute();
+                }
+                else{
+                    Toast.makeText(globalContext, "Error. Oprime de nuevo FIN.", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
@@ -115,7 +136,10 @@ public class AceptadoClienteFragment extends Fragment {
 
     public void generarPDF() {
 
-
+        folder = new File(Environment.getExternalStorageDirectory().toString(),"Facturas Creative Cake");
+        if(!folder.exists()){
+            folder.mkdirs();
+        }
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("usuarioCliente");
         Query checkUsuario = reference.orderByChild("telefono").equalTo(SharedPreferences_Util.getPhone_SP(getActivity()));
@@ -139,19 +163,33 @@ public class AceptadoClienteFragment extends Fragment {
 
                 paint.setTextSize(8.5f);
                 paint.setTextAlign(Paint.Align.LEFT);
+
                 canvas.drawText("Nombre: "+nombre, 20, 30, paint);
                 canvas.drawText("Telefono: "+telefono, 20, 50, paint);
                 canvas.drawText("Direccion: "+direccion,20,70, paint);
                 canvas.drawLine(10,80,340,80,paint);
 
+                int distanciay=100;
 
-                /*
-                este archivo se guarda en la carpeta android/data/com.example.creativecake/facturas
-                no pude cambiarle la ruta :(, si pueden porfa ayudenme con eso
-                y paula: le puedes agregar al pdf la informacion del producto a comprar? es con el metodo canvas.drawtext
-                 */
+                for(ItemHelperClass producto: listadoFactura){
+                    canvas.drawText(producto.getProducto()+" | "+producto.getCantidad()+" | $"+producto.getPrecio()+" c/u | Pastelería "+producto.getTienda()+" | -"+producto.getOferta()+" %",20,distanciay, paint);
+                    distanciay=distanciay+20;
+                }
+
+                canvas.drawLine(10,80,340,distanciay,paint);
+                distanciay=distanciay+20;
+                canvas.drawText("Subtotal: "+subTotal,20,distanciay, paint);
+                distanciay=distanciay+20;
+                canvas.drawText("Descuento: "+descuento,20,distanciay, paint);
+                distanciay=distanciay+20;
+                canvas.drawText("Comision: "+comision,20,distanciay, paint);
+                distanciay=distanciay+20;
+                canvas.drawText("Total + IVA: "+total,20,distanciay, paint);
+                distanciay=distanciay+20;
+                canvas.drawLine(10,80,340,distanciay,paint);
+
                 factura.finishPage(paginaPDF);
-                File file = new File(getActivity().getExternalFilesDir("../Facturas"), "Factura "+ nombre + ".pdf");
+                File file = new File(folder, "Factura "+ nombre + ".pdf");
 
 
                 try {
@@ -189,6 +227,98 @@ public class AceptadoClienteFragment extends Fragment {
                 Toast.makeText(getActivity(),"No hay aplicación de leer PDFs", Toast.LENGTH_SHORT);
             }
 
+    }
+
+    private void traerFactura(){
+        System.out.println(telefono);
+        carrito = FirebaseDatabase.getInstance().getReference().child("carrito");
+        carrito.child(telefono).addListenerForSingleValueEvent(new ValueEventListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                listadoFactura.removeAll(listadoFactura);
+                for(DataSnapshot snap: snapshot.getChildren()){
+                    if (!snap.getValue().equals(" ")){
+                        ItemHelperClass producto = snap.getValue(ItemHelperClass.class);
+                        if(producto.getFecha().equals(" ")){
+                            if(producto.getHora().equals(" ")){
+                                producto.setFecha(LocalDate.now().toString());
+                                producto.setHora(LocalTime.now().toString());
+                                listadoFactura.add(producto);
+                            }
+                        }
+                        else{
+                            listadoFactura.add(producto);
+                        }
+                    }
+                    else{
+                        f=true;
+                        break;}
+                }
+                f=true;
+                Comprar();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    public void Comprar(){
+        subTotal = 0;
+        descuento = 0;
+        comision = 0;
+        total=0;
+
+        for (ItemHelperClass producto:listadoFactura) {
+            if((producto.getOferta()==" ") || (producto.getOferta()=="0")){
+                if(producto.getCantidad()=="1"){
+                    try{
+                        subTotal = subTotal + Integer.parseInt(producto.getPrecio());
+                    }
+                    catch (Exception e){
+                        Toast.makeText(globalContext, "Fin del listado de productos en el carrito", Toast.LENGTH_SHORT).show();
+                        break;
+                    }
+                }
+                else{
+                    try{
+                        int items = Integer.parseInt(producto.getCantidad());
+                        subTotal = subTotal + (Integer.parseInt(producto.getPrecio())*items);
+                    }catch (Exception e){
+                        Toast.makeText(globalContext, "Fin del listado de productos en el carrito", Toast.LENGTH_SHORT).show();
+                        break;
+                    }
+                }
+            }else{
+                if(producto.getCantidad()=="1"){
+                    try{
+                        int desc = ((Integer.parseInt(producto.getPrecio())*Integer.parseInt(producto.getOferta()))/100);
+                        subTotal = subTotal + (Integer.parseInt(producto.getPrecio())-desc);
+                        descuento = descuento + desc;
+                    } catch (Exception e){
+                        Toast.makeText(globalContext, "Fin del listado de productos en el carrito", Toast.LENGTH_SHORT).show();
+                        break;
+                    }
+                }
+                else{
+                    try{
+                        int items = Integer.parseInt(producto.getCantidad());
+                        int desc = (((Integer.parseInt(producto.getPrecio())*items)*Integer.parseInt(producto.getOferta()))/100);
+                        subTotal = subTotal + ((Integer.parseInt(producto.getPrecio())*items)-desc);
+                        descuento = descuento + desc;
+                    }catch (Exception e){
+                        break;
+                    }
+
+                }
+            }
+        }
+
+        comision = ((subTotal*5)/100);
+        total= subTotal+comision;
     }
 
     private class Reordenar extends AsyncTask<Void,Integer,Boolean> {
