@@ -66,29 +66,19 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btn_verificarPago"
-            android:layout_width="168dp"
-            android:layout_height="49dp"
-            android:layout_margin="20dp"
-            android:background="@drawable/button_rounded"
-            android:text="@string/verificar"
-            android:textAllCaps="true"
-            android:textSize="25sp"
-            android:textStyle="bold" />
-
-        <Button
             android:id="@+id/btn_cancelarPago"
-            android:layout_width="169dp"
+            android:layout_width="357dp"
             android:layout_height="51dp"
             android:layout_margin="20dp"
             android:background="@drawable/button_rounded"
             android:text="@string/cancelar"
             android:textSize="25sp" />
+
     </LinearLayout>
 
     <Button
         android:id="@+id/button13"
-        android:layout_width="270dp"
+        android:layout_width="349dp"
         android:layout_height="51dp"
         android:background="@drawable/redondez_botones_daniel"
         android:text="@string/volver_al_carrito"
