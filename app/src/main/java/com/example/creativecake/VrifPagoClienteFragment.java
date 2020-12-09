@@ -120,7 +120,7 @@ public class VrifPagoClienteFragment extends Fragment {
                             }
                             else if(compra.getConfirmacion().equals("DENEGADO")){
                                 publishProgress("4 NO");
-                                item=snapshot.getKey();
+                                item=" ";
                                 ITEM.setText(item);
                                 r=true;
                                 n=true;

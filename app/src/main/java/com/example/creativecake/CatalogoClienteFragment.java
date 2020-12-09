@@ -88,7 +88,8 @@ public class CatalogoClienteFragment extends Fragment {
 
     public void Base() {
 
-        datosCatRef = FirebaseDatabase.getInstance().getReference().getRoot().child("productoTienda");
+        datosCatRef = FirebaseDatabase.getInstance().getReference().getRoot().
+                child("productoTienda");
         datosCatRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
