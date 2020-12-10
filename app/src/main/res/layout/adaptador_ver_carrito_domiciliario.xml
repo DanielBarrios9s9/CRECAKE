@@ -63,7 +63,7 @@
                     android:gravity="center"
                     android:text="@string/nombre_del_producto"
                     android:textColor="#000000"
-                    android:textSize="20sp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -73,16 +73,7 @@
                     android:gravity="center"
                     android:text="@string/precio_producto"
                     android:textColor="#000000"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/pasteleria_producto"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/pasteleria_producto"
-                    android:textAlignment="center"
-                    android:textColor="#000000"
-                    android:textSize="15sp" />
+                    android:textSize="10dp" />
 
                 <TextView
                     android:id="@+id/cantidad_producto"
@@ -91,7 +82,44 @@
                     android:text="Cantidad: 0"
                     android:textAlignment="center"
                     android:textColor="#000000"
-                    android:textSize="15sp" />
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/pasteleria"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tienda: "
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/pasteleria_producto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pasteleria_producto"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/dir"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dirección de la tienda: "
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/dir_pastele"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="dir-pastelereia"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="10dp" />
+
 
             </LinearLayout>
 

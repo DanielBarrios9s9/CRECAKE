@@ -27,7 +27,7 @@ import java.util.ArrayList;
 
 public class InicioDomiciliarioFragment extends Fragment {
 
-    Button btn1;
+    boolean qBoton;
     AdaptadorPedido adaptador;
     private RecyclerView recyclerProductos;
     private ArrayList<producto_carrito> listaPedido;
@@ -46,28 +46,12 @@ public class InicioDomiciliarioFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_inicio_domiciliario, container, false);
 
-
+        qBoton = true;
         recyclerProductos = (RecyclerView) v.findViewById(R.id.recyclerPedido);
         recyclerProductos.setLayoutManager(new LinearLayoutManager(getContext()));
         listaPedido = new ArrayList<>();
-        adaptador = new AdaptadorPedido(listaPedido, fragmentManager);
+        adaptador = new AdaptadorPedido(listaPedido, fragmentManager, qBoton);
         recyclerProductos.setAdapter(adaptador);
-
-        Button cerrarsesion = v.findViewById(R.id.button10);
-
-        cerrarsesion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SharedPreferences_Util.savePhone_SP("", getActivity());
-                SharedPreferences_Util.savePassword_SP("", getActivity());
-                SharedPreferences_Util.saveType_SP("", getActivity());
-                Intent intent = new Intent(getActivity(), MainActivity.class);
-                startActivity(intent);
-                requireActivity().finish();
-
-            }
-        });
-
 
         Base();
 
@@ -76,28 +60,43 @@ public class InicioDomiciliarioFragment extends Fragment {
 
     public void Base() {
 
-        datosCatRef = FirebaseDatabase.getInstance().getReference().getRoot().child("carrito");
+        datosCatRef = FirebaseDatabase.getInstance().getReference().getRoot().child("domicilios");
         datosCatRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 listaPedido.removeAll(listaPedido);
                 for (DataSnapshot ds : snapshot.getChildren()) {
                     producto_carrito pedido = new producto_carrito();
-                    pedido.setTelefono(ds.getKey());
-                    pedido.setDir_usuario("Cra. 16a # 181c - 38");
-                    pedido.setNom_usuario("Anderson Morales");
-                    int count = 0;
-                    for(DataSnapshot ds1: ds.getChildren()){
-                        if(ds1.child("cantidad").getValue() != null) {
-                            if (!ds1.child("cantidad").getValue().equals("")) {
+                    if(ds.hasChild("0")) {
+                        pedido.setKey(ds.getKey());
+                        int count = 0;
+                        for (DataSnapshot ds1 : ds.getChildren()) {
+                            if (!ds1.getValue().equals(" ") && !ds1.getValue().equals(null)) {
+                                if (pedido.getNom_usuario() == null || pedido.getNom_usuario().equals(" ")) {
+                                    pedido.setTelefono(ds1.child("numeroUsuario").getValue().toString());
+                                    pedido.setDir_usuario(ds1.child("direccionUsuario").getValue().toString());
+                                    pedido.setNom_usuario(ds1.child("usuario").getValue().toString());
+                                }
                                 count++;
+
                             }
                         }
-                    }
-                    String countR = String.valueOf(count);
-                    pedido.setCantidad(countR);
-                    listaPedido.add(pedido);
 
+                        String countR = String.valueOf(count);
+                        if(!countR.equals("0")) {
+                            pedido.setCantidad(countR);
+                            listaPedido.add(pedido);
+                        }
+                    }else{
+
+                        pedido.setKey(ds.getKey());
+                        pedido.setTelefono(ds.child("numeroUsuario").getValue().toString());
+                        pedido.setDir_usuario(ds.child("direccionUsuario").getValue().toString());
+                        pedido.setNom_usuario(ds.child("usuario").getValue().toString());
+
+                        listaPedido.add(pedido);
+
+                    }
                 }
                 adaptador.notifyDataSetChanged();
             }

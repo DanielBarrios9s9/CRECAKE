@@ -51,7 +51,7 @@ public class AdaptadorProductosCarrito  extends RecyclerView.Adapter<AdaptadorPr
             holder.valorProducto.setText("$ "+producto.getPrecio());
             holder.ofertaProducto.setText("-"+producto.getOferta()+"%");
 
-            holder.mas.setOnClickListener(new View.OnClickListener() {
+            /*holder.mas.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     items++;
@@ -91,7 +91,7 @@ public class AdaptadorProductosCarrito  extends RecyclerView.Adapter<AdaptadorPr
                         }
                     });
                 }
-            });
+            });*/
         }catch (Exception e){
 
         }

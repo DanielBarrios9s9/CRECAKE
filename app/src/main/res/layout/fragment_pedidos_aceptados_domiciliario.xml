@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:backgroundTint="#BF5A7F"
+    tools:context=".pedidosAceptadosDomiciliario">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Domicilios activos: "
+                android:textColor="#F2F2F2"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:layout_margin="10dp"/>
+            <TextView
+                android:id="@+id/cant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="cantidad"
+                android:textColor="#F2F2F2"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:layout_margin="10dp"/>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerPedido"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_margin="10dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_ruta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Abrir waze"
+                android:layout_gravity="center"
+                android:background="@drawable/button_rounded"/>
+
+            <Button
+                android:id="@+id/btn_direcciones"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Ver direcciones"
+                android:layout_gravity="center"
+                android:background="@drawable/button_rounded"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

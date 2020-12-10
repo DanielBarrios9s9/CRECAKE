@@ -17,10 +17,10 @@ import java.util.ArrayList;
 
 public class AdaptadorCarritoDomiciliario extends RecyclerView.Adapter<AdaptadorCarritoDomiciliario.pedidoviewHolder>{
 
-    ArrayList<Pedido> listaProductos;
+    ArrayList<ItemHelperClass> listaProductos;
     Context globalContext;
 
-    public AdaptadorCarritoDomiciliario(ArrayList<Pedido> listaProductos, Context globalContext) {
+    public AdaptadorCarritoDomiciliario(ArrayList<ItemHelperClass> listaProductos, Context globalContext) {
         this.listaProductos = listaProductos;
         this.globalContext = globalContext;
 
@@ -35,12 +35,22 @@ public class AdaptadorCarritoDomiciliario extends RecyclerView.Adapter<Adaptador
 
     @Override
     public void onBindViewHolder(@NonNull pedidoviewHolder holder, int position) {
-        final Pedido producto = listaProductos.get(position);
-        Picasso.get().load(producto.getImagen()).placeholder(R.drawable.imagenproducto). error(R.drawable.imagenproducto).resize(150,150).into(holder.imagenProducto);
+        final ItemHelperClass producto = listaProductos.get(position);
+
+        if(producto.getImagen().equals("ninguno")){
+
+            Picasso.get().load(R.drawable.ic_baseline_check_box_24).placeholder(R.drawable.imagenproducto).error(R.drawable.imagenproducto).resize(150, 150).into(holder.imagenProducto);
+
+        }else {
+
+            Picasso.get().load(producto.getImagen()).placeholder(R.drawable.imagenproducto).error(R.drawable.imagenproducto).resize(150, 150).into(holder.imagenProducto);
+        }
+
         holder.nombreProducto.setText(producto.getProducto());
         holder.valorProducto.setText("$ "+producto.getPrecio());
         holder.pasteleriaProducto.setText(producto.getTienda());
         holder.cantidadProducto.setText("Cantida: " + producto.getCantidad());
+        holder.dir_tienda.setText(producto.getDireccionTienda());
 
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,7 +76,7 @@ public class AdaptadorCarritoDomiciliario extends RecyclerView.Adapter<Adaptador
 
         CardView card, card2;
         ImageView imagenProducto;
-        TextView nombreProducto, valorProducto, pasteleriaProducto, cantidadProducto;
+        TextView nombreProducto, valorProducto, pasteleriaProducto, cantidadProducto, dir_tienda;
 
         public pedidoviewHolder(@NonNull View itemView) {
             super(itemView);
@@ -78,6 +88,7 @@ public class AdaptadorCarritoDomiciliario extends RecyclerView.Adapter<Adaptador
             valorProducto= (TextView) itemView.findViewById(R.id.precio_producto);
             pasteleriaProducto= (TextView) itemView.findViewById(R.id.pasteleria_producto);
             cantidadProducto = (TextView) itemView.findViewById(R.id.cantidad_producto);
+            dir_tienda = (TextView) itemView.findViewById(R.id.dir_pastele);
         }
     }
 }

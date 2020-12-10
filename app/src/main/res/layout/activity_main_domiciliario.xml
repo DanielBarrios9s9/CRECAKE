@@ -58,9 +58,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:background="#F2F2F2"
-            android:drawableTop="@drawable/ic_baseline_history_24"
+            android:drawableTop="@drawable/ic_baseline_person_24"
             android:drawablePadding="-10dp"
-            android:text="Historial de pedidos"
+            android:text="Cuenta"
             android:textColor="#BF5A7F"
             android:textSize="8dp" />
 

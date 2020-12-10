@@ -13,11 +13,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.squareup.picasso.Picasso;
 
 public class Dialog_ProductoDomiciliario {
-    Pedido producto;
+    ItemHelperClass producto;
     ImageView img;
     TextView nombre_producto, precio_producto, cantidad_producto, tiendaProducto;
 
-    public Dialog_ProductoDomiciliario(final Context context, final Pedido producto){
+    public Dialog_ProductoDomiciliario(final Context context, final ItemHelperClass producto){
 
         this.producto= producto;
         final Dialog dialog = new Dialog(context);
