@@ -94,29 +94,31 @@ public class Dialog_direcciones {
                 for (DataSnapshot ds : snapshot.getChildren()) {
 
                     int count = 1;
+                    if(ds.hasChild("0")){
+                        for(DataSnapshot sn : ds.getChildren()) {
 
-                    for(DataSnapshot sn : ds.getChildren()){
+                            if (!dir_tiendas.contains(sn.child("direccionTienda").getValue().toString()) && !tiendas.contains(sn.child("tienda").getValue().toString())) {
+                                dir_tiendas.add(sn.child("direccionTienda").getValue().toString());
+                                tiendas.add(sn.child("tienda").getValue().toString());
+                            }
 
-                        if(!dir_tiendas.contains(sn.child("direccionTienda").getValue().toString()) && !tiendas.contains(sn.child("tienda").getValue().toString())){
-
-                            dir_tiendas.add(sn.child("direccionTienda").getValue().toString());
-                            tiendas.add(sn.child("tienda").getValue().toString());
-
-                        }
-
-                        if(ds.getChildrenCount() == count){
-
-                            if(!dir_users.contains(sn.child("direccionUsuario").getValue().toString())) {
-
+                            if (!dir_users.contains(sn.child("direccionUsuario").getValue().toString())) {
                                 dir_users.add(sn.child("direccionUsuario").getValue().toString());
                                 nombres.add(sn.child("usuario").getValue().toString());
                             }
-
                         }
+                    }else{
 
-                        count++;
-
+                        if (!dir_tiendas.contains(ds.child("direccionTienda").getValue().toString()) && !tiendas.contains(ds.child("tienda").getValue().toString())) {
+                            dir_tiendas.add(ds.child("direccionTienda").getValue().toString());
+                            tiendas.add(ds.child("tienda").getValue().toString());
+                        }
+                        if (!dir_users.contains(ds.child("direccionUsuario").getValue().toString())) {
+                            dir_users.add(ds.child("direccionUsuario").getValue().toString());
+                            nombres.add(ds.child("usuario").getValue().toString());
+                        }
                     }
+
                 }
                 adapatadorDireccionesUser.notifyDataSetChanged();
                 adapatdoDireccionesTienda.notifyDataSetChanged();

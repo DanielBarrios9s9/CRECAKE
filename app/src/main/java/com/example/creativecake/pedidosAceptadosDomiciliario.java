@@ -167,6 +167,8 @@ public class pedidosAceptadosDomiciliario extends Fragment {
 
                     }
                     count++;
+                    System.out.println("CCCCCCCCCCCCCCCCCCCccooooooooooooonnnn: "+ count);
+
                 }
                 if(!String.valueOf(count).equals("0")) {
                     ruta.setEnabled(true);
